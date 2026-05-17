@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lucent helps footballers improve faster and get discovered sooner."
+    />
+    <title>Lucent — Your Game, Empowered</title>
+    <link rel="icon" href="data:," />
+    <link rel="preload" as="image" href="./assets/images/hero-athlete.webp" />
+    <link rel="preload" as="image" href="./assets/images/opening-poster.webp" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main>
+      <section class="film" id="top" aria-label="Opening football film">
+        <header class="nav shell">
+          <a class="brand" href="#top" aria-label="Lucent home">
+            <span class="brand__mark"></span>
+            <span>Lucent</span>
+          </a>
+
+          <nav aria-label="Primary">
+            <a href="#skills">Build skills</a>
+            <a href="#scouted">Get scouted</a>
+          </nav>
+
+          <a class="nav__cta" href="#join">Waitlist</a>
+        </header>
+
+        <video
+          class="film__video"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster="./assets/images/opening-poster.webp"
+          data-film-video
+        >
+          <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+          <source src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+          <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+        </video>
+
+        <div class="film__veil" aria-hidden="true"></div>
+        <div class="film__scanlines" aria-hidden="true"></div>
+        <div class="film__stamp" aria-hidden="true">Pose readout</div>
+
+        <div class="film__copy shell" data-reveal>
+          <p>Lucent</p>
+          <h1 aria-label="Your game. Empowered.">
+            <span>Your game.</span>
+            <span>Empowered.</span>
+          </h1>
+        </div>
+
+        <div class="film__marquee" aria-hidden="true">
+          <div>
+            <span>Build skills</span>
+            <span>Get scouted</span>
+            <span>Build skills</span>
+            <span>Get scouted</span>
+            <span>Build skills</span>
+            <span>Get scouted</span>
+          </div>
+        </div>
+
+        <div class="scroll-cue shell">
+          <span></span>
+          <small>Scroll to begin</small>
+        </div>
+      </section>
+
+      <section class="story story--skills" id="skills" data-skill-step="0">
+        <div class="story__sticky">
+          <div class="story__ticker" aria-hidden="true">
+            <div>
+              <span>Build skills</span>
+              <span>Build skills</span>
+              <span>Build skills</span>
+              <span>Build skills</span>
+              <span>Build skills</span>
+              <span>Build skills</span>
+            </div>
+          </div>
+
+          <div class="story__content shell">
+            <div class="story__intro" data-reveal>
+              <p class="eyebrow">Build skills</p>
+              <h2 data-skill-title>See the player clearly.</h2>
+              <p class="lede" data-skill-copy>
+                Lucent starts with the athlete, then reveals the movement patterns behind every rep.
+              </p>
+            </div>
+
+            <div class="skills-stage" aria-label="Player skill analysis scene">
+              <div class="skills-stage__halo skills-stage__halo--outer" aria-hidden="true"></div>
+              <div class="skills-stage__halo skills-stage__halo--inner" aria-hidden="true"></div>
+              <div class="skills-stage__scan" aria-hidden="true"></div>
+
+              <div class="skills-player">
+                <img
+                  class="skills-player__image"
+                  src="./assets/images/hero-athlete.webp"
+                  alt="Footballer standing upright and facing forward"
+                />
+
+                <svg class="pose-map" viewBox="0 0 100 210" aria-hidden="true" preserveAspectRatio="none">
+                  <g class="pose-map__lines">
+                    <line x1="40" y1="53" x2="60" y2="53" />
+                    <line x1="40" y1="53" x2="42" y2="101" />
+                    <line x1="60" y1="53" x2="58" y2="101" />
+                    <line x1="42" y1="101" x2="58" y2="101" />
+                    <line x1="42" y1="101" x2="44" y2="145" />
+                    <line x1="58" y1="101" x2="56" y2="145" />
+                    <line x1="44" y1="145" x2="43" y2="188" />
+                    <line x1="56" y1="145" x2="57" y2="188" />
+                  </g>
+                  <g class="pose-map__points">
+                    <circle cx="40" cy="53" r="1.8" />
+                    <circle cx="60" cy="53" r="1.8" />
+                    <circle cx="42" cy="101" r="1.8" />
+                    <circle cx="58" cy="101" r="1.8" />
+                    <circle cx="44" cy="145" r="1.8" />
+                    <circle cx="56" cy="145" r="1.8" />
+                    <circle cx="43" cy="188" r="1.8" />
+                    <circle cx="57" cy="188" r="1.8" />
+                  </g>
+                </svg>
+              </div>
+
+              <div class="metric metric--touch">
+                <span>First touch</span>
+                <strong>91%</strong>
+              </div>
+              <div class="metric metric--shot">
+                <span>Shot speed</span>
+                <strong>104 km/h</strong>
+              </div>
+              <div class="metric metric--weak-foot">
+                <span>Weak-foot score</span>
+                <strong>82%</strong>
+              </div>
+
+              <div class="pose-label pose-label--shoulders">Shoulder alignment</div>
+              <div class="pose-label pose-label--hips">Hip rotation</div>
+              <div class="pose-label pose-label--knees">Knee control</div>
+
+              <div class="analysis-chip analysis-chip--control">
+                <span>Ball control</span>
+                <strong>94%</strong>
+              </div>
+              <div class="analysis-chip analysis-chip--grade">
+                <span>Drill grade</span>
+                <strong>A−</strong>
+              </div>
+
+              <aside class="story-card story-card--focus">
+                <span>Training focus</span>
+                <strong>Build cleaner technique</strong>
+                <p>Review touch quality, striking mechanics, and finishing posture before the next session.</p>
+              </aside>
+
+              <aside class="story-card story-card--next">
+                <span>Next drill</span>
+                <strong>Repeat the finishing ladder</strong>
+              </aside>
+            </div>
+          </div>
+
+          <div class="story-steps shell" aria-hidden="true">
+            <span class="is-active">Player</span>
+            <span>Pose</span>
+            <span>Metrics</span>
+            <span>Next drill</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="story story--scouted" id="scouted" data-scout-step="0">
+        <div class="story__sticky">
+          <div class="story__ticker story__ticker--teal" aria-hidden="true">
+            <div>
+              <span>Get scouted</span>
+              <span>Get scouted</span>
+              <span>Get scouted</span>
+              <span>Get scouted</span>
+              <span>Get scouted</span>
+            </div>
+          </div>
+
+          <div class="scouted shell">
+            <div class="scouted__copy" data-reveal>
+              <p class="eyebrow">Get scouted</p>
+              <h2 data-scout-title>Find the right trial.</h2>
+              <p class="lede" data-scout-copy>
+                Browse open opportunities from clubs looking for players in your role.
+              </p>
+            </div>
+
+            <div class="product-shell" aria-label="Scroll-driven scouting product demonstration">
+              <div class="product-shell__chrome">
+                <span></span>
+                <span></span>
+                <span></span>
+                <strong>Lucent trials</strong>
+              </div>
+
+              <div class="screen screen--board is-active">
+                <div class="screen__header">
+                  <div>
+                    <span>Open trials</span>
+                    <strong>12 clubs recruiting this week</strong>
+                  </div>
+                  <em>Matched to your profile</em>
+                </div>
+
+                <div class="trial-grid">
+                  <article class="trial-card trial-card--aurelia is-selected">
+                    <div class="club-mark club-mark--aurelia" aria-hidden="true">
+                      <span>A</span>
+                    </div>
+                    <div>
+                      <h3>Aurelia SC</h3>
+                      <p>U19 winger · London</p>
+                    </div>
+                    <strong>94% fit</strong>
+                  </article>
+
+                  <article class="trial-card trial-card--northbridge">
+                    <div class="club-mark club-mark--northbridge" aria-hidden="true">
+                      <span>N</span>
+                    </div>
+                    <div>
+                      <h3>Northbridge FC</h3>
+                      <p>U21 forward · Manchester</p>
+                    </div>
+                    <strong>89% fit</strong>
+                  </article>
+
+                  <article class="trial-card trial-card--vale">
+                    <div class="club-mark club-mark--vale" aria-hidden="true">
+                      <span>V</span>
+                    </div>
+                    <div>
+                      <h3>Vale Athletic</h3>
+                      <p>Academy 9 · Birmingham</p>
+                    </div>
+                    <strong>86% fit</strong>
+                  </article>
+
+                  <article class="trial-card trial-card--meridian">
+                    <div class="club-mark club-mark--meridian" aria-hidden="true">
+                      <span>M</span>
+                    </div>
+                    <div>
+                      <h3>Meridian United</h3>
+                      <p>Wide forward · Leeds</p>
+                    </div>
+                    <strong>84% fit</strong>
+                  </article>
+                </div>
+              </div>
+
+              <div class="screen screen--trial">
+                <div class="selected-trial">
+                  <div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true">
+                    <span>A</span>
+                  </div>
+                  <div>
+                    <span>Selected trial</span>
+                    <h3>Aurelia SC · U19 winger</h3>
+                    <p>Saturday, 18 July · High-tempo transition profile</p>
+                  </div>
+                </div>
+
+                <div class="trial-summary">
+                  <article>
+                    <span>Club priority</span>
+                    <strong>1v1 acceleration</strong>
+                  </article>
+                  <article>
+                    <span>Evidence needed</span>
+                    <strong>3 drill uploads</strong>
+                  </article>
+                  <article>
+                    <span>Deadline</span>
+                    <strong>48 hours</strong>
+                  </article>
+                </div>
+              </div>
+
+              <div class="screen screen--requirements">
+                <div class="requirements">
+                  <article>
+                    <span>Requirements</span>
+                    <ul>
+                      <li>90 sec match reel</li>
+                      <li>Recent sprint profile</li>
+                      <li>Finishing ladder result</li>
+                    </ul>
+                  </article>
+
+                  <article>
+                    <span>Drills to complete</span>
+                    <ul>
+                      <li>Weak-foot finishing</li>
+                      <li>First-touch escape</li>
+                      <li>20 m burst test</li>
+                    </ul>
+                  </article>
+                </div>
+              </div>
+
+              <div class="screen screen--upload">
+                <div class="upload-card">
+                  <span>Upload proof</span>
+                  <h3>3 of 3 files attached</h3>
+                  <div class="upload-list">
+                    <em>finishing-ladder.mp4</em>
+                    <em>first-touch-escape.mp4</em>
+                    <em>sprint-profile.csv</em>
+                  </div>
+                  <strong>Ready to submit</strong>
+                </div>
+              </div>
+
+              <div class="screen screen--success">
+                <div class="success-card">
+                  <div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true">
+                    <span>A</span>
+                  </div>
+                  <span>Club-ready</span>
+                  <h3>Aurelia SC shortlisted you</h3>
+                  <p>Your verified profile, drill proof, and trial results are now with the recruitment team.</p>
+                </div>
+              </div>
+
+              <div class="product-pointer" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="story-steps story-steps--scouted shell" aria-hidden="true">
+            <span class="is-active">Trials</span>
+            <span>Select</span>
+            <span>Requirements</span>
+            <span>Upload</span>
+            <span>Scouted</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="join">
+        <div class="shell cta__inner" data-reveal>
+          <svg class="cta__glyph" viewBox="0 0 180 180" aria-hidden="true">
+            <circle cx="90" cy="28" r="14" />
+            <path d="M85 48 61 79 78 97 101 78 124 101 140 87 109 49Z" />
+            <path d="M77 96 48 136 64 148 96 109Z" />
+            <path d="M100 101 129 151 146 141 117 89Z" />
+          </svg>
+          <p class="eyebrow">Lucent</p>
+          <h2>Improve faster.<br />Get discovered sooner.</h2>
+          <p>Understand your body, sharpen your game, and show clubs the evidence behind your progress.</p>
+          <button class="button button--placeholder" type="button" aria-label="Join the waitlist placeholder">
+            Join the waitlist
+          </button>
+        </div>
+
+        <footer class="footer shell">
+          <a class="brand" href="#top" aria-label="Lucent home">
+            <span class="brand__mark"></span>
+            <span>Lucent</span>
+          </a>
+          <small>© 2026 Lucent. All rights reserved.</small>
+        </footer>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
