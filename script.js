@@ -70,6 +70,42 @@ function revealAll() {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
+function setupScoutedVideoBackground() {
+  const scoutSticky = document.querySelector(".story--scouted .story__sticky");
+  if (!scoutSticky) return;
+
+  const backgroundVideo = scoutSticky.querySelector(":scope > video");
+  const backgroundOverlay = backgroundVideo?.nextElementSibling;
+  const scoutContent = scoutSticky.querySelector(".scouted");
+  const scoutStepNav = scoutSticky.querySelector(".story-steps--scouted");
+
+  if (backgroundVideo) {
+    backgroundVideo.style.opacity = "0.52";
+    backgroundVideo.style.filter = "saturate(1.22) contrast(1.08) brightness(0.92)";
+    backgroundVideo.style.zIndex = "0";
+    backgroundVideo.style.mixBlendMode = "screen";
+    backgroundVideo.play?.().catch(() => {});
+  }
+
+  if (backgroundOverlay?.getAttribute("aria-hidden") === "true") {
+    backgroundOverlay.style.zIndex = "1";
+    backgroundOverlay.style.background = [
+      "radial-gradient(circle at 67% 44%, rgba(151, 255, 240, 0.12), transparent 30%)",
+      "linear-gradient(90deg, rgba(16, 0, 19, 0.9) 0%, rgba(16, 0, 19, 0.66) 34%, rgba(16, 0, 19, 0.38) 68%, rgba(16, 0, 19, 0.68) 100%)",
+      "linear-gradient(180deg, rgba(16, 0, 19, 0.56), rgba(16, 0, 19, 0.84))",
+    ].join(", ");
+  }
+
+  if (scoutContent) {
+    scoutContent.style.position = "relative";
+    scoutContent.style.zIndex = "3";
+  }
+
+  if (scoutStepNav) {
+    scoutStepNav.style.zIndex = "4";
+  }
+}
+
 function setupFilmFallback() {
   if (!filmVideo || !film) return;
 
@@ -231,6 +267,7 @@ prefersReducedMotion.addEventListener("change", () => {
   updateStories();
 });
 
+setupScoutedVideoBackground();
 setupFilmFallback();
 setupRevealObserver();
 updateStories();
