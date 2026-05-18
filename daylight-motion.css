@@ -158,6 +158,10 @@ body.is-intro-complete .launch-sequence__word--stack {
   padding-bottom: 30px;
 }
 
+.player-signal {
+  display: none !important;
+}
+
 .elevate__video {
   opacity: 1 !important;
   filter: saturate(1.04) contrast(1.08) brightness(1.02) !important;
