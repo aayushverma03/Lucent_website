@@ -1,5 +1,46 @@
 /* Daylight / Relats-inspired transition and visual refinements for Lucent */
 
+html::before {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: grid;
+  place-items: center;
+  color: #060606;
+  background:
+    radial-gradient(circle at 50% 64%, rgba(0, 0, 0, 0.18), transparent 18%),
+    radial-gradient(circle at 50% 50%, rgba(171, 184, 190, 0.2), transparent 48%),
+    linear-gradient(180deg, #f8f9fb 0%, #eef2f4 100%);
+  font-family: var(--display-font, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif);
+  font-size: clamp(1rem, 1.7vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  content: "LOADING";
+  pointer-events: none;
+  animation: activeHopLoaderExit 2.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+html::after {
+  position: fixed;
+  left: 50%;
+  top: 62%;
+  z-index: 9999;
+  width: min(48vw, 520px);
+  height: min(48vw, 520px);
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(16, 18, 18, 0.22), rgba(16, 18, 18, 0.07) 34%, transparent 68%);
+  filter: blur(38px);
+  transform: translate(-50%, -50%);
+  content: "";
+  pointer-events: none;
+  animation: activeHopLoaderSpotExit 2.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+html body .launch-sequence {
+  display: none !important;
+}
+
 .film::before {
   position: absolute;
   inset: -20%;
@@ -357,6 +398,30 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
   content: "Lucent\A Your game. Empowered. Visible.";
 }
 
+@keyframes activeHopLoaderExit {
+  0%, 58% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px) scale(1.015);
+    filter: blur(8px);
+    visibility: hidden;
+  }
+}
+@keyframes activeHopLoaderSpotExit {
+  0%, 58% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.18);
+    visibility: hidden;
+  }
+}
 @keyframes daylightAurora { 0% { transform: translate3d(-1%, -1%, 0) rotate(0deg) scale(1); } 50% { transform: translate3d(1%, 1%, 0) rotate(7deg) scale(1.04); } 100% { transform: translate3d(-1%, -1%, 0) rotate(0deg) scale(1); } }
 @keyframes daylightWordRise { from { opacity: 0; transform: translateY(32px) scale(0.98); filter: blur(10px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
 @keyframes daylightRing { 0% { opacity: 0; transform: scale(0.62); } 45% { opacity: 1; } 100% { opacity: 0.9; transform: scale(1.02); } }
@@ -364,6 +429,8 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
 @keyframes photoPan { from { transform: scale(1.08) translateX(-3%); } to { transform: scale(1.16) translateX(3%); } }
 
 @media (max-width: 860px) {
+  html::before { font-size: 0.94rem; }
+  html::after { width: 68vw; height: 68vw; }
   .nav.shell {
     top: 12px !important;
     max-width: calc(100vw - 20px) !important;
@@ -391,5 +458,8 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html::before, html::after {
+    animation-duration: 0.85s !important;
+  }
   .film::before, .film__video, .proof-strip__inner article::before, .launch-sequence__word--stack span, .launch-sequence__word--stack .launch-sequence__mark { animation: none !important; }
 }
