@@ -18,57 +18,90 @@
     <link rel="stylesheet" href="./qa-polish.css" />
     <link rel="stylesheet" href="./lucent-theme-visibility.css" />
     <link rel="stylesheet" href="./lucent-final-overrides.css" />
+    <link rel="stylesheet" href="./hero-redesign.css" />
   </head>
   <body class="lucent-theme">
     <div class="grain" aria-hidden="true"></div>
 
+    <header class="pill-nav" data-hero-nav>
+      <nav class="pill-nav__group pill-nav__group--left" aria-label="Primary left">
+        <a href="#how">How it works</a>
+        <a href="#skills">Skill engine</a>
+      </nav>
+      <a class="pill-nav__brand" href="#top" aria-label="Lucent home">
+        <span class="pill-nav__mark" aria-hidden="true"></span>
+        <span>Lucent</span>
+      </a>
+      <nav class="pill-nav__group pill-nav__group--right" aria-label="Primary right">
+        <a href="#scouted">Trials</a>
+        <a class="pill-nav__cta" href="#elevate">Join</a>
+      </nav>
+    </header>
+
     <main>
-      <section class="film" id="top" aria-label="Opening football film">
-        <header class="nav shell">
-          <a class="brand" href="#top" aria-label="Lucent home"><span class="brand__mark"></span><span>Lucent</span></a>
-          <nav aria-label="Primary">
-            <a href="#how">How it works</a>
-            <a href="#skills">Skill engine</a>
-            <a href="#premium-experience">Product film</a>
-            <a href="#scouted">Trials</a>
-            <a href="#elevate">Join</a>
-          </nav>
-          <a class="nav__cta" href="#elevate">Waitlist</a>
-        </header>
+      <section class="film film--redesign" id="top" aria-label="Opening football film">
+        <div class="film__sticky" data-hero-sticky>
+          <div class="film__stage" data-hero-stage>
+            <video class="film__stage-video" autoplay muted loop playsinline preload="auto" poster="./assets/images/opening-poster.webp">
+              <source src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <div class="film__stage-veil" aria-hidden="true"></div>
+          </div>
 
-        <video class="film__video" autoplay muted loop playsinline preload="auto" poster="./assets/images/opening-poster.webp" data-film-video>
-          <source src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-          <source src="./assets/video/opening-tracked.webm" type="video/webm" />
-          <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
-        </video>
-
-        <div class="film__veil" aria-hidden="true"></div>
-        <div class="film__scanlines" aria-hidden="true"></div>
-
-        <div class="film__copy shell film__copy--brand" data-reveal>
-          <div class="hero-brand-lockup" aria-label="Lucent logo and app name"><span class="hero-brand-lockup__mark"></span><h1>Lucent</h1></div>
-          <div class="film__subline">Built for footballers chasing the next trial</div>
-          <div class="hero-proof" aria-label="Lucent football product signals">
-            <span>Ball mastery</span><span>Weak-foot proof</span><span>Sprint profile</span><span>Scout-ready clips</span>
+          <div class="film__caption" data-hero-caption>
+            <p>Lucent turns every training rep into proof. Film the drill, read the signal, and put a scout-ready pack in front of clubs that are recruiting now.</p>
           </div>
         </div>
 
-        <aside class="hero-console" aria-label="Lucent live football evidence console">
-          <div class="hero-console__header"><span>Live player signal</span><strong>Trial-ready</strong></div>
-          <div class="hero-console__player"><span class="hero-console__avatar">RW</span><div><strong>Wide Forward</strong><small>Explosive winger · U21</small></div><em>92%</em></div>
-          <div class="hero-console__bars" aria-hidden="true"><span style="--w: 94%"></span><span style="--w: 88%"></span><span style="--w: 82%"></span></div>
-          <div class="hero-console__signals"><span>3 drills</span><span>2 scouts</span></div>
-        </aside>
-
-        <div class="scroll-cue shell"><span></span><small>Scroll</small></div>
       </section>
 
-      <section class="proof-strip" aria-label="Lucent football proof points">
-        <div class="shell proof-strip__inner">
-          <article data-reveal><span>01</span><strong>Train</strong><p>Record first touch, finishing, sprint, and agility drills.</p></article>
-          <article data-reveal><span>02</span><strong>Score</strong><p>Turn ball control, speed, and consistency into proof.</p></article>
-          <article data-reveal><span>03</span><strong>Package</strong><p>Create a club-ready profile with clips and metrics.</p></article>
-          <article data-reveal><span>04</span><strong>Trial</strong><p>Match your role and evidence to open club briefs.</p></article>
+      <section class="mosaic" aria-label="Lucent video mosaic">
+        <div class="mosaic__sticky" data-mosaic>
+          <div class="mosaic__grid" data-mosaic-grid>
+            <video class="m-tile m-tile--tl" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--tc" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--tr" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--ml" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--mc" autoplay muted loop playsinline preload="auto" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--mr" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--bl" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--bc" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <video class="m-tile m-tile--br" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="mosaic__veil" aria-hidden="true"></div>
+          <div class="mosaic__text">
+            <h2 class="mosaic__headline mosaic__headline--a" data-mosaic-h="a">We turn every training rep into proof.</h2>
+            <h2 class="mosaic__headline mosaic__headline--b" data-mosaic-h="b">From first touch to club shortlist — your full performance story.</h2>
+          </div>
         </div>
       </section>
 
@@ -154,5 +187,6 @@
     <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js" defer></script>
     <script src="./premium-elements.js" defer></script>
     <script src="./qa-polish.js" defer></script>
+    <script src="./hero-redesign.js" defer></script>
   </body>
 </html>
