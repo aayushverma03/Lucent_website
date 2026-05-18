@@ -49,134 +49,61 @@ function injectStyle(id, css) {
 
 function setupRelatsInspiredHeroContent() {
   const heroSubline = document.querySelector(".film__copy--brand .film__subline");
-  if (heroSubline) heroSubline.textContent = "Empowering future athletes.";
+  if (heroSubline) heroSubline.textContent = "Creating the next gen of footballers";
 
   const heroBrandLockup = document.querySelector(".film__copy--brand .hero-brand-lockup");
-  if (heroBrandLockup) heroBrandLockup.setAttribute("aria-hidden", "true");
+  if (heroBrandLockup) heroBrandLockup.removeAttribute("aria-hidden");
 
   const playerSignalSection = document.querySelector(".player-signal");
   playerSignalSection?.remove();
 }
 
+function setupActiveNavigation() {
+  const links = [...document.querySelectorAll(".nav.shell nav a[href^='#']")];
+  const items = links
+    .map((link) => {
+      const id = link.getAttribute("href")?.slice(1);
+      const section = id ? document.getElementById(id) : null;
+      return section ? { link, section } : null;
+    })
+    .filter(Boolean);
+
+  if (!items.length) return;
+
+  const setActive = (activeLink) => {
+    links.forEach((link) => link.classList.toggle("is-active", link === activeLink));
+  };
+
+  const update = () => {
+    const anchor = window.innerHeight * 0.38;
+    let active = items[0];
+    let nearestDistance = Number.POSITIVE_INFINITY;
+
+    items.forEach((item) => {
+      const rect = item.section.getBoundingClientRect();
+      const containsAnchor = rect.top <= anchor && rect.bottom >= anchor;
+      const distance = Math.abs(rect.top - anchor);
+
+      if (containsAnchor) {
+        active = item;
+        nearestDistance = -1;
+      } else if (nearestDistance !== -1 && distance < nearestDistance) {
+        active = item;
+        nearestDistance = distance;
+      }
+    });
+
+    if (active?.link) setActive(active.link);
+  };
+
+  links.forEach((link) => link.addEventListener("click", () => setActive(link)));
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+}
+
 function setupLaunchSequence() {
-  injectStyle(
-    "lucent-launch",
-    `
-    body.is-intro-running { overflow: hidden; }
-
-    .launch-sequence {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 52% 47%, rgba(224, 165, 255, 0.16), transparent 30%),
-        radial-gradient(circle at 50% 50%, rgba(151, 255, 240, 0.08), transparent 42%),
-        #050007;
-      color: var(--paper);
-      pointer-events: none;
-      transform-origin: center;
-      transition:
-        opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
-        transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
-        filter 1200ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .launch-sequence::before {
-      position: absolute;
-      inset: 0;
-      background:
-        url("./assets/images/opening-poster.webp") center / cover no-repeat;
-      opacity: 0.18;
-      filter: blur(16px) saturate(0.86) contrast(1.08);
-      transform: scale(1.18);
-      content: "";
-      transition:
-        opacity 1200ms cubic-bezier(0.16, 1, 0.3, 1),
-        transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
-        filter 1200ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .launch-sequence::after {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(5, 0, 7, 0.90), rgba(5, 0, 7, 0.38), rgba(5, 0, 7, 0.88)),
-        linear-gradient(180deg, rgba(5, 0, 7, 0.24), rgba(5, 0, 7, 0.72));
-      content: "";
-    }
-
-    .launch-sequence__word {
-      position: relative;
-      z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: clamp(14px, 2vw, 28px);
-      font-family: var(--display-font);
-      font-size: clamp(4.4rem, 12vw, 12rem);
-      letter-spacing: 0.08em;
-      line-height: 0.78;
-      text-transform: uppercase;
-      transform: translateY(0) scale(1);
-      transform-origin: center;
-      text-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
-      transition:
-        transform 1200ms cubic-bezier(0.16, 1, 0.3, 1),
-        opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
-        letter-spacing 1200ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .launch-sequence__mark {
-      width: 0.18em;
-      height: 0.18em;
-      border: 0.025em solid currentColor;
-      border-radius: 999px;
-      box-shadow: 0 0 34px rgba(224, 165, 255, 0.28);
-    }
-
-    body.is-intro-complete .launch-sequence {
-      opacity: 0;
-      filter: blur(10px);
-      transform: scale(1.34);
-    }
-
-    body.is-intro-complete .launch-sequence::before {
-      opacity: 0;
-      filter: blur(0) saturate(0.9) contrast(1.06);
-      transform: scale(0.98);
-    }
-
-    body.is-intro-complete .launch-sequence__word {
-      opacity: 0;
-      letter-spacing: 0.18em;
-      transform: translateY(-8svh) scale(0.34);
-    }
-
-    body.is-intro-running .film__video {
-      transform: scale(1.16);
-      filter: saturate(0.74) contrast(1.06) brightness(0.58) blur(8px);
-    }
-
-    .film__video {
-      transition:
-        transform 1500ms cubic-bezier(0.16, 1, 0.3, 1),
-        filter 1500ms cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    body.is-intro-complete .film__video {
-      transform: scale(1);
-      filter: saturate(0.88) contrast(1.08) brightness(0.76);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .launch-sequence { display: none; }
-      body.is-intro-running { overflow: auto; }
-    }
-    `,
-  );
-
+  // Disabled visually by daylight-motion.css, but kept safe for users without CSS overrides.
   let launch = document.querySelector(".launch-sequence");
   if (!launch) {
     launch = document.createElement("div");
@@ -453,6 +380,7 @@ prefersReducedMotion.addEventListener("change", () => {
 });
 
 setupRelatsInspiredHeroContent();
+setupActiveNavigation();
 setupLaunchSequence();
 injectScoutedPolish();
 setupScoutedVideoBackground();
