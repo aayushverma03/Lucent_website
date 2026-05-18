@@ -103,4 +103,27 @@
   render();
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
+
+  // Lazy-load mosaic videos: only attach src + play when section is near viewport.
+  if (mosaic && "IntersectionObserver" in window) {
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      mosaic.querySelectorAll("video[data-lazy-src]").forEach((v) => {
+        v.src = v.dataset.lazySrc;
+        v.load();
+        const tryPlay = () => v.play().catch(() => {});
+        if (v.readyState >= 2) tryPlay();
+        else v.addEventListener("loadeddata", tryPlay, { once: true });
+      });
+    };
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) if (e.isIntersecting) { start(); io.disconnect(); break; }
+      },
+      { rootMargin: "200px 0px 200px 0px" }
+    );
+    io.observe(mosaic);
+  }
 })();
