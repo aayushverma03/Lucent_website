@@ -70,6 +70,26 @@ function revealAll() {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
+function setupLaunchSequence() {
+  const launch = document.querySelector(".launch-sequence");
+  if (!launch) return;
+
+  const finishLaunch = () => {
+    document.body.classList.add("is-intro-complete");
+    window.setTimeout(() => launch.remove(), 1500);
+  };
+
+  if (prefersReducedMotion.matches) {
+    finishLaunch();
+    return;
+  }
+
+  document.body.classList.add("is-intro-running");
+  const delay = document.readyState === "complete" ? 1750 : 2150;
+
+  window.setTimeout(finishLaunch, delay);
+}
+
 function injectScoutedPolish() {
   if (document.querySelector("[data-scouted-polish]")) return;
 
@@ -89,8 +109,8 @@ function injectScoutedPolish() {
       z-index: 2;
       pointer-events: none;
       background:
-        linear-gradient(90deg, rgba(9, 0, 13, 0.92) 0%, rgba(9, 0, 13, 0.68) 42%, rgba(9, 0, 13, 0.78) 100%),
-        radial-gradient(circle at 70% 46%, rgba(151, 255, 240, 0.10), transparent 34%);
+        linear-gradient(90deg, rgba(9, 0, 13, 0.55) 0%, rgba(9, 0, 13, 0.24) 45%, rgba(9, 0, 13, 0.52) 100%),
+        radial-gradient(circle at 70% 46%, rgba(151, 255, 240, 0.08), transparent 34%);
       content: "";
     }
 
@@ -133,13 +153,13 @@ function injectScoutedPolish() {
       top: auto;
       right: auto;
       width: 100%;
-      min-height: min(62svh, 590px);
+      min-height: min(66svh, 650px);
       transform: none;
       border: 1px solid rgba(251, 250, 247, 0.18);
       border-radius: 34px;
       background:
-        linear-gradient(180deg, rgba(44, 36, 58, 0.78), rgba(15, 9, 24, 0.86)),
-        rgba(12, 8, 20, 0.84);
+        linear-gradient(180deg, rgba(44, 36, 58, 0.74), rgba(15, 9, 24, 0.82)),
+        rgba(12, 8, 20, 0.80);
       box-shadow:
         0 46px 120px rgba(0, 0, 0, 0.62),
         0 0 70px rgba(151, 255, 240, 0.06),
@@ -153,7 +173,7 @@ function injectScoutedPolish() {
     }
 
     .story--scouted .screen {
-      padding: clamp(24px, 2.6vw, 34px);
+      padding: clamp(24px, 2.4vw, 30px);
     }
 
     .story--scouted .trial-card,
@@ -224,7 +244,7 @@ function injectScoutedPolish() {
         right: 0;
         bottom: 68px;
         width: 100%;
-        min-height: min(56svh, 580px);
+        min-height: min(58svh, 590px);
       }
     }
   `;
@@ -236,26 +256,26 @@ function setupScoutedVideoBackground() {
   const scoutSticky = document.querySelector(".story--scouted .story__sticky");
   if (!scoutSticky) return;
 
-  const backgroundVideo = scoutSticky.querySelector(":scope > video");
-  const backgroundOverlay = backgroundVideo?.nextElementSibling;
+  const backgroundVideo = scoutSticky.querySelector(".scout-bg-video");
+  const backgroundOverlay = scoutSticky.querySelector(".scout-bg-overlay");
   const scoutContent = scoutSticky.querySelector(".scouted");
   const scoutStepNav = scoutSticky.querySelector(".story-steps--scouted");
 
   if (backgroundVideo) {
-    backgroundVideo.style.opacity = "0.18";
-    backgroundVideo.style.filter = "saturate(0.82) contrast(1.08) brightness(0.58) blur(1px)";
-    backgroundVideo.style.transform = "scale(1.04)";
+    backgroundVideo.style.opacity = "0.52";
+    backgroundVideo.style.filter = "saturate(0.98) contrast(1.12) brightness(0.88)";
+    backgroundVideo.style.transform = "scale(1.02)";
     backgroundVideo.style.zIndex = "0";
     backgroundVideo.style.mixBlendMode = "normal";
     backgroundVideo.play?.().catch(() => {});
   }
 
-  if (backgroundOverlay?.getAttribute("aria-hidden") === "true") {
+  if (backgroundOverlay) {
     backgroundOverlay.style.zIndex = "1";
     backgroundOverlay.style.background = [
-      "radial-gradient(circle at 67% 44%, rgba(151, 255, 240, 0.08), transparent 30%)",
-      "linear-gradient(90deg, rgba(9, 0, 13, 0.94) 0%, rgba(9, 0, 13, 0.74) 42%, rgba(9, 0, 13, 0.86) 100%)",
-      "linear-gradient(180deg, rgba(9, 0, 13, 0.58), rgba(9, 0, 13, 0.92))",
+      "radial-gradient(circle at 67% 44%, rgba(151, 255, 240, 0.10), transparent 30%)",
+      "linear-gradient(90deg, rgba(9, 0, 13, 0.58) 0%, rgba(9, 0, 13, 0.30) 45%, rgba(9, 0, 13, 0.60) 100%)",
+      "linear-gradient(180deg, rgba(9, 0, 13, 0.25), rgba(9, 0, 13, 0.70))",
     ].join(", ");
   }
 
@@ -430,6 +450,7 @@ prefersReducedMotion.addEventListener("change", () => {
   updateStories();
 });
 
+setupLaunchSequence();
 injectScoutedPolish();
 setupScoutedVideoBackground();
 setupFilmFallback();
