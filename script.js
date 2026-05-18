@@ -24,7 +24,7 @@ const skillScenes = [
   ["See the player clearly.", "Start with the athlete, then reveal the movement behind every rep."],
   ["Read the movement.", "Pose analysis exposes alignment, hip rotation, and control before small flaws become habits."],
   ["Turn reps into evidence.", "Touch quality, shot speed, and weak-foot control become measurable proof of improvement."],
-  ["Know what to train next.", "Lucent turns the readout into one clear recommendation for the next session."],
+  ["Know what to train next.", "Every drill makes your profile stronger."],
 ];
 
 const scoutScenes = [
@@ -171,7 +171,7 @@ function setupLaunchSequence() {
     launch = document.createElement("div");
     launch.className = "launch-sequence";
     launch.setAttribute("aria-hidden", "true");
-    launch.innerHTML = `<div class="launch-sequence__word"><span>Lucent</span><span class="launch-sequence__mark"></span></div>`;
+    launch.innerHTML = `<div class="launch-sequence__word launch-sequence__word--stack"><span>Your Game.</span><span>Empowered.</span><span>Visible.</span><span class="launch-sequence__mark"></span></div>`;
     document.body.prepend(launch);
   }
 
