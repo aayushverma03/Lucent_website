@@ -11,14 +11,16 @@
     <link rel="icon" href="data:," />
     <link rel="preload" as="image" href="./assets/images/hero-athlete.webp" />
     <link rel="preload" as="image" href="./assets/images/opening-poster.webp" />
+    <link rel="preload" as="video" href="./assets/video/opening-tracked.mp4" type="video/mp4" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./final-polish.css" />
     <link rel="stylesheet" href="./daylight-motion.css" />
     <link rel="stylesheet" href="./lucent-overrides.css" />
     <link rel="stylesheet" href="./premium-elements.css" />
     <link rel="stylesheet" href="./qa-polish.css" />
+    <link rel="stylesheet" href="./lucent-theme-visibility.css" />
   </head>
-  <body>
+  <body class="lucent-theme">
     <div class="grain" aria-hidden="true"></div>
 
     <main>
@@ -46,12 +48,12 @@
           muted
           loop
           playsinline
-          preload="metadata"
+          preload="auto"
           poster="./assets/images/opening-poster.webp"
           data-film-video
         >
-          <source src="./assets/video/opening-tracked.webm" type="video/webm" />
           <source src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+          <source src="./assets/video/opening-tracked.webm" type="video/webm" />
           <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
         </video>
 
