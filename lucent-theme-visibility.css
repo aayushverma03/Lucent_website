@@ -225,6 +225,15 @@ body.lucent-theme .elevate__veil {
     linear-gradient(180deg, rgba(5, 7, 10, 0.40), rgba(5, 7, 10, 0.62)) !important;
 }
 
+/* Delete the duplicate final CTA page shown after the product story. */
+body.lucent-theme .cta#join {
+  display: none !important;
+}
+
+body.lucent-theme .elevate {
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 860px) {
   body.lucent-theme .film__video {
     object-position: center 38% !important;
