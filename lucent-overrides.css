@@ -1,0 +1,65 @@
+/* Final Lucent page refinements */
+
+.hero-brand-lockup {
+  transform: translateY(5vh) !important;
+}
+
+.hero-brand-lockup h1 {
+  font-size: clamp(4.05rem, 9.75vw, 10.5rem) !important;
+}
+
+.hero-brand-lockup__mark {
+  width: clamp(56px, 6vw, 99px) !important;
+  height: clamp(56px, 6vw, 99px) !important;
+}
+
+.film__copy--brand {
+  align-content: center !important;
+  gap: clamp(14px, 1.8vw, 26px) !important;
+}
+
+.film__copy--brand .film__subline {
+  display: block !important;
+  margin-top: clamp(18px, 2.4vw, 34px) !important;
+  color: rgba(251, 250, 247, 0.9) !important;
+  font-family: var(--body-font, Inter, system-ui, sans-serif) !important;
+  font-size: clamp(1rem, 1.5vw, 1.36rem) !important;
+  font-weight: 650 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.3 !important;
+  text-transform: none !important;
+  text-shadow: 0 16px 58px rgba(0, 0, 0, 0.72);
+  transform: translateY(5vh);
+}
+
+.nav.shell nav a:first-child {
+  color: rgba(251, 250, 247, 0.78) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.nav.shell nav a.is-active {
+  color: rgba(251, 250, 247, 0.98) !important;
+  background: rgba(0, 0, 0, 0.48) !important;
+  border-color: rgba(251, 250, 247, 0.1) !important;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(251, 250, 247, 0.08) !important;
+}
+
+@media (max-width: 860px) {
+  .hero-brand-lockup,
+  .film__copy--brand .film__subline {
+    transform: translateY(3vh) !important;
+  }
+
+  .hero-brand-lockup h1 {
+    font-size: clamp(3.15rem, 16.5vw, 5.55rem) !important;
+  }
+
+  .hero-brand-lockup__mark {
+    width: 56px !important;
+    height: 56px !important;
+  }
+}
