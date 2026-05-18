@@ -46,14 +46,14 @@ body.lucent-theme ::selection {
 }
 
 body.lucent-theme .grain {
-  opacity: 0.08 !important;
-}
-
-body.lucent-theme .premium-tactical-grid {
   opacity: 0.055 !important;
 }
 
-/* Opening film: keep the footage highly visible, with only a light readability scrim. */
+body.lucent-theme .premium-tactical-grid {
+  opacity: 0.035 !important;
+}
+
+/* Opening film: keep the footage highly visible, with only a minimal readability scrim. */
 body.lucent-theme .film {
   background: var(--lucent-bg) !important;
   isolation: isolate !important;
@@ -64,8 +64,8 @@ body.lucent-theme .film__video {
   opacity: 1 !important;
   object-fit: cover !important;
   object-position: center 42% !important;
-  filter: saturate(1.16) contrast(1.12) brightness(1.08) !important;
-  transform: scale(1.015) !important;
+  filter: saturate(1.28) contrast(1.18) brightness(1.18) !important;
+  transform: scale(1.006) !important;
 }
 
 body.lucent-theme .film.is-fallback .film__video {
@@ -75,16 +75,16 @@ body.lucent-theme .film.is-fallback .film__video {
 body.lucent-theme .film__veil {
   z-index: 1 !important;
   background:
-    radial-gradient(circle at 50% 46%, rgba(102, 255, 241, 0.10), transparent 29%),
-    radial-gradient(circle at 50% 72%, rgba(184, 255, 92, 0.08), transparent 34%),
-    linear-gradient(90deg, rgba(5, 7, 10, 0.56), rgba(5, 7, 10, 0.10) 44%, rgba(5, 7, 10, 0.34)),
-    linear-gradient(180deg, rgba(5, 7, 10, 0.34), rgba(5, 7, 10, 0.10) 36%, rgba(5, 7, 10, 0.44)) !important;
+    radial-gradient(circle at 50% 46%, rgba(102, 255, 241, 0.045), transparent 31%),
+    radial-gradient(circle at 50% 72%, rgba(184, 255, 92, 0.035), transparent 36%),
+    linear-gradient(90deg, rgba(5, 7, 10, 0.28), rgba(5, 7, 10, 0.03) 44%, rgba(5, 7, 10, 0.18)),
+    linear-gradient(180deg, rgba(5, 7, 10, 0.20), rgba(5, 7, 10, 0.04) 38%, rgba(5, 7, 10, 0.26)) !important;
   mix-blend-mode: normal !important;
 }
 
 body.lucent-theme .film__scanlines {
   z-index: 2 !important;
-  opacity: 0.035 !important;
+  opacity: 0.018 !important;
   mix-blend-mode: screen !important;
 }
 
@@ -98,13 +98,12 @@ body.lucent-theme .film__copy--brand::before {
   top: 50%;
   left: 50%;
   z-index: -1;
-  width: min(980px, 92vw);
-  height: min(560px, 72svh);
+  width: min(900px, 86vw);
+  height: min(500px, 64svh);
   border-radius: clamp(32px, 5vw, 64px);
-  background:
-    radial-gradient(ellipse at center, rgba(2, 6, 10, 0.48) 0%, rgba(2, 6, 10, 0.28) 48%, transparent 74%);
+  background: radial-gradient(ellipse at center, rgba(2, 6, 10, 0.34) 0%, rgba(2, 6, 10, 0.18) 48%, transparent 74%);
   content: "";
-  filter: blur(4px);
+  filter: blur(2px);
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -237,19 +236,19 @@ body.lucent-theme .elevate {
 @media (max-width: 860px) {
   body.lucent-theme .film__video {
     object-position: center 38% !important;
-    filter: saturate(1.14) contrast(1.08) brightness(1.02) !important;
-    transform: scale(1.03) !important;
+    filter: saturate(1.22) contrast(1.14) brightness(1.12) !important;
+    transform: scale(1.018) !important;
   }
 
   body.lucent-theme .film__veil {
     background:
-      radial-gradient(circle at 50% 42%, rgba(102, 255, 241, 0.10), transparent 30%),
-      linear-gradient(180deg, rgba(5, 7, 10, 0.42), rgba(5, 7, 10, 0.18) 38%, rgba(5, 7, 10, 0.58)) !important;
+      radial-gradient(circle at 50% 42%, rgba(102, 255, 241, 0.045), transparent 30%),
+      linear-gradient(180deg, rgba(5, 7, 10, 0.26), rgba(5, 7, 10, 0.04) 38%, rgba(5, 7, 10, 0.34)) !important;
   }
 
   body.lucent-theme .film__copy--brand::before {
-    width: min(520px, 96vw);
-    height: min(560px, 68svh);
-    background: radial-gradient(ellipse at center, rgba(2, 6, 10, 0.50), rgba(2, 6, 10, 0.24) 56%, transparent 78%);
+    width: min(500px, 92vw);
+    height: min(520px, 62svh);
+    background: radial-gradient(ellipse at center, rgba(2, 6, 10, 0.36), rgba(2, 6, 10, 0.16) 56%, transparent 78%);
   }
 }
