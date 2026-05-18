@@ -47,6 +47,17 @@ function injectStyle(id, css) {
   document.head.appendChild(style);
 }
 
+function setupRelatsInspiredHeroContent() {
+  const heroSubline = document.querySelector(".film__copy--brand .film__subline");
+  if (heroSubline) heroSubline.textContent = "Empowering future athletes.";
+
+  const heroBrandLockup = document.querySelector(".film__copy--brand .hero-brand-lockup");
+  if (heroBrandLockup) heroBrandLockup.setAttribute("aria-hidden", "true");
+
+  const playerSignalSection = document.querySelector(".player-signal");
+  playerSignalSection?.remove();
+}
+
 function setupLaunchSequence() {
   injectStyle(
     "lucent-launch",
@@ -171,7 +182,7 @@ function setupLaunchSequence() {
     launch = document.createElement("div");
     launch.className = "launch-sequence";
     launch.setAttribute("aria-hidden", "true");
-    launch.innerHTML = `<div class="launch-sequence__word launch-sequence__word--stack"><span>Your Game.</span><span>Empowered.</span><span>Visible.</span><span class="launch-sequence__mark"></span></div>`;
+    launch.innerHTML = `<div class="launch-sequence__word launch-sequence__word--stack"><span>Lucent</span><span class="launch-sequence__mark"></span></div>`;
     document.body.prepend(launch);
   }
 
@@ -441,6 +452,7 @@ prefersReducedMotion.addEventListener("change", () => {
   updateStories();
 });
 
+setupRelatsInspiredHeroContent();
 setupLaunchSequence();
 injectScoutedPolish();
 setupScoutedVideoBackground();
