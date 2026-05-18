@@ -12,6 +12,7 @@
     <link rel="preload" as="image" href="./assets/images/hero-athlete.webp" />
     <link rel="preload" as="image" href="./assets/images/opening-poster.webp" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./final-polish.css" />
   </head>
   <body>
     <div class="grain" aria-hidden="true"></div>
@@ -122,66 +123,28 @@
                 </svg>
               </div>
 
-              <div class="metric metric--touch">
-                <span>First touch</span>
-                <strong>91%</strong>
-              </div>
-              <div class="metric metric--shot">
-                <span>Shot speed</span>
-                <strong>104 km/h</strong>
-              </div>
-              <div class="metric metric--weak-foot">
-                <span>Weak-foot score</span>
-                <strong>82%</strong>
-              </div>
-
+              <div class="metric metric--touch"><span>First touch</span><strong>91%</strong></div>
+              <div class="metric metric--shot"><span>Shot speed</span><strong>104 km/h</strong></div>
+              <div class="metric metric--weak-foot"><span>Weak-foot score</span><strong>82%</strong></div>
               <div class="pose-label pose-label--shoulders">Shoulder alignment</div>
               <div class="pose-label pose-label--hips">Hip rotation</div>
               <div class="pose-label pose-label--knees">Knee control</div>
-
-              <div class="analysis-chip analysis-chip--control">
-                <span>Ball control</span>
-                <strong>94%</strong>
-              </div>
-              <div class="analysis-chip analysis-chip--grade">
-                <span>Drill grade</span>
-                <strong>A−</strong>
-              </div>
-
-              <aside class="story-card story-card--focus">
-                <span>Training focus</span>
-                <strong>Build cleaner technique</strong>
-                <p>Review touch quality, striking mechanics, and finishing posture before the next session.</p>
-              </aside>
-
-              <aside class="story-card story-card--next">
-                <span>Next drill</span>
-                <strong>Repeat the finishing ladder</strong>
-              </aside>
+              <div class="analysis-chip analysis-chip--control"><span>Ball control</span><strong>94%</strong></div>
+              <div class="analysis-chip analysis-chip--grade"><span>Drill grade</span><strong>A−</strong></div>
+              <aside class="story-card story-card--focus"><span>Training focus</span><strong>Build cleaner technique</strong><p>Review touch quality, striking mechanics, and finishing posture before the next session.</p></aside>
+              <aside class="story-card story-card--next"><span>Next drill</span><strong>Repeat the finishing ladder</strong></aside>
             </div>
           </div>
 
           <div class="story-steps shell" aria-hidden="true">
-            <span class="is-active">Train</span>
-            <span>Scan</span>
-            <span>Measure</span>
-            <span>Improve</span>
+            <span class="is-active">Train</span><span>Scan</span><span>Measure</span><span>Improve</span>
           </div>
         </div>
       </section>
 
       <section class="story story--scouted" id="scouted" data-scout-step="0">
         <div class="story__sticky">
-          <video
-            class="scout-bg-video"
-            aria-hidden="true"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto"
-            poster="./assets/images/opening-poster.webp"
-          >
+          <video class="scout-bg-video" aria-hidden="true" autoplay muted loop playsinline preload="auto" poster="./assets/images/opening-poster.webp">
             <source src="./assets/video/opening-tracked.webm" type="video/webm" />
             <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
           </video>
@@ -191,319 +154,50 @@
             <div class="scouted__copy" data-reveal>
               <p class="eyebrow">Get scouted</p>
               <h2 data-scout-title>Find the right trial.</h2>
-              <p class="lede" data-scout-copy>
-                Browse open opportunities from clubs looking for players in your role.
-              </p>
+              <p class="lede" data-scout-copy>Browse open opportunities from clubs looking for players in your role.</p>
             </div>
 
             <div class="product-shell" aria-label="Scroll-driven scouting product demonstration">
-              <div class="product-shell__chrome">
-                <span></span>
-                <span></span>
-                <span></span>
-                <strong>Lucent scouting command centre</strong>
-              </div>
+              <div class="product-shell__chrome"><span></span><span></span><span></span><strong>Lucent scouting command centre</strong></div>
 
               <div class="screen screen--board is-active">
-                <div class="screen__header trial-board__header">
-                  <div>
-                    <span>Live opportunity radar</span>
-                    <strong>12 clubs recruiting this week</strong>
-                  </div>
-                  <em>3 urgent briefs</em>
-                </div>
-
-                <div class="command-strip" aria-label="Scouting command centre signals">
-                  <article>
-                    <span>Profile views</span>
-                    <strong>2</strong>
-                    <small>clubs this week</small>
-                  </article>
-                  <article>
-                    <span>Evidence status</span>
-                    <strong>87%</strong>
-                    <small>club-ready</small>
-                  </article>
-                  <article>
-                    <span>Best role fit</span>
-                    <strong>RW</strong>
-                    <small>inverted winger</small>
-                  </article>
-                </div>
-
-                <div class="trial-toolbar" aria-label="Trial filters and match signals">
-                  <span>Winger</span>
-                  <span>London + 50km</span>
-                  <span>Verified clubs</span>
-                  <span>High-fit only</span>
-                </div>
+                <div class="screen__header trial-board__header"><div><span>Live opportunity radar</span><strong>12 clubs recruiting this week</strong></div><em>3 urgent briefs</em></div>
+                <div class="command-strip" aria-label="Scouting command centre signals"><article><span>Profile views</span><strong>2</strong><small>clubs this week</small></article><article><span>Evidence status</span><strong>87%</strong><small>club-ready</small></article><article><span>Best role fit</span><strong>RW</strong><small>inverted winger</small></article></div>
+                <div class="trial-toolbar" aria-label="Trial filters and match signals"><span>Winger</span><span>London + 50km</span><span>Verified clubs</span><span>High-fit only</span></div>
 
                 <div class="trial-grid trial-grid--premium">
-                  <article class="trial-card trial-card--aurelia is-selected">
-                    <div class="trial-card__pulse" aria-hidden="true"></div>
-                    <div class="trial-card__top">
-                      <div class="club-mark club-mark--aurelia" aria-hidden="true">
-                        <span>A</span>
-                      </div>
-                      <div>
-                        <span class="trial-card__eyebrow">Recruiting now</span>
-                        <h3>Aurelia SC</h3>
-                        <p>U19 winger · London</p>
-                      </div>
-                      <strong class="trial-card__fit">94%</strong>
-                    </div>
-                    <div class="trial-card__insights">
-                      <span>Explosive winger</span>
-                      <span>3 proof drills</span>
-                      <span>Scout active</span>
-                    </div>
-                    <div class="trial-card__evidence">
-                      <span>First-touch escape</span>
-                      <span>Weak-foot finishing</span>
-                      <span>20m burst</span>
-                    </div>
-                    <div class="trial-card__bar" aria-hidden="true">
-                      <span style="width: 94%"></span>
-                    </div>
-                    <div class="trial-card__footer">
-                      <em>Deadline: 48h</em>
-                      <span>AI match: elite</span>
-                    </div>
-                  </article>
-
-                  <article class="trial-card trial-card--northbridge">
-                    <div class="trial-card__top">
-                      <div class="club-mark club-mark--northbridge" aria-hidden="true">
-                        <span>N</span>
-                      </div>
-                      <div>
-                        <span class="trial-card__eyebrow">New brief</span>
-                        <h3>Northbridge FC</h3>
-                        <p>U21 forward · Manchester</p>
-                      </div>
-                      <strong class="trial-card__fit">89%</strong>
-                    </div>
-                    <div class="trial-card__insights">
-                      <span>Transition runs</span>
-                      <span>Video reel</span>
-                      <span>Coach review</span>
-                    </div>
-                    <div class="trial-card__evidence">
-                      <span>Match reel</span>
-                      <span>Sprint profile</span>
-                    </div>
-                    <div class="trial-card__bar" aria-hidden="true">
-                      <span style="width: 89%"></span>
-                    </div>
-                    <div class="trial-card__footer">
-                      <em>Deadline: 3 days</em>
-                      <span>AI match: strong</span>
-                    </div>
-                  </article>
-
-                  <article class="trial-card trial-card--vale">
-                    <div class="trial-card__top">
-                      <div class="club-mark club-mark--vale" aria-hidden="true">
-                        <span>V</span>
-                      </div>
-                      <div>
-                        <span class="trial-card__eyebrow">Shortlist open</span>
-                        <h3>Vale Athletic</h3>
-                        <p>Academy 9 · Birmingham</p>
-                      </div>
-                      <strong class="trial-card__fit">86%</strong>
-                    </div>
-                    <div class="trial-card__insights">
-                      <span>Finishing bias</span>
-                      <span>Weak-foot test</span>
-                      <span>2 slots left</span>
-                    </div>
-                    <div class="trial-card__evidence">
-                      <span>Finishing ladder</span>
-                      <span>Coach note</span>
-                    </div>
-                    <div class="trial-card__bar" aria-hidden="true">
-                      <span style="width: 86%"></span>
-                    </div>
-                    <div class="trial-card__footer">
-                      <em>Deadline: 5 days</em>
-                      <span>AI match: strong</span>
-                    </div>
-                  </article>
-
-                  <article class="trial-card trial-card--meridian">
-                    <div class="trial-card__top">
-                      <div class="club-mark club-mark--meridian" aria-hidden="true">
-                        <span>M</span>
-                      </div>
-                      <div>
-                        <span class="trial-card__eyebrow">Recommended</span>
-                        <h3>Meridian United</h3>
-                        <p>Wide forward · Leeds</p>
-                      </div>
-                      <strong class="trial-card__fit">84%</strong>
-                    </div>
-                    <div class="trial-card__insights">
-                      <span>1v1 profile</span>
-                      <span>Sprint proof</span>
-                      <span>Open combine</span>
-                    </div>
-                    <div class="trial-card__evidence">
-                      <span>1v1 clips</span>
-                      <span>Agility test</span>
-                    </div>
-                    <div class="trial-card__bar" aria-hidden="true">
-                      <span style="width: 84%"></span>
-                    </div>
-                    <div class="trial-card__footer">
-                      <em>Deadline: 7 days</em>
-                      <span>AI match: good</span>
-                    </div>
-                  </article>
+                  <article class="trial-card trial-card--aurelia is-selected"><div class="trial-card__pulse" aria-hidden="true"></div><div class="trial-card__top"><div class="club-mark club-mark--aurelia" aria-hidden="true"><span>A</span></div><div><span class="trial-card__eyebrow">Recruiting now</span><h3>Aurelia SC</h3><p>U19 winger · London</p></div><strong class="trial-card__fit">94%</strong></div><div class="trial-card__insights"><span>Explosive winger</span><span>3 proof drills</span><span>Scout active</span></div><div class="trial-card__evidence"><span>First-touch escape</span><span>Weak-foot finishing</span><span>20m burst</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 94%"></span></div><div class="trial-card__footer"><em>Deadline: 48h</em><span>AI match: elite</span></div></article>
+                  <article class="trial-card trial-card--northbridge"><div class="trial-card__top"><div class="club-mark club-mark--northbridge" aria-hidden="true"><span>N</span></div><div><span class="trial-card__eyebrow">New brief</span><h3>Northbridge FC</h3><p>U21 forward · Manchester</p></div><strong class="trial-card__fit">89%</strong></div><div class="trial-card__insights"><span>Transition runs</span><span>Video reel</span><span>Coach review</span></div><div class="trial-card__evidence"><span>Match reel</span><span>Sprint profile</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 89%"></span></div><div class="trial-card__footer"><em>Deadline: 3 days</em><span>AI match: strong</span></div></article>
+                  <article class="trial-card trial-card--vale"><div class="trial-card__top"><div class="club-mark club-mark--vale" aria-hidden="true"><span>V</span></div><div><span class="trial-card__eyebrow">Shortlist open</span><h3>Vale Athletic</h3><p>Academy 9 · Birmingham</p></div><strong class="trial-card__fit">86%</strong></div><div class="trial-card__insights"><span>Finishing bias</span><span>Weak-foot test</span><span>2 slots left</span></div><div class="trial-card__evidence"><span>Finishing ladder</span><span>Coach note</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 86%"></span></div><div class="trial-card__footer"><em>Deadline: 5 days</em><span>AI match: strong</span></div></article>
+                  <article class="trial-card trial-card--meridian"><div class="trial-card__top"><div class="club-mark club-mark--meridian" aria-hidden="true"><span>M</span></div><div><span class="trial-card__eyebrow">Recommended</span><h3>Meridian United</h3><p>Wide forward · Leeds</p></div><strong class="trial-card__fit">84%</strong></div><div class="trial-card__insights"><span>1v1 profile</span><span>Sprint proof</span><span>Open combine</span></div><div class="trial-card__evidence"><span>1v1 clips</span><span>Agility test</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 84%"></span></div><div class="trial-card__footer"><em>Deadline: 7 days</em><span>AI match: good</span></div></article>
                 </div>
               </div>
 
-              <div class="screen screen--trial">
-                <div class="selected-trial selected-trial--rich">
-                  <div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true">
-                    <span>A</span>
-                  </div>
-                  <div>
-                    <span>Selected trial</span>
-                    <h3>Aurelia SC · U19 winger</h3>
-                    <p>Saturday, 18 July · High-tempo transition profile</p>
-                  </div>
-                  <strong>94% fit</strong>
-                </div>
-
-                <div class="brief-stack">
-                  <article>
-                    <span>Club priority</span>
-                    <strong>1v1 acceleration</strong>
-                    <p>They need proof that you can separate in the first three steps.</p>
-                  </article>
-                  <article>
-                    <span>Evidence package</span>
-                    <strong>3 uploads required</strong>
-                    <p>Lucent packages drill proof, match clips, and profile data for the scout.</p>
-                  </article>
-                  <article>
-                    <span>Scout signal</span>
-                    <strong>Active shortlist</strong>
-                    <p>Recruiter opened the brief twice in the last 24 hours.</p>
-                  </article>
-                </div>
-              </div>
-
-              <div class="screen screen--requirements">
-                <div class="requirements requirements--command">
-                  <article>
-                    <span>Requirements</span>
-                    <ul>
-                      <li>90 sec match reel</li>
-                      <li>Recent sprint profile</li>
-                      <li>Finishing ladder result</li>
-                    </ul>
-                  </article>
-
-                  <article>
-                    <span>Drills to complete</span>
-                    <ul>
-                      <li>Weak-foot finishing</li>
-                      <li>First-touch escape</li>
-                      <li>20 m burst test</li>
-                    </ul>
-                  </article>
-                </div>
-              </div>
-
-              <div class="screen screen--upload">
-                <div class="upload-card upload-card--package">
-                  <span>Upload proof</span>
-                  <h3>3 of 3 files attached</h3>
-                  <div class="upload-list">
-                    <em>finishing-ladder.mp4</em>
-                    <em>first-touch-escape.mp4</em>
-                    <em>sprint-profile.csv</em>
-                  </div>
-                  <strong>Evidence package ready</strong>
-                </div>
-              </div>
-
-              <div class="screen screen--success">
-                <div class="success-card success-card--scouted">
-                  <div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true">
-                    <span>A</span>
-                  </div>
-                  <span>Club-ready</span>
-                  <h3>Aurelia SC shortlisted you</h3>
-                  <p>Your verified profile, drill proof, and trial results are now with the recruitment team.</p>
-                </div>
-              </div>
-
+              <div class="screen screen--trial"><div class="selected-trial selected-trial--rich"><div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true"><span>A</span></div><div><span>Selected trial</span><h3>Aurelia SC · U19 winger</h3><p>Saturday, 18 July · High-tempo transition profile</p></div><strong>94% fit</strong></div><div class="brief-stack"><article><span>Club priority</span><strong>1v1 acceleration</strong><p>They need proof that you can separate in the first three steps.</p></article><article><span>Evidence package</span><strong>3 uploads required</strong><p>Lucent packages drill proof, match clips, and profile data for the scout.</p></article><article><span>Scout signal</span><strong>Active shortlist</strong><p>Recruiter opened the brief twice in the last 24 hours.</p></article></div></div>
+              <div class="screen screen--requirements"><div class="requirements requirements--command"><article><span>Requirements</span><ul><li>90 sec match reel</li><li>Recent sprint profile</li><li>Finishing ladder result</li></ul></article><article><span>Drills to complete</span><ul><li>Weak-foot finishing</li><li>First-touch escape</li><li>20 m burst test</li></ul></article></div></div>
+              <div class="screen screen--upload"><div class="upload-card upload-card--package"><span>Upload proof</span><h3>3 of 3 files attached</h3><div class="upload-list"><em>finishing-ladder.mp4</em><em>first-touch-escape.mp4</em><em>sprint-profile.csv</em></div><strong>Evidence package ready</strong></div></div>
+              <div class="screen screen--success"><div class="success-card success-card--scouted"><div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true"><span>A</span></div><span>Club-ready</span><h3>Aurelia SC shortlisted you</h3><p>Your verified profile, drill proof, and trial results are now with the recruitment team.</p></div></div>
               <div class="product-pointer" aria-hidden="true"></div>
             </div>
           </div>
-
-          <div class="story-steps story-steps--scouted shell" aria-hidden="true">
-            <span class="is-active">Radar</span>
-            <span>Brief</span>
-            <span>Proof</span>
-            <span>Package</span>
-            <span>Scout</span>
-          </div>
+          <div class="story-steps story-steps--scouted shell" aria-hidden="true"><span class="is-active">Radar</span><span>Brief</span><span>Proof</span><span>Package</span><span>Scout</span></div>
         </div>
       </section>
 
       <section class="elevate" id="elevate" aria-label="Are you ready to elevate your game">
-        <video
-          class="elevate__video"
-          aria-hidden="true"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="./assets/images/opening-poster.webp"
-        >
+        <video class="elevate__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp">
           <source src="./assets/video/opening-tracked.webm" type="video/webm" />
           <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
         </video>
         <div class="elevate__veil" aria-hidden="true"></div>
-        <div class="shell elevate__inner" data-reveal>
-          <p class="eyebrow">The next step</p>
-          <h2>Are you ready to elevate your game?</h2>
-          <p>Turn every drill, match, and milestone into evidence clubs can trust.</p>
-          <a class="button elevate__button" href="#join">Join the waitlist</a>
-        </div>
+        <div class="shell elevate__inner" data-reveal><p class="eyebrow">The next step</p><h2>Are you ready to elevate your game?</h2><p>Turn every drill, match, and milestone into evidence clubs can trust.</p><a class="button elevate__button" href="#join">Join the waitlist</a></div>
       </section>
 
       <section class="cta" id="join">
-        <div class="shell cta__inner" data-reveal>
-          <svg class="cta__glyph" viewBox="0 0 180 180" aria-hidden="true">
-            <circle cx="90" cy="28" r="14" />
-            <path d="M85 48 61 79 78 97 101 78 124 101 140 87 109 49Z" />
-            <path d="M77 96 48 136 64 148 96 109Z" />
-            <path d="M100 101 129 151 146 141 117 89Z" />
-          </svg>
-          <p class="eyebrow">Lucent</p>
-          <h2>Your game deserves<br />to be seen.</h2>
-          <p>Join Lucent and turn your training, trials, and progress into a verified player profile clubs can act on.</p>
-          <button class="button button--placeholder" type="button" aria-label="Join the waitlist placeholder">
-            Join the waitlist
-          </button>
-        </div>
-
-        <footer class="footer shell">
-          <a class="brand" href="#top" aria-label="Lucent home">
-            <span class="brand__mark"></span>
-            <span>Lucent</span>
-          </a>
-          <small>© 2026 Lucent. All rights reserved.</small>
-        </footer>
+        <div class="shell cta__inner" data-reveal><svg class="cta__glyph" viewBox="0 0 180 180" aria-hidden="true"><circle cx="90" cy="28" r="14" /><path d="M85 48 61 79 78 97 101 78 124 101 140 87 109 49Z" /><path d="M77 96 48 136 64 148 96 109Z" /><path d="M100 101 129 151 146 141 117 89Z" /></svg><p class="eyebrow">Lucent</p><h2>Your game deserves<br />to be seen.</h2><p>Join Lucent and turn your training, trials, and progress into a verified player profile clubs can act on.</p><button class="button button--placeholder" type="button" aria-label="Join the waitlist placeholder">Join the waitlist</button></div>
+        <footer class="footer shell"><a class="brand" href="#top" aria-label="Lucent home"><span class="brand__mark"></span><span>Lucent</span></a><small>© 2026 Lucent. All rights reserved.</small></footer>
       </section>
     </main>
-
     <script src="./script.js"></script>
   </body>
 </html>
