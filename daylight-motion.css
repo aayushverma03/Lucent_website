@@ -1,4 +1,4 @@
-/* Daylight-inspired transition and visual refinements for Lucent */
+/* Daylight / Relats-inspired transition and visual refinements for Lucent */
 
 .film::before {
   position: absolute;
@@ -24,8 +24,7 @@
 }
 
 .film__copy { z-index: 4; }
-.film__stamp { z-index: 5; }
-.hero-console { z-index: 5; }
+.film__stamp, .hero-console { display: none !important; }
 
 .launch-sequence {
   background:
@@ -125,10 +124,6 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
   text-transform: none !important;
   text-shadow: 0 24px 90px rgba(0, 0, 0, 0.72);
 }
-.film__copy--brand .film__subline::before { content: "Empowering future athletes."; }
-.film__copy--brand .film__subline { font-size: 0 !important; }
-.film__copy--brand .film__subline::before { font-size: clamp(2.4rem, 5.1vw, 5.7rem); }
-.hero-console, .film__stamp { display: none !important; }
 .film__video { transform: scale(1.08); animation: heroSlowPan 18s ease-in-out infinite alternate; }
 
 .proof-strip {
@@ -180,12 +175,13 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
   background: #111 !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
+  isolation: isolate;
 }
 .proof-strip__inner article:nth-child(4) { display: none !important; }
 .proof-strip__inner article::before {
   position: absolute;
   inset: -5%;
-  z-index: -1;
+  z-index: -2;
   background-size: cover;
   background-position: center;
   opacity: .9;
@@ -194,7 +190,7 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
   content: "";
 }
 .proof-strip__inner article:nth-child(1)::before { background-image: url("./assets/images/lucent-pan-01.svg"); }
-.proof-strip__inner article:nth-child(2)::before { background-image: url("./assets/images/lucent-pan-02.svg"); animation-delay: -5s; }
+.proof-strip__inner article:nth-child(2)::before { background-image: url("./assets/images/lucent-pan-02.svg"); animation-delay: -5s; filter: brightness(.68) saturate(1.12); }
 .proof-strip__inner article:nth-child(3)::before { background-image: url("./assets/images/lucent-pan-03.svg"); animation-delay: -9s; }
 .proof-strip__inner article::after {
   position: absolute;
@@ -205,166 +201,12 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
 }
 .proof-strip__inner article span, .proof-strip__inner article strong, .proof-strip__inner article p { display: none !important; }
 .proof-strip__inner article:nth-child(2) {
+  min-height: min(74svh, 690px);
   align-content: center;
   justify-items: center;
   text-align: center;
-}
-.proof-strip__inner article:nth-child(2) > * { display: none !important; }
-.proof-strip__inner article:nth-child(2)::after {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.48)),
-    radial-gradient(circle at 50% 48%, rgba(0,0,0,.18), rgba(0,0,0,.54));
-}
-.proof-strip__inner article:nth-child(2) { color: #fff; }
-.proof-strip__inner article:nth-child(2)::marker { content: ""; }
-.proof-strip__inner article:nth-child(2) { font-size: 0; }
-.proof-strip__inner article:nth-child(2) .fake { display: none; }
-.proof-strip__inner article:nth-child(2) {
-  --center-title: "Lucent";
-  --center-subtitle: "Your game. Empowered. Visible.";
-}
-.proof-strip__inner article:nth-child(2)::before { filter: brightness(.68) saturate(1.12); }
-.proof-strip__inner article:nth-child(2)::after { z-index: 0; }
-.proof-strip__inner article:nth-child(2) { isolation: isolate; }
-.proof-strip__inner article:nth-child(2) { text-shadow: 0 20px 80px rgba(0,0,0,.72); }
-.proof-strip__inner article:nth-child(2)::selection { background: transparent; }
-.proof-strip__inner article:nth-child(2) { counter-reset: none; }
-.proof-strip__inner article:nth-child(2) { display: grid !important; }
-.proof-strip__inner article:nth-child(2) { position: relative; }
-.proof-strip__inner article:nth-child(2) > p { display: none !important; }
-.proof-strip__inner article:nth-child(2) > strong { display: none !important; }
-.proof-strip__inner article:nth-child(2) > span { display: none !important; }
-.proof-strip__inner article:nth-child(2) .brandmark { display: none; }
-.proof-strip__inner article:nth-child(2) { overflow: hidden; }
-.proof-strip__inner article:nth-child(2)::backdrop { display: none; }
-.proof-strip__inner article:nth-child(2) { background: #000 !important; }
-.proof-strip__inner article:nth-child(2)::before { z-index: -2; }
-.proof-strip__inner article:nth-child(2)::after { z-index: -1; }
-.proof-strip__inner article:nth-child(2) { box-shadow: 0 0 0 1px rgba(251,250,247,.05) inset !important; }
-.proof-strip__inner article:nth-child(2) { padding-inline: clamp(24px, 4vw, 72px) !important; }
-.proof-strip__inner article:nth-child(2) { min-height: min(74svh, 690px); }
-.proof-strip__inner article:nth-child(2) { align-content: center; }
-.proof-strip__inner article:nth-child(2):before { background-position: center; }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) div { display: none; }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::selection { color: inherit; }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { content: ""; }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2) { }
-.proof-strip__inner article:nth-child(2)::after { }
-.proof-strip__inner article:nth-child(2)::before { }
-.proof-strip__inner article:nth-child(2) { }
-
-.proof-strip__inner article:nth-child(2) {
-  background-image:
-    linear-gradient(180deg, rgba(0,0,0,.22), rgba(0,0,0,.58)),
-    url("./assets/images/lucent-pan-02.svg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-}
-.proof-strip__inner article:nth-child(2)::before {
-  display: none !important;
+  padding-inline: clamp(24px, 4vw, 72px) !important;
+  text-shadow: 0 20px 80px rgba(0,0,0,.72);
 }
 .proof-strip__inner article:nth-child(2)::after {
   position: relative;
@@ -391,7 +233,7 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
 @keyframes photoPan { from { transform: scale(1.08) translateX(-3%); } to { transform: scale(1.16) translateX(3%); } }
 
 @media (max-width: 860px) {
-  .film__copy--brand .film__subline::before { font-size: clamp(2.2rem, 11vw, 4.2rem); }
+  .film__copy--brand .film__subline { font-size: clamp(2.2rem, 11vw, 4.2rem) !important; }
   .proof-strip__inner { grid-template-columns: 1fr !important; width: min(100vw - 24px, 720px) !important; }
   .proof-strip__inner article { min-height: 34svh; }
   .proof-strip__inner article:nth-child(2) { min-height: 48svh; }
