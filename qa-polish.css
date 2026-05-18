@@ -1,0 +1,501 @@
+/* Lucent QA polish layer
+   Loaded last to correct readability, layout, responsive overflow, and accessibility issues. */
+
+:root {
+  --shell: min(1200px, calc(100vw - 48px));
+  --readable-copy: rgba(251, 250, 247, 0.80);
+  --readable-muted: rgba(251, 250, 247, 0.66);
+  --lucent-focus: #b8ff5c;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  line-height: 1.5;
+}
+
+p,
+li,
+small,
+em,
+button,
+a {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+.lede,
+.section-kicker p:not(.eyebrow),
+.network-copy p,
+.signal-copy p,
+.why-lucent .section-kicker p:not(.eyebrow),
+.premium-filmstrip__copy p:not(.eyebrow),
+.elevate__inner p:last-of-type {
+  color: var(--readable-copy) !important;
+  line-height: 1.62 !important;
+}
+
+.eyebrow,
+.screen__header span,
+.selected-trial span,
+.requirements span,
+.upload-card span,
+.success-card span,
+.proof-strip span,
+.how-card span,
+.why-grid span,
+.signal-card > span,
+.premium-floating-card span {
+  letter-spacing: 0.105em !important;
+  line-height: 1.05 !important;
+}
+
+.nav.shell {
+  max-width: calc(100vw - 32px) !important;
+}
+
+.nav.shell nav a {
+  min-width: 0 !important;
+  line-height: 1.1 !important;
+  white-space: normal !important;
+}
+
+.nav.shell nav a:focus-visible,
+.button:focus-visible,
+.button--placeholder:focus-visible {
+  outline: 3px solid var(--lucent-focus) !important;
+  outline-offset: 4px !important;
+}
+
+/* Restore the full strategic hero promise: Train better / Showcase skills / Get scouted. */
+.premium-kinetic-headline {
+  width: min(900px, 94vw) !important;
+  gap: clamp(4px, 0.7vw, 10px) !important;
+  line-height: 0.84 !important;
+}
+
+.premium-kinetic-headline span {
+  display: block !important;
+  font-size: clamp(3.15rem, 8.2vw, 8.1rem) !important;
+  letter-spacing: -0.055em !important;
+}
+
+.premium-kinetic-headline span:nth-child(3) {
+  color: var(--premium-cyan, #66fff1) !important;
+}
+
+.hero-brand-lockup h1 {
+  font-size: clamp(2.9rem, 5.8vw, 6.2rem) !important;
+}
+
+.film__copy--brand {
+  padding-top: clamp(104px, 12svh, 140px) !important;
+}
+
+.film__copy--brand .film__subline {
+  max-width: 620px !important;
+}
+
+.scroll-cue {
+  bottom: clamp(24px, 4svh, 48px) !important;
+}
+
+/* Improve card readability without flattening the premium look. */
+.proof-strip article,
+.how-card,
+.why-grid article,
+.trial-card,
+.journey-device,
+.product-shell,
+.premium-phone-frame,
+.premium-floating-card,
+.network-node,
+.signal-card,
+.upload-card,
+.success-card,
+.selected-trial,
+.requirements article,
+.brief-stack article,
+.command-strip article {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+.proof-strip p,
+.how-card p,
+.why-grid strong,
+.trial-card p,
+.selected-trial p,
+.brief-stack p,
+.readout-panel p,
+.premium-scene p,
+.premium-data-row span,
+.network-copy p:not(.eyebrow) {
+  color: var(--readable-copy) !important;
+}
+
+.trial-card__evidence span,
+.trial-toolbar span,
+.hero-proof span,
+.signal-actions span {
+  color: rgba(251, 250, 247, 0.82) !important;
+}
+
+/* Prevent dense visual scenes from colliding with text. */
+.story__intro,
+.scouted__copy {
+  max-width: min(430px, 42vw) !important;
+}
+
+.readout-panel {
+  right: clamp(20px, 5vw, 82px) !important;
+}
+
+.metric--touch {
+  left: max(24px, 3vw) !important;
+}
+
+.metric--shot {
+  right: max(24px, 3vw) !important;
+}
+
+.analysis-chip--control {
+  right: max(110px, 12vw) !important;
+}
+
+.product-shell {
+  overflow: hidden !important;
+}
+
+.screen {
+  min-width: 0 !important;
+}
+
+.trial-card__top,
+.selected-trial--rich {
+  min-width: 0 !important;
+}
+
+.trial-card h3,
+.selected-trial h3,
+.upload-card h3,
+.success-card h3,
+.premium-scene h3 {
+  letter-spacing: -0.025em !important;
+  line-height: 1.12 !important;
+}
+
+/* Better final CTA hierarchy. */
+.cta__inner {
+  padding-top: clamp(76px, 10vw, 140px) !important;
+  padding-bottom: clamp(64px, 9vw, 120px) !important;
+}
+
+.button,
+.button--placeholder,
+.elevate__button {
+  min-height: 52px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  padding: 0 22px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Tablet */
+@media (max-width: 1080px) {
+  :root {
+    --shell: min(100vw - 40px, 1200px);
+  }
+
+  .story__intro,
+  .scouted__copy {
+    max-width: min(430px, 48vw) !important;
+  }
+
+  .premium-filmstrip__sticky {
+    grid-template-columns: minmax(280px, 0.44fr) minmax(420px, 0.56fr) !important;
+    gap: clamp(28px, 4vw, 56px) !important;
+  }
+
+  .premium-card-stack {
+    width: min(280px, 36vw) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 860px) {
+  :root {
+    --shell: min(100vw - 32px, 1200px);
+  }
+
+  body {
+    --nav-safe-top: 126px !important;
+  }
+
+  .nav.shell {
+    width: min(560px, calc(100vw - 22px)) !important;
+    padding: 6px !important;
+  }
+
+  .nav.shell nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    font-size: 0.68rem !important;
+  }
+
+  .nav.shell nav a {
+    min-height: 38px !important;
+    padding: 0 9px !important;
+  }
+
+  .nav.shell nav a:nth-child(3) {
+    display: grid !important;
+  }
+
+  .film__copy--brand {
+    padding-top: var(--nav-safe-top) !important;
+    padding-bottom: 42px !important;
+  }
+
+  .hero-brand-lockup h1 {
+    font-size: clamp(2.35rem, 11vw, 4.7rem) !important;
+  }
+
+  .premium-kinetic-headline {
+    width: min(420px, 94vw) !important;
+    line-height: 0.88 !important;
+  }
+
+  .premium-kinetic-headline span {
+    font-size: clamp(2.45rem, 13vw, 4.8rem) !important;
+    letter-spacing: -0.055em !important;
+  }
+
+  .film__copy--brand .film__subline {
+    font-size: clamp(0.92rem, 3.5vw, 1.08rem) !important;
+  }
+
+  .scroll-cue {
+    display: none !important;
+  }
+
+  .story {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  .story__sticky {
+    position: relative !important;
+    min-height: auto !important;
+    padding: 92px 0 72px !important;
+  }
+
+  .story__content,
+  .scouted {
+    min-height: auto !important;
+  }
+
+  .story__intro,
+  .scouted__copy,
+  .story--scouted .scouted__copy {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    max-width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  .story__intro h2,
+  .scouted__copy h2,
+  .section-kicker h2,
+  .network-copy h2,
+  .signal-copy h2,
+  .why-lucent h2,
+  .premium-filmstrip__copy h2 {
+    font-size: clamp(2.55rem, 11vw, 4.6rem) !important;
+    line-height: 0.92 !important;
+  }
+
+  .skills-stage {
+    position: relative !important;
+    min-height: 540px !important;
+    margin-top: 32px !important;
+  }
+
+  .skills-player {
+    width: min(220px, 54vw) !important;
+  }
+
+  .metric,
+  .pose-label,
+  .analysis-chip,
+  .story-card,
+  .readout-panel,
+  .story-steps {
+    display: none !important;
+  }
+
+  .story--scouted .product-shell {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    min-height: 660px !important;
+    margin-top: 32px !important;
+  }
+
+  .trial-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .trial-grid .trial-card:nth-child(n + 3) {
+    display: none !important;
+  }
+
+  .trial-card {
+    min-height: 0 !important;
+    padding: 14px !important;
+  }
+
+  .screen__header {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .selected-trial--rich {
+    align-items: flex-start !important;
+    flex-direction: column !important;
+  }
+
+  .premium-filmstrip__sticky {
+    display: block !important;
+    padding-top: 88px !important;
+  }
+
+  .premium-product-cinema {
+    min-height: auto !important;
+    margin-top: 38px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .premium-card-stack {
+    position: relative !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    margin-top: 18px !important;
+    transform: none !important;
+  }
+
+  .premium-phone-frame {
+    width: min(380px, 94vw) !important;
+    min-height: 560px !important;
+    transform: none !important;
+  }
+
+  .premium-phone-screen {
+    min-height: 500px !important;
+  }
+
+  .premium-scene {
+    padding: 22px !important;
+  }
+
+  .proof-strip__inner,
+  .why-grid,
+  .talent-network__inner,
+  .how__inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .journey-device__screen {
+    padding: 20px !important;
+  }
+
+  .network-map {
+    max-width: min(480px, 94vw) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  :root {
+    --shell: min(100vw - 24px, 1200px);
+  }
+
+  body {
+    --nav-safe-top: 136px !important;
+  }
+
+  .nav.shell nav {
+    font-size: 0.62rem !important;
+  }
+
+  .premium-kinetic-headline span {
+    font-size: clamp(2.25rem, 14vw, 3.8rem) !important;
+  }
+
+  .film__copy--brand .film__subline {
+    max-width: 310px !important;
+  }
+
+  .proof-strip article,
+  .how-card,
+  .why-grid article,
+  .journey-step,
+  .premium-floating-card {
+    border-radius: 22px !important;
+    padding: 18px !important;
+  }
+
+  .product-shell__chrome strong,
+  .journey-device__chrome strong {
+    max-width: 220px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+
+  .network-node {
+    transform: scale(0.88) !important;
+  }
+}
+
+@media (hover: none) {
+  .premium-tilt,
+  .premium-tilt:hover {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .film__video,
+  .elevate__video,
+  .scout-bg-video {
+    display: none !important;
+  }
+}
