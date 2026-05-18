@@ -169,20 +169,19 @@
       <section class="story story--scouted" id="scouted" data-scout-step="0">
         <div class="story__sticky">
           <video
+            class="scout-bg-video"
             aria-hidden="true"
             autoplay
             muted
             loop
             playsinline
-            preload="metadata"
-            style="position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0.26; filter: saturate(1.15) contrast(1.05) brightness(0.72); pointer-events: none;"
+            preload="auto"
+            poster="./assets/images/opening-poster.webp"
           >
+            <source src="./assets/video/opening-tracked.webm" type="video/webm" />
             <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
           </video>
-          <div
-            aria-hidden="true"
-            style="position: absolute; inset: 0; z-index: 1; background: radial-gradient(circle at 66% 45%, rgba(151, 255, 240, 0.08), transparent 28%), linear-gradient(90deg, rgba(16, 0, 19, 0.96) 0%, rgba(16, 0, 19, 0.78) 34%, rgba(16, 0, 19, 0.58) 68%, rgba(16, 0, 19, 0.82) 100%), linear-gradient(180deg, rgba(16, 0, 19, 0.72), rgba(16, 0, 19, 0.92)); pointer-events: none;"
-          ></div>
+          <div class="scout-bg-overlay" aria-hidden="true"></div>
 
           <div class="scouted shell">
             <div class="scouted__copy" data-reveal>
@@ -202,57 +201,124 @@
               </div>
 
               <div class="screen screen--board is-active">
-                <div class="screen__header">
+                <div class="screen__header trial-board__header">
                   <div>
-                    <span>Open trials</span>
+                    <span>Live opportunity radar</span>
                     <strong>12 clubs recruiting this week</strong>
                   </div>
-                  <em>Matched to your profile</em>
+                  <em>3 urgent briefs</em>
                 </div>
 
-                <div class="trial-grid">
+                <div class="trial-toolbar" aria-label="Trial filters and match signals">
+                  <span>Winger</span>
+                  <span>London + 50km</span>
+                  <span>Verified clubs</span>
+                  <span>High-fit only</span>
+                </div>
+
+                <div class="trial-grid trial-grid--premium">
                   <article class="trial-card trial-card--aurelia is-selected">
-                    <div class="club-mark club-mark--aurelia" aria-hidden="true">
-                      <span>A</span>
+                    <div class="trial-card__top">
+                      <div class="club-mark club-mark--aurelia" aria-hidden="true">
+                        <span>A</span>
+                      </div>
+                      <div>
+                        <span class="trial-card__eyebrow">Recruiting now</span>
+                        <h3>Aurelia SC</h3>
+                        <p>U19 winger · London</p>
+                      </div>
+                      <strong class="trial-card__fit">94%</strong>
                     </div>
-                    <div>
-                      <h3>Aurelia SC</h3>
-                      <p>U19 winger · London</p>
+                    <div class="trial-card__insights">
+                      <span>Explosive winger</span>
+                      <span>3 proof drills</span>
+                      <span>Scout active</span>
                     </div>
-                    <strong>94% fit</strong>
+                    <div class="trial-card__bar" aria-hidden="true">
+                      <span style="width: 94%"></span>
+                    </div>
+                    <div class="trial-card__footer">
+                      <em>Deadline: 48h</em>
+                      <span>AI match: elite</span>
+                    </div>
                   </article>
 
                   <article class="trial-card trial-card--northbridge">
-                    <div class="club-mark club-mark--northbridge" aria-hidden="true">
-                      <span>N</span>
+                    <div class="trial-card__top">
+                      <div class="club-mark club-mark--northbridge" aria-hidden="true">
+                        <span>N</span>
+                      </div>
+                      <div>
+                        <span class="trial-card__eyebrow">New brief</span>
+                        <h3>Northbridge FC</h3>
+                        <p>U21 forward · Manchester</p>
+                      </div>
+                      <strong class="trial-card__fit">89%</strong>
                     </div>
-                    <div>
-                      <h3>Northbridge FC</h3>
-                      <p>U21 forward · Manchester</p>
+                    <div class="trial-card__insights">
+                      <span>Transition runs</span>
+                      <span>Video reel</span>
+                      <span>Coach review</span>
                     </div>
-                    <strong>89% fit</strong>
+                    <div class="trial-card__bar" aria-hidden="true">
+                      <span style="width: 89%"></span>
+                    </div>
+                    <div class="trial-card__footer">
+                      <em>Deadline: 3 days</em>
+                      <span>AI match: strong</span>
+                    </div>
                   </article>
 
                   <article class="trial-card trial-card--vale">
-                    <div class="club-mark club-mark--vale" aria-hidden="true">
-                      <span>V</span>
+                    <div class="trial-card__top">
+                      <div class="club-mark club-mark--vale" aria-hidden="true">
+                        <span>V</span>
+                      </div>
+                      <div>
+                        <span class="trial-card__eyebrow">Shortlist open</span>
+                        <h3>Vale Athletic</h3>
+                        <p>Academy 9 · Birmingham</p>
+                      </div>
+                      <strong class="trial-card__fit">86%</strong>
                     </div>
-                    <div>
-                      <h3>Vale Athletic</h3>
-                      <p>Academy 9 · Birmingham</p>
+                    <div class="trial-card__insights">
+                      <span>Finishing bias</span>
+                      <span>Weak-foot test</span>
+                      <span>2 slots left</span>
                     </div>
-                    <strong>86% fit</strong>
+                    <div class="trial-card__bar" aria-hidden="true">
+                      <span style="width: 86%"></span>
+                    </div>
+                    <div class="trial-card__footer">
+                      <em>Deadline: 5 days</em>
+                      <span>AI match: strong</span>
+                    </div>
                   </article>
 
                   <article class="trial-card trial-card--meridian">
-                    <div class="club-mark club-mark--meridian" aria-hidden="true">
-                      <span>M</span>
+                    <div class="trial-card__top">
+                      <div class="club-mark club-mark--meridian" aria-hidden="true">
+                        <span>M</span>
+                      </div>
+                      <div>
+                        <span class="trial-card__eyebrow">Recommended</span>
+                        <h3>Meridian United</h3>
+                        <p>Wide forward · Leeds</p>
+                      </div>
+                      <strong class="trial-card__fit">84%</strong>
                     </div>
-                    <div>
-                      <h3>Meridian United</h3>
-                      <p>Wide forward · Leeds</p>
+                    <div class="trial-card__insights">
+                      <span>1v1 profile</span>
+                      <span>Sprint proof</span>
+                      <span>Open combine</span>
                     </div>
-                    <strong>84% fit</strong>
+                    <div class="trial-card__bar" aria-hidden="true">
+                      <span style="width: 84%"></span>
+                    </div>
+                    <div class="trial-card__footer">
+                      <em>Deadline: 7 days</em>
+                      <span>AI match: good</span>
+                    </div>
                   </article>
                 </div>
               </div>
