@@ -1,0 +1,157 @@
+/* Final theme + hero video polish
+   Loaded after qa-polish.css so it wins the cascade. */
+
+:root {
+  --lucent-accent: #66fff1;
+  --lucent-accent-2: #3f7cff;
+  --lucent-focus: #66fff1;
+  --lucent-panel-border: rgba(102, 255, 241, 0.20);
+}
+
+/* Consistent cyan-blue accent language across the experience */
+.eyebrow,
+.screen__header span,
+.selected-trial span,
+.requirements span,
+.upload-card span,
+.success-card span,
+.proof-strip span,
+.how-card span,
+.why-grid span,
+.signal-card > span,
+.premium-floating-card span,
+.journey-step span,
+.readout-panel > span,
+.command-strip span,
+.brief-stack span,
+.metric span,
+.analysis-chip span,
+.story-card span,
+.hero-console__header span,
+.hero-console__signals span,
+.network-node span {
+  color: var(--lucent-accent) !important;
+}
+
+.nav__cta,
+.button,
+.button--placeholder,
+.elevate__button,
+.premium-scene__cta,
+.screen__header em,
+.hero-console__header strong,
+.requirements li::before,
+.selected-trial--rich > strong,
+.metric,
+.analysis-chip {
+  color: #03161c !important;
+  background: linear-gradient(135deg, var(--lucent-accent), var(--lucent-accent-2)) !important;
+  border-color: rgba(102, 255, 241, 0.28) !important;
+}
+
+.metric strong,
+.analysis-chip strong,
+.readout-panel__rows i,
+.network-node strong,
+.command-strip strong,
+.trial-card strong,
+.hero-console__player em,
+.readout-panel__score,
+.signal-card strong {
+  color: var(--lucent-accent) !important;
+}
+
+.signal-card__meter i,
+.hero-console__bars span:after {
+  background: linear-gradient(90deg, var(--lucent-accent), var(--lucent-accent-2)) !important;
+}
+
+.club-mark--aurelia,
+.club-mark--northbridge,
+.club-mark--vale,
+.club-mark--meridian {
+  background: linear-gradient(135deg, var(--lucent-accent), var(--lucent-accent-2)) !important;
+}
+
+.proof-strip article,
+.how-card,
+.why-grid article,
+.trial-card,
+.journey-device,
+.product-shell,
+.premium-phone-frame,
+.premium-floating-card,
+.network-node,
+.signal-card,
+.upload-card,
+.success-card,
+.selected-trial,
+.requirements article,
+.brief-stack article,
+.command-strip article,
+.readout-panel,
+.story-card,
+.nav.shell {
+  border-color: var(--lucent-panel-border) !important;
+}
+
+.nav.shell nav a:hover,
+.nav.shell nav a.is-active {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(102, 255, 241, 0.16), transparent 58%),
+    rgba(0, 0, 0, 0.34) !important;
+  border-color: rgba(102, 255, 241, 0.24) !important;
+}
+
+/* Make the top background video extremely visible */
+.film {
+  background: #02070a !important;
+}
+
+.film__video {
+  opacity: 1 !important;
+  filter: saturate(1.10) contrast(1.06) brightness(0.92) blur(0.15px) !important;
+  transform: scale(1.01) !important;
+}
+
+.film__veil {
+  background:
+    radial-gradient(circle at 54% 44%, rgba(102, 255, 241, 0.10), transparent 24%),
+    linear-gradient(90deg, rgba(2, 7, 10, 0.38), rgba(2, 7, 10, 0.12) 48%, rgba(2, 7, 10, 0.34)),
+    linear-gradient(180deg, rgba(2, 7, 10, 0.14), rgba(2, 7, 10, 0.34)) !important;
+}
+
+.film__scanlines {
+  opacity: 0.03 !important;
+}
+
+.hero-brand-lockup h1,
+.premium-kinetic-headline span,
+.film__copy--brand .film__subline {
+  text-shadow: 0 14px 40px rgba(0, 0, 0, 0.34) !important;
+}
+
+.film__copy--brand .film__subline {
+  color: rgba(251, 250, 247, 0.94) !important;
+}
+
+.scroll-cue {
+  color: rgba(251, 250, 247, 0.86) !important;
+}
+
+.scroll-cue span {
+  background: rgba(102, 255, 241, 0.72) !important;
+}
+
+@media (max-width: 860px) {
+  .film__video {
+    filter: saturate(1.08) contrast(1.04) brightness(0.96) !important;
+    transform: scale(1.02) !important;
+  }
+
+  .film__veil {
+    background:
+      linear-gradient(90deg, rgba(2, 7, 10, 0.32), rgba(2, 7, 10, 0.08) 50%, rgba(2, 7, 10, 0.28)),
+      linear-gradient(180deg, rgba(2, 7, 10, 0.18), rgba(2, 7, 10, 0.40)) !important;
+  }
+}
