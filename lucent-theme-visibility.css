@@ -1,0 +1,246 @@
+/* Lucent final theme and hero-video visibility layer.
+   Loaded last so the color system and opening film remain consistent across all prior polish files. */
+
+:root {
+  --lucent-bg: #05070a;
+  --lucent-bg-2: #071017;
+  --lucent-panel: rgba(7, 14, 20, 0.70);
+  --lucent-panel-strong: rgba(5, 10, 15, 0.84);
+  --lucent-line: rgba(255, 255, 255, 0.14);
+  --lucent-ink: #fbfaf7;
+  --lucent-copy: rgba(251, 250, 247, 0.82);
+  --lucent-muted: rgba(251, 250, 247, 0.66);
+  --lucent-primary: #b8ff5c;
+  --lucent-primary-soft: #d8ffae;
+  --lucent-secondary: #66fff1;
+  --lucent-blue: #3f7cff;
+
+  /* Align legacy and premium tokens to one Lucent palette. */
+  --aubergine: var(--lucent-bg-2);
+  --aubergine-deep: var(--lucent-bg);
+  --lilac: var(--lucent-primary);
+  --lilac-soft: var(--lucent-primary-soft);
+  --cyan: var(--lucent-secondary);
+  --premium-green: var(--lucent-primary);
+  --premium-cyan: var(--lucent-secondary);
+  --premium-blue: var(--lucent-blue);
+  --premium-charcoal: var(--lucent-bg);
+  --premium-panel: var(--lucent-panel);
+  --premium-line: var(--lucent-line);
+  --readable-copy: var(--lucent-copy);
+  --readable-muted: var(--lucent-muted);
+  --lucent-focus: var(--lucent-primary);
+}
+
+body.lucent-theme {
+  background:
+    radial-gradient(circle at 50% -10%, rgba(63, 124, 255, 0.14), transparent 34%),
+    radial-gradient(circle at 85% 8%, rgba(102, 255, 241, 0.10), transparent 28%),
+    var(--lucent-bg) !important;
+  color: var(--lucent-ink) !important;
+}
+
+body.lucent-theme ::selection {
+  color: #05100d;
+  background: var(--lucent-primary);
+}
+
+body.lucent-theme .grain {
+  opacity: 0.08 !important;
+}
+
+body.lucent-theme .premium-tactical-grid {
+  opacity: 0.055 !important;
+}
+
+/* Opening film: keep the footage highly visible, with only a light readability scrim. */
+body.lucent-theme .film {
+  background: var(--lucent-bg) !important;
+  isolation: isolate !important;
+}
+
+body.lucent-theme .film__video {
+  z-index: 0 !important;
+  opacity: 1 !important;
+  object-fit: cover !important;
+  object-position: center 42% !important;
+  filter: saturate(1.16) contrast(1.12) brightness(1.08) !important;
+  transform: scale(1.015) !important;
+}
+
+body.lucent-theme .film.is-fallback .film__video {
+  opacity: 0 !important;
+}
+
+body.lucent-theme .film__veil {
+  z-index: 1 !important;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(102, 255, 241, 0.10), transparent 29%),
+    radial-gradient(circle at 50% 72%, rgba(184, 255, 92, 0.08), transparent 34%),
+    linear-gradient(90deg, rgba(5, 7, 10, 0.56), rgba(5, 7, 10, 0.10) 44%, rgba(5, 7, 10, 0.34)),
+    linear-gradient(180deg, rgba(5, 7, 10, 0.34), rgba(5, 7, 10, 0.10) 36%, rgba(5, 7, 10, 0.44)) !important;
+  mix-blend-mode: normal !important;
+}
+
+body.lucent-theme .film__scanlines {
+  z-index: 2 !important;
+  opacity: 0.035 !important;
+  mix-blend-mode: screen !important;
+}
+
+body.lucent-theme .film__copy--brand {
+  z-index: 4 !important;
+  isolation: isolate !important;
+}
+
+body.lucent-theme .film__copy--brand::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  width: min(980px, 92vw);
+  height: min(560px, 72svh);
+  border-radius: clamp(32px, 5vw, 64px);
+  background:
+    radial-gradient(ellipse at center, rgba(2, 6, 10, 0.48) 0%, rgba(2, 6, 10, 0.28) 48%, transparent 74%);
+  content: "";
+  filter: blur(4px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+body.lucent-theme .hero-brand-lockup h1,
+body.lucent-theme .premium-kinetic-headline span {
+  color: var(--lucent-ink) !important;
+  text-shadow:
+    0 2px 18px rgba(0, 0, 0, 0.72),
+    0 24px 90px rgba(0, 0, 0, 0.58) !important;
+}
+
+body.lucent-theme .premium-kinetic-headline span:nth-child(2) {
+  color: var(--lucent-primary) !important;
+}
+
+body.lucent-theme .premium-kinetic-headline span:nth-child(3) {
+  color: var(--lucent-secondary) !important;
+}
+
+body.lucent-theme .film__copy--brand .film__subline {
+  color: rgba(251, 250, 247, 0.90) !important;
+  text-shadow: 0 12px 42px rgba(0, 0, 0, 0.84) !important;
+}
+
+/* One coherent visual language across the rest of the page. */
+body.lucent-theme .eyebrow,
+body.lucent-theme .story-card span,
+body.lucent-theme .proof-strip span,
+body.lucent-theme .how-card span,
+body.lucent-theme .why-grid span,
+body.lucent-theme .signal-card > span,
+body.lucent-theme .premium-floating-card span,
+body.lucent-theme .screen__header span,
+body.lucent-theme .selected-trial span,
+body.lucent-theme .requirements span,
+body.lucent-theme .upload-card span,
+body.lucent-theme .success-card span {
+  color: var(--lucent-primary) !important;
+}
+
+body.lucent-theme .nav.shell,
+body.lucent-theme .proof-strip article,
+body.lucent-theme .how-card,
+body.lucent-theme .why-grid article,
+body.lucent-theme .journey-device,
+body.lucent-theme .product-shell,
+body.lucent-theme .premium-phone-frame,
+body.lucent-theme .premium-floating-card,
+body.lucent-theme .network-node,
+body.lucent-theme .signal-card,
+body.lucent-theme .upload-card,
+body.lucent-theme .success-card,
+body.lucent-theme .selected-trial,
+body.lucent-theme .requirements article,
+body.lucent-theme .brief-stack article,
+body.lucent-theme .command-strip article,
+body.lucent-theme .readout-panel,
+body.lucent-theme .story-card,
+body.lucent-theme .pose-label {
+  border-color: var(--lucent-line) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.025)),
+    var(--lucent-panel) !important;
+  box-shadow:
+    0 28px 90px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.13) !important;
+}
+
+body.lucent-theme .nav.shell nav a:hover,
+body.lucent-theme .nav.shell nav a.is-active {
+  color: var(--lucent-ink) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(184, 255, 92, 0.18), transparent 58%),
+    rgba(5, 10, 15, 0.58) !important;
+  border-color: rgba(184, 255, 92, 0.22) !important;
+}
+
+body.lucent-theme .nav__cta,
+body.lucent-theme .button,
+body.lucent-theme .button--placeholder,
+body.lucent-theme .elevate__button,
+body.lucent-theme .metric,
+body.lucent-theme .analysis-chip {
+  color: #06100d !important;
+  background: linear-gradient(135deg, var(--lucent-primary), var(--lucent-secondary)) !important;
+  box-shadow: 0 18px 54px rgba(184, 255, 92, 0.20) !important;
+}
+
+body.lucent-theme .metric strong,
+body.lucent-theme .analysis-chip strong {
+  color: #06100d !important;
+}
+
+body.lucent-theme .trial-card__bar span,
+body.lucent-theme .signal-card__meter i,
+body.lucent-theme .journey-line,
+body.lucent-theme .product-pointer {
+  background: linear-gradient(90deg, var(--lucent-primary), var(--lucent-secondary)) !important;
+}
+
+body.lucent-theme .story__sticky,
+body.lucent-theme .story--scouted .story__sticky,
+body.lucent-theme .why-lucent,
+body.lucent-theme .talent-network,
+body.lucent-theme .player-signal,
+body.lucent-theme .cta {
+  background:
+    radial-gradient(circle at 50% 8%, rgba(63, 124, 255, 0.12), transparent 34%),
+    radial-gradient(circle at 85% 38%, rgba(102, 255, 241, 0.08), transparent 30%),
+    linear-gradient(180deg, var(--lucent-bg-2), var(--lucent-bg)) !important;
+}
+
+body.lucent-theme .elevate__veil {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(102, 255, 241, 0.10), transparent 30%),
+    linear-gradient(90deg, rgba(5, 7, 10, 0.60), rgba(5, 7, 10, 0.18), rgba(5, 7, 10, 0.62)),
+    linear-gradient(180deg, rgba(5, 7, 10, 0.40), rgba(5, 7, 10, 0.62)) !important;
+}
+
+@media (max-width: 860px) {
+  body.lucent-theme .film__video {
+    object-position: center 38% !important;
+    filter: saturate(1.14) contrast(1.08) brightness(1.02) !important;
+    transform: scale(1.03) !important;
+  }
+
+  body.lucent-theme .film__veil {
+    background:
+      radial-gradient(circle at 50% 42%, rgba(102, 255, 241, 0.10), transparent 30%),
+      linear-gradient(180deg, rgba(5, 7, 10, 0.42), rgba(5, 7, 10, 0.18) 38%, rgba(5, 7, 10, 0.58)) !important;
+  }
+
+  body.lucent-theme .film__copy--brand::before {
+    width: min(520px, 96vw);
+    height: min(560px, 68svh);
+    background: radial-gradient(ellipse at center, rgba(2, 6, 10, 0.50), rgba(2, 6, 10, 0.24) 56%, transparent 78%);
+  }
+}
