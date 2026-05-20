@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-labelledby="lucentLockupTitle">
+  <title id="lucentLockupTitle">Lucent</title>
+  <g transform="translate(58 31) scale(.82)">
+    <path fill="#111217" d="M169 20 42 112h63l-47 89h43L193 20z"/>
+    <path fill="#5cff1f" d="M177 69 129 201h38l33-163z"/>
+  </g>
+  <text x="360" y="157" fill="#111217"
+        font-family="Orbitron, Rajdhani, Eurostile, 'Arial Black', Arial, sans-serif"
+        font-size="82" font-weight="700" letter-spacing="42">LUCENT</text>
+</svg>

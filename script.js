@@ -103,13 +103,19 @@ function setupActiveNavigation() {
 }
 
 function setupLaunchSequence() {
-  // Disabled visually by daylight-motion.css, but kept safe for users without CSS overrides.
   let launch = document.querySelector(".launch-sequence");
   if (!launch) {
     launch = document.createElement("div");
     launch.className = "launch-sequence";
     launch.setAttribute("aria-hidden", "true");
-    launch.innerHTML = `<div class="launch-sequence__word launch-sequence__word--stack"><span>Lucent</span><span class="launch-sequence__mark"></span></div>`;
+    launch.innerHTML = `
+      <div class="launch-sequence__word launch-sequence__word--stack">
+        <img class="launch-sequence__logo" src="./assets/lucent-logo-lockup.svg?v=green-logo" alt="" />
+      </div>
+      <div class="launch-sequence__status">
+        <div class="launch-sequence__bar"><i></i></div>
+      </div>
+    `;
     document.body.prepend(launch);
   }
 
@@ -120,13 +126,16 @@ function setupLaunchSequence() {
   }
 
   document.body.classList.add("is-intro-running");
+  let launchFinished = false;
   const finishLaunch = () => {
+    if (launchFinished) return;
+    launchFinished = true;
     document.body.classList.remove("is-intro-running");
     document.body.classList.add("is-intro-complete");
-    window.setTimeout(() => launch.remove(), 1400);
+    window.setTimeout(() => launch.remove(), 420);
   };
 
-  window.setTimeout(finishLaunch, 1850);
+  window.setTimeout(finishLaunch, 1650);
 }
 
 function injectScoutedPolish() {
