@@ -110,7 +110,7 @@ function setupLaunchSequence() {
     launch.setAttribute("aria-hidden", "true");
     launch.innerHTML = `
       <div class="launch-sequence__word launch-sequence__word--stack">
-        <img class="launch-sequence__logo" src="./assets/lucent-logo-lockup.svg?v=green-logo" alt="" />
+        <img class="launch-sequence__logo" src="./assets/lucent-logo-lockup.png" alt="Lucent" />
       </div>
       <div class="launch-sequence__status">
         <div class="launch-sequence__bar"><i></i></div>
