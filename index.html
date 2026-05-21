@@ -61,35 +61,25 @@
           </div>
         </div>
 
-        <div class="film__pillars" aria-hidden="true">
-          <div class="film__pillar film__pillar--1">
-            <div class="film__pillar-track film__pillar-track--fwd">
-              <span>TRAIN</span><span class="film__pillar-dot">—</span>
-              <span>TRAIN</span><span class="film__pillar-dot">—</span>
-              <span>TRAIN</span><span class="film__pillar-dot">—</span>
-              <span>TRAIN</span><span class="film__pillar-dot">—</span>
-              <span>TRAIN</span><span class="film__pillar-dot">—</span>
-              <span>TRAIN</span><span class="film__pillar-dot">—</span>
-            </div>
-          </div>
-          <div class="film__pillar film__pillar--2">
-            <div class="film__pillar-track film__pillar-track--rev">
-              <span>BUILD</span><span class="film__pillar-dot">—</span>
-              <span>BUILD</span><span class="film__pillar-dot">—</span>
-              <span>BUILD</span><span class="film__pillar-dot">—</span>
-              <span>BUILD</span><span class="film__pillar-dot">—</span>
-              <span>BUILD</span><span class="film__pillar-dot">—</span>
-              <span>BUILD</span><span class="film__pillar-dot">—</span>
-            </div>
-          </div>
-          <div class="film__pillar film__pillar--3">
-            <div class="film__pillar-track film__pillar-track--fwd">
-              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
-              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
-              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
-              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
-            </div>
-          </div>
+        <div class="hero-cards">
+          <button class="hero-card hero-card--1" type="button">
+            <span class="hero-card__num">01</span>
+            <span class="hero-card__title">Train</span>
+            <span class="hero-card__sub">Film every rep &amp; get instant AI feedback</span>
+            <span class="hero-card__arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="hero-card hero-card--2" type="button">
+            <span class="hero-card__num">02</span>
+            <span class="hero-card__title">Build</span>
+            <span class="hero-card__sub">Turn data into a scout-ready performance pack</span>
+            <span class="hero-card__arrow" aria-hidden="true">→</span>
+          </button>
+          <button class="hero-card hero-card--3" type="button">
+            <span class="hero-card__num">03</span>
+            <span class="hero-card__title">Get Scouted</span>
+            <span class="hero-card__sub">Match your profile to clubs recruiting right now</span>
+            <span class="hero-card__arrow" aria-hidden="true">→</span>
+          </button>
         </div>
 
       </section>
@@ -200,16 +190,15 @@
     <script src="./hero-redesign.js" defer></script>
     <script>
       (() => {
-        const pillars = document.querySelector('.film__pillars');
-        const film = document.querySelector('.film--redesign');
-        if (!pillars || !film) return;
-        let triggered = false;
+        const cards = document.querySelector('.hero-cards');
+        const film  = document.querySelector('.film--redesign');
+        if (!cards || !film) return;
+        let done = false;
         function check() {
-          if (triggered) return;
-          const threshold = film.offsetTop + film.offsetHeight - window.innerHeight * 0.55;
-          if (window.scrollY >= threshold) {
-            pillars.classList.add('is-visible');
-            triggered = true;
+          if (done) return;
+          if (window.scrollY >= film.offsetTop + film.offsetHeight - window.innerHeight * 0.6) {
+            cards.classList.add('is-visible');
+            done = true;
             window.removeEventListener('scroll', check);
           }
         }
