@@ -48,39 +48,7 @@
 
   const render = () => {
     ticking = false;
-    const rect = section.getBoundingClientRect();
-    const total = section.offsetHeight - window.innerHeight;
-    const p = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
-
-    const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const minSide = Math.min(vw, vh);
-
-    let w, h, r;
-    if (p < 0.55) {
-      // Phase 1: full bleed -> rounded rectangle
-      const t = p / 0.55;
-      w = lerp(vw, vw * 0.72, t);
-      h = lerp(vh, vh * 0.68, t);
-      r = lerp(0, 96, t);
-    } else {
-      // Phase 2: rounded rectangle -> circle
-      const t = (p - 0.55) / 0.45;
-      const targetSize = minSide * 0.58;
-      w = lerp(vw * 0.72, targetSize, t);
-      h = lerp(vh * 0.68, targetSize, t);
-      r = lerp(96, targetSize, t);
-    }
-
-    section.style.setProperty("--stage-w", `${w}px`);
-    section.style.setProperty("--stage-h", `${h}px`);
-    section.style.setProperty("--stage-r", `${r}px`);
-
-    // Caption fades in during phase 2
-    const captionP = clamp((p - 0.65) / 0.3, 0, 1);
-    section.style.setProperty("--caption-opacity", captionP.toFixed(3));
-    section.style.setProperty("--caption-y", `${lerp(24, 0, captionP)}px`);
-
     renderMosaic(vh);
   };
 

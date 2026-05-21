@@ -4,11 +4,9 @@
   --stage-w: 100vw;
   --stage-h: 100svh;
   --stage-r: 0px;
-  --caption-opacity: 0;
-  --caption-y: 24px;
 
   position: relative !important;
-  min-height: 260svh !important;
+  min-height: 100svh !important;
   background: #050406 !important;
   overflow: visible !important;
   isolation: isolate !important;
