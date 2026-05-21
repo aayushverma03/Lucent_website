@@ -3,384 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Lucent helps footballers improve faster and get discovered sooner."
-    />
-    <title>Lucent — Your Game, Empowered</title>
+    <meta name="description" content="Lucent helps footballers capture drills, prove their level, and get seen by clubs." />
+    <meta name="theme-color" content="#05070a" />
+    <title>Lucent — Train. Prove. Get Scouted.</title>
     <link rel="icon" href="data:," />
     <link rel="preload" as="image" href="./assets/images/hero-athlete.webp" />
     <link rel="preload" as="image" href="./assets/images/opening-poster.webp" />
+    <link rel="preload" as="video" href="./assets/video/opening-tracked.mp4" type="video/mp4" />
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./final-polish.css" />
+    <link rel="stylesheet" href="./daylight-motion.css?v=green-logo" />
+    <link rel="stylesheet" href="./lucent-overrides.css" />
+    <link rel="stylesheet" href="./premium-elements.css" />
+    <link rel="stylesheet" href="./qa-polish.css" />
+    <link rel="stylesheet" href="./lucent-theme-visibility.css" />
+    <link rel="stylesheet" href="./lucent-final-overrides.css" />
+    <link rel="stylesheet" href="./hero-redesign.css?v=green-logo" />
   </head>
-  <body>
+  <body class="lucent-theme">
     <div class="grain" aria-hidden="true"></div>
 
+    <header class="pill-nav" data-hero-nav>
+      <nav class="pill-nav__group pill-nav__group--left" aria-label="Primary left">
+        <a href="#how">How it works</a>
+        <a href="#skills">Skill engine</a>
+      </nav>
+      <a class="pill-nav__brand" href="#top" aria-label="Lucent home">
+        <img class="pill-nav__logo" src="./assets/lucent-logo-mark.svg?v=green-logo" alt="Lucent" />
+      </a>
+      <nav class="pill-nav__group pill-nav__group--right" aria-label="Primary right">
+        <a href="#scouted">Trials</a>
+        <a class="pill-nav__cta" href="#elevate">Join</a>
+      </nav>
+    </header>
+
     <main>
-      <section class="film" id="top" aria-label="Opening football film">
-        <header class="nav shell">
-          <a class="brand" href="#top" aria-label="Lucent home">
-            <span class="brand__mark"></span>
-            <span>Lucent</span>
-          </a>
+      <section class="film film--redesign" id="top" aria-label="Opening football film">
+        <div class="film__sticky" data-hero-sticky>
+          <div class="film__stage" data-hero-stage>
+            <video class="film__stage-video" autoplay muted loop playsinline preload="auto" poster="./assets/images/opening-poster.webp">
+              <source src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+              <source src="./assets/video/opening-tracked.webm" type="video/webm" />
+              <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
+            </video>
+            <div class="film__stage-veil" aria-hidden="true"></div>
+          </div>
 
-          <nav aria-label="Primary">
-            <a href="#skills">Build skills</a>
-            <a href="#scouted">Get scouted</a>
-          </nav>
-
-          <a class="nav__cta" href="#join">Waitlist</a>
-        </header>
-
-        <video
-          class="film__video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="metadata"
-          poster="./assets/images/opening-poster.webp"
-          data-film-video
-        >
-          <source src="./assets/video/opening-tracked.webm" type="video/webm" />
-          <source src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
-          <source src="./assets/video/opening-tracked.mp4" type="video/mp4" />
-        </video>
-
-        <div class="film__veil" aria-hidden="true"></div>
-        <div class="film__scanlines" aria-hidden="true"></div>
-        <div class="film__stamp" aria-hidden="true">Pose readout</div>
-
-        <div class="film__copy shell" data-reveal>
-          <p>Lucent</p>
-          <h1 aria-label="Your game. Empowered.">
-            <span>Your game.</span>
-            <span>Empowered.</span>
-          </h1>
-        </div>
-
-        <div class="film__marquee" aria-hidden="true">
-          <div>
-            <span>Build skills</span>
-            <span>Get scouted</span>
-            <span>Build skills</span>
-            <span>Get scouted</span>
-            <span>Build skills</span>
-            <span>Get scouted</span>
+          <div class="film__caption" data-hero-caption>
+            <p>Lucent turns every training rep into proof. Film the drill, read the signal, and put a scout-ready pack in front of clubs that are recruiting now.</p>
           </div>
         </div>
 
-        <div class="scroll-cue shell">
-          <span></span>
-          <small>Scroll to begin</small>
+      </section>
+
+      <section class="mosaic" aria-label="Lucent video mosaic">
+        <div class="mosaic__sticky" data-mosaic>
+          <div class="mosaic__grid" data-mosaic-grid>
+            <video class="m-tile m-tile--tl" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-soccer-player-juggling-the-ball-with-great-skill-43490-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--tc" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-player-dribbling-in-a-one-on-one-in-a-soccer-43484-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--tr" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-soccer-player-juggling-the-ball-with-great-skill-43490-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--ml" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-skilled-footballer-demonstrating-ball-juggling-prowess-43491-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--mc" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-skillful-female-soccer-player-doing-ball-juggling-42537-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--mr" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-semi-pro-soccer-game-43485-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--bl" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-player-dribbling-in-a-one-on-one-in-a-soccer-43484-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--bc" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-skilled-footballer-demonstrating-ball-juggling-prowess-43491-full-hd.mp4" aria-hidden="true"></video>
+            <video class="m-tile m-tile--br" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-src="./assets/video/mixkit-semi-pro-soccer-game-43485-full-hd.mp4" aria-hidden="true"></video>
+          </div>
+          <div class="mosaic__veil" aria-hidden="true"></div>
+          <div class="mosaic__text">
+            <h2 class="mosaic__headline mosaic__headline--a" data-mosaic-h="a">We turn every training rep into proof.</h2>
+            <h2 class="mosaic__headline mosaic__headline--b" data-mosaic-h="b">From first touch to club shortlist — your full performance story.</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" id="how" aria-label="How Lucent works">
+        <div class="shell how__inner">
+          <div class="section-kicker" data-reveal><p class="eyebrow">How it works</p><h2>From training clip to club shortlist.</h2><p>Capture your football work. Get a clear readout. Send proof clubs can trust.</p></div>
+          <div class="how__grid">
+            <article class="how-card how-card--active" data-reveal><span>Step 1</span><h3>Film the drill</h3><p>Upload finishing, dribbling, passing, sprint, and agility clips.</p></article>
+            <article class="how-card" data-reveal><span>Step 2</span><h3>Read the signal</h3><p>Measure first touch, weak foot, burst speed, control, and repeatability.</p></article>
+            <article class="how-card" data-reveal><span>Step 3</span><h3>Send the proof</h3><p>Build a compact evidence pack for scouts and academy recruiters.</p></article>
+          </div>
+          <div class="journey-device" data-reveal aria-label="Lucent product journey visual">
+            <div class="journey-device__chrome"><span></span><span></span><span></span><strong>Lucent evidence journey</strong></div>
+            <div class="journey-device__screen">
+              <div class="journey-step journey-step--capture"><span>Capture</span><strong>finishing-ladder.mp4</strong><em>Uploaded · 00:58</em></div>
+              <div class="journey-line" aria-hidden="true"></div>
+              <div class="journey-step journey-step--measure"><span>Measure</span><strong>Technique signal 88%</strong><em>Control improving</em></div>
+              <div class="journey-line" aria-hidden="true"></div>
+              <div class="journey-step journey-step--package"><span>Package</span><strong>Trial pack ready</strong><em>3 scouts matched</em></div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="story story--skills" id="skills" data-skill-step="0">
         <div class="story__sticky">
-          <div class="story__ticker" aria-hidden="true">
-            <div>
-              <span>Build skills</span>
-              <span>Build skills</span>
-              <span>Build skills</span>
-              <span>Build skills</span>
-              <span>Build skills</span>
-              <span>Build skills</span>
-            </div>
-          </div>
-
           <div class="story__content shell">
-            <div class="story__intro" data-reveal>
-              <p class="eyebrow">Build skills</p>
-              <h2 data-skill-title>See the player clearly.</h2>
-              <p class="lede" data-skill-copy>
-                Lucent starts with the athlete, then reveals the movement patterns behind every rep.
-              </p>
-            </div>
-
+            <div class="story__intro" data-reveal><p class="eyebrow">Skill engine</p><h2 data-skill-title>See the player clearly.</h2><p class="lede" data-skill-copy>Read the football actions that matter: touch, movement, speed, and finishing.</p></div>
             <div class="skills-stage" aria-label="Player skill analysis scene">
-              <div class="skills-stage__halo skills-stage__halo--outer" aria-hidden="true"></div>
-              <div class="skills-stage__halo skills-stage__halo--inner" aria-hidden="true"></div>
-              <div class="skills-stage__scan" aria-hidden="true"></div>
-
+              <div class="skills-stage__halo skills-stage__halo--outer" aria-hidden="true"></div><div class="skills-stage__halo skills-stage__halo--inner" aria-hidden="true"></div><div class="skills-stage__scan" aria-hidden="true"></div>
               <div class="skills-player">
-                <img
-                  class="skills-player__image"
-                  src="./assets/images/hero-athlete.webp"
-                  alt="Footballer standing upright and facing forward"
-                />
-
-                <svg class="pose-map" viewBox="0 0 100 210" aria-hidden="true" preserveAspectRatio="none">
-                  <g class="pose-map__lines">
-                    <line x1="40" y1="53" x2="60" y2="53" />
-                    <line x1="40" y1="53" x2="42" y2="101" />
-                    <line x1="60" y1="53" x2="58" y2="101" />
-                    <line x1="42" y1="101" x2="58" y2="101" />
-                    <line x1="42" y1="101" x2="44" y2="145" />
-                    <line x1="58" y1="101" x2="56" y2="145" />
-                    <line x1="44" y1="145" x2="43" y2="188" />
-                    <line x1="56" y1="145" x2="57" y2="188" />
-                  </g>
-                  <g class="pose-map__points">
-                    <circle cx="40" cy="53" r="1.8" />
-                    <circle cx="60" cy="53" r="1.8" />
-                    <circle cx="42" cy="101" r="1.8" />
-                    <circle cx="58" cy="101" r="1.8" />
-                    <circle cx="44" cy="145" r="1.8" />
-                    <circle cx="56" cy="145" r="1.8" />
-                    <circle cx="43" cy="188" r="1.8" />
-                    <circle cx="57" cy="188" r="1.8" />
-                  </g>
-                </svg>
+                <img class="skills-player__image" src="./assets/images/hero-athlete.webp" alt="Footballer standing upright and facing forward" loading="lazy" decoding="async" />
+                <svg class="pose-map" viewBox="0 0 100 210" aria-hidden="true" preserveAspectRatio="none"><g class="pose-map__lines"><line x1="40" y1="53" x2="60" y2="53" /><line x1="40" y1="53" x2="42" y2="101" /><line x1="60" y1="53" x2="58" y2="101" /><line x1="42" y1="101" x2="58" y2="101" /><line x1="42" y1="101" x2="44" y2="145" /><line x1="58" y1="101" x2="56" y2="145" /><line x1="44" y1="145" x2="43" y2="188" /><line x1="56" y1="145" x2="57" y2="188" /></g><g class="pose-map__points"><circle cx="40" cy="53" r="1.8" /><circle cx="60" cy="53" r="1.8" /><circle cx="42" cy="101" r="1.8" /><circle cx="58" cy="101" r="1.8" /><circle cx="44" cy="145" r="1.8" /><circle cx="56" cy="145" r="1.8" /><circle cx="43" cy="188" r="1.8" /><circle cx="57" cy="188" r="1.8" /></g></svg>
               </div>
-
-              <div class="metric metric--touch">
-                <span>First touch</span>
-                <strong>91%</strong>
-              </div>
-              <div class="metric metric--shot">
-                <span>Shot speed</span>
-                <strong>104 km/h</strong>
-              </div>
-              <div class="metric metric--weak-foot">
-                <span>Weak-foot score</span>
-                <strong>82%</strong>
-              </div>
-
-              <div class="pose-label pose-label--shoulders">Shoulder alignment</div>
-              <div class="pose-label pose-label--hips">Hip rotation</div>
-              <div class="pose-label pose-label--knees">Knee control</div>
-
-              <div class="analysis-chip analysis-chip--control">
-                <span>Ball control</span>
-                <strong>94%</strong>
-              </div>
-              <div class="analysis-chip analysis-chip--grade">
-                <span>Drill grade</span>
-                <strong>A−</strong>
-              </div>
-
-              <aside class="story-card story-card--focus">
-                <span>Training focus</span>
-                <strong>Build cleaner technique</strong>
-                <p>Review touch quality, striking mechanics, and finishing posture before the next session.</p>
-              </aside>
-
-              <aside class="story-card story-card--next">
-                <span>Next drill</span>
-                <strong>Repeat the finishing ladder</strong>
-              </aside>
+              <div class="readout-panel" aria-label="Lucent player readout panel"><span>Lucent Readout</span><strong>Scout readiness</strong><div class="readout-panel__score">87%</div><div class="readout-panel__rows"><em><b>Touch</b><i>91</i></em><em><b>Movement</b><i>84</i></em><em><b>Finishing</b><i>88</i></em></div><p>Next drill: weak-foot finishing under pressure.</p></div>
+              <div class="metric metric--touch"><span>First touch</span><strong>91%</strong></div><div class="metric metric--shot"><span>Shot speed</span><strong>104 km/h</strong></div><div class="metric metric--weak-foot"><span>Weak foot</span><strong>82%</strong></div>
+              <div class="pose-label pose-label--shoulders">Body shape</div><div class="pose-label pose-label--hips">Hip rotation</div><div class="pose-label pose-label--knees">Change of direction</div>
+              <div class="analysis-chip analysis-chip--control"><span>Ball control</span><strong>94%</strong></div><div class="analysis-chip analysis-chip--grade"><span>Drill grade</span><strong>A−</strong></div>
+              <aside class="story-card story-card--focus"><span>Training focus</span><strong>Sharper final action</strong><p>Improve touch before shot and weak-foot finish.</p></aside><aside class="story-card story-card--next"><span>Next drill</span><strong>Finishing ladder</strong></aside>
             </div>
           </div>
-
-          <div class="story-steps shell" aria-hidden="true">
-            <span class="is-active">Player</span>
-            <span>Pose</span>
-            <span>Metrics</span>
-            <span>Next drill</span>
-          </div>
+          <div class="story-steps shell" aria-hidden="true"><span class="is-active">Train</span><span>Scan</span><span>Measure</span><span>Improve</span></div>
         </div>
       </section>
 
       <section class="story story--scouted" id="scouted" data-scout-step="0">
         <div class="story__sticky">
-          <div class="story__ticker story__ticker--teal" aria-hidden="true">
-            <div>
-              <span>Get scouted</span>
-              <span>Get scouted</span>
-              <span>Get scouted</span>
-              <span>Get scouted</span>
-              <span>Get scouted</span>
-            </div>
-          </div>
-
+          <video class="scout-bg-video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp"><source src="./assets/video/opening-tracked.webm" type="video/webm" /><source src="./assets/video/opening-tracked.mp4" type="video/mp4" /></video>
+          <div class="scout-bg-overlay" aria-hidden="true"></div>
           <div class="scouted shell">
-            <div class="scouted__copy" data-reveal>
-              <p class="eyebrow">Get scouted</p>
-              <h2 data-scout-title>Find the right trial.</h2>
-              <p class="lede" data-scout-copy>
-                Browse open opportunities from clubs looking for players in your role.
-              </p>
-            </div>
-
+            <div class="scouted__copy" data-reveal><p class="eyebrow">Trials</p><h2 data-scout-title>Find the right trial.</h2><p class="lede" data-scout-copy>Match your position, clips, and scores to live club needs.</p></div>
             <div class="product-shell" aria-label="Scroll-driven scouting product demonstration">
-              <div class="product-shell__chrome">
-                <span></span>
-                <span></span>
-                <span></span>
-                <strong>Lucent trials</strong>
-              </div>
-
+              <div class="product-shell__chrome"><span></span><span></span><span></span><strong>Lucent trial board</strong></div>
               <div class="screen screen--board is-active">
-                <div class="screen__header">
-                  <div>
-                    <span>Open trials</span>
-                    <strong>12 clubs recruiting this week</strong>
-                  </div>
-                  <em>Matched to your profile</em>
-                </div>
-
-                <div class="trial-grid">
-                  <article class="trial-card trial-card--aurelia is-selected">
-                    <div class="club-mark club-mark--aurelia" aria-hidden="true">
-                      <span>A</span>
-                    </div>
-                    <div>
-                      <h3>Aurelia SC</h3>
-                      <p>U19 winger · London</p>
-                    </div>
-                    <strong>94% fit</strong>
-                  </article>
-
-                  <article class="trial-card trial-card--northbridge">
-                    <div class="club-mark club-mark--northbridge" aria-hidden="true">
-                      <span>N</span>
-                    </div>
-                    <div>
-                      <h3>Northbridge FC</h3>
-                      <p>U21 forward · Manchester</p>
-                    </div>
-                    <strong>89% fit</strong>
-                  </article>
-
-                  <article class="trial-card trial-card--vale">
-                    <div class="club-mark club-mark--vale" aria-hidden="true">
-                      <span>V</span>
-                    </div>
-                    <div>
-                      <h3>Vale Athletic</h3>
-                      <p>Academy 9 · Birmingham</p>
-                    </div>
-                    <strong>86% fit</strong>
-                  </article>
-
-                  <article class="trial-card trial-card--meridian">
-                    <div class="club-mark club-mark--meridian" aria-hidden="true">
-                      <span>M</span>
-                    </div>
-                    <div>
-                      <h3>Meridian United</h3>
-                      <p>Wide forward · Leeds</p>
-                    </div>
-                    <strong>84% fit</strong>
-                  </article>
+                <div class="screen__header trial-board__header"><div><span>Live trial radar</span><strong>12 clubs recruiting</strong></div><em>3 urgent briefs</em></div>
+                <div class="command-strip" aria-label="Scouting command centre signals"><article><span>Views</span><strong>2</strong><small>clubs this week</small></article><article><span>Status</span><strong>87%</strong><small>trial-ready</small></article><article><span>Role fit</span><strong>RW</strong><small>wide forward</small></article></div>
+                <div class="trial-toolbar" aria-label="Trial filters and match signals"><span>Winger</span><span>U21</span><span>Verified clubs</span><span>High-fit only</span></div>
+                <div class="trial-grid trial-grid--premium">
+                  <article class="trial-card trial-card--aurelia is-selected"><div class="trial-card__pulse" aria-hidden="true"></div><div class="trial-card__top"><div class="club-mark club-mark--aurelia" aria-hidden="true"><span>A</span></div><div><span class="trial-card__eyebrow">Recruiting now</span><h3>Aurelia SC</h3><p>U19 winger · London</p></div><strong class="trial-card__fit">94%</strong></div><div class="trial-card__insights"><span>1v1 burst</span><span>3 drills</span><span>Scout active</span></div><div class="trial-card__evidence"><span>First touch</span><span>Weak-foot finish</span><span>20m sprint</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 94%"></span></div><div class="trial-card__footer"><em>48h left</em><span>Elite fit</span></div></article>
+                  <article class="trial-card trial-card--northbridge"><div class="trial-card__top"><div class="club-mark club-mark--northbridge" aria-hidden="true"><span>N</span></div><div><span class="trial-card__eyebrow">New brief</span><h3>Northbridge FC</h3><p>U21 forward · Manchester</p></div><strong class="trial-card__fit">89%</strong></div><div class="trial-card__insights"><span>Runs in behind</span><span>Video reel</span><span>Coach review</span></div><div class="trial-card__evidence"><span>Match reel</span><span>Sprint profile</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 89%"></span></div><div class="trial-card__footer"><em>3 days</em><span>Strong fit</span></div></article>
+                  <article class="trial-card trial-card--vale"><div class="trial-card__top"><div class="club-mark club-mark--vale" aria-hidden="true"><span>V</span></div><div><span class="trial-card__eyebrow">Shortlist open</span><h3>Vale Athletic</h3><p>Academy 9 · Birmingham</p></div><strong class="trial-card__fit">86%</strong></div><div class="trial-card__insights"><span>Finishing</span><span>Weak foot</span><span>2 slots</span></div><div class="trial-card__evidence"><span>Finishing ladder</span><span>Coach note</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 86%"></span></div><div class="trial-card__footer"><em>5 days</em><span>Strong fit</span></div></article>
+                  <article class="trial-card trial-card--meridian"><div class="trial-card__top"><div class="club-mark club-mark--meridian" aria-hidden="true"><span>M</span></div><div><span class="trial-card__eyebrow">Recommended</span><h3>Meridian United</h3><p>Wide forward · Leeds</p></div><strong class="trial-card__fit">84%</strong></div><div class="trial-card__insights"><span>1v1 profile</span><span>Sprint proof</span><span>Open combine</span></div><div class="trial-card__evidence"><span>1v1 clips</span><span>Agility test</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 84%"></span></div><div class="trial-card__footer"><em>7 days</em><span>Good fit</span></div></article>
                 </div>
               </div>
-
-              <div class="screen screen--trial">
-                <div class="selected-trial">
-                  <div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true">
-                    <span>A</span>
-                  </div>
-                  <div>
-                    <span>Selected trial</span>
-                    <h3>Aurelia SC · U19 winger</h3>
-                    <p>Saturday, 18 July · High-tempo transition profile</p>
-                  </div>
-                </div>
-
-                <div class="trial-summary">
-                  <article>
-                    <span>Club priority</span>
-                    <strong>1v1 acceleration</strong>
-                  </article>
-                  <article>
-                    <span>Evidence needed</span>
-                    <strong>3 drill uploads</strong>
-                  </article>
-                  <article>
-                    <span>Deadline</span>
-                    <strong>48 hours</strong>
-                  </article>
-                </div>
-              </div>
-
-              <div class="screen screen--requirements">
-                <div class="requirements">
-                  <article>
-                    <span>Requirements</span>
-                    <ul>
-                      <li>90 sec match reel</li>
-                      <li>Recent sprint profile</li>
-                      <li>Finishing ladder result</li>
-                    </ul>
-                  </article>
-
-                  <article>
-                    <span>Drills to complete</span>
-                    <ul>
-                      <li>Weak-foot finishing</li>
-                      <li>First-touch escape</li>
-                      <li>20 m burst test</li>
-                    </ul>
-                  </article>
-                </div>
-              </div>
-
-              <div class="screen screen--upload">
-                <div class="upload-card">
-                  <span>Upload proof</span>
-                  <h3>3 of 3 files attached</h3>
-                  <div class="upload-list">
-                    <em>finishing-ladder.mp4</em>
-                    <em>first-touch-escape.mp4</em>
-                    <em>sprint-profile.csv</em>
-                  </div>
-                  <strong>Ready to submit</strong>
-                </div>
-              </div>
-
-              <div class="screen screen--success">
-                <div class="success-card">
-                  <div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true">
-                    <span>A</span>
-                  </div>
-                  <span>Club-ready</span>
-                  <h3>Aurelia SC shortlisted you</h3>
-                  <p>Your verified profile, drill proof, and trial results are now with the recruitment team.</p>
-                </div>
-              </div>
-
+              <div class="screen screen--trial"><div class="selected-trial selected-trial--rich"><div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true"><span>A</span></div><div><span>Selected trial</span><h3>Aurelia SC · U19 winger</h3><p>High-tempo transition profile</p></div><strong>94% fit</strong></div><div class="brief-stack"><article><span>Club priority</span><strong>1v1 acceleration</strong><p>Prove separation in the first three steps.</p></article><article><span>Evidence pack</span><strong>3 uploads</strong><p>Drill proof, match clips, and role signal.</p></article><article><span>Scout signal</span><strong>Active shortlist</strong><p>Recruiter opened the brief twice today.</p></article></div></div>
+              <div class="screen screen--requirements"><div class="requirements requirements--command"><article><span>Requirements</span><ul><li>90 sec match reel</li><li>Sprint profile</li><li>Finishing ladder</li></ul></article><article><span>Drills</span><ul><li>Weak-foot finish</li><li>First-touch escape</li><li>20 m burst</li></ul></article></div></div>
+              <div class="screen screen--upload"><div class="upload-card upload-card--package"><span>Upload proof</span><h3>3 of 3 attached</h3><div class="upload-list"><em>finishing-ladder.mp4</em><em>first-touch-escape.mp4</em><em>sprint-profile.csv</em></div><strong>Pack ready</strong></div></div>
+              <div class="screen screen--success"><div class="success-card success-card--scouted"><div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true"><span>A</span></div><span>Club-ready</span><h3>Aurelia SC shortlisted you</h3><p>Your football evidence is with the recruitment team.</p></div></div>
               <div class="product-pointer" aria-hidden="true"></div>
             </div>
           </div>
-
-          <div class="story-steps story-steps--scouted shell" aria-hidden="true">
-            <span class="is-active">Trials</span>
-            <span>Select</span>
-            <span>Requirements</span>
-            <span>Upload</span>
-            <span>Scouted</span>
-          </div>
+          <div class="story-steps story-steps--scouted shell" aria-hidden="true"><span class="is-active">Radar</span><span>Brief</span><span>Proof</span><span>Package</span><span>Scout</span></div>
         </div>
       </section>
 
-      <section class="cta" id="join">
-        <div class="shell cta__inner" data-reveal>
-          <svg class="cta__glyph" viewBox="0 0 180 180" aria-hidden="true">
-            <circle cx="90" cy="28" r="14" />
-            <path d="M85 48 61 79 78 97 101 78 124 101 140 87 109 49Z" />
-            <path d="M77 96 48 136 64 148 96 109Z" />
-            <path d="M100 101 129 151 146 141 117 89Z" />
-          </svg>
-          <p class="eyebrow">Lucent</p>
-          <h2>Improve faster.<br />Get discovered sooner.</h2>
-          <p>Understand your body, sharpen your game, and show clubs the evidence behind your progress.</p>
-          <button class="button button--placeholder" type="button" aria-label="Join the waitlist placeholder">
-            Join the waitlist
-          </button>
-        </div>
-
-        <footer class="footer shell">
-          <a class="brand" href="#top" aria-label="Lucent home">
-            <span class="brand__mark"></span>
-            <span>Lucent</span>
-          </a>
-          <small>© 2026 Lucent. All rights reserved.</small>
-        </footer>
+      <section class="elevate" id="elevate" aria-label="Step into Lucent">
+        <video class="elevate__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp"><source src="./assets/video/match%20vide%20(1).mp4" type="video/mp4" /></video>
+        <div class="elevate__veil" aria-hidden="true"></div>
+        <div class="shell elevate__inner" data-reveal><p class="eyebrow">Step into Lucent</p><h2>Train. Prove. Get scouted.</h2><p>Build the football evidence clubs can act on.</p><button class="button elevate__button" type="button">Join the waitlist</button></div>
       </section>
     </main>
-
-    <script src="./script.js"></script>
+    <script src="./script.js?v=minimal-loader-2" defer></script>
+    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js" defer></script>
+    <script src="./premium-elements.js" defer></script>
+    <script src="./qa-polish.js" defer></script>
+    <script src="./hero-redesign.js" defer></script>
   </body>
 </html>

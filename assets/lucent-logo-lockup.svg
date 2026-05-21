@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" role="img" aria-labelledby="lucentLockupTitle">
+  <title id="lucentLockupTitle">Lucent</title>
+
+  <!-- Icon mark -->
+  <g transform="translate(58 31) scale(.82)">
+    <path fill="#111217" d="M169 20 42 112h63l-47 89h43L193 20z"/>
+    <path fill="#5cff1f" d="M177 69 129 201h38l33-163z"/>
+  </g>
+
+  <!-- LUCENT wordmark — all letters as paths, E uses double-bar brand design -->
+  <g fill="#111217">
+
+    <!-- L -->
+    <rect x="340" y="88" width="12" height="84"/>
+    <rect x="340" y="160" width="56" height="12"/>
+
+    <!-- U -->
+    <rect x="436" y="88" width="12" height="72"/>
+    <rect x="484" y="88" width="12" height="72"/>
+    <rect x="436" y="160" width="60" height="12"/>
+
+    <!-- C -->
+    <rect x="536" y="88" width="12" height="84"/>
+    <rect x="536" y="88"  width="56" height="12"/>
+    <rect x="536" y="160" width="56" height="12"/>
+
+    <!-- E — top bar + left bar + two equal horizontal bars (double-bar / = style) -->
+    <rect x="632" y="88"  width="12" height="84"/>
+    <rect x="632" y="88"  width="56" height="12"/>
+    <rect x="632" y="122" width="46" height="10"/>
+    <rect x="632" y="141" width="46" height="10"/>
+
+    <!-- N -->
+    <rect x="728" y="88" width="12" height="84"/>
+    <rect x="776" y="88" width="12" height="84"/>
+    <polygon points="740,88 752,88 788,172 776,172"/>
+
+    <!-- T -->
+    <rect x="828" y="88" width="56" height="12"/>
+    <rect x="849" y="88" width="14" height="84"/>
+
+  </g>
+</svg>

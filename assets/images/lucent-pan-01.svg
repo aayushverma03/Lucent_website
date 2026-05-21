@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-label="Abstract football training pitch visual">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f241a"/>
+      <stop offset="0.45" stop-color="#1d5e37"/>
+      <stop offset="1" stop-color="#05080a"/>
+    </linearGradient>
+    <radialGradient id="r" cx="68%" cy="32%" r="58%">
+      <stop offset="0" stop-color="#97fff0" stop-opacity="0.42"/>
+      <stop offset="0.42" stop-color="#97fff0" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 0.12"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" fill="url(#g)"/>
+  <rect width="1200" height="760" fill="url(#r)"/>
+  <path d="M-80 648 C168 540 318 520 548 430 C762 347 936 238 1280 190" fill="none" stroke="#fbfaf7" stroke-opacity="0.22" stroke-width="12"/>
+  <path d="M-80 694 C190 586 362 560 598 462 C804 376 950 298 1280 236" fill="none" stroke="#97fff0" stroke-opacity="0.16" stroke-width="5"/>
+  <g opacity="0.22">
+    <circle cx="830" cy="316" r="42" fill="#fbfaf7"/>
+    <rect x="620" y="450" width="280" height="12" rx="6" fill="#fbfaf7"/>
+    <rect x="690" y="490" width="220" height="10" rx="5" fill="#fbfaf7"/>
+  </g>
+  <rect width="1200" height="760" filter="url(#grain)" opacity="0.5"/>
+</svg>
