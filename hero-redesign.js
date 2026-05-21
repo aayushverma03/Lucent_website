@@ -81,15 +81,6 @@
     section.style.setProperty("--caption-opacity", captionP.toFixed(3));
     section.style.setProperty("--caption-y", `${lerp(24, 0, captionP)}px`);
 
-    // Pill nav transitions from center to ~48px from top during last 30% of hero.
-    // Use global scrollY so the pill keeps its position past the hero.
-    const heroEnd = section.offsetTop + section.offsetHeight - vh;
-    const transitionStart = heroEnd * 0.7;
-    const transitionRange = Math.max(1, heroEnd - transitionStart);
-    const pillP = clamp((window.scrollY - transitionStart) / transitionRange, 0, 1);
-    const pillTopPx = lerp(vh / 2, 48, pillP);
-    document.documentElement.style.setProperty("--pill-top", `${pillTopPx}px`);
-
     renderMosaic(vh);
   };
 
@@ -99,6 +90,14 @@
       requestAnimationFrame(render);
     }
   };
+
+  // Scroll-activated nav background
+  const topNav = document.querySelector(".top-nav");
+  if (topNav) {
+    const updateNav = () => topNav.classList.toggle("is-scrolled", window.scrollY > 40);
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+  }
 
   render();
   window.addEventListener("scroll", onScroll, { passive: true });
