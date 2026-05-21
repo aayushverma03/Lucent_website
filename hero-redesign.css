@@ -7,7 +7,7 @@
 
   position: relative !important;
   min-height: 100svh !important;
-  padding-bottom: 38vh !important;
+  padding-bottom: 0 !important;
   background: #050406 !important;
   overflow: visible !important;
   isolation: isolate !important;
