@@ -7,7 +7,7 @@
 
   position: relative !important;
   min-height: 100svh !important;
-  padding-bottom: 20vh !important;
+  padding-bottom: 38vh !important;
   background: #050406 !important;
   overflow: visible !important;
   isolation: isolate !important;
@@ -363,4 +363,83 @@
 @keyframes scroll-hint-pulse {
   0%, 100% { opacity: 0.6; transform: translateX(-50%) translateY(0); }
   50%       { opacity: 1;   transform: translateX(-50%) translateY(4px); }
+}
+
+/* ── Pillar marquee bars ── */
+.film__pillars {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.film__pillar {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.film__pillars.is-visible .film__pillar--1 { opacity: 1; transform: translateY(0); transition-delay: 0s; }
+.film__pillars.is-visible .film__pillar--2 { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.film__pillars.is-visible .film__pillar--3 { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+
+.film__pillar-track {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  width: max-content;
+  padding: 0.18em 0;
+  will-change: transform;
+}
+
+.film__pillar-track span {
+  font-family: var(--display-font, 'Inter', sans-serif);
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.film__pillar--1 .film__pillar-track span:not(.film__pillar-dot) {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.85);
+}
+.film__pillar--1 .film__pillar-dot { color: rgba(255,255,255,0.3); }
+
+.film__pillar--2 .film__pillar-track span:not(.film__pillar-dot) {
+  color: #fbfaf7;
+}
+.film__pillar--2 .film__pillar-dot { color: rgba(255,255,255,0.25); }
+
+.film__pillar--3 .film__pillar-track span:not(.film__pillar-dot) {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #39ff14;
+}
+.film__pillar--3 .film__pillar-dot { color: rgba(57,255,20,0.3); }
+
+@keyframes marquee-fwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.film__pillar-track--fwd { animation: marquee-fwd 12s linear infinite; }
+.film__pillar-track--rev { animation: marquee-rev 10s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .film__pillar-track--fwd,
+  .film__pillar-track--rev { animation: none; }
 }

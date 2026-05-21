@@ -61,6 +61,37 @@
           </div>
         </div>
 
+        <div class="film__pillars" aria-hidden="true">
+          <div class="film__pillar film__pillar--1">
+            <div class="film__pillar-track film__pillar-track--fwd">
+              <span>TRAIN</span><span class="film__pillar-dot">—</span>
+              <span>TRAIN</span><span class="film__pillar-dot">—</span>
+              <span>TRAIN</span><span class="film__pillar-dot">—</span>
+              <span>TRAIN</span><span class="film__pillar-dot">—</span>
+              <span>TRAIN</span><span class="film__pillar-dot">—</span>
+              <span>TRAIN</span><span class="film__pillar-dot">—</span>
+            </div>
+          </div>
+          <div class="film__pillar film__pillar--2">
+            <div class="film__pillar-track film__pillar-track--rev">
+              <span>BUILD</span><span class="film__pillar-dot">—</span>
+              <span>BUILD</span><span class="film__pillar-dot">—</span>
+              <span>BUILD</span><span class="film__pillar-dot">—</span>
+              <span>BUILD</span><span class="film__pillar-dot">—</span>
+              <span>BUILD</span><span class="film__pillar-dot">—</span>
+              <span>BUILD</span><span class="film__pillar-dot">—</span>
+            </div>
+          </div>
+          <div class="film__pillar film__pillar--3">
+            <div class="film__pillar-track film__pillar-track--fwd">
+              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
+              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
+              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
+              <span>GET SCOUTED</span><span class="film__pillar-dot">—</span>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <section class="mosaic" aria-label="Lucent video mosaic">
@@ -167,5 +198,24 @@
     <script src="./premium-elements.js" defer></script>
     <script src="./qa-polish.js" defer></script>
     <script src="./hero-redesign.js" defer></script>
+    <script>
+      (() => {
+        const pillars = document.querySelector('.film__pillars');
+        const film = document.querySelector('.film--redesign');
+        if (!pillars || !film) return;
+        let triggered = false;
+        function check() {
+          if (triggered) return;
+          const threshold = film.offsetTop + film.offsetHeight - window.innerHeight * 0.55;
+          if (window.scrollY >= threshold) {
+            pillars.classList.add('is-visible');
+            triggered = true;
+            window.removeEventListener('scroll', check);
+          }
+        }
+        window.addEventListener('scroll', check, { passive: true });
+        check();
+      })();
+    </script>
   </body>
 </html>
