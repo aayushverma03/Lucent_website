@@ -48,48 +48,7 @@
 
   const render = () => {
     ticking = false;
-    const rect = section.getBoundingClientRect();
-    const total = section.offsetHeight - window.innerHeight;
-    const p = total > 0 ? clamp(-rect.top / total, 0, 1) : 0;
-
-    const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const minSide = Math.min(vw, vh);
-
-    let w, h, r;
-    if (p < 0.55) {
-      // Phase 1: full bleed -> rounded rectangle
-      const t = p / 0.55;
-      w = lerp(vw, vw * 0.72, t);
-      h = lerp(vh, vh * 0.68, t);
-      r = lerp(0, 96, t);
-    } else {
-      // Phase 2: rounded rectangle -> circle
-      const t = (p - 0.55) / 0.45;
-      const targetSize = minSide * 0.58;
-      w = lerp(vw * 0.72, targetSize, t);
-      h = lerp(vh * 0.68, targetSize, t);
-      r = lerp(96, targetSize, t);
-    }
-
-    section.style.setProperty("--stage-w", `${w}px`);
-    section.style.setProperty("--stage-h", `${h}px`);
-    section.style.setProperty("--stage-r", `${r}px`);
-
-    // Caption fades in during phase 2
-    const captionP = clamp((p - 0.65) / 0.3, 0, 1);
-    section.style.setProperty("--caption-opacity", captionP.toFixed(3));
-    section.style.setProperty("--caption-y", `${lerp(24, 0, captionP)}px`);
-
-    // Pill nav transitions from center to ~48px from top during last 30% of hero.
-    // Use global scrollY so the pill keeps its position past the hero.
-    const heroEnd = section.offsetTop + section.offsetHeight - vh;
-    const transitionStart = heroEnd * 0.7;
-    const transitionRange = Math.max(1, heroEnd - transitionStart);
-    const pillP = clamp((window.scrollY - transitionStart) / transitionRange, 0, 1);
-    const pillTopPx = lerp(vh / 2, 48, pillP);
-    document.documentElement.style.setProperty("--pill-top", `${pillTopPx}px`);
-
     renderMosaic(vh);
   };
 
@@ -99,6 +58,14 @@
       requestAnimationFrame(render);
     }
   };
+
+  // Scroll-activated nav background
+  const topNav = document.querySelector(".top-nav");
+  if (topNav) {
+    const updateNav = () => topNav.classList.toggle("is-scrolled", window.scrollY > 40);
+    updateNav();
+    window.addEventListener("scroll", updateNav, { passive: true });
+  }
 
   render();
   window.addEventListener("scroll", onScroll, { passive: true });

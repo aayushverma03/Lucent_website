@@ -4,11 +4,9 @@
   --stage-w: 100vw;
   --stage-h: 100svh;
   --stage-r: 0px;
-  --caption-opacity: 0;
-  --caption-y: 24px;
 
   position: relative !important;
-  min-height: 260svh !important;
+  min-height: 100svh !important;
   background: #050406 !important;
   overflow: visible !important;
   isolation: isolate !important;
@@ -62,82 +60,108 @@
   pointer-events: none;
 }
 
-/* Centered pill nav */
-.pill-nav {
+/* Top nav — floating glass bar with edge margins (Palantir style) */
+.top-nav {
   position: fixed;
-  top: var(--pill-top, 50vh);
+  top: 16px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 1200px;
   z-index: 200;
   display: flex;
   align-items: center;
-  gap: clamp(18px, 3vw, 36px);
-  padding: 10px 14px 10px 22px;
-  border-radius: 999px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(246, 247, 244, 0.84));
-  backdrop-filter: blur(22px) saturate(140%);
-  -webkit-backdrop-filter: blur(22px) saturate(140%);
-  border: 1px solid rgba(15, 17, 18, 0.12);
-  box-shadow:
-    0 18px 50px -22px rgba(0, 0, 0, 0.62),
-    0 4px 14px -6px rgba(15, 17, 18, 0.18),
-    0 0 0 1px rgba(255, 255, 255, 0.72) inset,
-    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 clamp(20px, 3vw, 32px);
+  background: rgba(10, 12, 16, 0.52);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
   font-family: var(--body-font);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #111315;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pill-nav__group {
+.top-nav.is-scrolled {
+  background: rgba(10, 12, 16, 0.82);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.52);
+}
+
+.top-nav__brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.top-nav__logo {
+  display: block;
+  width: clamp(110px, 11vw, 155px);
+  height: auto;
+  filter: invert(1) hue-rotate(180deg) saturate(6);
+}
+
+.top-nav__links {
   display: flex;
   align-items: center;
-  gap: clamp(14px, 2vw, 28px);
+  gap: clamp(24px, 2.6vw, 40px);
 }
 
-.pill-nav__group a {
-  color: rgba(15, 17, 18, 0.72);
+.top-nav__links a {
+  color: rgba(251, 250, 247, 0.55);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
   white-space: nowrap;
   transition: color 0.2s ease;
 }
 
-.pill-nav__group a:hover {
-  color: #111315;
+.top-nav__links a:hover {
+  color: rgba(251, 250, 247, 0.95);
 }
 
-.pill-nav__brand {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4px 12px;
-  border-left: 1px solid rgba(15, 17, 18, 0.14);
-  border-right: 1px solid rgba(15, 17, 18, 0.14);
-}
-
-.pill-nav__logo {
-  display: block;
-  width: clamp(26px, 2.6vw, 34px);
-  height: auto;
-}
-
-.pill-nav__cta {
-  padding: 9px 18px;
+.top-nav__cta {
+  padding: 8px 20px;
   border-radius: 999px;
   background: #5cff1f;
   color: #070907 !important;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 10px 24px -10px rgba(92, 255, 31, 0.72);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 0 20px -4px rgba(92, 255, 31, 0.55);
 }
 
-.pill-nav__cta:hover {
+.top-nav__cta:hover {
   transform: translateY(-1px);
   background: #74ff3d;
-  box-shadow: 0 14px 28px -10px rgba(92, 255, 31, 0.82);
+  box-shadow: 0 0 28px -4px rgba(92, 255, 31, 0.75);
+}
+
+/* Large centered hero tagline — Palantir style */
+.film__hero-tagline {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.film__hero-tagline p {
+  margin: 0;
+  text-align: center;
+  font-family: var(--body-font, sans-serif);
+  font-size: clamp(2.2rem, 5vw, 5.2rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  white-space: nowrap;
+  color: #fff;
+  text-shadow:
+    0 2px 40px rgba(0, 0, 0, 0.5),
+    0 0 120px rgba(92, 255, 31, 0.08);
 }
 
 /* Caption that fades in once stage has shrunk */
@@ -178,40 +202,23 @@
   }
 }
 
-/* Mobile: simpler nav, vertical stack on very small */
-@media (max-width: 640px) {
-  .pill-nav {
+/* Mobile nav */
+@media (max-width: 680px) {
+  .top-nav {
+    top: 12px;
+    width: calc(100% - 28px);
+    padding: 0 16px;
+    height: 48px;
+  }
+  .top-nav__links {
     gap: 12px;
-    padding: 8px 12px;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
   }
-  .pill-nav__brand {
-    padding: 3px 8px;
-  }
-  .pill-nav__logo {
-    width: 28px;
-  }
-  .pill-nav__group {
-    gap: 10px;
-  }
-}
-
-@media (max-width: 520px) {
-  .pill-nav {
-    gap: 10px;
-    padding: 8px 10px;
-    max-width: calc(100vw - 22px);
-  }
-  .pill-nav__group--left {
+  .top-nav__links a:not(.top-nav__cta) {
     display: none;
   }
-  .pill-nav__brand {
-    border-left: 0;
-    padding-left: 4px;
-  }
-  .pill-nav__logo {
-    width: 30px;
+  .film__hero-tagline p {
+    font-size: clamp(1.4rem, 6.5vw, 2.2rem);
+    white-space: nowrap;
   }
 }
 
@@ -322,4 +329,37 @@
     --headline-a-y: 0;
     min-height: 100svh;
   }
+}
+
+/* Scroll hint */
+.film__scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  animation: scroll-hint-pulse 2s ease-in-out infinite;
+  z-index: 10;
+}
+
+.film__scroll-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--ui-font, sans-serif);
+}
+
+.film__scroll-arrow {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+@keyframes scroll-hint-pulse {
+  0%, 100% { opacity: 0.6; transform: translateX(-50%) translateY(0); }
+  50%       { opacity: 1;   transform: translateX(-50%) translateY(4px); }
 }
