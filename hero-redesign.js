@@ -93,4 +93,91 @@
     );
     io.observe(mosaic);
   }
+
+  // Auto-advance the "How It Works" journey tiles.
+  // - Starts only when the section enters the viewport (resets to first card on re-entry).
+  // - 1 second between slides.
+  // - Seamless infinite loop: first few tiles are cloned at the end; scroll snaps back
+  //   to 0 invisibly once we cross the original set.
+  const journeyTrack = document.querySelector(".journey-track");
+  if (journeyTrack && "IntersectionObserver" in window) {
+    const section = journeyTrack.closest(".journey-section") || journeyTrack;
+    const originals = Array.from(journeyTrack.querySelectorAll(".jtile"));
+    const clonesNeeded = Math.min(originals.length, 4);
+    for (let i = 0; i < clonesNeeded; i++) {
+      const c = originals[i].cloneNode(true);
+      c.setAttribute("aria-hidden", "true");
+      c.classList.add("jtile--clone");
+      journeyTrack.appendChild(c);
+    }
+
+    let intervalId = null;
+    let index = 0;
+    let paused = false;
+    let pauseTimer = null;
+
+    const stepSize = () => {
+      const first = journeyTrack.querySelector(".jtile");
+      if (!first) return 0;
+      const gap = parseFloat(getComputedStyle(journeyTrack).gap) || 0;
+      return first.offsetWidth + gap;
+    };
+
+    const snapTo = (left) => {
+      journeyTrack.style.scrollBehavior = "auto";
+      journeyTrack.scrollLeft = left;
+      // force layout flush, then restore smooth
+      void journeyTrack.offsetWidth;
+      journeyTrack.style.scrollBehavior = "smooth";
+    };
+
+    const advance = () => {
+      if (paused) return;
+      const step = stepSize();
+      if (!step) return;
+      index += 1;
+      journeyTrack.scrollTo({ left: index * step, behavior: "smooth" });
+      // Once we've scrolled into the clones, wait for the smooth scroll to finish,
+      // then teleport back to the matching position at the start.
+      if (index >= originals.length) {
+        setTimeout(() => {
+          snapTo(0);
+          index = 0;
+        }, 700);
+      }
+    };
+
+    const start = () => {
+      if (intervalId) return;
+      snapTo(0);
+      index = 0;
+      intervalId = setInterval(advance, 1000);
+    };
+
+    const stop = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    const pauseFor = (ms) => {
+      paused = true;
+      clearTimeout(pauseTimer);
+      pauseTimer = setTimeout(() => { paused = false; }, ms);
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) start();
+          else stop();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(section);
+
+    // Pause briefly on user interaction so they can read what they grabbed.
+    journeyTrack.addEventListener("pointerdown", () => pauseFor(3500), { passive: true });
+    journeyTrack.addEventListener("wheel", () => pauseFor(3500), { passive: true });
+  }
 })();
