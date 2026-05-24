@@ -118,8 +118,14 @@
       });
     };
 
+    let depthResizeTimer;
+    const applyDepthDebounced = () => {
+      clearTimeout(depthResizeTimer);
+      depthResizeTimer = setTimeout(applyDepth, 100);
+    };
+
     journeyTrack.addEventListener("scroll", applyDepth, { passive: true });
-    window.addEventListener("resize", applyDepth, { passive: true });
+    window.addEventListener("resize", applyDepthDebounced, { passive: true });
     applyDepth();
   }
 })();

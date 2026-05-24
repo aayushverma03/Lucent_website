@@ -123,6 +123,9 @@
 }
 
 .top-nav__cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 8px 20px;
   border-radius: 999px;
   background: #5cff1f;
@@ -158,7 +161,6 @@
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.025em;
-  white-space: nowrap;
   color: #fff;
   text-shadow:
     0 2px 40px rgba(0, 0, 0, 0.5),
@@ -219,7 +221,6 @@
   }
   .film__hero-tagline p {
     font-size: clamp(1.4rem, 6.5vw, 2.2rem);
-    white-space: nowrap;
   }
 }
 

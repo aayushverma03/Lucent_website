@@ -86,7 +86,7 @@ function setupActiveNavigation() {
 
   update();
   window.addEventListener("scroll", update, { passive: true });
-  window.addEventListener("resize", update);
+  window.addEventListener("resize", update, { passive: true });
 }
 
 function setupHamburger() {
@@ -354,7 +354,7 @@ function updateStories() {
 }
 
 window.addEventListener("scroll", updateStories, { passive: true });
-window.addEventListener("resize", updateStories);
+window.addEventListener("resize", updateStories, { passive: true });
 prefersReducedMotion.addEventListener("change", () => {
   if (prefersReducedMotion.matches) revealItems.forEach((item) => item.classList.add("is-visible"));
   if (filmVideo && film) {

@@ -896,7 +896,7 @@ body.lucent-theme .jtile--cta .jtile__title {
 /* Journey draggable scroll thumb */
 body.lucent-theme .journey-slider {
   width: min(280px, 44vw);
-  height: 20px;
+  height: 44px;
   margin: clamp(24px, 3.5vh, 40px) auto 0;
   position: relative;
   display: flex;
@@ -1584,8 +1584,8 @@ body.lucent-theme .top-nav__hamburger {
   justify-content: center;
   flex-direction: column;
   gap: 5px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   padding: 8px;
   border: 1px solid var(--ap-b2);
   border-radius: 10px;
@@ -1748,7 +1748,7 @@ body.lucent-theme .story--scouted .story-steps--scouted {
     gap: 32px;
   }
 }
-@media (max-width: 860px) {
+@media (max-width: 895px) {
   body.lucent-theme .story--scouted .scouted {
     display: block;
   }
@@ -1942,5 +1942,123 @@ body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth
   }
   body.lucent-theme .journey-section__title {
     font-size: clamp(2rem, 9vw, 2.8rem) !important;
+  }
+}
+
+/* ── O. Skills section: full-screen layout matching desktop ────── */
+/*
+ * qa-polish.css collapses story__sticky to position:relative + auto height
+ * and story__content to min-height:auto on mobile, which causes skills-stage
+ * (position:absolute;inset:0) to shrink to the height of the intro text only.
+ * Restore sticky/full-screen behavior for the skills section so it renders
+ * identically to desktop: full-viewport sticky panel, intro text overlaid at
+ * the top-left, clip-frame centered, drill-queue floating at the bottom.
+ */
+@media (max-width: 860px) {
+  body.lucent-theme .story--skills .story__sticky {
+    position: sticky !important;
+    min-height: 100svh !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  body.lucent-theme .story--skills .story__content {
+    min-height: 100svh !important;
+  }
+
+  body.lucent-theme .story--skills .story__intro {
+    position: absolute !important;
+    top: clamp(72px, 9svh, 108px) !important;
+    left: 0 !important;
+    max-width: min(360px, 86vw) !important;
+    padding-top: 0 !important;
+  }
+
+  body.lucent-theme .story--skills .skills-stage {
+    position: absolute !important;
+    inset: 0 !important;
+    width: auto !important;
+    min-height: auto !important;
+    margin-top: 0 !important;
+  }
+
+  /* Widen drill-queue: 22vw collapses to the 250px floor on phone, which
+     is too narrow. Fill available width instead. */
+  body.lucent-theme .drill-queue {
+    width: min(320px, calc(100% - 32px)) !important;
+  }
+
+  /*
+   * Skills — give story__sticky an explicit 100svh height so the
+   * absolutely-positioned clip-frame and drill-queue have a proper
+   * containing block. qa-polish sets height:auto which collapses the
+   * box to 0; adding height:100svh restores it without re-enabling
+   * the scroll-scrub animation.
+   */
+  body.lucent-theme .story--skills .story__sticky {
+    height: 100svh !important;
+  }
+}
+
+/*
+ * Trials section — replace absolute layout with vertical flex.
+ * apple-redesign's 895px rule forces scouted__copy and product-shell
+ * to position:absolute inside a story__sticky that qa-polish has
+ * collapsed to height:auto + overflow:hidden. The containing block
+ * ends up only ~164px tall and clips both elements entirely.
+ * Switching to flow (flex column) lets the section size to its content.
+ */
+@media (max-width: 895px) {
+  body.lucent-theme .story--scouted .story__sticky {
+    position: relative !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: hidden !important;
+    padding: 80px 0 88px !important;
+  }
+
+  body.lucent-theme .story--scouted .scouted {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    min-height: 0 !important;
+  }
+
+  body.lucent-theme .story--scouted .scouted__copy {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    max-width: 100% !important;
+    padding-top: 0 !important;
+  }
+
+  body.lucent-theme .story--scouted .product-shell {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    min-height: clamp(460px, 56svh, 620px) !important;
+    margin-top: 0 !important;
+    transform: none !important;
+  }
+
+  body.lucent-theme .story--scouted .story-steps--scouted {
+    position: relative !important;
+    bottom: auto !important;
+    margin-top: 8px !important;
+  }
+}
+
+/*
+ * Journey tiles — reduce the 340px hard floor on phones ≤480px
+ * so each tile fits within the screen without showing only a sliver
+ * of the next card.
+ */
+@media (max-width: 480px) {
+  body.lucent-theme .jtile {
+    flex: 0 0 min(84vw, 330px) !important;
+    height: clamp(360px, 54svh, 500px) !important;
   }
 }

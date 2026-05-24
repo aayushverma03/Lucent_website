@@ -3,12 +3,17 @@ const premiumMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
 function setupLenisSmoothScroll() {
   if (premiumMotionQuery.matches || typeof window.Lenis !== "function") return;
 
+  // On touch-only devices (phones/tablets) native momentum scroll is better:
+  // Lenis intercepts touch events, fights the browser chrome show/hide, and
+  // breaks position:sticky sections on iOS Safari. Desktop-only wheel smooth.
+  const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+  if (isTouch) return;
+
   const lenis = new window.Lenis({
     duration: 1.18,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     smoothWheel: true,
     wheelMultiplier: 0.86,
-    touchMultiplier: 1.1,
   });
 
   function raf(time) {
