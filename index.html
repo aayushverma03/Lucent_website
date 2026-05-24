@@ -7,17 +7,20 @@
     <meta name="theme-color" content="#05070a" />
     <title>Lucent — Record. Train. Get Scouted.</title>
     <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
     <link rel="preload" as="image" href="./assets/images/hero-athlete.webp" />
     <link rel="preload" as="image" href="./assets/images/opening-poster.webp" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./final-polish.css" />
     <link rel="stylesheet" href="./daylight-motion.css?v=green-logo" />
-    <link rel="stylesheet" href="./lucent-overrides.css" />
     <link rel="stylesheet" href="./premium-elements.css" />
     <link rel="stylesheet" href="./qa-polish.css" />
     <link rel="stylesheet" href="./lucent-theme-visibility.css" />
     <link rel="stylesheet" href="./lucent-final-overrides.css" />
     <link rel="stylesheet" href="./hero-redesign.css?v=green-logo" />
+    <link rel="stylesheet" href="./apple-redesign.css" />
   </head>
   <body class="lucent-theme">
     <div class="grain" aria-hidden="true"></div>
@@ -26,31 +29,36 @@
       <a class="top-nav__brand" href="#top" aria-label="Lucent home">
         <img class="top-nav__logo" src="./assets/lucent-logo-lockup.png" alt="Lucent" />
       </a>
-      <nav class="top-nav__links" aria-label="Primary">
+      <nav class="top-nav__links" id="top-nav-links" aria-label="Primary">
         <a href="#how">How it works</a>
         <a href="#skills">Skill engine</a>
         <a href="#scouted">Trials</a>
         <a class="top-nav__cta" href="#elevate">Join</a>
       </nav>
+      <button class="top-nav__hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="top-nav-links">
+        <span></span><span></span><span></span>
+      </button>
     </header>
 
     <main>
       <section class="film film--redesign" id="top" aria-label="Opening football film">
         <div class="film__sticky" data-hero-sticky>
           <div class="film__stage" data-hero-stage>
-            <video class="film__stage-video" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp">
+            <video class="film__stage-video" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
               <source src="./assets/video/reel.mp4" type="video/mp4" />
             </video>
             <div class="film__stage-veil" aria-hidden="true"></div>
           </div>
 
-          <div class="film__hero-tagline" aria-hidden="false">
-            <p>Record. Train. Get Scouted.</p>
+          <div class="film__hero-tagline">
+            <h1>Record. Train. Get Scouted.</h1>
           </div>
 
           <div class="film__caption" data-hero-caption>
             <p>Lucent turns every training rep into proof. Film the drill, read the signal, and put a scout-ready pack in front of clubs that are recruiting now.</p>
           </div>
+
+          <a class="button hero__cta" href="#elevate">Join the waitlist</a>
 
           <div class="film__scroll-hint" aria-hidden="true">
             <span class="film__scroll-text">scroll for more</span>
@@ -105,24 +113,19 @@
             </div>
           </div>
 
-          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-apply-trials.jpg')">
-            <div class="jtile__overlay" aria-hidden="true"></div>
-            <span class="jtile__num">05</span>
-            <div class="jtile__body">
-              <h3 class="jtile__title">Apply to Trials</h3>
-              <p class="jtile__desc">One tap sends your evidence pack to clubs that match your profile.</p>
-            </div>
-          </div>
-
           <div class="jtile jtile--cta" role="listitem" style="background-image:url('./assets/images/tile-get-scouted.jpg')">
             <div class="jtile__overlay" aria-hidden="true"></div>
-            <span class="jtile__num">06</span>
+            <span class="jtile__num">05</span>
             <div class="jtile__body">
               <h3 class="jtile__title">Get Scouted</h3>
               <p class="jtile__desc">When your numbers match a brief, clubs find you directly.</p>
             </div>
           </div>
 
+        </div>
+        <div class="journey-slider" aria-hidden="true">
+          <div class="journey-slider__track"></div>
+          <div class="journey-slider__thumb"></div>
         </div>
       </section>
 
@@ -131,28 +134,81 @@
           <div class="story__content shell">
             <div class="story__intro" data-reveal><p class="eyebrow">Skill engine</p><h2 data-skill-title>See the player clearly.</h2><p class="lede" data-skill-copy>Read the football actions that matter: touch, movement, speed, and finishing.</p></div>
             <div class="skills-stage" aria-label="Player skill analysis scene">
-              <div class="skills-stage__halo skills-stage__halo--outer" aria-hidden="true"></div><div class="skills-stage__halo skills-stage__halo--inner" aria-hidden="true"></div><div class="skills-stage__scan" aria-hidden="true"></div>
-              <div class="skills-player">
-                <img class="skills-player__image" src="./assets/images/hero-athlete.webp" alt="Footballer standing upright and facing forward" loading="lazy" decoding="async" />
-                <svg class="pose-map" viewBox="0 0 100 210" aria-hidden="true" preserveAspectRatio="none"><g class="pose-map__lines"><line x1="25" y1="53" x2="75" y2="53" /><line x1="25" y1="53" x2="35" y2="101" /><line x1="75" y1="53" x2="65" y2="101" /><line x1="35" y1="101" x2="65" y2="101" /><line x1="35" y1="101" x2="30" y2="158" /><line x1="65" y1="101" x2="70" y2="158" /><line x1="30" y1="158" x2="25" y2="195" /><line x1="70" y1="158" x2="75" y2="195" /></g><g class="pose-map__points"><circle cx="25" cy="53" r="1.8" /><circle cx="75" cy="53" r="1.8" /><circle cx="35" cy="101" r="1.8" /><circle cx="65" cy="101" r="1.8" /><circle cx="30" cy="158" r="1.8" /><circle cx="70" cy="158" r="1.8" /><circle cx="25" cy="195" r="1.8" /><circle cx="75" cy="195" r="1.8" /></g></svg>
+              <div class="clip-frame" aria-hidden="true">
+                <div class="clip-rec"><span></span>REC</div>
+                <img class="clip-athlete" src="./assets/images/hero-athlete.webp" alt="" loading="lazy" decoding="async" />
+                <div class="clip-scan-line"></div>
               </div>
-              <div class="readout-panel" aria-label="Lucent player readout panel"><span>Lucent Readout</span><strong>Scout readiness</strong><div class="readout-panel__score">87%</div><div class="readout-panel__rows"><em><b>Touch</b><i>91</i></em><em><b>Movement</b><i>84</i></em><em><b>Finishing</b><i>88</i></em></div><p>Next drill: weak-foot finishing under pressure.</p></div>
-              <div class="metric metric--touch"><span>First touch</span><strong>91%</strong></div><div class="metric metric--shot"><span>Shot speed</span><strong>104 km/h</strong></div><div class="metric metric--weak-foot"><span>Weak foot</span><strong>82%</strong></div>
-              <div class="pose-label pose-label--shoulders">Body shape</div><div class="pose-label pose-label--hips">Hip rotation</div><div class="pose-label pose-label--knees">Change of direction</div>
-              <div class="analysis-chip analysis-chip--control"><span>Ball control</span><strong>94%</strong></div><div class="analysis-chip analysis-chip--grade"><span>Drill grade</span><strong>A−</strong></div>
-              <aside class="story-card story-card--focus"><span>Training focus</span><strong>Sharper final action</strong><p>Improve touch before shot and weak-foot finish.</p></aside><aside class="story-card story-card--next"><span>Next drill</span><strong>Finishing ladder</strong></aside>
+              <div class="skill-cards" aria-hidden="true">
+                <div class="skill-card skill-card--foundational">
+                  <p class="skill-card__cat">Foundational</p>
+                  <div class="skill-bars">
+                    <div class="skill-bar"><span>Strength</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:72%"></div></div><em>72</em></div>
+                    <div class="skill-bar"><span>Speed</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:85%"></div></div><em>85</em></div>
+                    <div class="skill-bar"><span>Agility</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:79%"></div></div><em>79</em></div>
+                    <div class="skill-bar"><span>Stamina</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:68%"></div></div><em>68</em></div>
+                    <div class="skill-bar"><span>Explosiveness</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:82%"></div></div><em>82</em></div>
+                  </div>
+                </div>
+                <div class="skill-card skill-card--technical">
+                  <p class="skill-card__cat">Technical</p>
+                  <div class="skill-bars">
+                    <div class="skill-bar"><span>First touch</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:91%"></div></div><em>91</em></div>
+                    <div class="skill-bar"><span>Ball retention</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:83%"></div></div><em>83</em></div>
+                    <div class="skill-bar"><span>Pose quality</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:76%"></div></div><em>76</em></div>
+                    <div class="skill-bar"><span>Shooting</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:78%"></div></div><em>78</em></div>
+                    <div class="skill-bar"><span>Weak foot</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:58%"></div></div><em>58</em></div>
+                  </div>
+                </div>
+                <div class="skill-card skill-card--cognitive">
+                  <p class="skill-card__cat">Cognitive</p>
+                  <div class="skill-bars">
+                    <div class="skill-bar"><span>Spatial awareness</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:74%"></div></div><em>74</em></div>
+                    <div class="skill-bar"><span>Reaction speed</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:77%"></div></div><em>77</em></div>
+                    <div class="skill-bar"><span>Decision making</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:83%"></div></div><em>83</em></div>
+                    <div class="skill-bar"><span>Off-ball movement</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:69%"></div></div><em>69</em></div>
+                  </div>
+                </div>
+              </div>
+              <div class="rank-card" aria-hidden="true">
+                <p class="rank-card__label">Overall rank</p>
+                <p class="rank-card__number">#847</p>
+                <p class="rank-card__sub">of 3,200 U19 wingers</p>
+                <div class="rank-card__divider"></div>
+                <div class="rank-card__rows">
+                  <div class="rank-row"><span>Technical</span><em>Top 18%</em></div>
+                  <div class="rank-row"><span>Foundational</span><em>Top 31%</em></div>
+                  <div class="rank-row"><span>Cognitive</span><em>Top 42%</em></div>
+                </div>
+              </div>
+
+              <div class="drill-queue" aria-hidden="true">
+                <div class="drill-queue__header"><span class="drill-queue__bolt">&#9889;</span>Priority drills</div>
+                <div class="drill-item">
+                  <div class="drill-item__top"><span class="drill-item__name">Weak-foot Finishing</span><span class="drill-item__dur">12m</span></div>
+                  <div class="drill-item__meta"><span class="drill-item__cat">Technical</span><span class="drill-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+                </div>
+                <div class="drill-item">
+                  <div class="drill-item__top"><span class="drill-item__name">First Touch Escape</span><span class="drill-item__dur">8m</span></div>
+                  <div class="drill-item__meta"><span class="drill-item__cat">Technical</span><span class="drill-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+                </div>
+                <div class="drill-item">
+                  <div class="drill-item__top"><span class="drill-item__name">20m Burst Ladder</span><span class="drill-item__dur">6m</span></div>
+                  <div class="drill-item__meta"><span class="drill-item__cat">Foundational</span><span class="drill-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="story-steps shell" aria-hidden="true"><span class="is-active">Train</span><span>Scan</span><span>Measure</span><span>Improve</span></div>
+          <div class="story-steps shell" aria-hidden="true"><span class="is-active">Train</span><span>Scan</span><span>Benchmark</span><span>Improve</span></div>
         </div>
       </section>
 
       <section class="story story--scouted" id="scouted" data-scout-step="0">
         <div class="story__sticky">
-          <video class="scout-bg-video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp"><source src="./assets/video/opening-tracked.webm" type="video/webm" /><source src="./assets/video/opening-tracked.mp4" type="video/mp4" /></video>
+          <video class="scout-bg-video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source data-src="./assets/video/opening-tracked.webm" type="video/webm" /><source data-src="./assets/video/opening-tracked.mp4" type="video/mp4" /></video>
           <div class="scout-bg-overlay" aria-hidden="true"></div>
           <div class="scouted shell">
-            <div class="scouted__copy" data-reveal><p class="eyebrow">Trials</p><h2 data-scout-title>Find the right trial.</h2><p class="lede" data-scout-copy>Match your position, clips, and scores to live club needs.</p></div>
+            <div class="scouted__copy" data-reveal><p class="eyebrow">Trials</p><h2 data-scout-title>See which clubs want you.</h2><p class="lede" data-scout-copy>Browse live opportunities from clubs recruiting for your exact role.</p></div>
             <div class="product-shell" aria-label="Scroll-driven scouting product demonstration">
               <div class="product-shell__chrome"><span></span><span></span><span></span><strong>Lucent trial board</strong></div>
               <div class="screen screen--board is-active">
@@ -178,9 +234,21 @@
       </section>
 
       <section class="elevate" id="elevate" aria-label="Step into Lucent">
-        <video class="elevate__video" aria-hidden="true" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp"><source src="./assets/video/match%20vide%20(1).mp4" type="video/mp4" /></video>
+        <video class="elevate__video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source data-src="./assets/video/match%20vide%20(1).mp4" type="video/mp4" /></video>
         <div class="elevate__veil" aria-hidden="true"></div>
-        <div class="shell elevate__inner" data-reveal><p class="eyebrow">Step into Lucent</p><h2>Train. Prove. Get scouted.</h2><p>Build the football evidence clubs can act on.</p><button class="button elevate__button" type="button">Join the waitlist</button></div>
+        <div class="shell elevate__inner" data-reveal>
+          <p class="eyebrow">Join Lucent</p>
+          <h2>Record. Train. Get Scouted.</h2>
+          <p>Build the football evidence clubs can act on. Be first when we launch.</p>
+          <form class="waitlist-form" id="waitlist-form" novalidate>
+            <label class="waitlist-form__label" for="waitlist-email">Your email</label>
+            <div class="waitlist-form__row">
+              <input class="waitlist-form__input" id="waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+              <button class="button elevate__button" type="submit">Join the waitlist</button>
+            </div>
+            <p class="waitlist-form__note" aria-live="polite" role="status"></p>
+          </form>
+        </div>
       </section>
     </main>
     <script src="./script.js?v=minimal-loader-2" defer></script>
@@ -207,9 +275,92 @@
           checkCards();
         }
 
-        // Drag-to-scroll on journey track
+        // Journey draggable scroll thumb
         const track = document.querySelector('.journey-track');
-        if (track) {
+        const slider = document.querySelector('.journey-slider');
+        const thumb = document.querySelector('.journey-slider__thumb');
+        if (track && slider && thumb) {
+          const scrollMax = () => track.scrollWidth - track.clientWidth;
+          const thumbRange = () => slider.clientWidth - thumb.offsetWidth;
+
+          const syncThumb = () => {
+            const pct = scrollMax() > 0 ? track.scrollLeft / scrollMax() : 0;
+            thumb.style.left = (pct * thumbRange()) + 'px';
+          };
+
+          track.addEventListener('scroll', syncThumb, { passive: true });
+          syncThumb();
+
+          let dragging = false, dragStartX, dragStartScroll, rafId;
+
+          thumb.addEventListener('mousedown', e => {
+            dragging = true;
+            dragStartX = e.clientX;
+            dragStartScroll = track.scrollLeft;
+            thumb.classList.add('is-dragging');
+            track.style.scrollSnapType = 'none';
+            e.preventDefault();
+          });
+
+          document.addEventListener('mousemove', e => {
+            if (!dragging) return;
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              const dx = e.clientX - dragStartX;
+              const ratio = thumbRange() > 0 ? dx / thumbRange() : 0;
+              const newScroll = Math.max(0, Math.min(dragStartScroll + ratio * scrollMax(), scrollMax()));
+              track.scrollLeft = newScroll;
+              thumb.style.left = (newScroll / scrollMax() * thumbRange()) + 'px';
+            });
+          });
+
+          document.addEventListener('mouseup', () => {
+            if (!dragging) return;
+            dragging = false;
+            thumb.classList.remove('is-dragging');
+            track.style.scrollSnapType = 'x mandatory';
+            cancelAnimationFrame(rafId);
+          });
+
+          thumb.addEventListener('touchstart', e => {
+            dragging = true;
+            dragStartX = e.touches[0].clientX;
+            dragStartScroll = track.scrollLeft;
+            thumb.classList.add('is-dragging');
+            track.style.scrollSnapType = 'none';
+            e.preventDefault();
+          }, { passive: false });
+
+          document.addEventListener('touchmove', e => {
+            if (!dragging) return;
+            cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              const dx = e.touches[0].clientX - dragStartX;
+              const ratio = thumbRange() > 0 ? dx / thumbRange() : 0;
+              const newScroll = Math.max(0, Math.min(dragStartScroll + ratio * scrollMax(), scrollMax()));
+              track.scrollLeft = newScroll;
+              thumb.style.left = (newScroll / scrollMax() * thumbRange()) + 'px';
+            });
+          }, { passive: true });
+
+          document.addEventListener('touchend', () => {
+            if (!dragging) return;
+            dragging = false;
+            thumb.classList.remove('is-dragging');
+            track.style.scrollSnapType = 'x mandatory';
+            cancelAnimationFrame(rafId);
+          });
+
+          slider.addEventListener('click', e => {
+            if (e.target === thumb) return;
+            const rect = slider.getBoundingClientRect();
+            const pct = Math.max(0, Math.min((e.clientX - rect.left - thumb.offsetWidth / 2) / thumbRange(), 1));
+            track.scrollLeft = pct * scrollMax();
+          });
+        }
+
+        // Drag-to-scroll on journey track
+        if (track) { // track already declared above
           let down = false, startX, scrollLeft;
           track.addEventListener('mousedown', e => {
             down = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;

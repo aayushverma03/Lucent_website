@@ -88,7 +88,7 @@ body {
   gap: 4px !important;
   color: rgba(251, 250, 247, 0.62) !important;
   font-size: clamp(0.72rem, 0.88vw, 0.94rem) !important;
-  font-weight: 780 !important;
+  font-weight: 700 !important;
   line-height: 1.04 !important;
 }
 

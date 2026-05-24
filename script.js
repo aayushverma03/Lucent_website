@@ -10,11 +10,6 @@ const skillTitle = document.querySelector("[data-skill-title]");
 const skillCopy = document.querySelector("[data-skill-copy]");
 const scoutTitle = document.querySelector("[data-scout-title]");
 const scoutCopy = document.querySelector("[data-scout-copy]");
-const poseMap = document.querySelector(".pose-map");
-const metrics = [...document.querySelectorAll(".metric")];
-const poseLabels = [...document.querySelectorAll(".pose-label")];
-const analysisChips = [...document.querySelectorAll(".analysis-chip")];
-const storyCards = [...document.querySelectorAll(".story-card")];
 const skillSteps = [...document.querySelectorAll(".story--skills .story-steps span")];
 const scoutSteps = [...document.querySelectorAll(".story--scouted .story-steps span")];
 const screens = [...document.querySelectorAll(".screen")];
@@ -23,44 +18,25 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const skillScenes = [
   ["See the player clearly.", "Start with the athlete, then reveal the movement behind every rep."],
   ["Read the movement.", "Pose analysis exposes alignment, hip rotation, and control before small flaws become habits."],
-  ["Turn reps into evidence.", "Touch quality, shot speed, and weak-foot control become measurable proof of improvement."],
-  ["Know what to train next.", "Every drill makes your profile stronger."],
+  ["See where you rank.", "Every score is benchmarked against players at your level, across your position and age group."],
+  ["Know what to train next.", "Lucent builds a drill plan from your weakest scores and updates it every session."],
 ];
 
 const scoutScenes = [
-  ["Find the right trial.", "Browse open opportunities from clubs looking for players in your role."],
+  ["See which clubs want you.", "Browse live opportunities from clubs recruiting for your exact role."],
   ["Open the best match.", "Select a trial and instantly understand what that club wants to see."],
   ["Follow the brief.", "Lucent turns each trial into a clear checklist of requirements and drills."],
-  ["Upload the proof.", "Complete the drills, attach the evidence, and submit a club-ready package."],
-  ["Get scouted.", "Your verified profile reaches the club with the context they need to act faster."],
+  ["Submit your proof.", "Complete the drills, attach the evidence, and send a club-ready package."],
+  ["Get in front of scouts.", "Your verified profile reaches the recruitment team with full context."],
 ];
 
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
-function injectStyle(id, css) {
-  if (document.querySelector(`[data-style-id="${id}"]`)) return;
-  const style = document.createElement("style");
-  style.setAttribute("data-style-id", id);
-  style.textContent = css;
-  document.head.appendChild(style);
-}
-
-function setupRelatsInspiredHeroContent() {
-  const heroSubline = document.querySelector(".film__copy--brand .film__subline");
-  if (heroSubline) heroSubline.textContent = "Creating the next gen of footballers";
-
-  const heroBrandLockup = document.querySelector(".film__copy--brand .hero-brand-lockup");
-  if (heroBrandLockup) heroBrandLockup.removeAttribute("aria-hidden");
-
-  const playerSignalSection = document.querySelector(".player-signal");
-  playerSignalSection?.remove();
-}
-
 function setupActiveNavigation() {
-  const links = [...document.querySelectorAll(".nav.shell nav a[href^='#']")];
-  const items = links
+  const navLinks = [...document.querySelectorAll(".top-nav__links a[href^='#']")];
+  const items = navLinks
     .map((link) => {
       const id = link.getAttribute("href")?.slice(1);
       const section = id ? document.getElementById(id) : null;
@@ -71,11 +47,11 @@ function setupActiveNavigation() {
   if (!items.length) return;
 
   const setActive = (activeLink) => {
-    links.forEach((link) => link.classList.toggle("is-active", link === activeLink));
+    navLinks.forEach((link) => link.classList.toggle("is-active", link === activeLink));
   };
 
   const update = () => {
-    const anchor = window.innerHeight * 0.38;
+    const anchor = window.innerHeight * 0.42;
     let active = items[0];
     let nearestDistance = Number.POSITIVE_INFINITY;
 
@@ -96,10 +72,54 @@ function setupActiveNavigation() {
     if (active?.link) setActive(active.link);
   };
 
-  links.forEach((link) => link.addEventListener("click", () => setActive(link)));
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href")?.slice(1);
+      const target = targetId ? document.getElementById(targetId) : null;
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: prefersReducedMotion.matches ? "auto" : "smooth", block: "start" });
+      history.replaceState(null, "", `#${targetId}`);
+      setActive(link);
+    });
+  });
+
   update();
   window.addEventListener("scroll", update, { passive: true });
   window.addEventListener("resize", update);
+}
+
+function setupHamburger() {
+  const hamburger = document.querySelector(".top-nav__hamburger");
+  const nav = document.getElementById("top-nav-links");
+  if (!hamburger || !nav) return;
+
+  hamburger.addEventListener("click", () => {
+    const isOpen = hamburger.getAttribute("aria-expanded") === "true";
+    hamburger.setAttribute("aria-expanded", String(!isOpen));
+    hamburger.classList.toggle("is-active", !isOpen);
+    nav.classList.toggle("is-open", !isOpen);
+    document.body.classList.toggle("nav-is-open", !isOpen);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) {
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.classList.remove("is-active");
+      nav.classList.remove("is-open");
+      document.body.classList.remove("nav-is-open");
+      hamburger.focus();
+    }
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.classList.remove("is-active");
+      nav.classList.remove("is-open");
+      document.body.classList.remove("nav-is-open");
+    });
+  });
 }
 
 function setupLaunchSequence() {
@@ -127,6 +147,7 @@ function setupLaunchSequence() {
 
   document.body.classList.add("is-intro-running");
   let launchFinished = false;
+
   const finishLaunch = () => {
     if (launchFinished) return;
     launchFinished = true;
@@ -138,122 +159,57 @@ function setupLaunchSequence() {
   window.setTimeout(finishLaunch, 1650);
 }
 
-function injectScoutedPolish() {
-  injectStyle(
-    "scouted-polish",
-    `
-    .story--scouted .story__sticky {
-      background:
-        radial-gradient(circle at 72% 42%, rgba(151, 255, 240, 0.10), transparent 30%),
-        radial-gradient(circle at 20% 52%, rgba(224, 165, 255, 0.14), transparent 34%),
-        linear-gradient(180deg, #160018 0%, #09000d 100%);
-    }
+function setupVideoLazyLoad() {
+  if (!("IntersectionObserver" in window)) return;
 
-    .story--scouted .story__sticky::after {
-      position: absolute;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      background:
-        linear-gradient(90deg, rgba(9, 0, 13, 0.44) 0%, rgba(9, 0, 13, 0.18) 46%, rgba(9, 0, 13, 0.48) 100%),
-        radial-gradient(circle at 70% 46%, rgba(151, 255, 240, 0.08), transparent 34%);
-      content: "";
-    }
+  const lazyVideos = [...document.querySelectorAll("video[data-lazy-video]")];
+  if (!lazyVideos.length) return;
 
-    .story--scouted .scouted {
-      min-height: 100svh;
-      display: grid;
-      grid-template-columns: minmax(300px, 0.42fr) minmax(560px, 0.58fr);
-      align-items: center;
-      gap: clamp(36px, 6vw, 96px);
-      position: relative;
-      z-index: 4;
-    }
-
-    .story--scouted .scouted__copy {
-      position: relative;
-      top: auto;
-      left: auto;
-      max-width: 430px;
-      padding-top: 14px;
-    }
-
-    .story--scouted .scouted__copy h2 {
-      max-width: 400px;
-      text-shadow: 0 26px 70px rgba(0, 0, 0, 0.72);
-    }
-
-    .story--scouted .scouted__copy .lede {
-      max-width: 390px;
-      color: rgba(251, 250, 247, 0.82);
-    }
-
-    .story--scouted .product-shell {
-      position: relative;
-      top: auto;
-      right: auto;
-      width: 100%;
-      min-height: min(66svh, 650px);
-      transform: none;
-      border-radius: 34px;
-      background:
-        linear-gradient(180deg, rgba(44, 36, 58, 0.68), rgba(15, 9, 24, 0.78)),
-        rgba(12, 8, 20, 0.74);
-      box-shadow:
-        0 46px 120px rgba(0, 0, 0, 0.62),
-        0 0 70px rgba(151, 255, 240, 0.06),
-        inset 0 1px 0 rgba(251, 250, 247, 0.16);
-      backdrop-filter: blur(18px);
-    }
-
-    .story--scouted .screen { padding: clamp(24px, 2.4vw, 30px); }
-    .story--scouted .story-steps--scouted { z-index: 5; bottom: 38px; justify-content: flex-start; }
-
-    @media (max-width: 1080px) {
-      .story--scouted .scouted { grid-template-columns: minmax(250px, 0.38fr) minmax(480px, 0.62fr); gap: 32px; }
-    }
-
-    @media (max-width: 860px) {
-      .story--scouted .scouted { display: block; }
-      .story--scouted .scouted__copy { position: absolute; top: 88px; right: 0; left: 0; max-width: min(100%, 430px); }
-      .story--scouted .product-shell { position: absolute; top: auto; right: 0; bottom: 68px; width: 100%; min-height: min(58svh, 590px); }
-    }
-    `,
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const video = entry.target;
+        video.querySelectorAll("source[data-src]").forEach((source) => {
+          source.src = source.dataset.src;
+        });
+        video.load();
+        video.play().catch(() => {});
+        observer.unobserve(video);
+      });
+    },
+    { rootMargin: "200px 0px 200px 0px" },
   );
+
+  lazyVideos.forEach((v) => observer.observe(v));
 }
 
-function setupScoutedVideoBackground() {
-  const scoutSticky = document.querySelector(".story--scouted .story__sticky");
-  if (!scoutSticky) return;
+function setupWaitlistForm() {
+  const form = document.getElementById("waitlist-form");
+  if (!form) return;
 
-  const backgroundVideo = scoutSticky.querySelector(".scout-bg-video");
-  const backgroundOverlay = scoutSticky.querySelector(".scout-bg-overlay");
-  const scoutContent = scoutSticky.querySelector(".scouted");
-  const scoutStepNav = scoutSticky.querySelector(".story-steps--scouted");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const emailInput = form.querySelector('[type="email"]');
+    const note = form.querySelector(".waitlist-form__note");
+    const email = emailInput?.value?.trim();
 
-  if (backgroundVideo) {
-    backgroundVideo.style.opacity = "0.58";
-    backgroundVideo.style.filter = "saturate(1.02) contrast(1.12) brightness(0.94)";
-    backgroundVideo.style.transform = "scale(1.02)";
-    backgroundVideo.style.zIndex = "0";
-    backgroundVideo.style.mixBlendMode = "normal";
-    backgroundVideo.play?.().catch(() => {});
-  }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      if (note) note.textContent = "Please enter a valid email address.";
+      emailInput?.focus();
+      return;
+    }
 
-  if (backgroundOverlay) {
-    backgroundOverlay.style.zIndex = "1";
-    backgroundOverlay.style.background = [
-      "radial-gradient(circle at 67% 44%, rgba(151, 255, 240, 0.10), transparent 30%)",
-      "linear-gradient(90deg, rgba(9, 0, 13, 0.46) 0%, rgba(9, 0, 13, 0.20) 45%, rgba(9, 0, 13, 0.52) 100%)",
-      "linear-gradient(180deg, rgba(9, 0, 13, 0.18), rgba(9, 0, 13, 0.64))",
-    ].join(", ");
-  }
+    const subject = encodeURIComponent("Lucent waitlist");
+    const body = encodeURIComponent(
+      `Hi Lucent team,\n\nI'd like to join the waitlist.\n\nEmail: ${email}\n\nLooking forward to it!`,
+    );
+    window.location.href = `mailto:hello@lucent.app?subject=${subject}&body=${body}`;
 
-  if (scoutContent) {
-    scoutContent.style.position = "relative";
-    scoutContent.style.zIndex = "4";
-  }
-  if (scoutStepNav) scoutStepNav.style.zIndex = "5";
+    if (note) {
+      note.textContent = "Opening your email client — if nothing happens, email us at hello@lucent.app";
+    }
+  });
 }
 
 function setupFilmFallback() {
@@ -311,49 +267,74 @@ function setScoutStep(step) {
   screens.forEach((screen, index) => screen.classList.toggle("is-active", index === step));
 }
 
-function setVisible(items, amount) {
-  items.forEach((item, index) => {
-    const local = clamp((amount - index * 0.16) / 0.22, 0, 1);
-    item.style.opacity = local.toFixed(3);
-    item.style.transform = `translateY(${(1 - local) * 16}px)`;
-  });
-}
+const clipFrameEl  = document.querySelector(".clip-frame");
+const skillCardsEl = document.querySelector(".skill-cards");
+const scanLineEl   = document.querySelector(".clip-scan-line");
+const rankCardEl   = document.querySelector(".rank-card");
+const drillQueueEl = document.querySelector(".drill-queue");
+let rankAnimated   = false;
 
 function updateSkillStory() {
   if (!skillStory) return;
   if (prefersReducedMotion.matches) {
-    root.style.setProperty("--skill-progress", "1");
-    root.style.setProperty("--skill-scan-y", "0px");
-    root.style.setProperty("--skill-scan-opacity", "0");
-    root.style.setProperty("--skill-player-scale", "1");
-    root.style.setProperty("--skill-player-y", "0px");
-    root.style.setProperty("--skill-orbit", "0deg");
     setSkillStep(3);
-    if (poseMap) poseMap.style.opacity = "1";
-    [...metrics, ...poseLabels, ...analysisChips, ...storyCards].forEach((item) => {
-      item.style.opacity = "1";
-      item.style.transform = "none";
-    });
+    if (skillCardsEl) skillCardsEl.classList.add("is-revealed");
     return;
   }
 
   const progress = sectionProgress(skillStory);
-  const step = Math.min(skillScenes.length - 1, Math.floor(progress * skillScenes.length));
-  const localScan = clamp((progress - 0.18) / 0.24, 0, 1);
-  const poseReveal = clamp((progress - 0.22) / 0.14, 0, 1);
 
-  root.style.setProperty("--skill-progress", progress.toFixed(4));
-  root.style.setProperty("--skill-scan-y", `${-260 + localScan * 520}px`);
-  root.style.setProperty("--skill-scan-opacity", localScan > 0 && localScan < 1 ? "1" : "0");
-  root.style.setProperty("--skill-player-scale", `${1 + progress * 0.05}`);
-  root.style.setProperty("--skill-player-y", `${progress * -26}px`);
-  root.style.setProperty("--skill-orbit", `${progress * 72}deg`);
+  const stepBounds = [0, 0.14, 0.58, 0.76];
+  let step = 0;
+  for (let i = stepBounds.length - 1; i >= 0; i--) {
+    if (progress >= stepBounds[i]) { step = i; break; }
+  }
+  step = Math.min(step, skillScenes.length - 1);
+
+  const localScan = clamp((progress - 0.14) / 0.12, 0, 1);
+
   setSkillStep(step);
-  if (poseMap) poseMap.style.opacity = poseReveal.toFixed(3);
-  setVisible(poseLabels, clamp((progress - 0.24) / 0.18, 0, 1));
-  setVisible(metrics, clamp((progress - 0.46) / 0.18, 0, 1));
-  setVisible(analysisChips, clamp((progress - 0.62) / 0.16, 0, 1));
-  setVisible(storyCards, clamp((progress - 0.76) / 0.12, 0, 1));
+
+  if (scanLineEl) {
+    const pct = (localScan * 100).toFixed(2);
+    const opacity = localScan <= 0 || localScan >= 1
+      ? 0
+      : Math.min(localScan / 0.08, (1 - localScan) / 0.08, 1);
+    scanLineEl.style.top     = pct + "%";
+    scanLineEl.style.opacity = opacity.toFixed(3);
+  }
+
+  if (skillCardsEl) {
+    if (localScan >= 1) {
+      skillCardsEl.classList.add("is-revealed");
+    } else {
+      skillCardsEl.classList.remove("is-revealed");
+    }
+  }
+
+  if (step === 2 && !rankAnimated && rankCardEl) {
+    rankAnimated = true;
+    const numEl = rankCardEl.querySelector(".rank-card__number");
+    if (numEl) {
+      const target = 847, start = target + 153, dur = 900;
+      const t0 = performance.now();
+      (function tick(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        numEl.textContent = "#" + Math.round(start - (start - target) * eased);
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+    }
+  }
+  if (step < 2) rankAnimated = false;
+
+  if (drillQueueEl) {
+    if (step >= 3) {
+      drillQueueEl.classList.add("is-revealed");
+    } else {
+      drillQueueEl.classList.remove("is-revealed");
+    }
+  }
 }
 
 function updateScoutStory() {
@@ -388,11 +369,11 @@ prefersReducedMotion.addEventListener("change", () => {
   updateStories();
 });
 
-setupRelatsInspiredHeroContent();
 setupActiveNavigation();
+setupHamburger();
 setupLaunchSequence();
-injectScoutedPolish();
-setupScoutedVideoBackground();
+setupVideoLazyLoad();
+setupWaitlistForm();
 setupFilmFallback();
 setupRevealObserver();
 updateStories();

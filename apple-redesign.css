@@ -1,0 +1,1946 @@
+/* ================================================================
+   Lucent · Apple-style design layer
+   Loaded last — overrides all visual properties from prior sheets.
+   Scroll logic, positioning, and layout are intentionally untouched.
+   ================================================================ */
+
+/* ── 1. Design tokens ─────────────────────────────────────────── */
+:root {
+  --display-font: 'Inter', ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Brand */
+  --ap-green:        #30d158;
+  --ap-green-dim:    rgba(48, 209, 88, 0.12);
+  --ap-green-glow:   rgba(48, 209, 88, 0.28);
+  --ap-blue:         #64d2ff;
+  --lucent-primary:  var(--ap-green);
+  --lucent-secondary: var(--ap-blue);
+  --premium-green:   var(--ap-green);
+  --premium-cyan:    var(--ap-blue);
+
+  /* Surfaces */
+  --ap-bg:     #04060a;
+  --ap-s1:     rgba(255, 255, 255, 0.04);
+  --ap-s2:     rgba(255, 255, 255, 0.07);
+  --ap-s3:     rgba(255, 255, 255, 0.11);
+
+  /* Text */
+  --ap-t1:  #f5f5f7;
+  --ap-t2:  rgba(245, 245, 247, 0.72);
+  --ap-t3:  rgba(245, 245, 247, 0.44);
+
+  /* Borders */
+  --ap-b1:  rgba(255, 255, 255, 0.07);
+  --ap-b2:  rgba(255, 255, 255, 0.12);
+  --ap-b3:  rgba(255, 255, 255, 0.20);
+
+  /* Radius */
+  --r-sm:  10px;
+  --r-md:  16px;
+  --r-lg:  24px;
+  --r-xl:  32px;
+
+  /* Spacing */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
+  --sp-6:24px; --sp-8:32px; --sp-12:48px; --sp-16:64px;
+}
+
+/* ── 2. Global base ───────────────────────────────────────────── */
+body.lucent-theme {
+  background: var(--ap-bg) !important;
+  color: var(--ap-t1) !important;
+  font-family: var(--display-font) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Kill the body background gradients from premium-elements / final-overrides */
+body.lucent-theme,
+body.premium-motion-ready {
+  background:
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(48, 209, 88, 0.06), transparent),
+    var(--ap-bg) !important;
+}
+
+/* ── 3. Typography reset — ALL headings ───────────────────────── */
+body.lucent-theme h1,
+body.lucent-theme h2,
+body.lucent-theme h3,
+body.lucent-theme h4 {
+  font-family: var(--display-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.028em !important;
+  line-height: 1.05 !important;
+  text-transform: none !important;
+}
+
+/* ── 4. Eyebrows / kickers ────────────────────────────────────── */
+body.lucent-theme .eyebrow,
+body.lucent-theme .journey-section__kicker {
+  font-family: var(--display-font) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-green) !important;
+  margin-bottom: var(--sp-3) !important;
+  line-height: 1.4 !important;
+}
+
+/* ── 5. Navigation ────────────────────────────────────────────── */
+body.lucent-theme .top-nav {
+  background: rgba(4, 6, 10, 0.62) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4) !important;
+}
+body.lucent-theme .top-nav.is-scrolled {
+  background: rgba(4, 6, 10, 0.90) !important;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.56), inset 0 1px 0 rgba(255,255,255,0.07) !important;
+}
+body.lucent-theme .top-nav__links a {
+  font-family: var(--display-font) !important;
+  font-size: 0.77rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-t2) !important;
+  transition: color 0.2s ease !important;
+}
+body.lucent-theme .top-nav__links a:hover {
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .top-nav__cta {
+  background: var(--ap-green) !important;
+  color: #071409 !important;
+  font-family: var(--display-font) !important;
+  font-weight: 600 !important;
+  font-size: 0.77rem !important;
+  letter-spacing: 0.07em !important;
+  box-shadow: 0 0 28px var(--ap-green-glow) !important;
+}
+body.lucent-theme .top-nav__cta:hover {
+  background: #42e569 !important;
+  box-shadow: 0 0 40px rgba(48, 209, 88, 0.42) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* ── 6. Hero film ─────────────────────────────────────────────── */
+body.lucent-theme .film--redesign {
+  background: var(--ap-bg) !important;
+}
+body.lucent-theme .film__stage-video {
+  filter: saturate(0.82) contrast(1.08) brightness(0.72) !important;
+}
+body.lucent-theme .film__stage-veil {
+  background:
+    linear-gradient(180deg,
+      rgba(4, 6, 10, 0.10) 0%,
+      rgba(4, 6, 10, 0.28) 55%,
+      rgba(4, 6, 10, 0.68) 100%) !important;
+}
+body.lucent-theme .film__hero-tagline p,
+body.lucent-theme .film__hero-tagline h1 {
+  margin: 0 !important;
+  font-family: var(--display-font) !important;
+  font-size: clamp(2.8rem, 6.5vw, 7rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 0.96 !important;
+  color: var(--ap-t1) !important;
+  text-shadow: 0 4px 80px rgba(0, 0, 0, 0.55) !important;
+}
+body.lucent-theme .film__caption {
+  color: var(--ap-t2) !important;
+  font-family: var(--display-font) !important;
+  font-size: clamp(0.93rem, 1.15vw, 1.07rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.68 !important;
+  letter-spacing: -0.005em !important;
+  max-width: 540px !important;
+}
+body.lucent-theme .film__scroll-text {
+  font-family: var(--display-font) !important;
+  font-size: 0.6rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
+  color: var(--ap-t3) !important;
+}
+
+/* ── 7. Journey section ───────────────────────────────────────── */
+body.lucent-theme .journey-section {
+  background: var(--ap-bg) !important;
+  padding: clamp(96px, 13vh, 152px) clamp(24px, 6vw, 120px) !important;
+  border-top: 1px solid var(--ap-b1) !important;
+}
+body.lucent-theme .journey-section__header {
+  margin-bottom: clamp(64px, 9vh, 108px) !important;
+}
+body.lucent-theme .journey-section__title {
+  font-size: clamp(2.6rem, 5.2vw, 5.2rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.038em !important;
+  line-height: 1.04 !important;
+  text-transform: none !important;
+  color: var(--ap-t1) !important;
+}
+
+/* Tiles — defer will-change to hover only to avoid unnecessary GPU layers */
+body.lucent-theme .jtile:hover {
+  will-change: transform, opacity;
+}
+body.lucent-theme .jtile__num,
+body.lucent-theme .jtile__title,
+body.lucent-theme .jtile__desc {
+  font-family: var(--display-font) !important;
+}
+
+/* Hero cards */
+body.lucent-theme .hero-card {
+  background: rgba(6, 9, 14, 0.80) !important;
+  border-right: 1px solid var(--ap-b1) !important;
+}
+body.lucent-theme .hero-card:hover {
+  background: rgba(10, 14, 20, 0.92) !important;
+}
+body.lucent-theme .hero-card__num {
+  font-family: var(--display-font) !important;
+  font-size: 0.63rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .hero-card__title {
+  font-family: var(--display-font) !important;
+  font-size: clamp(1.3rem, 2vw, 1.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.025em !important;
+  text-transform: none !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .hero-card--3 .hero-card__title {
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .hero-card__sub {
+  font-size: clamp(0.72rem, 0.85vw, 0.82rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.6 !important;
+  color: var(--ap-t3) !important;
+}
+body.lucent-theme .hero-card:hover .hero-card__arrow {
+  color: var(--ap-green) !important;
+}
+
+/* ── 8. Skill engine section ──────────────────────────────────── */
+body.lucent-theme .story__sticky {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 46%, rgba(48, 209, 88, 0.05), transparent),
+    #060a0e !important;
+}
+body.lucent-theme .story__intro h2,
+body.lucent-theme .scouted__copy h2 {
+  font-size: clamp(2.4rem, 4.8vw, 4.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.038em !important;
+  line-height: 1.05 !important;
+  text-transform: none !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .lede {
+  font-family: var(--display-font) !important;
+  font-size: clamp(0.93rem, 1.25vw, 1.08rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.68 !important;
+  letter-spacing: -0.005em !important;
+  color: var(--ap-t2) !important;
+}
+
+/* Skill scan halo — refined */
+body.lucent-theme .skills-stage__halo--inner {
+  border-color: rgba(48, 209, 88, 0.18) !important;
+}
+body.lucent-theme .skills-stage__scan {
+  background:
+    radial-gradient(circle at center, rgba(48, 209, 88, 0.22), transparent 68%),
+    linear-gradient(180deg, transparent 0%, transparent 46%, rgba(48, 209, 88, 0.72) 50%, transparent 54%, transparent 100%) !important;
+}
+body.lucent-theme .pose-map__lines {
+  stroke: rgba(48, 209, 88, 0.85) !important;
+}
+body.lucent-theme .pose-map__points {
+  fill: var(--ap-green) !important;
+}
+
+/* Metric badges */
+body.lucent-theme .metric,
+body.lucent-theme .analysis-chip {
+  border-radius: var(--r-md) !important;
+  background: linear-gradient(135deg, var(--ap-green), #64d2ff) !important;
+  color: #071409 !important;
+  box-shadow: 0 8px 28px rgba(48, 209, 88, 0.18) !important;
+}
+body.lucent-theme .metric span,
+body.lucent-theme .analysis-chip span {
+  font-family: var(--display-font) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.07em !important;
+  text-transform: uppercase !important;
+  color: #071409 !important;
+}
+body.lucent-theme .metric strong,
+body.lucent-theme .analysis-chip strong {
+  font-family: var(--display-font) !important;
+  font-size: 0.98rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: #071409 !important;
+}
+
+/* Pose labels */
+body.lucent-theme .pose-label {
+  font-family: var(--display-font) !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.01em !important;
+  border-color: var(--ap-b2) !important;
+  border-radius: 999px !important;
+  background: rgba(4, 6, 10, 0.92) !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .pose-label::before {
+  background: rgba(48, 209, 88, 0.6) !important;
+}
+body.lucent-theme .pose-label::after {
+  background: var(--ap-green) !important;
+}
+
+/* Story cards */
+body.lucent-theme .story-card {
+  border-color: var(--ap-b1) !important;
+  border-radius: var(--r-lg) !important;
+  background: rgba(6, 9, 14, 0.90) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28), inset 0 1px 0 var(--ap-b1) !important;
+}
+body.lucent-theme .story-card span {
+  font-family: var(--display-font) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .story-card strong {
+  font-family: var(--display-font) !important;
+  font-size: 0.93rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .story-card p {
+  font-size: 0.83rem !important;
+  font-weight: 400 !important;
+  line-height: 1.58 !important;
+  color: var(--ap-t2) !important;
+}
+
+/* Readout panel */
+body.lucent-theme .readout-panel {
+  border-color: var(--ap-b2) !important;
+  border-radius: var(--r-lg) !important;
+  background: rgba(6, 9, 14, 0.94) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 var(--ap-b1) !important;
+}
+body.lucent-theme .readout-panel span {
+  font-family: var(--display-font) !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .readout-panel strong {
+  font-family: var(--display-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+}
+body.lucent-theme .readout-panel__score {
+  font-family: var(--display-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  color: var(--ap-green) !important;
+}
+
+/* Step indicators */
+body.lucent-theme .story-steps span {
+  font-family: var(--display-font) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-t3) !important;
+}
+body.lucent-theme .story-steps span.is-active {
+  color: var(--ap-t1) !important;
+}
+
+/* ── 9. Scouted / Trials section ──────────────────────────────── */
+body.lucent-theme .story--scouted .story__sticky {
+  background:
+    radial-gradient(ellipse 50% 40% at 72% 44%, rgba(100, 210, 255, 0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 48% 48%, rgba(48, 209, 88, 0.04), transparent),
+    #060a0e !important;
+}
+body.lucent-theme .scout-bg-video {
+  opacity: 0.28 !important;
+  filter: saturate(0.8) contrast(1.1) brightness(0.68) !important;
+}
+body.lucent-theme .scout-bg-overlay {
+  background:
+    linear-gradient(90deg, rgba(4, 6, 10, 0.92) 0%, rgba(4, 6, 10, 0.62) 42%, rgba(4, 6, 10, 0.80) 100%),
+    linear-gradient(180deg, rgba(4, 6, 10, 0.44), rgba(4, 6, 10, 0.88)) !important;
+}
+
+/* Product shell */
+body.lucent-theme .product-shell {
+  border-radius: var(--r-xl) !important;
+  border-color: var(--ap-b2) !important;
+  background: rgba(5, 8, 13, 0.88) !important;
+  box-shadow:
+    0 32px 96px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 var(--ap-b2) !important;
+}
+body.lucent-theme .product-shell__chrome {
+  border-bottom-color: var(--ap-b1) !important;
+}
+body.lucent-theme .product-shell__chrome span {
+  background: var(--ap-s2) !important;
+}
+body.lucent-theme .product-shell__chrome strong {
+  font-family: var(--display-font) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--ap-t2) !important;
+}
+
+/* Screen labels (eyebrows inside product shell) */
+body.lucent-theme .screen__header span,
+body.lucent-theme .selected-trial span,
+body.lucent-theme .trial-summary span,
+body.lucent-theme .requirements span,
+body.lucent-theme .upload-card span,
+body.lucent-theme .success-card span {
+  font-family: var(--display-font) !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .screen__header strong {
+  font-family: var(--display-font) !important;
+  font-size: clamp(1rem, 1.4vw, 1.2rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .screen__header em {
+  background: var(--ap-green) !important;
+  color: #071409 !important;
+  font-family: var(--display-font) !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 999px !important;
+}
+
+/* Command strip */
+body.lucent-theme .command-strip article {
+  border-color: var(--ap-b1) !important;
+  background: var(--ap-s1) !important;
+  border-radius: var(--r-md) !important;
+}
+body.lucent-theme .command-strip span {
+  font-family: var(--display-font) !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.09em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .command-strip strong {
+  font-family: var(--display-font) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Trial toolbar / tags */
+body.lucent-theme .trial-toolbar span,
+body.lucent-theme .trial-card__insights span,
+body.lucent-theme .trial-card__footer span,
+body.lucent-theme .trial-card__footer em,
+body.lucent-theme .trial-card__eyebrow {
+  font-family: var(--display-font) !important;
+  font-size: 0.66rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  border-radius: 999px !important;
+  border-color: var(--ap-b1) !important;
+  background: var(--ap-s1) !important;
+  color: var(--ap-t2) !important;
+}
+body.lucent-theme .trial-card__eyebrow {
+  color: var(--ap-green) !important;
+  background: rgba(48, 209, 88, 0.08) !important;
+  border-color: rgba(48, 209, 88, 0.12) !important;
+  font-weight: 600 !important;
+}
+body.lucent-theme .trial-card__footer em {
+  color: var(--ap-green) !important;
+  background: rgba(48, 209, 88, 0.08) !important;
+  border-color: rgba(48, 209, 88, 0.12) !important;
+}
+
+/* Trial cards */
+body.lucent-theme .trial-grid--premium .trial-card {
+  border-radius: var(--r-lg) !important;
+  background: rgba(7, 10, 16, 0.82) !important;
+  border-color: var(--ap-b1) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), inset 0 1px 0 var(--ap-b1) !important;
+}
+body.lucent-theme .trial-grid--premium .trial-card.is-selected {
+  border-color: rgba(48, 209, 88, 0.3) !important;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba(48, 209, 88, 0.15),
+    0 0 40px rgba(48, 209, 88, 0.06) !important;
+}
+body.lucent-theme .trial-card h3,
+body.lucent-theme .selected-trial h3,
+body.lucent-theme .upload-card h3,
+body.lucent-theme .success-card h3 {
+  font-family: var(--display-font) !important;
+  font-size: clamp(0.95rem, 1.25vw, 1.12rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  line-height: 1.25 !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .trial-card p,
+body.lucent-theme .selected-trial p {
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: var(--ap-t2) !important;
+}
+body.lucent-theme .trial-card__fit {
+  border-color: rgba(48, 209, 88, 0.28) !important;
+  background: rgba(48, 209, 88, 0.06) !important;
+  color: var(--ap-green) !important;
+  font-family: var(--display-font) !important;
+  font-weight: 700 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: -0.01em !important;
+}
+body.lucent-theme .trial-card__bar span {
+  background: linear-gradient(90deg, var(--ap-green) 0%, #64d2ff 100%) !important;
+  box-shadow: 0 0 16px rgba(48, 209, 88, 0.22) !important;
+}
+
+/* Selected trial */
+body.lucent-theme .selected-trial {
+  border-color: var(--ap-b2) !important;
+  background: rgba(6, 9, 14, 0.82) !important;
+  border-radius: var(--r-xl) !important;
+}
+
+/* Brief stack */
+body.lucent-theme .brief-stack article {
+  border-color: var(--ap-b1) !important;
+  background: var(--ap-s1) !important;
+  border-radius: var(--r-md) !important;
+}
+body.lucent-theme .brief-stack span {
+  font-family: var(--display-font) !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--ap-green) !important;
+}
+body.lucent-theme .brief-stack strong {
+  font-family: var(--display-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.015em !important;
+}
+
+/* Requirements */
+body.lucent-theme .requirements article,
+body.lucent-theme .trial-summary article {
+  border-color: var(--ap-b1) !important;
+  background: var(--ap-s1) !important;
+  border-radius: var(--r-lg) !important;
+}
+body.lucent-theme .requirements li {
+  color: var(--ap-t1) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+}
+body.lucent-theme .requirements li::before {
+  background: var(--ap-green) !important;
+  color: #071409 !important;
+}
+body.lucent-theme .requirements strong {
+  font-family: var(--display-font) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Upload */
+body.lucent-theme .upload-card,
+body.lucent-theme .success-card {
+  border-color: var(--ap-b2) !important;
+  background: rgba(6, 9, 14, 0.88) !important;
+  border-radius: var(--r-xl) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.32), inset 0 1px 0 var(--ap-b1) !important;
+}
+body.lucent-theme .upload-list em {
+  border-color: var(--ap-b1) !important;
+  background: var(--ap-s1) !important;
+  border-radius: var(--r-sm) !important;
+  color: var(--ap-t2) !important;
+  font-size: 0.8rem !important;
+  font-style: normal !important;
+}
+body.lucent-theme .upload-card strong {
+  background: var(--ap-green) !important;
+  color: #071409 !important;
+  font-family: var(--display-font) !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  border-radius: 999px !important;
+}
+body.lucent-theme .success-card p {
+  color: var(--ap-t2) !important;
+  line-height: 1.65 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Club marks */
+body.lucent-theme .club-mark {
+  font-family: var(--display-font) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  border-radius: var(--r-md) !important;
+}
+body.lucent-theme .club-mark--large {
+  border-radius: var(--r-lg) !important;
+}
+body.lucent-theme .club-mark--aurelia {
+  background: linear-gradient(135deg, #30d158, #64d2ff) !important;
+}
+body.lucent-theme .club-mark--northbridge {
+  background: linear-gradient(135deg, #64d2ff, #a8e4ff) !important;
+}
+body.lucent-theme .club-mark--vale {
+  background: linear-gradient(135deg, #ffd60a, #30d158) !important;
+}
+body.lucent-theme .club-mark--meridian {
+  background: linear-gradient(135deg, #bf5af2, #64d2ff) !important;
+}
+body.lucent-theme .club-mark span {
+  color: #04060a !important;
+}
+
+/* ── 10. Elevate / CTA section ────────────────────────────────── */
+body.lucent-theme .elevate__inner h2,
+body.lucent-theme .cta__inner h2 {
+  font-family: var(--display-font) !important;
+  font-size: clamp(2.8rem, 6.5vw, 6.8rem) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.0 !important;
+  text-transform: none !important;
+  color: var(--ap-t1) !important;
+}
+body.lucent-theme .elevate__inner p,
+body.lucent-theme .cta__inner p:last-of-type {
+  font-family: var(--display-font) !important;
+  font-size: clamp(0.93rem, 1.25vw, 1.08rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.68 !important;
+  letter-spacing: -0.005em !important;
+  color: var(--ap-t2) !important;
+}
+
+/* ── 11. Buttons ──────────────────────────────────────────────── */
+body.lucent-theme .button,
+body.lucent-theme .elevate__button {
+  font-family: var(--display-font) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.005em !important;
+  border-radius: 999px !important;
+  padding: 0 var(--sp-8) !important;
+  min-height: 50px !important;
+  color: #071409 !important;
+  background: var(--ap-green) !important;
+  box-shadow: 0 0 32px rgba(48, 209, 88, 0.22) !important;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease !important;
+}
+body.lucent-theme .button:hover,
+body.lucent-theme .elevate__button:hover {
+  background: #42e569 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 48px rgba(48, 209, 88, 0.36) !important;
+}
+
+/* ── 12. Focus states ─────────────────────────────────────────── */
+body.lucent-theme a:focus-visible,
+body.lucent-theme button:focus-visible {
+  outline: 2px solid var(--ap-green) !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}
+
+/* ── 13. Cursor glow — removed ───────────────────────────────── */
+body.lucent-theme .premium-cursor-glow {
+  display: none !important;
+}
+
+/* ── 14. Grain / noise overlay — toned down ───────────────────── */
+body.lucent-theme .grain {
+  opacity: 0.10 !important;
+}
+
+/* ── 14. Pitch-line decoration — subtler ──────────────────────── */
+body.lucent-theme .film::before,
+body.lucent-theme .story__sticky::before,
+body.lucent-theme .elevate::before {
+  opacity: 0.06 !important;
+}
+
+/* ── 15. Premium ambient orbs — cool palette ──────────────────── */
+body.lucent-theme .premium-orb--one {
+  background: rgba(48, 209, 88, 0.10) !important;
+}
+body.lucent-theme .premium-orb--two {
+  background: rgba(100, 210, 255, 0.10) !important;
+}
+body.lucent-theme .premium-orb--three {
+  background: rgba(48, 209, 88, 0.07) !important;
+}
+
+/* ── 16. Mobile refinements ───────────────────────────────────── */
+@media (max-width: 680px) {
+  body.lucent-theme .film__hero-tagline p,
+  body.lucent-theme .film__hero-tagline h1 {
+    font-size: clamp(2rem, 10vw, 3.2rem) !important;
+    letter-spacing: -0.03em !important;
+    white-space: normal !important;
+  }
+  body.lucent-theme .journey-section__title {
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+  }
+  body.lucent-theme .story__intro h2,
+  body.lucent-theme .scouted__copy h2 {
+    font-size: clamp(2rem, 9vw, 3.2rem) !important;
+  }
+  body.lucent-theme .elevate__inner h2 {
+    font-size: clamp(2.4rem, 11vw, 3.8rem) !important;
+  }
+}
+
+/* ── 17. Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  body.lucent-theme .jtile:hover {
+    transform: none !important;
+  }
+}
+
+/* ================================================================
+   Minimal + Modern layer — sections #how onwards
+   Principles: strip decoration · generous space · 60-30-10 colour ·
+   clean lines · reduced cognitive load (sleek/minimal/spacious/modern)
+   ================================================================ */
+
+/* ── A. Journey section (#how) ─────────────────────────────────── */
+
+/* More breathing room above section */
+body.lucent-theme .journey-section {
+  padding-top: clamp(120px, 18vh, 200px) !important;
+  padding-bottom: clamp(96px, 14vh, 160px) !important;
+}
+
+/* Larger header gap */
+body.lucent-theme .journey-section__header {
+  margin-bottom: clamp(80px, 12vh, 128px) !important;
+  max-width: 480px !important;
+}
+
+/* Kicker — thinner, more restrained */
+body.lucent-theme .journey-section__kicker {
+  font-size: 0.65rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.14em !important;
+  opacity: 0.7 !important;
+  margin-bottom: var(--sp-4) !important;
+}
+
+/* Title — bolder weight, more editorial */
+body.lucent-theme .journey-section__title {
+  font-size: clamp(2.8rem, 5.5vw, 5.6rem) !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.02 !important;
+}
+
+/* Tiles — borderless, glass footer panel, layered shadows */
+body.lucent-theme .jtile {
+  border: none !important;
+  outline: none !important;
+  border-radius: 20px !important;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 20px 60px rgba(0, 0, 0, 0.55) !important;
+  transition: box-shadow 0.4s ease !important;
+}
+body.lucent-theme .jtile:hover {
+  will-change: transform, opacity;
+}
+body.lucent-theme .jtile:hover {
+  border: none !important;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.5),
+    0 32px 80px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(48, 209, 88, 0.12) !important;
+}
+
+/* Overlay — transparent top, fades so glass panel bleeds through at base */
+body.lucent-theme .jtile__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(4, 6, 10, 0.0) 0%,
+    rgba(4, 6, 10, 0.22) 40%,
+    rgba(4, 6, 10, 0.46) 65%,
+    rgba(4, 6, 10, 0.60) 100%) !important;
+}
+
+/* Step number — green pill badge */
+body.lucent-theme .jtile__num {
+  font-size: 0.58rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  color: var(--ap-green) !important;
+  background: rgba(48, 209, 88, 0.12) !important;
+  padding: 3px 8px !important;
+  border-radius: 5px !important;
+  opacity: 1 !important;
+  text-transform: uppercase !important;
+}
+
+/* Glass body panel — frosted glass bar edge-to-edge at tile base */
+body.lucent-theme .jtile__body {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 3 !important;
+  height: auto !important;
+  padding: 18px clamp(24px, 3.5vw, 36px) clamp(24px, 3.5vw, 36px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  background: rgba(4, 6, 10, 0.52) !important;
+  backdrop-filter: blur(24px) saturate(1.5) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(1.5) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Title */
+body.lucent-theme .jtile__title {
+  font-weight: 600 !important;
+  font-size: clamp(1.25rem, 2.2vw, 1.8rem) !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.12 !important;
+  text-transform: none !important;
+  color: var(--ap-t1) !important;
+  margin: 0 !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+}
+
+/* Description */
+body.lucent-theme .jtile__desc {
+  font-size: 0.875rem !important;
+  font-weight: 400 !important;
+  color: rgba(245, 245, 247, 0.58) !important;
+  line-height: 1.58 !important;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+}
+
+/* CTA tile — green accent, no border */
+body.lucent-theme .jtile--cta {
+  border: none !important;
+}
+body.lucent-theme .jtile--cta .jtile__title {
+  color: var(--ap-green) !important;
+}
+
+/* Journey draggable scroll thumb */
+body.lucent-theme .journey-slider {
+  width: min(280px, 44vw);
+  height: 20px;
+  margin: clamp(24px, 3.5vh, 40px) auto 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+body.lucent-theme .journey-slider__track {
+  position: absolute;
+  inset: 50% 0 auto 0;
+  transform: translateY(-50%);
+  height: 2px;
+  background: rgba(245, 245, 247, 0.12);
+  border-radius: 2px;
+}
+
+body.lucent-theme .journey-slider__thumb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0px;
+  width: 48px;
+  height: 4px;
+  background: var(--ap-green, #30d158);
+  border-radius: 2px;
+  transition: left 0.12s ease-out, height 0.2s ease;
+  cursor: grab;
+}
+
+body.lucent-theme .journey-slider:hover .journey-slider__thumb {
+  height: 6px;
+}
+
+body.lucent-theme .journey-slider__thumb.is-dragging {
+  height: 6px;
+  transition: none;
+  cursor: grabbing;
+}
+
+/* ── B. Skill engine section (#skills) ─────────────────────────── */
+
+body.lucent-theme .story__sticky {
+  background: #060a0d !important;
+}
+
+body.lucent-theme .story__intro h2 {
+  font-weight: 300 !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.04 !important;
+}
+
+body.lucent-theme .lede {
+  font-weight: 300 !important;
+  color: rgba(245, 245, 247, 0.60) !important;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem) !important;
+  line-height: 1.72 !important;
+}
+
+body.lucent-theme .story-steps span {
+  font-weight: 400 !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(245, 245, 247, 0.50) !important;
+}
+body.lucent-theme .story-steps span.is-active {
+  color: rgba(245, 245, 247, 0.88) !important;
+  font-weight: 500 !important;
+}
+
+/* Stage: full-screen positioning context */
+body.lucent-theme .story--skills .skills-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* ── Clip frame: big, dominant ── */
+body.lucent-theme .clip-frame {
+  position: relative;
+  height: min(78vh, 680px);
+  width: auto;
+  aspect-ratio: 9 / 16;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 0 rgba(48, 209, 88, 0);
+  transition: border-color 0.7s ease, box-shadow 0.7s ease;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+body.lucent-theme [data-skill-step="1"] .clip-frame,
+body.lucent-theme [data-skill-step="2"] .clip-frame,
+body.lucent-theme [data-skill-step="3"] .clip-frame {
+  border-color: rgba(48, 209, 88, 0.5);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(48, 209, 88, 0.10),
+    0 0 60px rgba(48, 209, 88, 0.12),
+    0 0 120px rgba(48, 209, 88, 0.06);
+}
+
+body.lucent-theme .clip-athlete {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+  background: #060a0d;
+}
+
+/* REC badge */
+body.lucent-theme .clip-rec {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(245, 245, 247, 0.92);
+  background: rgba(4, 6, 10, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 5px 9px;
+  border-radius: 6px;
+}
+
+body.lucent-theme .clip-rec span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff3b30;
+  animation: rec-blink 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes rec-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+
+/* Scan line — position and opacity driven directly by JS via inline style */
+body.lucent-theme .clip-scan-line {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(48, 209, 88, 0.4) 15%,
+    rgba(48, 209, 88, 1) 50%,
+    rgba(48, 209, 88, 0.4) 85%,
+    transparent 100%);
+  box-shadow:
+    0 0 8px 2px rgba(48, 209, 88, 0.7),
+    0 0 24px 6px rgba(48, 209, 88, 0.35),
+    0 0 60px 12px rgba(48, 209, 88, 0.15);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Fanned skill cards — absolute within skills-stage ── */
+body.lucent-theme .skill-cards {
+  position: absolute;
+  bottom: clamp(52px, 7vh, 80px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+body.lucent-theme [data-skill-step="1"] .skill-cards {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.lucent-theme .skill-card {
+  width: clamp(155px, 13vw, 190px);
+  padding: 15px 16px 17px;
+  background: rgba(6, 10, 14, 0.90);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: translateY(32px) rotate(0deg);
+  transition:
+    opacity 0.9s cubic-bezier(0.34, 1.2, 0.64, 1),
+    transform 0.9s cubic-bezier(0.34, 1.2, 0.64, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+body.lucent-theme .skill-cards.is-revealed .skill-card--foundational {
+  opacity: 1;
+  transform: translateY(14px) rotate(-6deg);
+  transition-delay: 0.08s;
+}
+body.lucent-theme .skill-cards.is-revealed .skill-card--technical {
+  opacity: 1;
+  transform: translateY(-14px) rotate(0deg);
+  transition-delay: 0s;
+  z-index: 2;
+  border-color: rgba(48, 209, 88, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 28px rgba(48, 209, 88, 0.1);
+}
+body.lucent-theme .skill-cards.is-revealed .skill-card--psychological {
+  opacity: 1;
+  transform: translateY(14px) rotate(6deg);
+  transition-delay: 0.08s;
+}
+
+/* Category label */
+body.lucent-theme .skill-card__cat {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ap-green, #30d158);
+  margin: 0 0 11px;
+}
+
+/* Metric bars */
+body.lucent-theme .skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+body.lucent-theme .skill-bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 4px;
+  gap: 4px 6px;
+}
+
+body.lucent-theme .skill-bar span {
+  font-size: 0.6rem;
+  color: rgba(245, 245, 247, 0.42);
+  font-weight: 400;
+  line-height: 1;
+}
+
+body.lucent-theme .skill-bar em {
+  font-style: normal;
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: rgba(245, 245, 247, 0.72);
+  text-align: right;
+  line-height: 1;
+}
+
+body.lucent-theme .skill-bar__track {
+  grid-column: 1 / -1;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+body.lucent-theme .skill-bar__fill {
+  height: 100%;
+  width: 0%;
+  background: var(--ap-green, #30d158);
+  border-radius: 2px;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Bars fill after cards settle (~0.58s) with per-bar stagger */
+body.lucent-theme .skill-cards.is-revealed .skill-card--foundational   .skill-bar:nth-child(1) .skill-bar__fill { width: var(--pct); transition-delay: 0.58s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--foundational   .skill-bar:nth-child(2) .skill-bar__fill { width: var(--pct); transition-delay: 0.68s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--foundational   .skill-bar:nth-child(3) .skill-bar__fill { width: var(--pct); transition-delay: 0.78s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--foundational   .skill-bar:nth-child(4) .skill-bar__fill { width: var(--pct); transition-delay: 0.88s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--foundational   .skill-bar:nth-child(5) .skill-bar__fill { width: var(--pct); transition-delay: 0.98s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--technical      .skill-bar:nth-child(1) .skill-bar__fill { width: var(--pct); transition-delay: 0.56s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--technical      .skill-bar:nth-child(2) .skill-bar__fill { width: var(--pct); transition-delay: 0.66s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--technical      .skill-bar:nth-child(3) .skill-bar__fill { width: var(--pct); transition-delay: 0.76s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--technical      .skill-bar:nth-child(4) .skill-bar__fill { width: var(--pct); transition-delay: 0.86s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--technical      .skill-bar:nth-child(5) .skill-bar__fill { width: var(--pct); transition-delay: 0.96s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--psychological  .skill-bar:nth-child(1) .skill-bar__fill { width: var(--pct); transition-delay: 0.58s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--psychological  .skill-bar:nth-child(2) .skill-bar__fill { width: var(--pct); transition-delay: 0.68s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--psychological  .skill-bar:nth-child(3) .skill-bar__fill { width: var(--pct); transition-delay: 0.78s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--psychological  .skill-bar:nth-child(4) .skill-bar__fill { width: var(--pct); transition-delay: 0.88s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--psychological  .skill-bar:nth-child(5) .skill-bar__fill { width: var(--pct); transition-delay: 0.98s; }
+
+
+/* ── Rank card (step 2) ── */
+body.lucent-theme .rank-card {
+  position: absolute;
+  bottom: clamp(52px, 7vh, 80px);
+  left: 50%;
+  transform: translateX(-50%) translateY(24px);
+  width: clamp(240px, 22vw, 290px);
+  padding: 22px 24px 24px;
+  background: rgba(6, 10, 14, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+body.lucent-theme [data-skill-step="2"] .rank-card {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+body.lucent-theme .rank-card__label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 247, 0.38);
+  margin: 0 0 10px;
+}
+
+body.lucent-theme .rank-card__number {
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--ap-t1, #f5f5f7);
+  line-height: 1;
+  margin: 0 0 6px;
+}
+
+body.lucent-theme .rank-card__sub {
+  font-size: 0.72rem;
+  color: rgba(245, 245, 247, 0.44);
+  margin: 0;
+}
+
+body.lucent-theme .rank-card__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 16px 0;
+}
+
+body.lucent-theme .rank-card__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+body.lucent-theme .rank-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.lucent-theme .rank-row span {
+  font-size: 0.72rem;
+  color: rgba(245, 245, 247, 0.52);
+  font-weight: 400;
+}
+
+body.lucent-theme .rank-row em {
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--ap-green, #30d158);
+}
+
+/* ── Drill queue (step 3) ── */
+body.lucent-theme .drill-queue {
+  position: absolute;
+  bottom: clamp(52px, 7vh, 80px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(250px, 22vw, 300px);
+  background: rgba(6, 10, 14, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 20px;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+body.lucent-theme [data-skill-step="3"] .drill-queue {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.lucent-theme .drill-queue__header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 18px 12px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 247, 0.55);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+body.lucent-theme .drill-queue__bolt {
+  color: var(--ap-green, #30d158);
+  font-size: 0.8rem;
+}
+
+body.lucent-theme .drill-item {
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+body.lucent-theme .drill-item:last-child {
+  border-bottom: none;
+}
+
+body.lucent-theme .drill-queue.is-revealed .drill-item:nth-child(1) { opacity: 1; transform: none; transition-delay: 0.08s; }
+body.lucent-theme .drill-queue.is-revealed .drill-item:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.22s; }
+body.lucent-theme .drill-queue.is-revealed .drill-item:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.36s; }
+
+body.lucent-theme .drill-item__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+body.lucent-theme .drill-item__name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--ap-t1, #f5f5f7);
+}
+
+body.lucent-theme .drill-item__dur {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(245, 245, 247, 0.38);
+}
+
+body.lucent-theme .drill-item__meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+body.lucent-theme .drill-item__cat {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ap-green, #30d158);
+}
+
+body.lucent-theme .drill-dots {
+  display: flex;
+  gap: 3px;
+}
+
+body.lucent-theme .drill-dots i {
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  font-style: normal;
+}
+
+body.lucent-theme .drill-dots i.on {
+  background: var(--ap-green, #30d158);
+}
+
+/* ── C. Trials section (#scouted) ──────────────────────────────── */
+
+body.lucent-theme .story--scouted .story__sticky {
+  background: #060a0d !important;
+}
+
+body.lucent-theme .scouted__copy h2 {
+  font-weight: 300 !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* Product shell — minimal chrome */
+body.lucent-theme .product-shell {
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  background: rgba(5, 7, 12, 0.82) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 32px 80px rgba(0, 0, 0, 0.5) !important;
+}
+body.lucent-theme .product-shell__chrome {
+  border-bottom-color: rgba(255, 255, 255, 0.06) !important;
+  min-height: 48px !important;
+}
+
+/* Trial cards — clean, borderless feel */
+body.lucent-theme .trial-grid--premium .trial-card {
+  border-color: rgba(255, 255, 255, 0.06) !important;
+  background: rgba(6, 9, 15, 0.70) !important;
+  box-shadow: none !important;
+  border-radius: 18px !important;
+}
+body.lucent-theme .trial-grid--premium .trial-card.is-selected {
+  border-color: rgba(48, 209, 88, 0.18) !important;
+  background: rgba(8, 12, 18, 0.85) !important;
+  box-shadow: 0 0 0 1px rgba(48, 209, 88, 0.10) inset !important;
+}
+
+/* Tags — minimal, barely there */
+body.lucent-theme .trial-toolbar span,
+body.lucent-theme .trial-card__insights span,
+body.lucent-theme .trial-card__footer span {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  color: rgba(245, 245, 247, 0.48) !important;
+  font-weight: 400 !important;
+}
+
+/* Command strip — clean stats bar */
+body.lucent-theme .command-strip article {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Requirements list — cleaner */
+body.lucent-theme .requirements article,
+body.lucent-theme .trial-summary article {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Upload / success cards */
+body.lucent-theme .upload-card,
+body.lucent-theme .success-card {
+  background: rgba(6, 9, 15, 0.70) !important;
+  border-color: rgba(255, 255, 255, 0.07) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+/* ── D. Elevate / CTA (#elevate) ───────────────────────────────── */
+
+/* More generous vertical space */
+body.lucent-theme .elevate {
+  min-height: 100svh !important;
+}
+body.lucent-theme .elevate__inner {
+  padding: clamp(96px, 16svh, 160px) 0 !important;
+}
+
+/* Headline — editorial weight */
+body.lucent-theme .elevate__inner h2,
+body.lucent-theme .cta__inner h2 {
+  font-weight: 300 !important;
+  letter-spacing: -0.045em !important;
+  line-height: 0.98 !important;
+  font-size: clamp(3rem, 7vw, 7.6rem) !important;
+}
+
+/* Subtext — quieter */
+body.lucent-theme .elevate__inner p,
+body.lucent-theme .cta__inner p:last-of-type {
+  font-weight: 300 !important;
+  color: rgba(245, 245, 247, 0.55) !important;
+  font-size: clamp(0.9rem, 1.2vw, 1.05rem) !important;
+  max-width: 480px !important;
+}
+
+/* Eyebrow — barely-there label */
+body.lucent-theme .elevate__inner .eyebrow,
+body.lucent-theme .cta__inner .eyebrow {
+  font-weight: 400 !important;
+  font-size: 0.65rem !important;
+  opacity: 0.65 !important;
+  letter-spacing: 0.16em !important;
+}
+
+/* CTA button — clean outlined variant */
+body.lucent-theme .button,
+body.lucent-theme .elevate__button {
+  background: var(--ap-green) !important;
+  font-weight: 500 !important;
+  font-size: 0.88rem !important;
+  letter-spacing: 0.02em !important;
+  padding: 0 40px !important;
+  min-height: 48px !important;
+  box-shadow: none !important;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease !important;
+}
+body.lucent-theme .button:hover,
+body.lucent-theme .elevate__button:hover {
+  background: #42e569 !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 32px rgba(48, 209, 88, 0.20) !important;
+}
+
+/* ── E. Shared section separators ──────────────────────────────── */
+
+/* Thin rule between sections */
+body.lucent-theme .journey-section,
+body.lucent-theme .story,
+body.lucent-theme .elevate {
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ── F. Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  body.lucent-theme .journey-section__title {
+    font-size: clamp(2.4rem, 10vw, 3.4rem) !important;
+    font-weight: 300 !important;
+  }
+  body.lucent-theme .story__intro h2,
+  body.lucent-theme .scouted__copy h2 {
+    font-weight: 300 !important;
+  }
+  body.lucent-theme .elevate__inner h2 {
+    font-size: clamp(2.6rem, 12vw, 4.2rem) !important;
+    font-weight: 300 !important;
+  }
+}
+
+/* ── G. Nav active state ───────────────────────────────────────── */
+body.lucent-theme .top-nav__links a.is-active {
+  color: var(--ap-t1) !important;
+  font-weight: 600 !important;
+}
+
+/* ── H. Hero CTA button — absolutely positioned below tagline ──── */
+body.lucent-theme .hero__cta {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, clamp(56px, 9vh, 96px)) !important;
+  z-index: 4 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  min-height: 48px !important;
+  padding: 0 32px !important;
+  border-radius: 999px !important;
+  background: var(--ap-green) !important;
+  color: #071409 !important;
+  font-family: var(--display-font) !important;
+  font-size: 0.88rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 0 32px var(--ap-green-glow) !important;
+  transition: background 0.2s ease, box-shadow 0.2s ease !important;
+}
+body.lucent-theme .hero__cta:hover {
+  background: #42e569 !important;
+  box-shadow: 0 0 48px rgba(48, 209, 88, 0.42) !important;
+}
+
+/* ── I. Hamburger menu ─────────────────────────────────────────── */
+body.lucent-theme .top-nav__hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 1px solid var(--ap-b2);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  z-index: 201;
+  transition: background 0.2s ease;
+}
+body.lucent-theme .top-nav__hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--ap-t1);
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+body.lucent-theme .top-nav__hamburger:hover {
+  background: var(--ap-s2);
+}
+body.lucent-theme .top-nav__hamburger.is-active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+body.lucent-theme .top-nav__hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+body.lucent-theme .top-nav__hamburger.is-active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+@media (max-width: 680px) {
+  body.lucent-theme .top-nav__hamburger {
+    display: flex !important;
+  }
+
+  /* Nav links: hidden by default */
+  body.lucent-theme .top-nav__links {
+    display: none !important;
+  }
+
+  /*
+   * Fullscreen overlay fix: .top-nav has transform: translateX(-50%) which
+   * makes it the containing block for position:fixed children. Fix: expand
+   * .top-nav itself to fullscreen using body.nav-is-open, then use
+   * position:absolute on .top-nav__links inside it.
+   */
+  body.lucent-theme.nav-is-open .top-nav {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    background: rgba(4, 6, 10, 0.97) !important;
+    border: none !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(28px) saturate(1.1) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(1.1) !important;
+    /* switch to block so brand+hamburger sit at top via absolute positioning */
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  /* Brand (logo) pinned to top-left of fullscreen overlay */
+  body.lucent-theme.nav-is-open .top-nav .top-nav__brand {
+    position: absolute !important;
+    top: 18px !important;
+    left: 20px !important;
+    z-index: 2 !important;
+  }
+
+  /* Hamburger (X) pinned to top-right */
+  body.lucent-theme.nav-is-open .top-nav .top-nav__hamburger {
+    position: absolute !important;
+    top: 14px !important;
+    right: 16px !important;
+    z-index: 2 !important;
+  }
+
+  body.lucent-theme .top-nav__links.is-open {
+    display: flex !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0 !important;
+    padding: 40px 24px !important;
+  }
+
+  /* Force all links visible when menu is open, overriding hero-redesign.css display:none */
+  body.lucent-theme .top-nav__links.is-open a,
+  body.lucent-theme .top-nav__links.is-open a:not(.top-nav__cta) {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 18px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    font-size: clamp(1.2rem, 5vw, 1.6rem) !important;
+    font-weight: 300 !important;
+    letter-spacing: -0.02em !important;
+    text-transform: none !important;
+    color: var(--ap-t1) !important;
+    text-align: center !important;
+  }
+  body.lucent-theme .top-nav__links.is-open .top-nav__cta {
+    margin-top: 24px !important;
+    min-height: 52px !important;
+    padding: 0 36px !important;
+    border-radius: 999px !important;
+    background: var(--ap-green) !important;
+    color: #071409 !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    border-bottom: none !important;
+    width: auto !important;
+    box-shadow: 0 0 28px var(--ap-green-glow) !important;
+  }
+}
+
+/* ── J. Scouted section layout (moved from JS injection) ──────── */
+body.lucent-theme .story--scouted .scouted {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(300px, 0.42fr) minmax(560px, 0.58fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 96px);
+  position: relative;
+  z-index: 4;
+}
+body.lucent-theme .story--scouted .scouted__copy {
+  position: relative;
+  top: auto;
+  left: auto;
+  max-width: 430px;
+  padding-top: 14px;
+}
+body.lucent-theme .story--scouted .product-shell {
+  position: relative;
+  top: auto;
+  right: auto;
+  width: 100%;
+  min-height: min(66svh, 650px);
+  transform: none;
+}
+body.lucent-theme .story--scouted .story-steps--scouted {
+  z-index: 5;
+  bottom: 38px;
+  justify-content: flex-start;
+}
+
+@media (max-width: 1080px) {
+  body.lucent-theme .story--scouted .scouted {
+    grid-template-columns: minmax(250px, 0.38fr) minmax(480px, 0.62fr);
+    gap: 32px;
+  }
+}
+@media (max-width: 860px) {
+  body.lucent-theme .story--scouted .scouted {
+    display: block;
+  }
+  body.lucent-theme .story--scouted .scouted__copy {
+    position: absolute;
+    top: 88px;
+    right: 0;
+    left: 0;
+    max-width: min(100%, 430px);
+  }
+  body.lucent-theme .story--scouted .product-shell {
+    position: absolute;
+    top: auto;
+    right: 0;
+    bottom: 68px;
+    width: 100%;
+    min-height: min(58svh, 590px);
+  }
+}
+
+/* ── K. Waitlist form ──────────────────────────────────────────── */
+body.lucent-theme .waitlist-form {
+  margin-top: clamp(24px, 4vh, 40px);
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+body.lucent-theme .waitlist-form__label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ap-t3);
+}
+body.lucent-theme .waitlist-form__row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  height: 52px;
+}
+body.lucent-theme .waitlist-form__input {
+  flex: 1;
+  min-width: 0;
+  height: 52px;
+  padding: 0 18px;
+  border: 1px solid var(--ap-b2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--ap-t1);
+  font-family: var(--display-font);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  -webkit-appearance: none;
+}
+body.lucent-theme .waitlist-form__input::placeholder {
+  color: var(--ap-t3);
+}
+body.lucent-theme .waitlist-form__input:focus {
+  outline: none;
+  border-color: var(--ap-green);
+  background: rgba(48, 209, 88, 0.05);
+}
+/* Reset the elevate__button margin-top that final-polish.css sets to 34px */
+body.lucent-theme .waitlist-form .elevate__button,
+body.lucent-theme .waitlist-form .button {
+  margin-top: 0 !important;
+  flex-shrink: 0 !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  padding: 0 28px !important;
+  white-space: nowrap !important;
+  align-self: stretch !important;
+}
+body.lucent-theme .waitlist-form__note {
+  margin-top: 10px;
+  min-height: 1.2em;
+  font-size: 0.78rem;
+  color: var(--ap-t3);
+  line-height: 1.5;
+  text-align: left;
+}
+@media (max-width: 520px) {
+  body.lucent-theme .waitlist-form {
+    max-width: 100% !important;
+  }
+  body.lucent-theme .waitlist-form__row {
+    flex-direction: column !important;
+    height: auto !important;
+    gap: 12px !important;
+  }
+  body.lucent-theme .waitlist-form__input {
+    width: 100% !important;
+  }
+  body.lucent-theme .waitlist-form .elevate__button,
+  body.lucent-theme .waitlist-form .button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ── L. Reduced motion: stop ambient orbs ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  body.lucent-theme .premium-orb--one,
+  body.lucent-theme .premium-orb--two,
+  body.lucent-theme .premium-orb--three {
+    animation: none !important;
+  }
+}
+
+/* ── M. Cognitive skill card (renamed from Psychological) ─────── */
+body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive {
+  opacity: 1;
+  transform: translateY(14px) rotate(6deg);
+  transition-delay: 0.08s;
+}
+
+body.lucent-theme .skill-card--cognitive .skill-bar:nth-child(1) { opacity: 0; transform: translateX(-8px); transition: none; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth-child(1) .skill-bar__fill { width: var(--pct); transition-delay: 0.58s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth-child(2) .skill-bar__fill { width: var(--pct); transition-delay: 0.68s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth-child(3) .skill-bar__fill { width: var(--pct); transition-delay: 0.78s; }
+body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth-child(4) .skill-bar__fill { width: var(--pct); transition-delay: 0.88s; }
+
+/* ── N. Mobile responsive fixes ───────────────────────────────── */
+
+/*
+ * Skill engine — three fanned cards total ~480 px wide which overflows
+ * a 390-px viewport. On phones, hide the outer pair and show only the
+ * centre Technical card flat, so the stat bars are readable.
+ */
+@media (max-width: 520px) {
+  body.lucent-theme .skill-card--foundational,
+  body.lucent-theme .skill-card--cognitive {
+    display: none !important;
+  }
+  body.lucent-theme .skill-cards.is-revealed .skill-card--technical {
+    transform: none !important;
+  }
+  body.lucent-theme .skill-card--technical {
+    width: clamp(210px, 54vw, 250px) !important;
+  }
+}
+
+/*
+ * Trials section — on narrow phones the product-shell sits too high
+ * and overlaps the copy text above it. Pull the shell up enough so the
+ * copy (ending ~276 px from top) has clear air above the shell.
+ * Also limit the trial grid to the two top cards so the shortened
+ * shell doesn't show half-cropped cards.
+ */
+@media (max-width: 680px) {
+  body.lucent-theme .story--scouted .product-shell {
+    min-height: min(50svh, 500px) !important;
+    bottom: 60px !important;
+  }
+  body.lucent-theme .trial-grid--premium .trial-card:nth-child(n+3) {
+    display: none !important;
+  }
+}
+
+/*
+ * Selected-trial rich header — three flex items (club mark, text,
+ * fit badge) can get very cramped below ~400 px. Let the badge drop
+ * to a second row so the club name always has room.
+ */
+@media (max-width: 400px) {
+  body.lucent-theme .selected-trial--rich {
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+  body.lucent-theme .selected-trial--rich > strong {
+    padding: 8px 14px !important;
+  }
+}
+
+/*
+ * Very narrow screens (≤360 px, e.g. Galaxy Fold, older Androids).
+ * Tighten the hero CTA and elevate section padding slightly.
+ */
+@media (max-width: 360px) {
+  body.lucent-theme .hero__cta {
+    font-size: 0.8rem !important;
+    padding: 0 22px !important;
+    min-height: 44px !important;
+  }
+  body.lucent-theme .elevate__inner {
+    padding: clamp(72px, 12svh, 120px) 0 !important;
+  }
+  body.lucent-theme .journey-section__title {
+    font-size: clamp(2rem, 9vw, 2.8rem) !important;
+  }
+}
