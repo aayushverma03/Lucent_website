@@ -31,6 +31,25 @@ body.lucent-theme .top-nav.is-scrolled {
     0 4px 10px -3px rgba(0, 0, 0, 0.30) !important;
 }
 
+/* When the mobile menu opens, the nav expands to fullscreen.
+   These rules must beat the floating-glass defaults above. */
+body.lucent-theme.nav-is-open .top-nav,
+body.lucent-theme.nav-is-open .top-nav.is-scrolled {
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  height: 100dvh !important;
+  max-width: none !important;
+  transform: none !important;
+  border-radius: 0 !important;
+  background: rgba(4, 6, 10, 0.97) !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(28px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(1.1) !important;
+}
+
 /* Brand lockup — use the official PNG, inverted so the dark wings + wordmark
    read as white on the translucent nav, with hue-rotate/saturate to keep
    the green accent green after the invert. */

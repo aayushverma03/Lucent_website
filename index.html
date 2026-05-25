@@ -46,7 +46,7 @@
         <div class="film__sticky" data-hero-sticky>
           <div class="film__stage" data-hero-stage>
             <video class="film__stage-video" autoplay muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" aria-hidden="true">
-              <source media="(max-width: 720px)" src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" />
+              <source media="(max-width: 720px)" src="./assets/video/reel-mobile.mp4" type="video/mp4" />
               <source src="./assets/video/reel.mp4" type="video/mp4" />
             </video>
             <div class="film__stage-veil" aria-hidden="true"></div>
@@ -208,9 +208,35 @@
           <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
         </div>
         <div class="story__mobile-cards" aria-hidden="true">
-          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Train</p><h3>Film any drill from any angle</h3><p>Capture every rep on your phone. No coach, no rig.</p></article>
-          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Scan</p><h3>AI reads touch, speed, control</h3><p>Lucent scores the football actions that matter on every rep.</p></article>
-          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Benchmark</p><h3>See where your stats rank</h3><p>Compare against players in your position and age group, and find where to improve.</p></article>
+          <div class="story__mobile-intro">
+            <p class="story__mobile-eyebrow">Skill engine</p>
+            <h2>See the player clearly.</h2>
+            <p class="story__mobile-lede">Read the football actions that matter: touch, movement, speed, and finishing.</p>
+          </div>
+
+          <div class="story__mobile-clip">
+            <span class="story__mobile-rec"><i></i>REC</span>
+            <img src="./assets/images/hero-athlete.webp" alt="Player being analysed" loading="lazy" decoding="async" />
+          </div>
+
+          <article class="story__mobile-skills">
+            <p class="story__mobile-cat">Technical</p>
+            <div class="story__mobile-bar"><span>First touch</span><div class="story__mobile-track"><i style="--p:91%"></i></div><em>91</em></div>
+            <div class="story__mobile-bar"><span>Ball retention</span><div class="story__mobile-track"><i style="--p:83%"></i></div><em>83</em></div>
+            <div class="story__mobile-bar"><span>Shooting</span><div class="story__mobile-track"><i style="--p:78%"></i></div><em>78</em></div>
+            <div class="story__mobile-bar"><span>Weak foot</span><div class="story__mobile-track"><i style="--p:58%"></i></div><em>58</em></div>
+          </article>
+
+          <article class="story__mobile-rank">
+            <p class="story__mobile-rank-label">Overall rank</p>
+            <p class="story__mobile-rank-num">#847</p>
+            <p class="story__mobile-rank-sub">of 3,200 U19 wingers</p>
+            <div class="story__mobile-rank-rows">
+              <div><span>Technical</span><em>Top 18%</em></div>
+              <div><span>Foundational</span><em>Top 31%</em></div>
+              <div><span>Cognitive</span><em>Top 42%</em></div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -244,9 +270,57 @@
           <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
         </div>
         <div class="story__mobile-cards" aria-hidden="true">
-          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Radar</p><h3>See live briefs from clubs recruiting your role</h3><p>Browse opportunities posted by clubs looking for your exact position.</p></article>
-          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Proof</p><h3>Upload the evidence each club asks for</h3><p>Attach the drills, clips, and signals the brief calls out.</p></article>
-          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Scout</p><h3>Match the brief and appear on shortlists</h3><p>When your numbers fit, your profile lands with the recruitment team.</p></article>
+          <div class="story__mobile-intro">
+            <p class="story__mobile-eyebrow">Trials</p>
+            <h2>See which clubs want you.</h2>
+            <p class="story__mobile-lede">Browse live opportunities from clubs recruiting for your exact role.</p>
+          </div>
+
+          <div class="story__mobile-board">
+            <header class="story__mobile-board-head">
+              <div>
+                <span>Live trial radar</span>
+                <strong>12 clubs recruiting</strong>
+              </div>
+              <em>3 urgent</em>
+            </header>
+
+            <article class="story__mobile-trial story__mobile-trial--featured">
+              <div class="story__mobile-club story__mobile-club--aurelia"><span>A</span></div>
+              <div class="story__mobile-trial-body">
+                <p class="story__mobile-trial-eyebrow">Recruiting now</p>
+                <h3>Aurelia SC</h3>
+                <p class="story__mobile-trial-meta">U19 winger &middot; London</p>
+              </div>
+              <strong class="story__mobile-trial-fit">94%</strong>
+              <div class="story__mobile-trial-bar"><i style="--p:94%"></i></div>
+              <div class="story__mobile-trial-foot"><em>48h left</em><span>Elite fit</span></div>
+            </article>
+
+            <article class="story__mobile-trial">
+              <div class="story__mobile-club story__mobile-club--northbridge"><span>N</span></div>
+              <div class="story__mobile-trial-body">
+                <p class="story__mobile-trial-eyebrow">New brief</p>
+                <h3>Northbridge FC</h3>
+                <p class="story__mobile-trial-meta">U21 forward &middot; Manchester</p>
+              </div>
+              <strong class="story__mobile-trial-fit">89%</strong>
+              <div class="story__mobile-trial-bar"><i style="--p:89%"></i></div>
+              <div class="story__mobile-trial-foot"><em>3 days</em><span>Strong fit</span></div>
+            </article>
+
+            <article class="story__mobile-trial">
+              <div class="story__mobile-club story__mobile-club--vale"><span>V</span></div>
+              <div class="story__mobile-trial-body">
+                <p class="story__mobile-trial-eyebrow">Shortlist open</p>
+                <h3>Vale Athletic</h3>
+                <p class="story__mobile-trial-meta">Academy 9 &middot; Birmingham</p>
+              </div>
+              <strong class="story__mobile-trial-fit">86%</strong>
+              <div class="story__mobile-trial-bar"><i style="--p:86%"></i></div>
+              <div class="story__mobile-trial-foot"><em>5 days</em><span>Strong fit</span></div>
+            </article>
+          </div>
         </div>
       </section>
 
