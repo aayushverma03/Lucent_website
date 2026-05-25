@@ -1640,11 +1640,11 @@ body.lucent-theme .top-nav__hamburger.is-active span:nth-child(3) {
     height: 100dvh !important;
     transform: none !important;
     border-radius: 0 !important;
-    background: rgba(4, 6, 10, 0.97) !important;
+    background: rgba(8, 12, 18, 0.62) !important;
     border: none !important;
     box-shadow: none !important;
-    backdrop-filter: blur(28px) saturate(1.1) !important;
-    -webkit-backdrop-filter: blur(28px) saturate(1.1) !important;
+    backdrop-filter: blur(44px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(44px) saturate(180%) !important;
     /* switch to block so brand+hamburger sit at top via absolute positioning */
     display: block !important;
     padding: 0 !important;

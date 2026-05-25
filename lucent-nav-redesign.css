@@ -31,7 +31,8 @@ body.lucent-theme .top-nav.is-scrolled {
     0 4px 10px -3px rgba(0, 0, 0, 0.30) !important;
 }
 
-/* When the mobile menu opens, the nav expands to fullscreen.
+/* When the mobile menu opens, the nav expands to fullscreen with a
+   translucent, water-like glass surface (matches Image #19 reference).
    These rules must beat the floating-glass defaults above. */
 body.lucent-theme.nav-is-open .top-nav,
 body.lucent-theme.nav-is-open .top-nav.is-scrolled {
@@ -43,11 +44,11 @@ body.lucent-theme.nav-is-open .top-nav.is-scrolled {
   max-width: none !important;
   transform: none !important;
   border-radius: 0 !important;
-  background: rgba(4, 6, 10, 0.97) !important;
+  background: rgba(8, 12, 18, 0.62) !important;
   border: none !important;
   box-shadow: none !important;
-  backdrop-filter: blur(28px) saturate(1.1) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(1.1) !important;
+  backdrop-filter: blur(44px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(44px) saturate(180%) !important;
 }
 
 /* Brand lockup — use the official PNG, inverted so the dark wings + wordmark
@@ -154,4 +155,13 @@ body.lucent-theme .top-nav__cta:focus-visible {
 /* Hamburger lines — white on glass */
 body.lucent-theme .top-nav__hamburger span {
   background: #FFFFFF !important;
+}
+
+/* When drawer is open, give the X a soft glass tile so it reads
+   clearly on the translucent backdrop (matches Image #19). */
+body.lucent-theme.nav-is-open .top-nav__hamburger {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
 }
