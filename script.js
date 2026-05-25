@@ -12,6 +12,8 @@ const scoutTitle = document.querySelector("[data-scout-title]");
 const scoutCopy = document.querySelector("[data-scout-copy]");
 const skillSteps = [...document.querySelectorAll(".story--skills .story-steps span")];
 const scoutSteps = [...document.querySelectorAll(".story--scouted .story-steps span")];
+const skillDots = [...document.querySelectorAll(".story--skills .story-progress span")];
+const scoutDots = [...document.querySelectorAll(".story--scouted .story-progress span")];
 const screens = [...document.querySelectorAll(".screen")];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -254,6 +256,10 @@ function setSkillStep(step) {
     if (skillCopy) skillCopy.textContent = scene[1];
   }
   skillSteps.forEach((item, index) => item.classList.toggle("is-active", index === step));
+  skillDots.forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === step);
+    dot.classList.toggle("is-past", index < step);
+  });
 }
 
 function setScoutStep(step) {
@@ -264,6 +270,10 @@ function setScoutStep(step) {
     if (scoutCopy) scoutCopy.textContent = scene[1];
   }
   scoutSteps.forEach((item, index) => item.classList.toggle("is-active", index === step));
+  scoutDots.forEach((dot, index) => {
+    dot.classList.toggle("is-active", index === step);
+    dot.classList.toggle("is-past", index < step);
+  });
   screens.forEach((screen, index) => screen.classList.toggle("is-active", index === step));
 }
 

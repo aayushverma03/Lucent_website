@@ -7,20 +7,21 @@
     <meta name="theme-color" content="#05070a" />
     <title>Lucent — Record. Train. Get Scouted.</title>
     <link rel="icon" href="data:," />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" />
-    <link rel="preload" as="image" href="./assets/images/hero-athlete.webp" />
-    <link rel="preload" as="image" href="./assets/images/opening-poster.webp" />
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Inter-Variable-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="preload" as="image" href="./assets/images/opening-poster.webp" fetchpriority="high" />
+    <!-- Cascade order preserved. Critical sheets block; polish bundle deferred via preload+onload. -->
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./final-polish.css" />
-    <link rel="stylesheet" href="./daylight-motion.css?v=green-logo" />
-    <link rel="stylesheet" href="./premium-elements.css" />
-    <link rel="stylesheet" href="./qa-polish.css" />
-    <link rel="stylesheet" href="./lucent-theme-visibility.css" />
-    <link rel="stylesheet" href="./lucent-final-overrides.css" />
+    <link rel="preload" as="style" href="./lucent-polish-bundle.css?v=1" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href="./hero-redesign.css?v=green-logo" />
     <link rel="stylesheet" href="./apple-redesign.css" />
+    <link rel="stylesheet" href="./lucent-layout-fixes.css" />
+    <link rel="preload" as="style" href="./footer.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="./lucent-nav-redesign.css" />
+    <noscript>
+      <link rel="stylesheet" href="./lucent-polish-bundle.css?v=1" />
+      <link rel="stylesheet" href="./footer.css" />
+    </noscript>
   </head>
   <body class="lucent-theme">
     <div class="grain" aria-hidden="true"></div>
@@ -44,7 +45,8 @@
       <section class="film film--redesign" id="top" aria-label="Opening football film">
         <div class="film__sticky" data-hero-sticky>
           <div class="film__stage" data-hero-stage>
-            <video class="film__stage-video" autoplay muted loop playsinline preload="metadata" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+            <video class="film__stage-video" autoplay muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" aria-hidden="true">
+              <source media="(max-width: 720px)" src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" />
               <source src="./assets/video/reel.mp4" type="video/mp4" />
             </video>
             <div class="film__stage-veil" aria-hidden="true"></div>
@@ -72,8 +74,15 @@
 
       <section class="journey-section" id="how" aria-label="How Lucent works">
         <div class="journey-section__header">
-          <p class="journey-section__kicker">How It Works</p>
-          <h2 class="journey-section__title">From first rep<br>to first contract.</h2>
+          <div class="journey-section__header-copy">
+            <p class="journey-section__kicker">How it works</p>
+            <h2 class="journey-section__title">From first rep<br>to first <em>contract.</em></h2>
+            <p class="journey-section__sub">Five steps. One transformation &mdash; from your phone to a club shortlist.</p>
+          </div>
+          <div class="journey-slider" aria-hidden="true">
+            <div class="journey-slider__track"></div>
+            <div class="journey-slider__thumb"></div>
+          </div>
         </div>
         <div class="journey-track" role="list">
 
@@ -122,10 +131,6 @@
             </div>
           </div>
 
-        </div>
-        <div class="journey-slider" aria-hidden="true">
-          <div class="journey-slider__track"></div>
-          <div class="journey-slider__thumb"></div>
         </div>
       </section>
 
@@ -200,12 +205,18 @@
             </div>
           </div>
           <div class="story-steps shell" aria-hidden="true"><span class="is-active">Train</span><span>Scan</span><span>Benchmark</span><span>Improve</span></div>
+          <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="story__mobile-cards" aria-hidden="true">
+          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Train</p><h3>Film any drill from any angle</h3><p>Capture every rep on your phone. No coach, no rig.</p></article>
+          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Scan</p><h3>AI reads touch, speed, control</h3><p>Lucent scores the football actions that matter on every rep.</p></article>
+          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Benchmark</p><h3>See where your stats rank</h3><p>Compare against players in your position and age group, and find where to improve.</p></article>
         </div>
       </section>
 
       <section class="story story--scouted" id="scouted" data-scout-step="0">
         <div class="story__sticky">
-          <video class="scout-bg-video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source data-src="./assets/video/opening-tracked.webm" type="video/webm" /><source data-src="./assets/video/opening-tracked.mp4" type="video/mp4" /></video>
+          <video class="scout-bg-video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source media="(max-width: 720px)" data-src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" /><source data-src="./assets/video/opening-tracked.webm" type="video/webm" /><source data-src="./assets/video/opening-tracked.mp4" type="video/mp4" /></video>
           <div class="scout-bg-overlay" aria-hidden="true"></div>
           <div class="scouted shell">
             <div class="scouted__copy" data-reveal><p class="eyebrow">Trials</p><h2 data-scout-title>See which clubs want you.</h2><p class="lede" data-scout-copy>Browse live opportunities from clubs recruiting for your exact role.</p></div>
@@ -230,11 +241,17 @@
             </div>
           </div>
           <div class="story-steps story-steps--scouted shell" aria-hidden="true"><span class="is-active">Radar</span><span>Brief</span><span>Proof</span><span>Package</span><span>Scout</span></div>
+          <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
+        </div>
+        <div class="story__mobile-cards" aria-hidden="true">
+          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Radar</p><h3>See live briefs from clubs recruiting your role</h3><p>Browse opportunities posted by clubs looking for your exact position.</p></article>
+          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Proof</p><h3>Upload the evidence each club asks for</h3><p>Attach the drills, clips, and signals the brief calls out.</p></article>
+          <article class="story__mobile-card"><p class="story__mobile-eyebrow">Scout</p><h3>Match the brief and appear on shortlists</h3><p>When your numbers fit, your profile lands with the recruitment team.</p></article>
         </div>
       </section>
 
       <section class="elevate" id="elevate" aria-label="Step into Lucent">
-        <video class="elevate__video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source data-src="./assets/video/match%20vide%20(1).mp4" type="video/mp4" /></video>
+        <video class="elevate__video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source media="(max-width: 720px)" data-src="./assets/video/match-vide-mobile.mp4" type="video/mp4" /><source data-src="./assets/video/match%20vide%20(1).mp4" type="video/mp4" /></video>
         <div class="elevate__veil" aria-hidden="true"></div>
         <div class="shell elevate__inner" data-reveal>
           <p class="eyebrow">Join Lucent</p>
@@ -250,133 +267,72 @@
           </form>
         </div>
       </section>
+
     </main>
-    <script src="./script.js?v=minimal-loader-2" defer></script>
-    <script src="https://unpkg.com/lenis@1.3.15/dist/lenis.min.js" defer></script>
-    <script src="./premium-elements.js" defer></script>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__main">
+          <div class="site-footer__brand-block">
+            <a class="site-footer__brand" href="#top"><img src="./assets/lucent-logo-lockup.png" alt="Lucent" /></a>
+            <p class="site-footer__tagline">Record. Train. Get Scouted. Build the football evidence clubs can act on.</p>
+            <a class="site-footer__cta" href="#elevate">Join the waitlist</a>
+          </div>
+
+          <div>
+            <p class="site-footer__col-title">Explore</p>
+            <ul class="site-footer__links">
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#skills">Skill engine</a></li>
+              <li><a href="#scouted">Trials</a></li>
+              <li><a href="./faq.html">FAQ</a></li>
+              <li><a href="#elevate">Join</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="site-footer__col-title">For</p>
+            <ul class="site-footer__links">
+              <li><a href="#how">For players</a></li>
+              <li><a href="#scouted">For clubs</a></li>
+              <li><a href="#how">For coaches</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="site-footer__col-title">Stay in touch</p>
+            <p class="site-footer__contact">
+              <a href="mailto:hello@lucent.example">hello@lucent.example</a>
+            </p>
+            <div class="site-footer__socials" aria-label="Social links">
+              <a class="site-footer__social" href="https://x.com/lucent" aria-label="Lucent on X" rel="noopener noreferrer" target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a class="site-footer__social" href="https://linkedin.com/company/lucent" aria-label="Lucent on LinkedIn" rel="noopener noreferrer" target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1c1.37 0 2.49 1.12 2.49 2.5zM.22 8h4.54v14H.22V8zm7.32 0h4.36v1.92h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.02 5.42 6.94V22h-4.52v-6.18c0-1.48-.02-3.38-2.06-3.38-2.06 0-2.38 1.6-2.38 3.26V22H7.54V8z"/></svg>
+              </a>
+              <a class="site-footer__social" href="https://instagram.com/lucent" aria-label="Lucent on Instagram" rel="noopener noreferrer" target="_blank">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14c-.3.76-.5 1.64-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 12 18.16 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 12 8a4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <span>&copy; 2026 Lucent. All rights reserved.</span>
+          <ul class="site-footer__bottom-links">
+            <li><a href="./privacy.html">Privacy</a></li>
+            <li><a href="./terms.html">Terms</a></li>
+            <li><a href="./cookies.html">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=dots-1" defer></script>
+    <script src="./premium-elements.js?v=lenis-lazy-1" defer></script>
     <script src="./qa-polish.js" defer></script>
     <script src="./hero-redesign.js?v=auto-slide-v2" defer></script>
-    <script>
-      (() => {
-        // Hero cards scroll trigger
-        const cards = document.querySelector('.hero-cards');
-        const film  = document.querySelector('.film--redesign');
-        if (cards && film) {
-          let done = false;
-          function checkCards() {
-            if (done) return;
-            if (window.scrollY >= film.offsetTop + film.offsetHeight - window.innerHeight * 0.6) {
-              cards.classList.add('is-visible');
-              done = true;
-              window.removeEventListener('scroll', checkCards);
-            }
-          }
-          window.addEventListener('scroll', checkCards, { passive: true });
-          checkCards();
-        }
-
-        // Journey draggable scroll thumb
-        const track = document.querySelector('.journey-track');
-        const slider = document.querySelector('.journey-slider');
-        const thumb = document.querySelector('.journey-slider__thumb');
-        if (track && slider && thumb) {
-          const scrollMax = () => track.scrollWidth - track.clientWidth;
-          const thumbRange = () => slider.clientWidth - thumb.offsetWidth;
-
-          const syncThumb = () => {
-            const pct = scrollMax() > 0 ? track.scrollLeft / scrollMax() : 0;
-            thumb.style.left = (pct * thumbRange()) + 'px';
-          };
-
-          track.addEventListener('scroll', syncThumb, { passive: true });
-          syncThumb();
-
-          let dragging = false, dragStartX, dragStartScroll, rafId;
-
-          thumb.addEventListener('mousedown', e => {
-            dragging = true;
-            dragStartX = e.clientX;
-            dragStartScroll = track.scrollLeft;
-            thumb.classList.add('is-dragging');
-            track.style.scrollSnapType = 'none';
-            e.preventDefault();
-          });
-
-          document.addEventListener('mousemove', e => {
-            if (!dragging) return;
-            cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-              const dx = e.clientX - dragStartX;
-              const ratio = thumbRange() > 0 ? dx / thumbRange() : 0;
-              const newScroll = Math.max(0, Math.min(dragStartScroll + ratio * scrollMax(), scrollMax()));
-              track.scrollLeft = newScroll;
-              thumb.style.left = (newScroll / scrollMax() * thumbRange()) + 'px';
-            });
-          });
-
-          document.addEventListener('mouseup', () => {
-            if (!dragging) return;
-            dragging = false;
-            thumb.classList.remove('is-dragging');
-            track.style.scrollSnapType = 'x mandatory';
-            cancelAnimationFrame(rafId);
-          });
-
-          thumb.addEventListener('touchstart', e => {
-            dragging = true;
-            dragStartX = e.touches[0].clientX;
-            dragStartScroll = track.scrollLeft;
-            thumb.classList.add('is-dragging');
-            track.style.scrollSnapType = 'none';
-            e.preventDefault();
-          }, { passive: false });
-
-          document.addEventListener('touchmove', e => {
-            if (!dragging) return;
-            cancelAnimationFrame(rafId);
-            rafId = requestAnimationFrame(() => {
-              const dx = e.touches[0].clientX - dragStartX;
-              const ratio = thumbRange() > 0 ? dx / thumbRange() : 0;
-              const newScroll = Math.max(0, Math.min(dragStartScroll + ratio * scrollMax(), scrollMax()));
-              track.scrollLeft = newScroll;
-              thumb.style.left = (newScroll / scrollMax() * thumbRange()) + 'px';
-            });
-          }, { passive: true });
-
-          document.addEventListener('touchend', () => {
-            if (!dragging) return;
-            dragging = false;
-            thumb.classList.remove('is-dragging');
-            track.style.scrollSnapType = 'x mandatory';
-            cancelAnimationFrame(rafId);
-          });
-
-          slider.addEventListener('click', e => {
-            if (e.target === thumb) return;
-            const rect = slider.getBoundingClientRect();
-            const pct = Math.max(0, Math.min((e.clientX - rect.left - thumb.offsetWidth / 2) / thumbRange(), 1));
-            track.scrollLeft = pct * scrollMax();
-          });
-        }
-
-        // Drag-to-scroll on journey track
-        if (track) { // track already declared above
-          let down = false, startX, scrollLeft;
-          track.addEventListener('mousedown', e => {
-            down = true; startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft;
-            track.style.scrollSnapType = 'none';
-          });
-          track.addEventListener('mouseleave', () => { down = false; });
-          track.addEventListener('mouseup', () => {
-            down = false; track.style.scrollSnapType = 'x mandatory';
-          });
-          track.addEventListener('mousemove', e => {
-            if (!down) return;
-            e.preventDefault();
-            track.scrollLeft = scrollLeft - (e.pageX - track.offsetLeft - startX) * 1.4;
-          });
-        }
-      })();
-    </script>
+    <script src="./journey-slider.js?v=autocycle-1" defer></script>
   </body>
 </html>

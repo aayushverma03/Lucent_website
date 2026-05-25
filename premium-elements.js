@@ -1,28 +1,35 @@
 const premiumMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function setupLenisSmoothScroll() {
-  if (premiumMotionQuery.matches || typeof window.Lenis !== "function") return;
+  if (premiumMotionQuery.matches) return;
+  if (!window.matchMedia("(hover: hover)").matches) return;
 
-  // On touch-only devices (phones/tablets) native momentum scroll is better:
-  // Lenis intercepts touch events, fights the browser chrome show/hide, and
-  // breaks position:sticky sections on iOS Safari. Desktop-only wheel smooth.
-  const isTouch = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
-  if (isTouch) return;
-
-  const lenis = new window.Lenis({
-    duration: 1.18,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-    wheelMultiplier: 0.86,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
+  const init = () => {
+    if (typeof window.Lenis !== "function") return;
+    const lenis = new window.Lenis({
+      duration: 1.18,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+      wheelMultiplier: 0.86,
+    });
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
     requestAnimationFrame(raf);
+    window.lucentLenis = lenis;
+  };
+
+  if (typeof window.Lenis === "function") {
+    init();
+    return;
   }
 
-  requestAnimationFrame(raf);
-  window.lucentLenis = lenis;
+  const s = document.createElement("script");
+  s.src = "https://unpkg.com/lenis@1.3.15/dist/lenis.min.js";
+  s.async = true;
+  s.onload = init;
+  document.head.appendChild(s);
 }
 
 function setupPremiumAmbient() {

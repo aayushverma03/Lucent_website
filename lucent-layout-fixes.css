@@ -1,0 +1,302 @@
+/* lucent-layout-fixes.css
+   Scoped section/layout fixes for #how, #skills, #scouted.
+   Loaded after apple-redesign.css, before footer.css. */
+
+/* #how — two-column header with slider on the right */
+body.lucent-theme .journey-section {
+  padding: clamp(64px, 9vh, 112px) clamp(24px, 6vw, 120px) clamp(56px, 8vh, 96px) !important;
+}
+
+body.lucent-theme .journey-section__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  max-width: none !important;
+  gap: 32px;
+  margin-bottom: clamp(40px, 6vh, 72px) !important;
+}
+
+body.lucent-theme .journey-section__header .journey-slider {
+  margin: 0 !important;
+  width: clamp(160px, 22vw, 260px);
+}
+
+/* Perspective-style header: display kicker + Oswald title with accent + Poppins subtitle */
+body.lucent-theme .journey-section__kicker {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-family: 'Oswald', 'Inter', sans-serif !important;
+  font-size: clamp(12px, 1vw, 14px) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  color: #00BD7D !important;
+  margin: 0 0 clamp(20px, 2.5vw, 32px) !important;
+}
+
+body.lucent-theme .journey-section__kicker::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #00BD7D;
+  border-radius: 2px;
+}
+
+body.lucent-theme .journey-section__title {
+  font-family: 'Oswald', var(--display-font, 'Inter'), sans-serif !important;
+  font-size: clamp(48px, 6.5vw, 92px) !important;
+  font-weight: 600 !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.025em !important;
+  color: rgba(255, 255, 255, 0.96) !important;
+  text-transform: none !important;
+  margin: 0 0 clamp(20px, 2.4vw, 28px) !important;
+  max-width: clamp(420px, 50vw, 720px) !important;
+}
+
+body.lucent-theme .journey-section__title em {
+  font-style: normal !important;
+  color: #00BD7D !important;
+  font-weight: 600 !important;
+}
+
+body.lucent-theme .journey-section__sub {
+  font-family: 'Poppins', 'Inter', sans-serif !important;
+  font-size: clamp(15px, 1.2vw, 18px) !important;
+  font-weight: 400 !important;
+  line-height: 1.55 !important;
+  letter-spacing: 0.01em !important;
+  color: rgba(245, 245, 247, 0.62) !important;
+  max-width: clamp(360px, 36vw, 480px) !important;
+  margin: 0 !important;
+}
+
+body.lucent-theme .jtile {
+  height: clamp(380px, 52svh, 560px) !important;
+}
+
+/* Step number — large, dimensional, on-theme. Replaces the tiny green pill. */
+body.lucent-theme .jtile__num {
+  position: absolute !important;
+  top: clamp(16px, 2vw, 24px) !important;
+  left: clamp(20px, 2.4vw, 32px) !important;
+  z-index: 3 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  font-family: 'Oswald', 'Inter', sans-serif !important;
+  font-size: clamp(40px, 5vw, 64px) !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: -0.02em !important;
+  text-transform: none !important;
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+  opacity: 1 !important;
+}
+
+/* Unified title color across all tiles — kill the lone green on the CTA tile */
+body.lucent-theme .jtile--cta .jtile__title,
+body.lucent-theme .jtile .jtile__title {
+  color: rgba(255, 255, 255, 0.96) !important;
+}
+
+@media (max-width: 720px) {
+  body.lucent-theme .journey-section__header {
+    grid-template-columns: 1fr;
+  }
+  body.lucent-theme .journey-section__header .journey-slider {
+    width: 100%;
+  }
+}
+
+/* #scouted — overflow + dots fixes */
+body.lucent-theme .story--scouted .scouted {
+  grid-template-columns: minmax(280px, 0.4fr) minmax(0, 0.6fr) !important;
+  gap: clamp(28px, 4vw, 72px) !important;
+}
+
+@media (max-width: 1080px) and (min-width: 896px) {
+  body.lucent-theme .story--scouted .scouted {
+    grid-template-columns: minmax(260px, 0.42fr) minmax(0, 0.58fr) !important;
+  }
+}
+
+body.lucent-theme .story--scouted .product-shell {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1200px) {
+  body.lucent-theme .trial-card__pulse { display: none !important; }
+}
+
+body.lucent-theme .trial-card__top { min-width: 0 !important; }
+body.lucent-theme .trial-card__top > div:nth-child(2) { min-width: 0; overflow: hidden; }
+body.lucent-theme .trial-card__top h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  body.lucent-theme .trial-grid--premium {
+    grid-template-columns: 1fr !important;
+  }
+  body.lucent-theme .trial-grid--premium .trial-card:nth-child(n+4) {
+    display: none !important;
+  }
+}
+
+body.lucent-theme .screen {
+  padding: 20px !important;
+  min-height: 0 !important;
+  overflow: hidden;
+}
+
+/* #skills — bump fanned-cards collapse from 520 to 820 */
+@media (max-width: 820px) {
+  body.lucent-theme .skill-card--foundational,
+  body.lucent-theme .skill-card--cognitive {
+    display: none !important;
+  }
+  body.lucent-theme .skill-cards.is-revealed .skill-card--technical {
+    transform: none !important;
+  }
+  body.lucent-theme .skill-card--technical {
+    width: clamp(240px, 60vw, 320px) !important;
+  }
+}
+
+/* Constrain skill/scouted intro headings so they don't drift into the stage column */
+body.lucent-theme .story--skills .story__intro,
+body.lucent-theme .story--scouted .scouted__copy {
+  max-width: clamp(280px, 28vw, 420px);
+  padding-right: clamp(20px, 3vw, 40px);
+}
+
+body.lucent-theme .story--skills .story__intro h2,
+body.lucent-theme .story--scouted .scouted__copy h2 {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: none;
+}
+
+body.lucent-theme .story--skills .story__intro .lede,
+body.lucent-theme .story--scouted .scouted__copy .lede {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+/* Hide the vestigial product-pointer dot — distracting and miscued at later steps */
+body.lucent-theme .product-pointer { display: none !important; }
+
+/* Success card — give the CLUB-READY eyebrow breathing room below the icon */
+body.lucent-theme .success-card .club-mark + span,
+body.lucent-theme .success-card--scouted span {
+  display: block !important;
+  margin-top: 18px !important;
+}
+
+body.lucent-theme .success-card h3 {
+  margin-top: 12px !important;
+}
+
+body.lucent-theme .success-card p {
+  margin-top: 10px !important;
+}
+
+/* Scroll-progress dots — absolute inside .story__sticky (sticky is positioned) */
+.story-progress {
+  position: absolute;
+  right: clamp(12px, 1.6vw, 22px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.story-progress span {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(245, 245, 247, 0.18);
+  transition: background 220ms ease, transform 220ms ease;
+}
+
+.story-progress span.is-active {
+  background: #00BD7D;
+  transform: scale(1.6);
+}
+
+.story-progress span.is-past {
+  background: rgba(0, 189, 125, 0.4);
+}
+
+@media (max-width: 860px) {
+  .story-progress { display: none; }
+}
+
+/* Premium orbs — hide on mobile */
+@media (max-width: 720px) {
+  body.lucent-theme [class*="premium-orb"] {
+    display: none !important;
+  }
+}
+
+/* Mobile sticky-story replacement — only for #skills and #scouted */
+.story__mobile-cards {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  body.lucent-theme .story--skills .story__sticky,
+  body.lucent-theme .story--scouted .story__sticky {
+    display: none !important;
+  }
+
+  body.lucent-theme .story--skills .story__mobile-cards,
+  body.lucent-theme .story--scouted .story__mobile-cards {
+    display: grid;
+    gap: 16px;
+    padding: clamp(48px, 8vw, 72px) clamp(20px, 5vw, 32px);
+  }
+
+  body.lucent-theme .story__mobile-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(245, 245, 247, 0.08);
+    border-radius: 14px;
+    padding: 20px;
+    color: rgba(245, 245, 247, 0.92);
+  }
+
+  body.lucent-theme .story__mobile-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #00BD7D;
+    margin: 0 0 6px;
+  }
+
+  body.lucent-theme .story__mobile-card h3 {
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  body.lucent-theme .story__mobile-card p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(245, 245, 247, 0.62);
+    margin: 0;
+  }
+}
