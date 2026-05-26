@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./lucent-layout-fixes.css" />
     <link rel="preload" as="style" href="./footer.css" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href="./lucent-nav-redesign.css" />
+    <link rel="stylesheet" href="./mobile-story.css?v=3" media="(max-width: 860px)" />
     <noscript>
       <link rel="stylesheet" href="./lucent-polish-bundle.css?v=1" />
       <link rel="stylesheet" href="./footer.css" />
@@ -46,7 +47,7 @@
         <div class="film__sticky" data-hero-sticky>
           <div class="film__stage" data-hero-stage>
             <video class="film__stage-video" autoplay muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" aria-hidden="true">
-              <source media="(max-width: 720px)" src="./assets/video/reel-mobile.mp4" type="video/mp4" />
+              <source media="(max-width: 720px)" src="./assets/video/reel-mobile-vertical.mp4" type="video/mp4" />
               <source src="./assets/video/reel.mp4" type="video/mp4" />
             </video>
             <div class="film__stage-veil" aria-hidden="true"></div>
@@ -207,70 +208,52 @@
           <div class="story-steps shell" aria-hidden="true"><span class="is-active">Train</span><span>Scan</span><span>Benchmark</span><span>Improve</span></div>
           <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
         </div>
-        <div class="story__mobile-cards" aria-hidden="true">
-          <div class="story__mobile-intro">
-            <p class="story__mobile-eyebrow">Skill engine</p>
-            <h2>See the player clearly.</h2>
-            <p class="story__mobile-lede">Read the football actions that matter: touch, movement, speed, and finishing.</p>
+        <div class="story__mobile-cards ms" data-ms="skills" data-ms-steps="4" aria-hidden="true">
+          <div class="ms__head">
+            <p class="ms__eyebrow">Skill engine</p>
+            <div class="ms__progress"><i class="is-active"></i><i></i><i></i><i></i></div>
+            <p class="ms__steplabel" data-ms-label>Train</p>
+            <h2 class="ms__title" data-ms-title>See the player clearly.</h2>
+            <p class="ms__lede" data-ms-lede>Start with the athlete, then reveal the movement behind every rep.</p>
           </div>
 
-          <div class="story__mobile-clip">
-            <span class="story__mobile-rec"><i></i>REC</span>
-            <img src="./assets/images/hero-athlete.webp" alt="Player being analysed" loading="lazy" decoding="async" />
+          <div class="ms__stage">
+            <div class="ms__hero">
+              <div class="ms__clip">
+                <span class="ms__rec"><i></i>REC</span>
+                <img src="./assets/images/hero-athlete.webp" alt="Player being analysed" loading="lazy" decoding="async" />
+                <span class="ms__scanline"></span>
+              </div>
+            </div>
+
+            <div class="ms__panels">
+              <article class="ms__panel ms__card" data-scene="1">
+                <p class="ms__card-cat">Skill scan</p>
+                <div class="ms__bar"><span>First touch</span><em>91</em><div class="ms__track"><i data-fill="91"></i></div></div>
+                <div class="ms__bar"><span>Speed</span><em>85</em><div class="ms__track"><i data-fill="85"></i></div></div>
+                <div class="ms__bar"><span>Decision making</span><em>83</em><div class="ms__track"><i data-fill="83"></i></div></div>
+                <div class="ms__bar"><span>Explosiveness</span><em>82</em><div class="ms__track"><i data-fill="82"></i></div></div>
+              </article>
+
+              <article class="ms__panel ms__card" data-scene="2">
+                <p class="ms__rank-label">Overall rank</p>
+                <p class="ms__rank-num" data-ms-rank>#847</p>
+                <p class="ms__rank-sub">of 3,200 U19 wingers</p>
+                <div class="ms__rank-rows">
+                  <div><span>Technical</span><em>Top 18%</em></div>
+                  <div><span>Foundational</span><em>Top 31%</em></div>
+                  <div><span>Cognitive</span><em>Top 42%</em></div>
+                </div>
+              </article>
+
+              <article class="ms__panel ms__card" data-scene="3">
+                <header class="ms__drills-head"><span>&#9889;</span>Priority drills</header>
+                <div class="ms__drill"><div><span class="ms__drill-name">Weak-foot Finishing</span><span class="ms__drill-cat">Technical</span></div><span class="ms__drill-dur">12m</span></div>
+                <div class="ms__drill"><div><span class="ms__drill-name">First Touch Escape</span><span class="ms__drill-cat">Technical</span></div><span class="ms__drill-dur">8m</span></div>
+                <div class="ms__drill"><div><span class="ms__drill-name">20m Burst Ladder</span><span class="ms__drill-cat">Foundational</span></div><span class="ms__drill-dur">6m</span></div>
+              </article>
+            </div>
           </div>
-
-          <article class="story__mobile-skills">
-            <p class="story__mobile-cat">Foundational</p>
-            <div class="story__mobile-bar"><span>Strength</span><div class="story__mobile-track"><i style="--p:72%"></i></div><em>72</em></div>
-            <div class="story__mobile-bar"><span>Speed</span><div class="story__mobile-track"><i style="--p:85%"></i></div><em>85</em></div>
-            <div class="story__mobile-bar"><span>Agility</span><div class="story__mobile-track"><i style="--p:79%"></i></div><em>79</em></div>
-            <div class="story__mobile-bar"><span>Stamina</span><div class="story__mobile-track"><i style="--p:68%"></i></div><em>68</em></div>
-            <div class="story__mobile-bar"><span>Explosiveness</span><div class="story__mobile-track"><i style="--p:82%"></i></div><em>82</em></div>
-          </article>
-
-          <article class="story__mobile-skills">
-            <p class="story__mobile-cat">Technical</p>
-            <div class="story__mobile-bar"><span>First touch</span><div class="story__mobile-track"><i style="--p:91%"></i></div><em>91</em></div>
-            <div class="story__mobile-bar"><span>Ball retention</span><div class="story__mobile-track"><i style="--p:83%"></i></div><em>83</em></div>
-            <div class="story__mobile-bar"><span>Pose quality</span><div class="story__mobile-track"><i style="--p:76%"></i></div><em>76</em></div>
-            <div class="story__mobile-bar"><span>Shooting</span><div class="story__mobile-track"><i style="--p:78%"></i></div><em>78</em></div>
-            <div class="story__mobile-bar"><span>Weak foot</span><div class="story__mobile-track"><i style="--p:58%"></i></div><em>58</em></div>
-          </article>
-
-          <article class="story__mobile-skills">
-            <p class="story__mobile-cat">Cognitive</p>
-            <div class="story__mobile-bar"><span>Spatial awareness</span><div class="story__mobile-track"><i style="--p:74%"></i></div><em>74</em></div>
-            <div class="story__mobile-bar"><span>Reaction speed</span><div class="story__mobile-track"><i style="--p:77%"></i></div><em>77</em></div>
-            <div class="story__mobile-bar"><span>Decision making</span><div class="story__mobile-track"><i style="--p:83%"></i></div><em>83</em></div>
-            <div class="story__mobile-bar"><span>Off-ball movement</span><div class="story__mobile-track"><i style="--p:69%"></i></div><em>69</em></div>
-          </article>
-
-          <article class="story__mobile-rank">
-            <p class="story__mobile-rank-label">Overall rank</p>
-            <p class="story__mobile-rank-num">#847</p>
-            <p class="story__mobile-rank-sub">of 3,200 U19 wingers</p>
-            <div class="story__mobile-rank-rows">
-              <div><span>Technical</span><em>Top 18%</em></div>
-              <div><span>Foundational</span><em>Top 31%</em></div>
-              <div><span>Cognitive</span><em>Top 42%</em></div>
-            </div>
-          </article>
-
-          <article class="story__mobile-drills">
-            <header class="story__mobile-drills-head"><span class="story__mobile-drills-bolt">&#9889;</span>Priority drills</header>
-            <div class="story__mobile-drill">
-              <div class="story__mobile-drill-top"><span class="story__mobile-drill-name">Weak-foot Finishing</span><span class="story__mobile-drill-dur">12m</span></div>
-              <div class="story__mobile-drill-meta"><span class="story__mobile-drill-cat">Technical</span><span class="story__mobile-drill-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
-            </div>
-            <div class="story__mobile-drill">
-              <div class="story__mobile-drill-top"><span class="story__mobile-drill-name">First Touch Escape</span><span class="story__mobile-drill-dur">8m</span></div>
-              <div class="story__mobile-drill-meta"><span class="story__mobile-drill-cat">Technical</span><span class="story__mobile-drill-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
-            </div>
-            <div class="story__mobile-drill">
-              <div class="story__mobile-drill-top"><span class="story__mobile-drill-name">20m Burst Ladder</span><span class="story__mobile-drill-dur">6m</span></div>
-              <div class="story__mobile-drill-meta"><span class="story__mobile-drill-cat">Foundational</span><span class="story__mobile-drill-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
-            </div>
-          </article>
         </div>
       </section>
 
@@ -303,155 +286,93 @@
           <div class="story-steps story-steps--scouted shell" aria-hidden="true"><span class="is-active">Radar</span><span>Brief</span><span>Proof</span><span>Package</span><span>Scout</span></div>
           <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
         </div>
-        <div class="story__mobile-cards" aria-hidden="true">
-          <div class="story__mobile-intro">
-            <p class="story__mobile-eyebrow">Trials</p>
-            <h2>See which clubs want you.</h2>
-            <p class="story__mobile-lede">Browse live opportunities from clubs recruiting for your exact role.</p>
+        <div class="story__mobile-cards ms" data-ms="scouted" data-ms-steps="5" aria-hidden="true">
+          <div class="ms__head">
+            <p class="ms__eyebrow">Trials</p>
+            <div class="ms__progress"><i class="is-active"></i><i></i><i></i><i></i><i></i></div>
+            <p class="ms__steplabel" data-ms-label>Radar</p>
+            <h2 class="ms__title" data-ms-title>See which clubs want you.</h2>
+            <p class="ms__lede" data-ms-lede>Browse live opportunities from clubs recruiting for your exact role.</p>
           </div>
 
-          <div class="story__mobile-board">
-            <header class="story__mobile-board-chrome"><span></span><span></span><span></span><strong>Lucent trial board</strong></header>
+          <div class="ms__stage">
+            <div class="ms__scout-bg"><img src="./assets/images/opening-poster.webp" alt="" loading="lazy" decoding="async" /></div>
+            <div class="ms__frame">
+              <header class="ms__chrome"><span></span><span></span><span></span><strong>Lucent trial board</strong></header>
+              <div class="ms__screens">
 
-            <header class="story__mobile-board-head">
-              <div>
-                <span>Live trial radar</span>
-                <strong>12 clubs recruiting</strong>
+                <article class="ms__panel" data-scene="0">
+                  <header class="ms-sc__head">
+                    <div><small>Live trial radar</small><strong>12 clubs recruiting</strong></div>
+                    <em class="ms-sc__urgent">3 urgent</em>
+                  </header>
+                  <div class="ms-sc__command">
+                    <article><span>Views</span><strong>2</strong><small>this week</small></article>
+                    <article><span>Status</span><strong>87%</strong><small>trial-ready</small></article>
+                    <article><span>Role fit</span><strong>RW</strong><small>wide fwd</small></article>
+                  </div>
+                  <div class="ms-sc__card ms-sc__card--hot">
+                    <div class="ms-sc__trial-top">
+                      <div class="ms-sc__club">A</div>
+                      <div class="ms-sc__trial-body"><em>Recruiting now</em><h3>Aurelia SC</h3><p>U19 winger &middot; London</p></div>
+                      <strong class="ms-sc__fit">94%</strong>
+                    </div>
+                    <div class="ms-sc__chips"><span>1v1 burst</span><span>3 drills</span><span>Scout active</span></div>
+                    <div class="ms-sc__bar"><i style="width:94%"></i></div>
+                  </div>
+                  <div class="ms-sc__card">
+                    <div class="ms-sc__trial-top">
+                      <div class="ms-sc__club" style="background:linear-gradient(135deg,#6ec3ff,#2563eb);color:#fff">N</div>
+                      <div class="ms-sc__trial-body"><em>New brief</em><h3>Northbridge FC</h3><p>U21 forward &middot; Manchester</p></div>
+                      <strong class="ms-sc__fit">89%</strong>
+                    </div>
+                    <div class="ms-sc__bar"><i style="width:89%"></i></div>
+                  </div>
+                </article>
+
+                <article class="ms__panel" data-scene="1">
+                  <div class="ms-sc__card ms-sc__card--hot">
+                    <div class="ms-sc__trial-top">
+                      <div class="ms-sc__club">A</div>
+                      <div class="ms-sc__trial-body"><em>Selected trial</em><h3>Aurelia SC &middot; U19 winger</h3><p>High-tempo transition profile</p></div>
+                      <strong class="ms-sc__fit">94%</strong>
+                    </div>
+                  </div>
+                  <div class="ms-sc__rows">
+                    <div class="ms-sc__row"><span>Club priority</span><strong>1v1 acceleration</strong><p>Prove separation in the first three steps.</p></div>
+                    <div class="ms-sc__row"><span>Evidence pack</span><strong>3 uploads</strong><p>Drill proof, match clips, and role signal.</p></div>
+                    <div class="ms-sc__row"><span>Scout signal</span><strong>Active shortlist</strong><p>Recruiter opened the brief twice today.</p></div>
+                  </div>
+                </article>
+
+                <article class="ms__panel" data-scene="2">
+                  <div class="ms-sc__cols">
+                    <div class="ms-sc__row"><span>Requirements</span><ul><li>90 sec match reel</li><li>Sprint profile</li><li>Finishing ladder</li></ul></div>
+                    <div class="ms-sc__row"><span>Drills</span><ul><li>Weak-foot finish</li><li>First-touch escape</li><li>20 m burst</li></ul></div>
+                  </div>
+                </article>
+
+                <article class="ms__panel" data-scene="3">
+                  <div class="ms-sc__center">
+                    <span>Upload proof</span>
+                    <h3>3 of 3 attached</h3>
+                    <div class="ms-sc__files"><em>finishing-ladder.mp4</em><em>first-touch-escape.mp4</em><em>sprint-profile.csv</em></div>
+                    <p class="ms-sc__done">Pack ready</p>
+                  </div>
+                </article>
+
+                <article class="ms__panel" data-scene="4">
+                  <div class="ms-sc__center">
+                    <div class="ms-sc__check">&#10003;</div>
+                    <span>Club-ready</span>
+                    <h3>Aurelia SC shortlisted you</h3>
+                    <p>Your football evidence is with the recruitment team.</p>
+                  </div>
+                </article>
+
               </div>
-              <em>3 urgent</em>
-            </header>
-
-            <div class="story__mobile-command">
-              <article><span>Views</span><strong>2</strong><small>clubs this week</small></article>
-              <article><span>Status</span><strong>87%</strong><small>trial-ready</small></article>
-              <article><span>Role fit</span><strong>RW</strong><small>wide forward</small></article>
             </div>
-
-            <div class="story__mobile-filters">
-              <span>Winger</span><span>U21</span><span>Verified clubs</span><span>High-fit only</span>
-            </div>
-
-            <article class="story__mobile-trial story__mobile-trial--featured">
-              <div class="story__mobile-club story__mobile-club--aurelia"><span>A</span></div>
-              <div class="story__mobile-trial-body">
-                <p class="story__mobile-trial-eyebrow">Recruiting now</p>
-                <h3>Aurelia SC</h3>
-                <p class="story__mobile-trial-meta">U19 winger &middot; London</p>
-              </div>
-              <strong class="story__mobile-trial-fit">94%</strong>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--insights"><span>1v1 burst</span><span>3 drills</span><span>Scout active</span></div>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--evidence"><span>First touch</span><span>Weak-foot finish</span><span>20m sprint</span></div>
-              <div class="story__mobile-trial-bar"><i style="--p:94%"></i></div>
-              <div class="story__mobile-trial-foot"><em>48h left</em><span>Elite fit</span></div>
-            </article>
-
-            <article class="story__mobile-trial">
-              <div class="story__mobile-club story__mobile-club--northbridge"><span>N</span></div>
-              <div class="story__mobile-trial-body">
-                <p class="story__mobile-trial-eyebrow">New brief</p>
-                <h3>Northbridge FC</h3>
-                <p class="story__mobile-trial-meta">U21 forward &middot; Manchester</p>
-              </div>
-              <strong class="story__mobile-trial-fit">89%</strong>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--insights"><span>Runs in behind</span><span>Video reel</span><span>Coach review</span></div>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--evidence"><span>Match reel</span><span>Sprint profile</span></div>
-              <div class="story__mobile-trial-bar"><i style="--p:89%"></i></div>
-              <div class="story__mobile-trial-foot"><em>3 days</em><span>Strong fit</span></div>
-            </article>
-
-            <article class="story__mobile-trial">
-              <div class="story__mobile-club story__mobile-club--vale"><span>V</span></div>
-              <div class="story__mobile-trial-body">
-                <p class="story__mobile-trial-eyebrow">Shortlist open</p>
-                <h3>Vale Athletic</h3>
-                <p class="story__mobile-trial-meta">Academy 9 &middot; Birmingham</p>
-              </div>
-              <strong class="story__mobile-trial-fit">86%</strong>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--insights"><span>Finishing</span><span>Weak foot</span><span>2 slots</span></div>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--evidence"><span>Finishing ladder</span><span>Coach note</span></div>
-              <div class="story__mobile-trial-bar"><i style="--p:86%"></i></div>
-              <div class="story__mobile-trial-foot"><em>5 days</em><span>Strong fit</span></div>
-            </article>
-
-            <article class="story__mobile-trial">
-              <div class="story__mobile-club story__mobile-club--meridian"><span>M</span></div>
-              <div class="story__mobile-trial-body">
-                <p class="story__mobile-trial-eyebrow">Recommended</p>
-                <h3>Meridian United</h3>
-                <p class="story__mobile-trial-meta">Wide forward &middot; Leeds</p>
-              </div>
-              <strong class="story__mobile-trial-fit">84%</strong>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--insights"><span>1v1 profile</span><span>Sprint proof</span><span>Open combine</span></div>
-              <div class="story__mobile-trial-chips story__mobile-trial-chips--evidence"><span>1v1 clips</span><span>Agility test</span></div>
-              <div class="story__mobile-trial-bar"><i style="--p:84%"></i></div>
-              <div class="story__mobile-trial-foot"><em>7 days</em><span>Good fit</span></div>
-            </article>
           </div>
-
-          <article class="story__mobile-selected">
-            <div class="story__mobile-club story__mobile-club--aurelia story__mobile-club--lg"><span>A</span></div>
-            <div class="story__mobile-selected-body">
-              <span>Selected trial</span>
-              <h3>Aurelia SC &middot; U19 winger</h3>
-              <p>High-tempo transition profile</p>
-            </div>
-            <strong>94% fit</strong>
-          </article>
-
-          <div class="story__mobile-brief">
-            <article>
-              <span>Club priority</span>
-              <strong>1v1 acceleration</strong>
-              <p>Prove separation in the first three steps.</p>
-            </article>
-            <article>
-              <span>Evidence pack</span>
-              <strong>3 uploads</strong>
-              <p>Drill proof, match clips, and role signal.</p>
-            </article>
-            <article>
-              <span>Scout signal</span>
-              <strong>Active shortlist</strong>
-              <p>Recruiter opened the brief twice today.</p>
-            </article>
-          </div>
-
-          <div class="story__mobile-reqs">
-            <article>
-              <span>Requirements</span>
-              <ul>
-                <li>90 sec match reel</li>
-                <li>Sprint profile</li>
-                <li>Finishing ladder</li>
-              </ul>
-            </article>
-            <article>
-              <span>Drills</span>
-              <ul>
-                <li>Weak-foot finish</li>
-                <li>First-touch escape</li>
-                <li>20 m burst</li>
-              </ul>
-            </article>
-          </div>
-
-          <article class="story__mobile-upload">
-            <span>Upload proof</span>
-            <h3>3 of 3 attached</h3>
-            <div class="story__mobile-upload-list">
-              <em>finishing-ladder.mp4</em>
-              <em>first-touch-escape.mp4</em>
-              <em>sprint-profile.csv</em>
-            </div>
-            <strong>Pack ready</strong>
-          </article>
-
-          <article class="story__mobile-success">
-            <div class="story__mobile-club story__mobile-club--aurelia story__mobile-club--lg"><span>A</span></div>
-            <span>Club-ready</span>
-            <h3>Aurelia SC shortlisted you</h3>
-            <p>Your football evidence is with the recruitment team.</p>
-          </article>
         </div>
       </section>
 
@@ -534,7 +455,10 @@
       </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="./script.js?v=dots-1" defer></script>
+    <script src="./mobile-story.js?v=3" defer></script>
     <script src="./premium-elements.js?v=lenis-lazy-1" defer></script>
     <script src="./qa-polish.js" defer></script>
     <script src="./hero-redesign.js?v=auto-slide-v2" defer></script>

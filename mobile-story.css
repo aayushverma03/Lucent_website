@@ -1,0 +1,438 @@
+/* mobile-story.css — GSAP pinned scene-stepper for #skills and #scouted.
+   Loaded with media="(max-width: 860px)", so desktop never applies any of it.
+   Reuses the existing .story__mobile-* card visuals, restructured into scenes.
+   Without JS the .is-ready class is absent and the section falls back to a
+   normal scrolling stack (graceful, no blank screen). */
+
+/* ── Pinned stage container ───────────────────────────────────────── */
+body.lucent-theme .story__mobile-cards.ms.is-ready {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100svh;
+  min-height: 100svh;
+  padding: 0;
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Head: eyebrow, progress, step label, dynamic title/lede ──────── */
+.ms__head {
+  position: relative;
+  z-index: 6;
+  padding: clamp(58px, 12vw, 84px) 22px 10px;
+  pointer-events: none;
+}
+.ms__eyebrow {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #00BD7D;
+  margin: 0;
+}
+.ms__progress {
+  display: flex;
+  gap: 7px;
+  margin: 13px 0 12px;
+}
+.ms__progress i {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.14);
+  position: relative;
+  overflow: hidden;
+}
+.ms__progress i::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: #00BD7D;
+  border-radius: 2px;
+  transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ms__progress i.is-past::after { width: 100%; }
+.ms__progress i.is-active::after { width: 100%; }
+.ms__steplabel {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 247, 0.55);
+  margin: 0 0 8px;
+}
+.ms__title {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-size: clamp(30px, 8vw, 42px);
+  line-height: 1.04;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: rgba(245, 245, 247, 0.96);
+  margin: 0 0 10px;
+  min-height: 1.04em;
+}
+.ms__lede {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(245, 245, 247, 0.62);
+  margin: 0;
+  max-width: 32ch;
+}
+
+/* ── Stage: persistent hero + crossfading scene panels ────────────── */
+.ms__stage {
+  position: relative;
+  min-height: 0;
+}
+
+/* Persistent athlete clip (full, contain — never cropped) */
+.ms__hero {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.ms__clip {
+  position: relative;
+  height: 92%;
+  aspect-ratio: 532 / 1584;
+  max-width: 86%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #060a0d;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55);
+  transition: border-color 0.6s ease, box-shadow 0.6s ease;
+}
+.ms.is-scanning .ms__clip {
+  border-color: rgba(48, 209, 88, 0.5);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55), 0 0 48px rgba(48, 209, 88, 0.16);
+}
+.ms__clip img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  display: block;
+}
+.ms__rec {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(245, 245, 247, 0.92);
+  background: rgba(4, 6, 10, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+.ms__rec i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ff3b30;
+  animation: rec-blink 1.4s ease-in-out infinite;
+}
+.ms__scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 2;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(48, 209, 88, 0.4) 15%, rgba(48, 209, 88, 1) 50%, rgba(48, 209, 88, 0.4) 85%, transparent);
+  box-shadow: 0 0 8px 2px rgba(48, 209, 88, 0.7), 0 0 24px 6px rgba(48, 209, 88, 0.35);
+  pointer-events: none;
+}
+
+/* Scene panels overlay the lower portion of the clip and crossfade */
+.ms__panels {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: clamp(18px, 5vh, 46px);
+  z-index: 4;
+}
+.ms__panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  will-change: opacity, transform;
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+.ms.is-ready .ms__panel.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* Glass card shell shared by scene panels */
+.ms__card {
+  background: rgba(6, 10, 14, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  padding: 16px 18px;
+}
+.ms__card-cat {
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #00BD7D;
+  margin: 0 0 12px;
+}
+
+/* Skill bars inside the Scan panel */
+.ms__bar {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px 10px;
+  margin-bottom: 9px;
+}
+.ms__bar:last-child { margin-bottom: 0; }
+.ms__bar > span {
+  font-size: 12.5px;
+  color: rgba(245, 245, 247, 0.7);
+}
+.ms__bar > em {
+  font-style: normal;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: rgba(245, 245, 247, 0.92);
+  text-align: right;
+}
+.ms__track {
+  grid-column: 1 / -1;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+.ms__track i {
+  display: block;
+  height: 100%;
+  width: 0%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #00BD7D, #30d158);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Rank panel (Benchmark) */
+.ms__rank-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 247, 0.4);
+  margin: 0 0 8px;
+}
+.ms__rank-num {
+  font-size: clamp(2.6rem, 12vw, 3.4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #f5f5f7;
+  line-height: 1;
+  margin: 0 0 4px;
+}
+.ms__rank-sub {
+  font-size: 0.72rem;
+  color: rgba(245, 245, 247, 0.44);
+  margin: 0 0 14px;
+}
+.ms__rank-rows { display: grid; gap: 9px; }
+.ms__rank-rows > div { display: flex; justify-content: space-between; }
+.ms__rank-rows span { font-size: 0.74rem; color: rgba(245, 245, 247, 0.52); }
+.ms__rank-rows em { font-style: normal; font-size: 0.74rem; font-weight: 600; color: #30d158; }
+
+/* Drills panel (Improve) */
+.ms__drills-head {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 247, 0.55);
+  margin: 0 0 12px;
+}
+.ms__drill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.ms__drill:first-of-type { border-top: 0; }
+.ms__drill-name { font-size: 13px; color: rgba(245, 245, 247, 0.88); }
+.ms__drill-cat { font-size: 11px; color: rgba(245, 245, 247, 0.45); display: block; margin-top: 2px; }
+.ms__drill-dur { font-size: 12px; font-weight: 600; color: #30d158; }
+
+/* ── Scouted: persistent product frame with swapping screens ──────── */
+.ms[data-ms="scouted"] .ms__stage {
+  padding: 0 14px clamp(16px, 4vh, 36px);
+}
+.ms__scout-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.ms__scout-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.16;
+  filter: saturate(0.8) brightness(0.65);
+}
+.ms__scout-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5, 7, 10, 0.7), rgba(5, 7, 10, 0.94));
+}
+.ms__frame {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 14, 18, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+}
+.ms__chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  font-size: 11px;
+  color: rgba(245, 245, 247, 0.5);
+  flex-shrink: 0;
+}
+.ms__chrome span { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.18); }
+.ms__chrome strong { margin-left: 8px; font-weight: 600; letter-spacing: 0.03em; color: rgba(245, 245, 247, 0.7); }
+.ms__screens { position: relative; flex: 1; min-height: 0; }
+
+.ms[data-ms="scouted"] .ms__panel {
+  position: absolute;
+  inset: 0;
+  bottom: auto;
+  top: 0;
+  height: 100%;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  overflow: hidden;
+  transform: translateY(0);
+}
+.ms[data-ms="scouted"] .ms.is-ready .ms__panel.is-active,
+.ms[data-ms="scouted"] .ms__panel.is-active { transform: none; }
+
+/* Board head */
+.ms-sc__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.ms-sc__head small { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #00BD7D; }
+.ms-sc__head strong { display: block; font-size: 15px; font-weight: 600; color: rgba(245, 245, 247, 0.92); margin-top: 2px; }
+.ms-sc__urgent { font-style: normal; font-size: 11px; color: #ff8f6b; background: rgba(255, 90, 60, 0.12); padding: 4px 9px; border-radius: 999px; white-space: nowrap; }
+
+/* Command strip */
+.ms-sc__command { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ms-sc__command article {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 9px 10px;
+}
+.ms-sc__command span { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(245, 245, 247, 0.4); }
+.ms-sc__command strong { display: block; font-size: 18px; font-weight: 700; color: #f5f5f7; margin: 2px 0; }
+.ms-sc__command small { font-size: 10px; color: rgba(245, 245, 247, 0.4); }
+
+/* Trial / selected / generic cards */
+.ms-sc__card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 13px;
+}
+.ms-sc__card--hot { border-color: rgba(0, 189, 125, 0.45); background: rgba(0, 189, 125, 0.07); }
+.ms-sc__trial-top { display: flex; align-items: center; gap: 11px; }
+.ms-sc__club {
+  width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 16px; color: #04231a;
+  background: linear-gradient(135deg, #4be3a8, #00bd7d);
+}
+.ms-sc__trial-body { flex: 1; min-width: 0; }
+.ms-sc__trial-body em { font-style: normal; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: #00BD7D; }
+.ms-sc__trial-body h3 { font-size: 15px; font-weight: 600; color: rgba(245, 245, 247, 0.95); margin: 1px 0; }
+.ms-sc__trial-body p { font-size: 12px; color: rgba(245, 245, 247, 0.5); margin: 0; }
+.ms-sc__fit { font-size: 18px; font-weight: 700; color: #30d158; }
+.ms-sc__bar { height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.08); overflow: hidden; margin-top: 11px; }
+.ms-sc__bar i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #00BD7D, #30d158); }
+.ms-sc__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.ms-sc__chips span { font-size: 10.5px; color: rgba(245, 245, 247, 0.62); background: rgba(255, 255, 255, 0.06); padding: 3px 9px; border-radius: 999px; }
+
+/* Brief / requirement rows */
+.ms-sc__rows { display: grid; gap: 9px; }
+.ms-sc__row {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  padding: 11px 13px;
+}
+.ms-sc__row span { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(245, 245, 247, 0.4); }
+.ms-sc__row strong { display: block; font-size: 14px; font-weight: 600; color: rgba(245, 245, 247, 0.92); margin: 2px 0; }
+.ms-sc__row p { font-size: 12px; color: rgba(245, 245, 247, 0.5); margin: 0; line-height: 1.4; }
+.ms-sc__row ul { margin: 6px 0 0; padding-left: 16px; }
+.ms-sc__row li { font-size: 12.5px; color: rgba(245, 245, 247, 0.72); margin-bottom: 4px; }
+.ms-sc__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin: auto 0; }
+
+/* Upload + success */
+.ms-sc__center { margin: auto 0; text-align: center; display: grid; gap: 8px; justify-items: center; }
+.ms-sc__big-club { width: 56px; height: 56px; border-radius: 16px; font-size: 24px; }
+.ms-sc__center span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #00BD7D; }
+.ms-sc__center h3 { font-size: 20px; font-weight: 600; color: rgba(245, 245, 247, 0.96); margin: 2px 0; line-height: 1.15; }
+.ms-sc__center p { font-size: 13px; color: rgba(245, 245, 247, 0.55); margin: 0; max-width: 30ch; }
+.ms-sc__files { display: grid; gap: 7px; width: 100%; margin-top: 6px; }
+.ms-sc__files em { font-style: normal; font-size: 12px; color: rgba(245, 245, 247, 0.72); background: rgba(255, 255, 255, 0.05); border-radius: 9px; padding: 9px 12px; text-align: left; }
+.ms-sc__done { margin-top: 6px; font-size: 12px; font-weight: 600; color: #30d158; }
+.ms-sc__check { width: 54px; height: 54px; border-radius: 50%; background: rgba(48, 209, 88, 0.16); border: 1px solid rgba(48, 209, 88, 0.5); display: flex; align-items: center; justify-content: center; font-size: 26px; color: #30d158; }
+
+/* ── Fallback when JS/GSAP unavailable: show as readable stack ─────── */
+body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__scanline { display: none; }
+body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__hero { position: relative; height: 60vh; }
+body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__stage { display: grid; gap: 16px; padding: 0 16px 32px; }
+body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__panels { position: static; }
+body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__panel { position: static; opacity: 1; transform: none; margin-top: 14px; }
