@@ -5,7 +5,7 @@
 # enables HTTPS.
 #
 # Run ON the instance as the default 'ubuntu' user:
-#   curl -fsSL https://raw.githubusercontent.com/mshbp92zt8-png/Lucent_website/main/deploy/bootstrap.sh | bash -s -- yourdomain.com you@example.com
+#   curl -fsSL https://raw.githubusercontent.com/aayushverma03/Lucent_website/main/deploy/bootstrap.sh | bash -s -- yourdomain.com you@example.com
 # or copy this file up and:
 #   chmod +x bootstrap.sh && ./bootstrap.sh yourdomain.com you@example.com
 #
@@ -15,7 +15,7 @@ set -euo pipefail
 
 DOMAIN="${1:?Usage: bootstrap.sh <domain> [email]   e.g. ./bootstrap.sh lucentapp.com you@example.com}"
 EMAIL="${2:-}"
-REPO_URL="https://github.com/mshbp92zt8-png/Lucent_website.git"
+REPO_URL="https://github.com/aayushverma03/Lucent_website.git"
 WEBROOT="/var/www/lucent"
 
 echo "==> Installing nginx, certbot, git, rsync"
