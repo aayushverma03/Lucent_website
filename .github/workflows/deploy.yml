@@ -1,0 +1,43 @@
+name: Deploy to EC2
+
+# Deploys the static site to the EC2 instance on every push to main.
+# Requires these repository secrets (Settings -> Secrets and variables -> Actions):
+#   EC2_HOST     Elastic IP or domain of the instance (e.g. 203.0.113.10)
+#   EC2_USER     SSH user (ubuntu for Ubuntu AMIs)
+#   EC2_SSH_KEY  Full private key that can SSH in (contents of your .pem)
+#   EC2_PORT     Optional SSH port (defaults to 22)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-ec2
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.EC2_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          PORT="${{ secrets.EC2_PORT }}"; PORT="${PORT:-22}"
+          ssh-keyscan -p "$PORT" -H "${{ secrets.EC2_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null
+
+      - name: Deploy with rsync
+        run: |
+          PORT="${{ secrets.EC2_PORT }}"; PORT="${PORT:-22}"
+          rsync -avz --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'deploy' \
+            --exclude 'DEPLOYMENT.md' \
+            --exclude '.gitignore' \
+            -e "ssh -i ~/.ssh/deploy_key -p $PORT -o StrictHostKeyChecking=yes" \
+            ./ "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/lucent/"

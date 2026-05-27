@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Obtain and install a free Let's Encrypt certificate, and turn on the
+# HTTP->HTTPS redirect. Run this AFTER GoDaddy DNS points at this server,
+# otherwise the domain-validation check will fail.
+#
+# Usage:  ./enable-https.sh <domain> <email>
+# Example: ./enable-https.sh lucentapp.com you@example.com
+
+set -euo pipefail
+
+DOMAIN="${1:?Usage: enable-https.sh <domain> <email>}"
+EMAIL="${2:?Usage: enable-https.sh <domain> <email>}"
+
+sudo certbot --nginx \
+  -d "$DOMAIN" -d "www.$DOMAIN" \
+  --non-interactive --agree-tos -m "$EMAIL" --redirect
+
+echo
+echo "HTTPS is on. Renewal is automatic via the certbot systemd timer:"
+systemctl list-timers 2>/dev/null | grep -i certbot || echo "  (run 'sudo certbot renew --dry-run' to verify)"

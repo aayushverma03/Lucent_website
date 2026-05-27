@@ -1,0 +1,41 @@
+# Lucent — static site served by Nginx on EC2.
+# Installed to /etc/nginx/sites-available/lucent.conf by deploy/setup-server.sh
+# (which substitutes __DOMAIN__). Certbot (--nginx) later appends the TLS
+# server block and the HTTP->HTTPS redirect automatically.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name __DOMAIN__ www.__DOMAIN__;
+
+    root /var/www/lucent;
+    index index.html;
+
+    # Security headers (apply to document responses).
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    # Compress text assets; video/images are already compressed.
+    gzip on;
+    gzip_comp_level 6;
+    gzip_min_length 1024;
+    gzip_types text/css application/javascript application/json image/svg+xml application/manifest+json;
+
+    # Keep HTML fresh so deploys show up immediately.
+    location = /index.html {
+        add_header Cache-Control "no-cache";
+    }
+
+    # Long-cache static assets (filenames are versioned via ?v= query strings).
+    location ~* \.(?:css|js|woff2?|ttf|otf|eot|webp|png|jpe?g|gif|svg|ico|mp4|webm)$ {
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000";
+        access_log off;
+    }
+
+    # Pretty URLs: /faq serves /faq.html; otherwise serve the file or 404.
+    location / {
+        try_files $uri $uri.html $uri/ =404;
+    }
+}
