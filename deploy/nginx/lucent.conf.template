@@ -27,8 +27,16 @@ server {
         add_header Cache-Control "no-cache";
     }
 
-    # Long-cache static assets (filenames are versioned via ?v= query strings).
-    location ~* \.(?:css|js|woff2?|ttf|otf|eot|webp|png|jpe?g|gif|svg|ico|mp4|webm)$ {
+    # CSS/JS change with deploys, so keep their cache short — new code shows
+    # up for visitors within minutes (no version-bumping or hard-refresh needed).
+    location ~* \.(?:css|js)$ {
+        expires 5m;
+        add_header Cache-Control "public, max-age=300, must-revalidate";
+        access_log off;
+    }
+
+    # Images, fonts, video rarely change — cache long.
+    location ~* \.(?:woff2?|ttf|otf|eot|webp|png|jpe?g|gif|svg|ico|mp4|webm)$ {
         expires 30d;
         add_header Cache-Control "public, max-age=2592000";
         access_log off;

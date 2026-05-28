@@ -77,7 +77,13 @@ server {
 
     location = /index.html { add_header Cache-Control "no-cache"; }
 
-    location ~* \.(?:css|js|woff2?|ttf|otf|eot|webp|png|jpe?g|gif|svg|ico|mp4|webm)\$ {
+    location ~* \.(?:css|js)\$ {
+        expires 5m;
+        add_header Cache-Control "public, max-age=300, must-revalidate";
+        access_log off;
+    }
+
+    location ~* \.(?:woff2?|ttf|otf|eot|webp|png|jpe?g|gif|svg|ico|mp4|webm)\$ {
         expires 30d;
         add_header Cache-Control "public, max-age=2592000";
         access_log off;
