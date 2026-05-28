@@ -53,25 +53,18 @@ function setupActiveNavigation() {
   };
 
   const update = () => {
+    // Only highlight a nav link when its section actually contains the viewport
+    // anchor. On the hero (#top) and any other non-nav section, no link is
+    // active. The previous "nearest section" fallback wrongly highlighted
+    // "How it works" while sitting on the hero.
     const anchor = window.innerHeight * 0.42;
-    let active = items[0];
-    let nearestDistance = Number.POSITIVE_INFINITY;
-
-    items.forEach((item) => {
+    const active = items.find((item) => {
       const rect = item.section.getBoundingClientRect();
-      const containsAnchor = rect.top <= anchor && rect.bottom >= anchor;
-      const distance = Math.abs(rect.top - anchor);
-
-      if (containsAnchor) {
-        active = item;
-        nearestDistance = -1;
-      } else if (nearestDistance !== -1 && distance < nearestDistance) {
-        active = item;
-        nearestDistance = distance;
-      }
+      return rect.top <= anchor && rect.bottom >= anchor;
     });
 
     if (active?.link) setActive(active.link);
+    else navLinks.forEach((link) => link.classList.remove("is-active"));
   };
 
   navLinks.forEach((link) => {
