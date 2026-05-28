@@ -1575,6 +1575,9 @@ body.lucent-theme .hero__cta {
 body.lucent-theme .hero__cta:hover {
   background: #42e569 !important;
   box-shadow: 0 0 48px rgba(48, 209, 88, 0.42) !important;
+  /* Preserve the -50% X centering; the generic .button:hover transform
+     would otherwise drop it and the button would jump sideways on hover. */
+  transform: translate(-50%, calc(clamp(56px, 9vh, 96px) - 2px)) !important;
 }
 
 /* ── I. Hamburger menu ─────────────────────────────────────────── */
