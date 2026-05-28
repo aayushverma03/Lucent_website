@@ -27,7 +27,7 @@ By creating an account, downloading the app, or using the website, you agree to 
 | Service provider | `[TO_CONFIRM: legal entity name]` |
 | Trading as | `[TO_CONFIRM: product name]` |
 | Registered address | `[TO_CONFIRM]` |
-| Contact | `[TO_CONFIRM: legal/contact email]` |
+| Contact | `support@lucent-ai.app` |
 
 These Terms cover the website at `[TO_CONFIRM: domain]`, the iOS and Android apps, and any related services we provide (together, the **Service**).
 
@@ -183,7 +183,7 @@ We will investigate suspected breaches and may suspend or terminate access witho
 
 ### 8.1 By you
 
-You can delete your account at any time from the in-app settings or by writing to `[TO_CONFIRM: support email]`. We will deactivate the account immediately and delete the associated data in line with the retention schedule in the Privacy Policy.
+You can delete your account at any time from the in-app settings or by writing to `support@lucent-ai.app`. We will deactivate the account immediately and delete the associated data in line with the retention schedule in the Privacy Policy.
 
 ### 8.2 By us
 
@@ -198,7 +198,7 @@ Where possible we will notify you before suspension and give you a chance to res
 
 ### 8.3 Appeals
 
-If you believe your account was suspended in error, write to `[TO_CONFIRM: appeals email]` within 30 days. We will review the decision and respond within a reasonable time.
+If you believe your account was suspended in error, write to `support@lucent-ai.app` within 30 days. We will review the decision and respond within a reasonable time.
 
 ---
 
@@ -314,7 +314,7 @@ We may remove a profile from discoverability at any time if we believe the profi
 
 ## 21. Notices
 
-We send legal notices to the email address registered against your account. You can send legal notices to us at `[TO_CONFIRM: legal email]` and `[TO_CONFIRM: postal address]`. Notices take effect on the day after they are sent.
+We send legal notices to the email address registered against your account. You can send legal notices to us at `support@lucent-ai.app` and `[TO_CONFIRM: postal address]`. Notices take effect on the day after they are sent.
 
 ---
 
@@ -329,8 +329,8 @@ We send legal notices to the email address registered against your account. You 
 
 ## 23. How to contact us
 
-- **General support:** `[TO_CONFIRM: support email]`
-- **Legal and notices:** `[TO_CONFIRM: legal email]`
+- **General support:** `support@lucent-ai.app`
+- **Legal and notices:** `support@lucent-ai.app`
 - **Postal address:** `[TO_CONFIRM]`
 
 ---

@@ -18,7 +18,7 @@ If you remember three things from this notice:
 
 1. **You're in control.** Coaches and scouts can't see your data unless you (or your guardian) say yes.
 2. **Health data is treated as sensitive.** We only use it for the features you've enabled.
-3. **You can ask for your data back, or have it deleted, at any time.** Write to `[TO_CONFIRM: privacy email]`.
+3. **You can ask for your data back, or have it deleted, at any time.** Write to `support@lucent-ai.app`.
 
 ---
 
@@ -31,7 +31,7 @@ If you remember three things from this notice:
 | Registered address | `[TO_CONFIRM]` |
 | Jurisdiction of incorporation | `[TO_CONFIRM: Mainland UAE / DIFC / ADGM / other free zone]` |
 | Website | `[TO_CONFIRM: domain]` |
-| Privacy contact (data subject requests, complaints) | `[TO_CONFIRM: privacy@…]` |
+| Privacy contact (data subject requests, complaints) | `support@lucent-ai.app` |
 | Data Protection Officer | `[TO_CONFIRM: name or "to be appointed"]` |
 | Postal address for legal notices | `[TO_CONFIRM]` |
 
@@ -124,7 +124,7 @@ Our AI features take your training videos and your health data and produce annot
 
 - **No solely-automated decisions with legal or similarly significant effect** are made about you. Where a coach or scout uses AI output, a human is in the loop.
 - You can **turn off** AI coaching and analysis at any time in your settings.
-- You can ask for **human review** of any AI output that you believe is inaccurate. Contact `[TO_CONFIRM: privacy email]`.
+- You can ask for **human review** of any AI output that you believe is inaccurate. Contact `support@lucent-ai.app`.
 
 ---
 
@@ -159,7 +159,7 @@ A guardian can, at any time:
 - Withdraw consent for any processing.
 - Request deletion of the minor's account and data.
 
-Contact `[TO_CONFIRM: privacy email]`.
+Contact `support@lucent-ai.app`.
 
 ---
 
@@ -271,7 +271,7 @@ Under the PDPL, you have the right to:
 - **Be informed** about automated decisions — see §4.3.
 - **Lodge a complaint** with the UAE Data Office (or with the DIFC Commissioner of Data Protection / ADGM Office of Data Protection, depending on which jurisdiction applies to our entity — see §1).
 
-**How to exercise your rights:** email `[TO_CONFIRM: privacy email]` from the address linked to your account, or use the in-app privacy controls.
+**How to exercise your rights:** email `support@lucent-ai.app` from the address linked to your account, or use the in-app privacy controls.
 
 **Our response time:** within **30 days**. For complex requests we may extend this by a further 30 days and will tell you why.
 
@@ -305,7 +305,7 @@ For material changes — for example, a new category of data we collect, a new t
 
 For any privacy question, request, or complaint:
 
-- **Email:** `[TO_CONFIRM: privacy email]`
+- **Email:** `support@lucent-ai.app`
 - **Postal address:** `[TO_CONFIRM]`
 - **Data Protection Officer:** `[TO_CONFIRM]`
 

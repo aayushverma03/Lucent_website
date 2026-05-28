@@ -145,7 +145,7 @@ If a change adds a new category of cookie that requires your consent, we will re
 
 For any question about cookies:
 
-- **Email:** `[TO_CONFIRM: privacy email]`
+- **Email:** `support@lucent-ai.app`
 - **Postal address:** `[TO_CONFIRM]`
 
 You can also exercise the broader privacy rights described in our Privacy Policy at the same contact.
