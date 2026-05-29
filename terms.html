@@ -4,27 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Lucent Terms of Use." />
-    <meta name="theme-color" content="#05070a" />
+    <meta name="theme-color" content="#04060a" />
     <title>Terms of Use &mdash; Lucent</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Inter-Variable-latin.woff2" crossorigin />
     <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./faq-page.css" />
     <link rel="stylesheet" href="./legal-page.css" />
   </head>
-  <body>
-    <header class="legal-nav">
-      <a class="legal-nav__brand" href="./index.html">Lucent</a>
-      <a class="legal-nav__home" href="./index.html">&larr; Home</a>
+  <body class="lucent-theme">
+    <header class="fp-nav" aria-label="Primary navigation">
+      <a class="fp-nav__brand" href="./index.html" aria-label="Lucent home">
+        <img src="./assets/lucent-logo-lockup.png" alt="Lucent" />
+      </a>
+      <nav class="fp-nav__links" aria-label="Primary">
+        <a href="./index.html#how">How it works</a>
+        <a href="./index.html#skills">Skill engine</a>
+        <a href="./index.html#scouted">Trials</a>
+        <a class="fp-nav__cta" href="./index.html#elevate">Join</a>
+      </nav>
     </header>
 
-    <main class="legal">
-      <h1>Terms of Use</h1>
-      <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> <code class="placeholder">[TO_CONFIRM]</code> &middot; <strong>Last updated:</strong> <code class="placeholder">[TO_CONFIRM]</code></p>
+    <main class="fp-main">
+      <div class="fp-inner">
+        <header class="fp-hero">
+          <p class="fp-hero__kicker">Legal</p>
+          <h1 class="fp-hero__title">Terms of Use</h1>
+          <p class="fp-hero__sub">The agreement between you and Lucent when you use the website, the apps, and our services.</p>
+        </header>
+        <div class="legal">
+          <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> 29 May 2026 &middot; <strong>Last updated:</strong> 29 May 2026</p>
 
       <section class="summary">
         <h2>Plain-language summary</h2>
-        <p>These Terms are the agreement between you and <code class="placeholder">[TO_CONFIRM: trading name]</code> (operated by <code class="placeholder">[TO_CONFIRM: legal entity]</code>) when you use our website, mobile apps, or any of our services.</p>
+        <p>These Terms are the agreement between you and Lucent (operated by Lucent AI Pvt Ltd FZ) when you use our website, mobile apps, or any of our services.</p>
         <p>If you remember three things:</p>
         <ol>
           <li><strong>What you upload is yours.</strong> You keep ownership of your videos and content. You give us a limited licence to process them so we can give you the analysis.</li>
@@ -37,18 +52,18 @@
       <h2>1. Who you're agreeing with</h2>
       <table>
         <tbody>
-          <tr><th>Service provider</th><td><code class="placeholder">[TO_CONFIRM: legal entity name]</code></td></tr>
-          <tr><th>Trading as</th><td><code class="placeholder">[TO_CONFIRM: product name]</code></td></tr>
-          <tr><th>Registered address</th><td><code class="placeholder">[TO_CONFIRM]</code></td></tr>
+          <tr><th>Service provider</th><td>Lucent AI Pvt Ltd FZ</td></tr>
+          <tr><th>Trading as</th><td>Lucent</td></tr>
+          <tr><th>Registered address</th><td>Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates</td></tr>
           <tr><th>Contact</th><td><a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a></td></tr>
         </tbody>
       </table>
-      <p>These Terms cover the website at <code class="placeholder">[TO_CONFIRM: domain]</code>, the iOS and Android apps, and any related services we provide (together, the <strong>Service</strong>).</p>
+      <p>These Terms cover the website at https://www.lucent-ai.app, the iOS and Android apps, and any related services we provide (together, the <strong>Service</strong>).</p>
 
       <h2>2. Eligibility and age</h2>
       <ul>
         <li>You must be at least 18 to use the Service independently.</li>
-        <li>A player aged <code class="placeholder">[TO_CONFIRM: minimum age, recommended &ge;13]</code> to 17 may use the Service only with <strong>verifiable consent from a parent or guardian</strong>. The guardian becomes a party to these Terms alongside the minor and accepts responsibility for the minor's use of the Service.</li>
+        <li>A player aged 13 to 17 may use the Service only with <strong>verifiable consent from a parent or guardian</strong>. The guardian becomes a party to these Terms alongside the minor and accepts responsibility for the minor's use of the Service.</li>
         <li>Coaches, scouts, and club administrators must be at least 18.</li>
         <li>You must have the legal capacity to enter into these Terms in your jurisdiction. If you act on behalf of an organisation (a club, academy, or school), you confirm that you have authority to bind that organisation.</li>
         <li>You may not use the Service if you are barred from doing so under the laws of the UAE or any other jurisdiction that applies to you.</li>
@@ -182,7 +197,7 @@
         <li>You breach these Terms.</li>
         <li>Your use of the Service creates risk for other users, especially minors.</li>
         <li>We are required to do so by law, court order, or regulator.</li>
-        <li>You have not used the Service for a continuous period of <code class="placeholder">[TO_CONFIRM: e.g. 18 months]</code> and we have notified you.</li>
+        <li>You have not used the Service for a continuous period of 18 months and we have notified you.</li>
       </ul>
       <p>Where possible we will notify you before suspension and give you a chance to respond. For serious breaches &mdash; for example, attempts to contact minors outside the protected flow, or upload of unlawful content &mdash; we may act immediately.</p>
 
@@ -190,7 +205,30 @@
       <p>If you believe your account was suspended in error, write to <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a> within 30 days. We will review the decision and respond within a reasonable time.</p>
 
       <h2>9. Payment, refunds, and renewals</h2>
-      <blockquote>The Service is offered free of charge at this time. If we introduce paid features, we will publish the terms in advance and ask for your separate agreement before billing you.</blockquote>
+      <h3>9.1 Plans and price</h3>
+      <ul>
+        <li><strong>Player subscription.</strong> A player subscription costs <strong>USD 5 per month</strong>, or the equivalent in AED for users billed in the United Arab Emirates (approximately AED 18, as shown at checkout).</li>
+        <li><strong>Club-sponsored access.</strong> Where a club, academy, or other organisation buys access on a player's behalf, the player pays nothing &mdash; the sponsoring organisation is billed under its own agreement with us, and that agreement governs its payment terms.</li>
+        <li>A free trial may be offered from time to time. Where a trial is offered, its length and what happens when it ends are shown to you at signup; unless you cancel before the trial ends, it converts to a paid subscription.</li>
+      </ul>
+
+      <h3>9.2 Billing, renewal, and cancellation</h3>
+      <ul>
+        <li>Subscriptions are billed <strong>monthly in advance</strong> and <strong>renew automatically</strong> each month until you cancel.</li>
+        <li>You can <strong>cancel at any time</strong>. Cancellation stops the next renewal; your paid access continues until the end of the period you have already paid for.</li>
+        <li>Where you subscribe through the <strong>Apple App Store</strong> or <strong>Google Play</strong>, billing, renewals, and cancellations are handled by that store under its own terms, and you manage the subscription in your store account.</li>
+        <li>If a payment fails or is reversed, we may suspend or downgrade your paid access until it is resolved. Where we reasonably can, we will tell you before paid features are withdrawn.</li>
+      </ul>
+
+      <h3>9.3 Taxes</h3>
+      <p>Prices are exclusive of applicable taxes unless stated otherwise. Where VAT or another tax applies (for example, UAE VAT), it is added at checkout or included as required by law.</p>
+
+      <h3>9.4 Refunds</h3>
+      <ul>
+        <li>Subscriptions are generally <strong>non-refundable</strong>, including for partial billing periods, except where a refund is required by applicable law.</li>
+        <li>Where you purchased through an app store, refunds are handled by that store under its refund policy.</li>
+        <li>Nothing here removes the mandatory rights you have as a consumer under the UAE Consumer Protection Law (Federal Law No. 15 of 2020).</li>
+      </ul>
 
       <h2>10. Intellectual property</h2>
 
@@ -219,7 +257,7 @@
         <li>Our total cumulative liability arising out of or relating to the Service, in any 12-month period, is capped at the greater of:
           <ul>
             <li>the amount you paid us for the Service in the 12 months before the event giving rise to the claim, or</li>
-            <li><code class="placeholder">[TO_CONFIRM: AED amount, e.g. AED 1,000]</code> if you are a free user.</li>
+            <li>AED 1,000 if you are a free user.</li>
           </ul>
         </li>
         <li>Nothing in these Terms limits liability that cannot be limited under applicable law &mdash; for example, liability for death or personal injury caused by negligence, or for fraud.</li>
@@ -238,12 +276,11 @@
 
       <h2>16. Changes to these Terms</h2>
       <p>We may update these Terms from time to time. Where the change is material &mdash; for example, a new restriction on use, a change to the liability cap, a change to the licence in &sect;4.2 &mdash; we will notify you at least <strong>30 days in advance</strong> by email and in-app. If you continue to use the Service after the change takes effect, you are deemed to have accepted the updated Terms. If you do not agree, stop using the Service and delete your account before the effective date.</p>
-      <p>A versioned changelog is at <code class="placeholder">[TO_CONFIRM: URL]</code>.</p>
+      <p>A versioned changelog is at https://www.lucent-ai.app/legal/changelog.</p>
 
       <h2>17. Governing law and disputes</h2>
-      <p>These Terms are governed by <code class="placeholder">[TO_CONFIRM: e.g. the federal laws of the UAE / DIFC law / ADGM law]</code>.</p>
-      <p>Any dispute arising out of or relating to these Terms or the Service will be submitted to the exclusive jurisdiction of <code class="placeholder">[TO_CONFIRM: e.g. the courts of Dubai / the DIFC Courts / the ADGM Courts]</code>.</p>
-      <p><code class="placeholder">[TO_CONFIRM: optional arbitration clause for B2B disputes &mdash; e.g. DIAC / DIFC-LCIA successor / ADGM Arbitration Centre. Consumer claims should remain in court.]</code></p>
+      <p>These Terms are governed by the laws of the Dubai International Financial Centre (DIFC).</p>
+      <p>Any dispute arising out of or relating to these Terms or the Service will be submitted to the exclusive jurisdiction of the DIFC Courts.</p>
       <p>Where you are a consumer protected under the UAE Consumer Protection Law (Federal Law No. 15 of 2020), nothing in this section deprives you of mandatory protections.</p>
 
       <h2>18. Export controls and sanctions</h2>
@@ -257,7 +294,7 @@
       <p>We may remove a profile from discoverability at any time if we believe the profile is fraudulent, in breach of these Terms, or unsafe.</p>
 
       <h2>21. Notices</h2>
-      <p>We send legal notices to the email address registered against your account. You can send legal notices to us at <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a> and <code class="placeholder">[TO_CONFIRM: postal address]</code>. Notices take effect on the day after they are sent.</p>
+      <p>We send legal notices to the email address registered against your account. You can send legal notices to us at <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a> and Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates. Notices take effect on the day after they are sent.</p>
 
       <h2>22. Miscellaneous</h2>
       <ul>
@@ -271,18 +308,23 @@
       <ul>
         <li><strong>General support:</strong> <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a></li>
         <li><strong>Legal and notices:</strong> <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a></li>
-        <li><strong>Postal address:</strong> <code class="placeholder">[TO_CONFIRM]</code></li>
+        <li><strong>Postal address:</strong> Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates</li>
       </ul>
 
       <hr />
-      <p class="meta"><em>This document is available in English. <code class="placeholder">[TO_CONFIRM: Arabic translation status and prevailing language clause.]</code></em></p>
+      <p class="meta"><em>This document is available in English. An Arabic translation will follow. In the event of any conflict, the English version prevails.</em></p>
+        </div>
+      </div>
     </main>
 
-    <footer class="legal-footer">
-      <span>&copy; 2026 Lucent</span>
-      <a href="./index.html">Home</a>
-      <a href="./privacy.html">Privacy Policy</a>
-      <a href="./cookies.html">Cookie Policy</a>
+    <footer class="fp-footer">
+      <span>&copy; 2026 Lucent. All rights reserved.</span>
+      <ul class="fp-footer__links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>
+        <li><a href="./terms.html">Terms</a></li>
+        <li><a href="./cookies.html">Cookies</a></li>
+      </ul>
     </footer>
   </body>
 </html>

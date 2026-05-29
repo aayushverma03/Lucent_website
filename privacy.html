@@ -4,27 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Lucent Privacy Policy." />
-    <meta name="theme-color" content="#05070a" />
+    <meta name="theme-color" content="#04060a" />
     <title>Privacy Policy &mdash; Lucent</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Inter-Variable-latin.woff2" crossorigin />
     <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./faq-page.css" />
     <link rel="stylesheet" href="./legal-page.css" />
   </head>
-  <body>
-    <header class="legal-nav">
-      <a class="legal-nav__brand" href="./index.html">Lucent</a>
-      <a class="legal-nav__home" href="./index.html">&larr; Home</a>
+  <body class="lucent-theme">
+    <header class="fp-nav" aria-label="Primary navigation">
+      <a class="fp-nav__brand" href="./index.html" aria-label="Lucent home">
+        <img src="./assets/lucent-logo-lockup.png" alt="Lucent" />
+      </a>
+      <nav class="fp-nav__links" aria-label="Primary">
+        <a href="./index.html#how">How it works</a>
+        <a href="./index.html#skills">Skill engine</a>
+        <a href="./index.html#scouted">Trials</a>
+        <a class="fp-nav__cta" href="./index.html#elevate">Join</a>
+      </nav>
     </header>
 
-    <main class="legal">
-      <h1>Privacy Policy</h1>
-      <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> <code class="placeholder">[TO_CONFIRM]</code> &middot; <strong>Last updated:</strong> <code class="placeholder">[TO_CONFIRM]</code></p>
+    <main class="fp-main">
+      <div class="fp-inner">
+        <header class="fp-hero">
+          <p class="fp-hero__kicker">Legal</p>
+          <h1 class="fp-hero__title">Privacy Policy</h1>
+          <p class="fp-hero__sub">How Lucent collects, uses, and protects your data &mdash; including health, video, and the data of players under 18.</p>
+        </header>
+        <div class="legal">
+          <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> 29 May 2026 &middot; <strong>Last updated:</strong> 29 May 2026</p>
 
       <section class="summary">
         <h2>Plain-language summary</h2>
-        <p><code class="placeholder">[TO_CONFIRM: trading name]</code> is a football performance platform. We help players record training, get AI-driven feedback, sync health data, and (with the player's permission) connect with coaches and scouts.</p>
+        <p>Lucent is a football performance platform. We help players record training, get AI-driven feedback, sync health data, and (with the player's permission) connect with coaches and scouts.</p>
         <p>To do that, we collect personal information &mdash; including sensitive data like health vitals and video of you training. We treat this data carefully, store it securely, only share it with people you've approved, and give you the right to access, correct, or delete it at any time.</p>
         <p>If you're under 18, a parent or guardian must give consent before you can use the platform, and additional protections apply to your data.</p>
         <p>If you remember three things from this notice:</p>
@@ -38,17 +53,17 @@
       <h2>1. Who we are</h2>
       <table>
         <tbody>
-          <tr><th>Legal entity</th><td><code class="placeholder">[TO_CONFIRM: legal entity name]</code></td></tr>
-          <tr><th>Trading name</th><td><code class="placeholder">[TO_CONFIRM: product name]</code></td></tr>
-          <tr><th>Registered address</th><td><code class="placeholder">[TO_CONFIRM]</code></td></tr>
-          <tr><th>Jurisdiction of incorporation</th><td><code class="placeholder">[TO_CONFIRM: Mainland UAE / DIFC / ADGM / other free zone]</code></td></tr>
-          <tr><th>Website</th><td><code class="placeholder">[TO_CONFIRM: domain]</code></td></tr>
+          <tr><th>Legal entity</th><td>Lucent AI Pvt Ltd FZ</td></tr>
+          <tr><th>Trading name</th><td>Lucent</td></tr>
+          <tr><th>Registered address</th><td>Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates</td></tr>
+          <tr><th>Jurisdiction of incorporation</th><td>DIFC</td></tr>
+          <tr><th>Website</th><td>https://www.lucent-ai.app</td></tr>
           <tr><th>Privacy contact</th><td><a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a></td></tr>
-          <tr><th>Data Protection Officer</th><td><code class="placeholder">[TO_CONFIRM: name or "to be appointed"]</code></td></tr>
-          <tr><th>Postal address for legal notices</th><td><code class="placeholder">[TO_CONFIRM]</code></td></tr>
+          <tr><th>Data Protection Officer</th><td>to be appointed</td></tr>
+          <tr><th>Postal address for legal notices</th><td>Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates</td></tr>
         </tbody>
       </table>
-      <p>This Privacy Policy applies to our website at <code class="placeholder">[TO_CONFIRM: domain]</code> and to our mobile apps on iOS and Android.</p>
+      <p>This Privacy Policy applies to our website at https://www.lucent-ai.app and to our mobile apps on iOS and Android.</p>
 
       <h2>2. What data we collect</h2>
       <h3>At a glance</h3>
@@ -60,7 +75,7 @@
         <li><strong>Contact:</strong> email, phone, and optionally a postal address.</li>
         <li><strong>Account:</strong> hashed password, login history, device identifiers, authentication tokens.</li>
         <li><strong>Sporting profile:</strong> position, dominant foot, height, weight, club affiliation, years played, achievements.</li>
-        <li><strong>Payment and billing:</strong> <code class="placeholder">[TO_CONFIRM: only if paid tiers launch]</code>.</li>
+        <li><strong>Payment and billing:</strong> card or payment details processed by our payment processor, billing address, and transaction history.</li>
         <li><strong>Communications:</strong> in-app messages, support tickets.</li>
       </ul>
 
@@ -91,8 +106,8 @@
       <h3>2.5 Information from third parties</h3>
       <ul>
         <li>Apple HealthKit and Google Health Connect (only with your operating-system permission).</li>
-        <li>Identity verification provider, if you sign up for a feature that requires it &mdash; <code class="placeholder">[TO_CONFIRM]</code>.</li>
-        <li>Sign-in providers (Apple, Google, Facebook) &mdash; <code class="placeholder">[TO_CONFIRM: which are enabled]</code>.</li>
+        <li>Identity verification provider, if you sign up for a feature that requires it &mdash; none is used at this time.</li>
+        <li>Sign-in providers (Apple, Google, Facebook) &mdash; all of these are enabled.</li>
         <li>Coaches and scouts who have your accepted connection may submit notes, ratings, or watchlist entries about you. You can see what they have submitted.</li>
       </ul>
 
@@ -125,9 +140,9 @@
 
       <h3>4.2 What data is sent where</h3>
       <ul>
-        <li>Computer-vision processing runs on <code class="placeholder">[TO_CONFIRM: in-region servers / named third-party provider and location]</code>.</li>
-        <li>Large-language-model processing uses <code class="placeholder">[TO_CONFIRM: LLM provider]</code> and is processed in <code class="placeholder">[TO_CONFIRM: country]</code>. Where possible, the data we send is de-identified before it leaves our environment.</li>
-        <li>The LLM provider does <strong>not</strong> use your data to train their models. We have a contractual commitment to that effect &mdash; <code class="placeholder">[TO_CONFIRM]</code>.</li>
+        <li>Computer-vision processing runs on in-region servers located in the UAE.</li>
+        <li>Large-language-model processing uses Anthropic and is processed in the United States. Where possible, the data we send is de-identified before it leaves our environment.</li>
+        <li>The LLM provider does <strong>not</strong> use your data to train their models. We have a contractual commitment to that effect &mdash; set out in our data processing agreement with that provider.</li>
       </ul>
 
       <h3>4.3 Your control over AI features</h3>
@@ -144,12 +159,12 @@
       <h3>5.1 Age limits</h3>
       <ul>
         <li>The minimum age to use the platform <strong>independently</strong> is 18.</li>
-        <li>A player aged <code class="placeholder">[TO_CONFIRM: minimum age, recommended &ge;13]</code> to 17 may use the platform only with <strong>verifiable guardian consent</strong>.</li>
-        <li>Below <code class="placeholder">[TO_CONFIRM: minimum age]</code>, the account is operated by the guardian or coach on the minor's behalf. The minor is the data subject but not the account holder.</li>
+        <li>A player aged 13 to 17 may use the platform only with <strong>verifiable guardian consent</strong>.</li>
+        <li>Below 13, the account is operated by the guardian or coach on the minor's behalf. The minor is the data subject but not the account holder.</li>
       </ul>
 
       <h3>5.2 Guardian consent</h3>
-      <p>We verify guardian consent through <code class="placeholder">[TO_CONFIRM: e.g. Emirates ID verification of guardian, credit-card check, signed e-form]</code>. We will not activate a minor's account until consent is verified.</p>
+      <p>We verify guardian consent through Emirates ID verification of the guardian plus a signed e-form. We will not activate a minor's account until consent is verified.</p>
 
       <h3>5.3 Protections for minors</h3>
       <ul>
@@ -202,33 +217,33 @@
         <li><strong>Authorities and courts</strong> where we are legally required to disclose, or to protect rights, safety, or the integrity of the service.</li>
         <li><strong>Successors in interest</strong> if our business is sold or restructured, subject to the same protections.</li>
       </ol>
-      <p>We do not sell your personal data. <code class="placeholder">[TO_CONFIRM: state position on sharing anonymised/aggregated data with clubs, federations, or research partners]</code>.</p>
+      <p>We do not sell your personal data. We may share aggregated, anonymised data that no longer identifies you with clubs, federations, or research partners.</p>
 
       <h3>Sub-processors</h3>
       <table>
         <thead><tr><th>Vendor</th><th>Purpose</th><th>Categories</th><th>Location</th><th>Role</th></tr></thead>
         <tbody>
-          <tr><td><code class="placeholder">[TO_CONFIRM: cloud provider]</code></td><td>Hosting, video storage, compute</td><td>All categories</td><td><code class="placeholder">[TO_CONFIRM: UAE region preferred for health data]</code></td><td>Processor</td></tr>
+          <tr><td>Amazon Web Services (AWS)</td><td>Hosting, video storage, compute</td><td>All categories</td><td>UAE region</td><td>Processor</td></tr>
           <tr><td>Apple HealthKit</td><td>Source of iOS health vitals</td><td>Health data</td><td>On-device &rarr; our servers via your permission</td><td>Independent controller</td></tr>
           <tr><td>Google Health Connect</td><td>Source of Android health vitals</td><td>Health data</td><td>On-device &rarr; our servers via your permission</td><td>Independent controller</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: LLM provider]</code></td><td>Generation of coaching and health summaries</td><td>Performance and health summaries (de-identified where possible)</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: CV model provider]</code></td><td>Video analysis</td><td>Video frames or extracted features</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: analytics]</code></td><td>Web and app analytics</td><td>Usage and device data</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: payment processor]</code></td><td>Billing</td><td>Payment and identity</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Independent controller</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: email / push]</code></td><td>Transactional and marketing comms</td><td>Contact and content</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: support tool]</code></td><td>Customer support</td><td>Account and ticket content</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: auth provider]</code></td><td>Sign-in</td><td>Account credentials</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: crash reporting]</code></td><td>Diagnostics</td><td>Device and crash data</td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Processor</td></tr>
+          <tr><td>Anthropic</td><td>Generation of coaching and health summaries</td><td>Performance and health summaries (de-identified where possible)</td><td>the United States</td><td>Processor</td></tr>
+          <tr><td>In-house (no external provider)</td><td>Video analysis</td><td>Video frames or extracted features</td><td>UAE region</td><td>Processor</td></tr>
+          <tr><td>Google Analytics 4 (GA4)</td><td>Web and app analytics</td><td>Usage and device data</td><td>the United States</td><td>Processor</td></tr>
+          <tr><td>Stripe</td><td>Billing</td><td>Payment and identity</td><td>the United States</td><td>Independent controller</td></tr>
+          <tr><td>SendGrid and Firebase Cloud Messaging</td><td>Transactional and marketing comms</td><td>Contact and content</td><td>the United States</td><td>Processor</td></tr>
+          <tr><td>Zendesk</td><td>Customer support</td><td>Account and ticket content</td><td>the United States</td><td>Processor</td></tr>
+          <tr><td>Firebase Authentication</td><td>Sign-in</td><td>Account credentials</td><td>the United States</td><td>Processor</td></tr>
+          <tr><td>Firebase Crashlytics</td><td>Diagnostics</td><td>Device and crash data</td><td>the United States</td><td>Processor</td></tr>
         </tbody>
       </table>
-      <p>We update this list when we change a sub-processor. The current version is always at <code class="placeholder">[TO_CONFIRM: URL]</code>.</p>
+      <p>We update this list when we change a sub-processor. The current version is always at https://www.lucent-ai.app/legal/subprocessors.</p>
 
       <h2>8. How long we keep your data</h2>
       <table>
         <thead><tr><th>Category</th><th>Retention</th></tr></thead>
         <tbody>
           <tr><td>Active account data</td><td>While your account is active, plus 90 days after a deletion request</td></tr>
-          <tr><td>Raw uploaded video</td><td><code class="placeholder">[TO_CONFIRM: recommended 12 months from upload unless you pin it]</code></td></tr>
+          <tr><td>Raw uploaded video</td><td>12 months from upload, unless you pin it</td></tr>
           <tr><td>Annotated video and derived metrics</td><td>While your account is active</td></tr>
           <tr><td>Health vitals time series</td><td>Default 24 months rolling window; you can request earlier deletion</td></tr>
           <tr><td>Coach notes about a player</td><td>Until the connection is revoked, then 90 days</td></tr>
@@ -248,7 +263,7 @@
         <li>Your <strong>explicit consent</strong>, collected separately at signup or in-app.</li>
       </ul>
       <p>For health data generated inside the UAE, our default architecture keeps the data in the UAE in line with Federal Law No. 2 of 2019. Where any transfer is required, we will tell you the destination country, the safeguard relied on, and (where applicable) ask for your separate consent.</p>
-      <p>Where AI coaching summaries are processed by a provider located in <code class="placeholder">[TO_CONFIRM: country]</code>, we have contracted that the provider will not retain or use the data to train its own models, and we de-identify the input where feasible. You can opt out of AI features at any time.</p>
+      <p>Where AI coaching summaries are processed by a provider located in the United States, we have contracted that the provider will not retain or use the data to train its own models, and we de-identify the input where feasible. You can opt out of AI features at any time.</p>
 
       <h2>10. Your rights</h2>
       <p>Under the PDPL, you have the right to:</p>
@@ -279,27 +294,32 @@
       <p>If a personal-data breach is likely to result in risk to you, we will notify the UAE Data Office and affected users without undue delay, as required by Article 9 of the PDPL.</p>
 
       <h2>12. Changes to this Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will always show the latest version, and we will keep a changelog at <code class="placeholder">[TO_CONFIRM: URL]</code>.</p>
+      <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will always show the latest version, and we will keep a changelog at https://www.lucent-ai.app/legal/changelog.</p>
       <p>For material changes &mdash; for example, a new category of data we collect, a new third-party processor with whom we share sensitive data, or a change to your rights &mdash; we will notify you in the app and by email <strong>before</strong> the change takes effect, and (where the change requires it) we will ask for your consent again.</p>
 
       <h2>13. How to contact us</h2>
       <p>For any privacy question, request, or complaint:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a></li>
-        <li><strong>Postal address:</strong> <code class="placeholder">[TO_CONFIRM]</code></li>
-        <li><strong>Data Protection Officer:</strong> <code class="placeholder">[TO_CONFIRM]</code></li>
+        <li><strong>Postal address:</strong> Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates</li>
+        <li><strong>Data Protection Officer:</strong> to be appointed</li>
       </ul>
       <p>For complaints, you may also contact the UAE Data Office at the address published on its website, or the DIFC / ADGM data protection authority if our entity is registered in those free zones.</p>
 
       <hr />
-      <p class="meta"><em>This document is available in English. <code class="placeholder">[TO_CONFIRM: Arabic translation status and prevailing language clause.]</code></em></p>
+      <p class="meta"><em>This document is available in English. An Arabic translation will follow. In the event of any conflict, the English version prevails.</em></p>
+        </div>
+      </div>
     </main>
 
-    <footer class="legal-footer">
-      <span>&copy; 2026 Lucent</span>
-      <a href="./index.html">Home</a>
-      <a href="./terms.html">Terms of Use</a>
-      <a href="./cookies.html">Cookie Policy</a>
+    <footer class="fp-footer">
+      <span>&copy; 2026 Lucent. All rights reserved.</span>
+      <ul class="fp-footer__links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>
+        <li><a href="./terms.html">Terms</a></li>
+        <li><a href="./cookies.html">Cookies</a></li>
+      </ul>
     </footer>
   </body>
 </html>

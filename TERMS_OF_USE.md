@@ -1,14 +1,14 @@
 # Terms of Use
 
 **Version:** 0.1 (draft)
-**Effective date:** `[TO_CONFIRM]`
-**Last updated:** `[TO_CONFIRM]`
+**Effective date:** 29 May 2026
+**Last updated:** 29 May 2026
 
 ---
 
 ## Plain-language summary
 
-These Terms are the agreement between you and `[TO_CONFIRM: trading name]` (operated by `[TO_CONFIRM: legal entity]`) when you use our website, mobile apps, or any of our services.
+These Terms are the agreement between you and Lucent (operated by Lucent AI Pvt Ltd FZ) when you use our website, mobile apps, or any of our services.
 
 If you remember three things:
 
@@ -24,19 +24,19 @@ By creating an account, downloading the app, or using the website, you agree to 
 
 | | |
 |---|---|
-| Service provider | `[TO_CONFIRM: legal entity name]` |
-| Trading as | `[TO_CONFIRM: product name]` |
-| Registered address | `[TO_CONFIRM]` |
+| Service provider | Lucent AI Pvt Ltd FZ |
+| Trading as | Lucent |
+| Registered address | Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates |
 | Contact | `support@lucent-ai.app` |
 
-These Terms cover the website at `[TO_CONFIRM: domain]`, the iOS and Android apps, and any related services we provide (together, the **Service**).
+These Terms cover the website at https://www.lucent-ai.app, the iOS and Android apps, and any related services we provide (together, the **Service**).
 
 ---
 
 ## 2. Eligibility and age
 
 - You must be at least 18 to use the Service independently.
-- A player aged `[TO_CONFIRM: minimum age, recommended ≥13]` to 17 may use the Service only with **verifiable consent from a parent or guardian**. The guardian becomes a party to these Terms alongside the minor and accepts responsibility for the minor's use of the Service.
+- A player aged 13 to 17 may use the Service only with **verifiable consent from a parent or guardian**. The guardian becomes a party to these Terms alongside the minor and accepts responsibility for the minor's use of the Service.
 - Coaches, scouts, and club administrators must be at least 18.
 - You must have the legal capacity to enter into these Terms in your jurisdiction. If you act on behalf of an organisation (a club, academy, or school), you confirm that you have authority to bind that organisation.
 - You may not use the Service if you are barred from doing so under the laws of the UAE or any other jurisdiction that applies to you.
@@ -192,7 +192,7 @@ We may suspend or terminate your access to the Service if:
 - You breach these Terms.
 - Your use of the Service creates risk for other users, especially minors.
 - We are required to do so by law, court order, or regulator.
-- You have not used the Service for a continuous period of `[TO_CONFIRM: e.g. 18 months]` and we have notified you.
+- You have not used the Service for a continuous period of 18 months and we have notified you.
 
 Where possible we will notify you before suspension and give you a chance to respond. For serious breaches — for example, attempts to contact minors outside the protected flow, or upload of unlawful content — we may act immediately.
 
@@ -204,11 +204,28 @@ If you believe your account was suspended in error, write to `support@lucent-ai.
 
 ## 9. Payment, refunds, and renewals
 
-`[TO_CONFIRM: this section depends on whether paid tiers launch at v1. If paid tiers exist, the section needs to cover: price, billing cycle, taxes, late payment, free trials, auto-renewal disclosure, cancellation window, refund policy, currency, and the chosen payment processor.]`
+### 9.1 Plans and price
 
-If no paid tiers launch at v1, leave the following placeholder:
+- **Player subscription.** A player subscription costs **USD 5 per month**, or the equivalent in AED for users billed in the United Arab Emirates (approximately AED 18, as shown at checkout).
+- **Club-sponsored access.** Where a club, academy, or other organisation buys access on a player's behalf, the player pays nothing — the sponsoring organisation is billed under its own agreement with us, and that agreement governs its payment terms.
+- A free trial may be offered from time to time. Where a trial is offered, its length and what happens when it ends are shown to you at signup; unless you cancel before the trial ends, it converts to a paid subscription.
 
-> The Service is offered free of charge at this time. If we introduce paid features, we will publish the terms in advance and ask for your separate agreement before billing you.
+### 9.2 Billing, renewal, and cancellation
+
+- Subscriptions are billed **monthly in advance** and **renew automatically** each month until you cancel.
+- You can **cancel at any time**. Cancellation stops the next renewal; your paid access continues until the end of the period you have already paid for.
+- Where you subscribe through the **Apple App Store** or **Google Play**, billing, renewals, and cancellations are handled by that store under its own terms, and you manage the subscription in your store account.
+- If a payment fails or is reversed, we may suspend or downgrade your paid access until it is resolved. Where we reasonably can, we will tell you before paid features are withdrawn.
+
+### 9.3 Taxes
+
+Prices are exclusive of applicable taxes unless stated otherwise. Where VAT or another tax applies (for example, UAE VAT), it is added at checkout or included as required by law.
+
+### 9.4 Refunds
+
+- Subscriptions are generally **non-refundable**, including for partial billing periods, except where a refund is required by applicable law.
+- Where you purchased through an app store, refunds are handled by that store under its refund policy.
+- Nothing here removes the mandatory rights you have as a consumer under the UAE Consumer Protection Law (Federal Law No. 15 of 2020).
 
 ---
 
@@ -251,7 +268,7 @@ To the maximum extent permitted under applicable law:
 - We are not liable for indirect, incidental, consequential, special, exemplary, or punitive damages, including loss of profits, goodwill, opportunity, data, or use, even if we were told the damage was possible.
 - Our total cumulative liability arising out of or relating to the Service, in any 12-month period, is capped at the greater of:
     - the amount you paid us for the Service in the 12 months before the event giving rise to the claim, or
-    - `[TO_CONFIRM: AED amount, e.g. AED 1,000]` if you are a free user.
+    - AED 1,000 if you are a free user.
 - Nothing in these Terms limits liability that cannot be limited under applicable law — for example, liability for death or personal injury caused by negligence, or for fraud.
 
 ---
@@ -276,17 +293,15 @@ Neither party is liable for failure to perform caused by events beyond reasonabl
 
 We may update these Terms from time to time. Where the change is material — for example, a new restriction on use, a change to the liability cap, a change to the licence in §4.2 — we will notify you at least **30 days in advance** by email and in-app. If you continue to use the Service after the change takes effect, you are deemed to have accepted the updated Terms. If you do not agree, stop using the Service and delete your account before the effective date.
 
-A versioned changelog is at `[TO_CONFIRM: URL]`.
+A versioned changelog is at https://www.lucent-ai.app/legal/changelog.
 
 ---
 
 ## 17. Governing law and disputes
 
-These Terms are governed by `[TO_CONFIRM: e.g. the federal laws of the United Arab Emirates / DIFC law / ADGM law]`.
+These Terms are governed by the laws of the Dubai International Financial Centre (DIFC).
 
-Any dispute arising out of or relating to these Terms or the Service will be submitted to the exclusive jurisdiction of `[TO_CONFIRM: e.g. the courts of Dubai / the DIFC Courts / the ADGM Courts]`.
-
-`[TO_CONFIRM: optional arbitration clause for B2B disputes — e.g. DIAC / DIFC-LCIA successor / ADGM Arbitration Centre. Consumer claims should remain in court.]`
+Any dispute arising out of or relating to these Terms or the Service will be submitted to the exclusive jurisdiction of the DIFC Courts.
 
 Where you are a consumer protected under the UAE Consumer Protection Law (Federal Law No. 15 of 2020), nothing in this section deprives you of mandatory protections.
 
@@ -314,7 +329,7 @@ We may remove a profile from discoverability at any time if we believe the profi
 
 ## 21. Notices
 
-We send legal notices to the email address registered against your account. You can send legal notices to us at `support@lucent-ai.app` and `[TO_CONFIRM: postal address]`. Notices take effect on the day after they are sent.
+We send legal notices to the email address registered against your account. You can send legal notices to us at `support@lucent-ai.app` and Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates. Notices take effect on the day after they are sent.
 
 ---
 
@@ -331,8 +346,8 @@ We send legal notices to the email address registered against your account. You 
 
 - **General support:** `support@lucent-ai.app`
 - **Legal and notices:** `support@lucent-ai.app`
-- **Postal address:** `[TO_CONFIRM]`
+- **Postal address:** Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates
 
 ---
 
-*This document is available in English. `[TO_CONFIRM: Arabic translation status and prevailing language clause.]`*
+*This document is available in English. An Arabic translation will follow. In the event of any conflict, the English version prevails.*

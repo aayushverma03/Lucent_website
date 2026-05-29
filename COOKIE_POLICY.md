@@ -1,14 +1,14 @@
 # Cookie Policy
 
 **Version:** 0.1 (draft)
-**Effective date:** `[TO_CONFIRM]`
-**Last updated:** `[TO_CONFIRM]`
+**Effective date:** 29 May 2026
+**Last updated:** 29 May 2026
 
 ---
 
 ## Plain-language summary
 
-When you visit our website at `[TO_CONFIRM: domain]`, we and our partners place small files on your device called **cookies** (and use similar technologies like local storage and SDK identifiers). Some cookies are strictly necessary to make the site work. Others — for analytics, preferences, and marketing — only run if you say yes.
+When you visit our website at https://www.lucent-ai.app, we and our partners place small files on your device called **cookies** (and use similar technologies like local storage and SDK identifiers). Some cookies are strictly necessary to make the site work. Others — for analytics, preferences, and marketing — only run if you say yes.
 
 You decide. You can change your choices at any time using the **Cookie settings** link in the footer.
 
@@ -41,36 +41,34 @@ You can accept all, reject all, or pick categories individually. "Reject all" is
 
 ## 3. The specific cookies we use
 
-`[TO_CONFIRM: this table needs to match the actual cookies and SDKs deployed at launch. The list below is a template — replace with the real names, providers, purposes, and durations.]`
-
 ### 3.1 Strictly necessary
 
 | Cookie | Provider | Purpose | Expires |
 |---|---|---|---|
-| `[TO_CONFIRM: e.g. session_id]` | Us | Maintain your logged-in session | End of session |
-| `[TO_CONFIRM: e.g. csrf_token]` | Us | Protect against cross-site request forgery | End of session |
-| `[TO_CONFIRM: e.g. cookie_consent]` | Us | Remember your cookie choices | 12 months |
+| `session_id` | Us | Maintain your logged-in session | End of session |
+| `csrf_token` | Us | Protect against cross-site request forgery | End of session |
+| `cookie_consent` | Us | Remember your cookie choices | 12 months |
 
 ### 3.2 Functional / preference
 
 | Cookie | Provider | Purpose | Expires |
 |---|---|---|---|
-| `[TO_CONFIRM]` | Us | Remember language and region | 12 months |
-| `[TO_CONFIRM]` | Us | Remember UI theme (light / dark) | 12 months |
+| `lang` | Us | Remember language and region | 12 months |
+| `theme` | Us | Remember UI theme (light / dark) | 12 months |
 
 ### 3.3 Analytics / performance
 
 | Cookie | Provider | Purpose | Expires |
 |---|---|---|---|
-| `[TO_CONFIRM: e.g. _ga]` | `[TO_CONFIRM: Google Analytics / Firebase / Mixpanel / Amplitude]` | Measure visits and feature use | `[TO_CONFIRM: typically 14 months]` |
-| `[TO_CONFIRM]` | `[TO_CONFIRM]` | Heatmaps and session replay (if used) | `[TO_CONFIRM]` |
+| `_ga` | Google Analytics 4 (GA4) | Measure visits and feature use | 14 months |
+| `_hjSession` | Hotjar | Heatmaps and session replay | 12 months |
 
 ### 3.4 Marketing / advertising
 
 | Cookie | Provider | Purpose | Expires |
 |---|---|---|---|
-| `[TO_CONFIRM: e.g. _fbp]` | `[TO_CONFIRM: Meta Pixel]` | Measure ad performance and audience | `[TO_CONFIRM]` |
-| `[TO_CONFIRM]` | `[TO_CONFIRM: e.g. LinkedIn Insight Tag / Google Ads]` | Measure ad performance and audience | `[TO_CONFIRM]` |
+| `_fbp` | Meta Pixel | Measure ad performance and audience | 3 months |
+| `_gcl_au` | Google Ads | Measure ad performance and audience | 90 days |
 
 ---
 
@@ -135,7 +133,7 @@ We do not knowingly use analytics or marketing cookies for visitors we know to b
 
 ## 8. Changes to this Cookie Policy
 
-We may update this Cookie Policy from time to time — for example, when we add or remove a third-party provider. The "Last updated" date at the top of this page shows the latest version, and a changelog is at `[TO_CONFIRM: URL]`.
+We may update this Cookie Policy from time to time — for example, when we add or remove a third-party provider. The "Last updated" date at the top of this page shows the latest version, and a changelog is at https://www.lucent-ai.app/legal/changelog.
 
 If a change adds a new category of cookie that requires your consent, we will re-prompt you in the banner before the new cookies run.
 
@@ -146,10 +144,10 @@ If a change adds a new category of cookie that requires your consent, we will re
 For any question about cookies:
 
 - **Email:** `support@lucent-ai.app`
-- **Postal address:** `[TO_CONFIRM]`
+- **Postal address:** Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates
 
 You can also exercise the broader privacy rights described in our Privacy Policy at the same contact.
 
 ---
 
-*This document is available in English. `[TO_CONFIRM: Arabic translation status and prevailing language clause.]`*
+*This document is available in English. An Arabic translation will follow. In the event of any conflict, the English version prevails.*

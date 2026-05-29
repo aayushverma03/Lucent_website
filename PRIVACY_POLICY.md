@@ -1,14 +1,14 @@
 # Privacy Policy
 
 **Version:** 0.1 (draft)
-**Effective date:** `[TO_CONFIRM]`
-**Last updated:** `[TO_CONFIRM]`
+**Effective date:** 29 May 2026
+**Last updated:** 29 May 2026
 
 ---
 
 ## Plain-language summary
 
-`[TO_CONFIRM: trading name]` is a football performance platform. We help players record training, get AI-driven feedback, sync health data, and (with the player's permission) connect with coaches and scouts.
+Lucent is a football performance platform. We help players record training, get AI-driven feedback, sync health data, and (with the player's permission) connect with coaches and scouts.
 
 To do that, we collect personal information — including sensitive data like health vitals and video of you training. We treat this data carefully, store it securely, only share it with people you've approved, and give you the right to access, correct, or delete it at any time.
 
@@ -26,16 +26,16 @@ If you remember three things from this notice:
 
 | | |
 |---|---|
-| Legal entity | `[TO_CONFIRM: legal entity name]` |
-| Trading name | `[TO_CONFIRM: product name]` |
-| Registered address | `[TO_CONFIRM]` |
-| Jurisdiction of incorporation | `[TO_CONFIRM: Mainland UAE / DIFC / ADGM / other free zone]` |
-| Website | `[TO_CONFIRM: domain]` |
+| Legal entity | Lucent AI Pvt Ltd FZ |
+| Trading name | Lucent |
+| Registered address | Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates |
+| Jurisdiction of incorporation | DIFC |
+| Website | https://www.lucent-ai.app |
 | Privacy contact (data subject requests, complaints) | `support@lucent-ai.app` |
-| Data Protection Officer | `[TO_CONFIRM: name or "to be appointed"]` |
-| Postal address for legal notices | `[TO_CONFIRM]` |
+| Data Protection Officer | to be appointed |
+| Postal address for legal notices | Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates |
 
-This Privacy Policy applies to our website at `[TO_CONFIRM: domain]` and to our mobile apps on iOS and Android.
+This Privacy Policy applies to our website at https://www.lucent-ai.app and to our mobile apps on iOS and Android.
 
 ---
 
@@ -51,7 +51,7 @@ We collect five categories of data: information you give us, your health and bio
 - **Contact:** email, phone, and optionally a postal address.
 - **Account:** hashed password, login history, device identifiers, authentication tokens.
 - **Sporting profile:** position, dominant foot, height, weight, club affiliation, years played, achievements.
-- **Payment and billing:** `[TO_CONFIRM: only if paid tiers launch]`.
+- **Payment and billing:** card or payment details processed by our payment processor, billing address, and transaction history.
 - **Communications:** in-app messages, support tickets.
 
 ### 2.2 Sensitive personal data
@@ -79,8 +79,8 @@ This data is treated as a **special category** under UAE Federal Decree-Law No. 
 ### 2.5 Information from third parties
 
 - Apple HealthKit and Google Health Connect (only with your operating-system permission).
-- Identity verification provider, if you sign up for a feature that requires it — `[TO_CONFIRM]`.
-- Sign-in providers (Apple, Google, Facebook) — `[TO_CONFIRM: which are enabled]`.
+- Identity verification provider, if you sign up for a feature that requires it — none is used at this time.
+- Sign-in providers (Apple, Google, Facebook) — all of these are enabled.
 - Coaches and scouts who have your accepted connection may submit notes, ratings, or watchlist entries about you. You can see what they have submitted.
 
 ---
@@ -116,9 +116,9 @@ Our AI features take your training videos and your health data and produce annot
 
 ### 4.2 What data is sent where
 
-- Computer-vision processing runs on `[TO_CONFIRM: in-region servers / named third-party provider and location]`.
-- Large-language-model processing uses `[TO_CONFIRM: LLM provider, e.g. Anthropic / OpenAI]` and is processed in `[TO_CONFIRM: country]`. Where possible, the data we send is de-identified before it leaves our environment.
-- The LLM provider does **not** use your data to train their models. We have a contractual commitment to that effect — `[TO_CONFIRM]`.
+- Computer-vision processing runs on in-region servers located in the UAE.
+- Large-language-model processing uses Anthropic and is processed in the United States. Where possible, the data we send is de-identified before it leaves our environment.
+- The LLM provider does **not** use your data to train their models. We have a contractual commitment to that effect — set out in our data processing agreement with that provider.
 
 ### 4.3 Your control over AI features
 
@@ -137,12 +137,12 @@ If you're under 18, you need verifiable consent from a parent or guardian before
 ### 5.1 Age limits
 
 - The minimum age to use the platform **independently** is 18.
-- A player aged `[TO_CONFIRM: minimum age, recommended ≥13]` to 17 may use the platform only with **verifiable guardian consent**.
-- Below `[TO_CONFIRM: minimum age]`, the account is operated by the guardian or coach on the minor's behalf. The minor is the data subject but not the account holder.
+- A player aged 13 to 17 may use the platform only with **verifiable guardian consent**.
+- Below 13, the account is operated by the guardian or coach on the minor's behalf. The minor is the data subject but not the account holder.
 
 ### 5.2 Guardian consent
 
-We verify guardian consent through `[TO_CONFIRM: e.g. Emirates ID verification of guardian, credit-card check, signed e-form]`. We will not activate a minor's account until consent is verified.
+We verify guardian consent through Emirates ID verification of the guardian plus a signed e-form. We will not activate a minor's account until consent is verified.
 
 ### 5.3 Protections for minors
 
@@ -203,25 +203,25 @@ We share your data only with:
 3. **Authorities and courts** where we are legally required to disclose, or to protect rights, safety, or the integrity of the service.
 4. **Successors in interest** if our business is sold or restructured, subject to the same protections.
 
-We do not sell your personal data. `[TO_CONFIRM: state position on sharing anonymised/aggregated data with clubs, federations, or research partners]`.
+We do not sell your personal data. We may share aggregated, anonymised data that no longer identifies you with clubs, federations, or research partners.
 
 ### Sub-processors
 
 | Vendor | Purpose | Categories of data | Location | Role |
 |---|---|---|---|---|
-| `[TO_CONFIRM: cloud provider — AWS / GCP / Azure]` | Hosting, video storage, compute | All categories | `[TO_CONFIRM: UAE region preferred for health data]` | Processor |
+| Amazon Web Services (AWS) | Hosting, video storage, compute | All categories | UAE region | Processor |
 | Apple HealthKit | Source of iOS health vitals | Health data | On-device → our servers via your permission | Independent controller |
 | Google Health Connect | Source of Android health vitals | Health data | On-device → our servers via your permission | Independent controller |
-| `[TO_CONFIRM: LLM provider]` | Generation of coaching and health summaries | Performance and health summaries (de-identified where possible) | `[TO_CONFIRM: country]` | Processor |
-| `[TO_CONFIRM: CV model provider, if any external]` | Video analysis | Video frames or extracted features | `[TO_CONFIRM]` | Processor |
-| `[TO_CONFIRM: analytics — GA4 / Firebase / Mixpanel / Amplitude]` | Web and app analytics | Usage and device data | `[TO_CONFIRM]` | Processor |
-| `[TO_CONFIRM: payment processor]` | Billing | Payment and identity | `[TO_CONFIRM]` | Independent controller |
-| `[TO_CONFIRM: email / push provider]` | Transactional and marketing comms | Contact and content | `[TO_CONFIRM]` | Processor |
-| `[TO_CONFIRM: support tool]` | Customer support | Account and ticket content | `[TO_CONFIRM]` | Processor |
-| `[TO_CONFIRM: auth provider]` | Sign-in | Account credentials | `[TO_CONFIRM]` | Processor |
-| `[TO_CONFIRM: crash reporting]` | Diagnostics | Device and crash data | `[TO_CONFIRM]` | Processor |
+| Anthropic | Generation of coaching and health summaries | Performance and health summaries (de-identified where possible) | the United States | Processor |
+| In-house (no external provider) | Video analysis | Video frames or extracted features | UAE region | Processor |
+| Google Analytics 4 (GA4) | Web and app analytics | Usage and device data | the United States | Processor |
+| Stripe | Billing | Payment and identity | the United States | Independent controller |
+| SendGrid and Firebase Cloud Messaging | Transactional and marketing comms | Contact and content | the United States | Processor |
+| Zendesk | Customer support | Account and ticket content | the United States | Processor |
+| Firebase Authentication | Sign-in | Account credentials | the United States | Processor |
+| Firebase Crashlytics | Diagnostics | Device and crash data | the United States | Processor |
 
-We update this list when we change a sub-processor. The current version is always at `[TO_CONFIRM: URL]`.
+We update this list when we change a sub-processor. The current version is always at https://www.lucent-ai.app/legal/subprocessors.
 
 ---
 
@@ -230,7 +230,7 @@ We update this list when we change a sub-processor. The current version is alway
 | Category | Retention |
 |---|---|
 | Active account data | While your account is active, plus 90 days after a deletion request (grace period + backup expiry) |
-| Raw uploaded video | `[TO_CONFIRM: recommended 12 months from upload unless you pin it]` |
+| Raw uploaded video | 12 months from upload, unless you pin it |
 | Annotated video and derived metrics | While your account is active |
 | Health vitals time series | Default 24 months rolling window; you can request earlier deletion |
 | Coach notes about a player | Until the connection is revoked, then 90 days |
@@ -253,7 +253,7 @@ Where we transfer your personal data outside the UAE, we rely on one of the foll
 
 For health data generated inside the UAE, our default architecture keeps the data in the UAE in line with Federal Law No. 2 of 2019. Where any transfer is required, we will tell you the destination country, the safeguard relied on, and (where applicable) ask for your separate consent.
 
-Where AI coaching summaries are processed by a provider located in `[TO_CONFIRM: country]`, we have contracted that the provider will not retain or use the data to train its own models, and we de-identify the input where feasible. You can opt out of AI features at any time.
+Where AI coaching summaries are processed by a provider located in the United States, we have contracted that the provider will not retain or use the data to train its own models, and we de-identify the input where feasible. You can opt out of AI features at any time.
 
 ---
 
@@ -295,7 +295,7 @@ If a personal-data breach is likely to result in risk to you, we will notify the
 
 ## 12. Changes to this Privacy Policy
 
-We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will always show the latest version, and we will keep a changelog at `[TO_CONFIRM: URL]`.
+We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will always show the latest version, and we will keep a changelog at https://www.lucent-ai.app/legal/changelog.
 
 For material changes — for example, a new category of data we collect, a new third-party processor with whom we share sensitive data, or a change to your rights — we will notify you in the app and by email **before** the change takes effect, and (where the change requires it) we will ask for your consent again.
 
@@ -306,11 +306,11 @@ For material changes — for example, a new category of data we collect, a new t
 For any privacy question, request, or complaint:
 
 - **Email:** `support@lucent-ai.app`
-- **Postal address:** `[TO_CONFIRM]`
-- **Data Protection Officer:** `[TO_CONFIRM]`
+- **Postal address:** Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates
+- **Data Protection Officer:** to be appointed
 
 For complaints, you may also contact the UAE Data Office at the address published on its website, or the DIFC / ADGM data protection authority if our entity is registered in those free zones.
 
 ---
 
-*This document is available in English. `[TO_CONFIRM: An Arabic translation is available at … / An Arabic translation will follow. In the event of any conflict, the … version prevails.]`*
+*This document is available in English. An Arabic translation will follow. In the event of any conflict, the English version prevails.*

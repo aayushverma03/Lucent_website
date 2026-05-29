@@ -4,27 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Lucent Cookie Policy." />
-    <meta name="theme-color" content="#05070a" />
+    <meta name="theme-color" content="#04060a" />
     <title>Cookie Policy &mdash; Lucent</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Inter-Variable-latin.woff2" crossorigin />
     <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="stylesheet" href="./faq-page.css" />
     <link rel="stylesheet" href="./legal-page.css" />
   </head>
-  <body>
-    <header class="legal-nav">
-      <a class="legal-nav__brand" href="./index.html">Lucent</a>
-      <a class="legal-nav__home" href="./index.html">&larr; Home</a>
+  <body class="lucent-theme">
+    <header class="fp-nav" aria-label="Primary navigation">
+      <a class="fp-nav__brand" href="./index.html" aria-label="Lucent home">
+        <img src="./assets/lucent-logo-lockup.png" alt="Lucent" />
+      </a>
+      <nav class="fp-nav__links" aria-label="Primary">
+        <a href="./index.html#how">How it works</a>
+        <a href="./index.html#skills">Skill engine</a>
+        <a href="./index.html#scouted">Trials</a>
+        <a class="fp-nav__cta" href="./index.html#elevate">Join</a>
+      </nav>
     </header>
 
-    <main class="legal">
-      <h1>Cookie Policy</h1>
-      <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> <code class="placeholder">[TO_CONFIRM]</code> &middot; <strong>Last updated:</strong> <code class="placeholder">[TO_CONFIRM]</code></p>
+    <main class="fp-main">
+      <div class="fp-inner">
+        <header class="fp-hero">
+          <p class="fp-hero__kicker">Legal</p>
+          <h1 class="fp-hero__title">Cookie Policy</h1>
+          <p class="fp-hero__sub">How Lucent uses cookies and similar technologies &mdash; and the choices you control.</p>
+        </header>
+        <div class="legal">
+          <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> 29 May 2026 &middot; <strong>Last updated:</strong> 29 May 2026</p>
 
       <section class="summary">
         <h2>Plain-language summary</h2>
-        <p>When you visit our website at <code class="placeholder">[TO_CONFIRM: domain]</code>, we and our partners place small files on your device called <strong>cookies</strong> (and use similar technologies like local storage and SDK identifiers). Some cookies are strictly necessary to make the site work. Others &mdash; for analytics, preferences, and marketing &mdash; only run if you say yes.</p>
+        <p>When you visit our website at https://www.lucent-ai.app, we and our partners place small files on your device called <strong>cookies</strong> (and use similar technologies like local storage and SDK identifiers). Some cookies are strictly necessary to make the site work. Others &mdash; for analytics, preferences, and marketing &mdash; only run if you say yes.</p>
         <p>You decide. You can change your choices at any time using the <strong>Cookie settings</strong> link in the footer.</p>
         <p>In our mobile apps, we use similar technologies (SDK identifiers, advertising IDs). The same principle applies: nothing tracks you across apps or for advertising unless you agree.</p>
       </section>
@@ -47,15 +62,14 @@
       <p>You can accept all, reject all, or pick categories individually. "Reject all" is as easy to find as "Accept all".</p>
 
       <h2>3. The specific cookies we use</h2>
-      <p><code class="placeholder">[TO_CONFIRM: this table needs to match the actual cookies and SDKs deployed at launch. The list below is a template &mdash; replace with the real names, providers, purposes, and durations.]</code></p>
 
       <h3>3.1 Strictly necessary</h3>
       <table>
         <thead><tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Expires</th></tr></thead>
         <tbody>
-          <tr><td><code class="placeholder">[TO_CONFIRM: session_id]</code></td><td>Us</td><td>Maintain your logged-in session</td><td>End of session</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: csrf_token]</code></td><td>Us</td><td>Protect against cross-site request forgery</td><td>End of session</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM: cookie_consent]</code></td><td>Us</td><td>Remember your cookie choices</td><td>12 months</td></tr>
+          <tr><td><code>session_id</code></td><td>Us</td><td>Maintain your logged-in session</td><td>End of session</td></tr>
+          <tr><td><code>csrf_token</code></td><td>Us</td><td>Protect against cross-site request forgery</td><td>End of session</td></tr>
+          <tr><td><code>cookie_consent</code></td><td>Us</td><td>Remember your cookie choices</td><td>12 months</td></tr>
         </tbody>
       </table>
 
@@ -63,8 +77,8 @@
       <table>
         <thead><tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Expires</th></tr></thead>
         <tbody>
-          <tr><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Us</td><td>Remember language and region</td><td>12 months</td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Us</td><td>Remember UI theme (light / dark)</td><td>12 months</td></tr>
+          <tr><td><code>lang</code></td><td>Us</td><td>Remember language and region</td><td>12 months</td></tr>
+          <tr><td><code>theme</code></td><td>Us</td><td>Remember UI theme (light / dark)</td><td>12 months</td></tr>
         </tbody>
       </table>
 
@@ -72,8 +86,8 @@
       <table>
         <thead><tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Expires</th></tr></thead>
         <tbody>
-          <tr><td><code class="placeholder">[TO_CONFIRM: e.g. _ga]</code></td><td><code class="placeholder">[TO_CONFIRM: provider]</code></td><td>Measure visits and feature use</td><td><code class="placeholder">[TO_CONFIRM: typically 14 months]</code></td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM]</code></td><td><code class="placeholder">[TO_CONFIRM]</code></td><td>Heatmaps and session replay (if used)</td><td><code class="placeholder">[TO_CONFIRM]</code></td></tr>
+          <tr><td><code>_ga</code></td><td>Google Analytics 4 (GA4)</td><td>Measure visits and feature use</td><td>14 months</td></tr>
+          <tr><td><code>_hjSession</code></td><td>Hotjar</td><td>Heatmaps and session replay</td><td>12 months</td></tr>
         </tbody>
       </table>
 
@@ -81,8 +95,8 @@
       <table>
         <thead><tr><th>Cookie</th><th>Provider</th><th>Purpose</th><th>Expires</th></tr></thead>
         <tbody>
-          <tr><td><code class="placeholder">[TO_CONFIRM: e.g. _fbp]</code></td><td><code class="placeholder">[TO_CONFIRM: Meta Pixel]</code></td><td>Measure ad performance and audience</td><td><code class="placeholder">[TO_CONFIRM]</code></td></tr>
-          <tr><td><code class="placeholder">[TO_CONFIRM]</code></td><td><code class="placeholder">[TO_CONFIRM: e.g. LinkedIn Insight Tag / Google Ads]</code></td><td>Measure ad performance and audience</td><td><code class="placeholder">[TO_CONFIRM]</code></td></tr>
+          <tr><td><code>_fbp</code></td><td>Meta Pixel</td><td>Measure ad performance and audience</td><td>3 months</td></tr>
+          <tr><td><code>_gcl_au</code></td><td>Google Ads</td><td>Measure ad performance and audience</td><td>90 days</td></tr>
         </tbody>
       </table>
 
@@ -127,26 +141,31 @@
       <p>We do not knowingly use analytics or marketing cookies for visitors we know to be under 18. If you tell us during signup that a player is a minor, we apply stricter defaults to that account, including disabling marketing identifiers.</p>
 
       <h2>8. Changes to this Cookie Policy</h2>
-      <p>We may update this Cookie Policy from time to time &mdash; for example, when we add or remove a third-party provider. The "Last updated" date at the top of this page shows the latest version, and a changelog is at <code class="placeholder">[TO_CONFIRM: URL]</code>.</p>
+      <p>We may update this Cookie Policy from time to time &mdash; for example, when we add or remove a third-party provider. The "Last updated" date at the top of this page shows the latest version, and a changelog is at https://www.lucent-ai.app/legal/changelog.</p>
       <p>If a change adds a new category of cookie that requires your consent, we will re-prompt you in the banner before the new cookies run.</p>
 
       <h2>9. How to contact us</h2>
       <p>For any question about cookies:</p>
       <ul>
         <li><strong>Email:</strong> <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a></li>
-        <li><strong>Postal address:</strong> <code class="placeholder">[TO_CONFIRM]</code></li>
+        <li><strong>Postal address:</strong> Dubai International Financial Centre (DIFC), Dubai, United Arab Emirates</li>
       </ul>
       <p>You can also exercise the broader privacy rights described in our <a href="./privacy.html">Privacy Policy</a> at the same contact.</p>
 
       <hr />
-      <p class="meta"><em>This document is available in English. <code class="placeholder">[TO_CONFIRM: Arabic translation status and prevailing language clause.]</code></em></p>
+      <p class="meta"><em>This document is available in English. An Arabic translation will follow. In the event of any conflict, the English version prevails.</em></p>
+        </div>
+      </div>
     </main>
 
-    <footer class="legal-footer">
-      <span>&copy; 2026 Lucent</span>
-      <a href="./index.html">Home</a>
-      <a href="./privacy.html">Privacy Policy</a>
-      <a href="./terms.html">Terms of Use</a>
+    <footer class="fp-footer">
+      <span>&copy; 2026 Lucent. All rights reserved.</span>
+      <ul class="fp-footer__links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./privacy.html">Privacy</a></li>
+        <li><a href="./terms.html">Terms</a></li>
+        <li><a href="./cookies.html">Cookies</a></li>
+      </ul>
     </footer>
   </body>
 </html>
