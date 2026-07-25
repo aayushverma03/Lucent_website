@@ -21,6 +21,11 @@ sudo cp "$HERE/../backend/app.py" "$HERE/../backend/pyproject.toml" "$HERE/../ba
 sudo chown -R "$(id -un)" "$APP_DIR"
 
 echo "==> Building the virtualenv with uv (pinned by uv.lock)"
+# Keep the managed Python inside APP_DIR: a root-homed interpreter
+# (~/.local/share/uv) is unreadable by the service user and blocked by
+# the unit's ProtectHome=true.
+export UV_PYTHON_INSTALL_DIR="$APP_DIR/python"
+sudo rm -rf "$APP_DIR/.venv"
 ( cd "$APP_DIR" && uv sync --frozen )
 
 echo "==> Data dir $DB_DIR"
