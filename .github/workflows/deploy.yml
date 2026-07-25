@@ -88,5 +88,6 @@ jobs:
 
       - name: Smoke test
         run: |
-          $SSH "curl -sf http://127.0.0.1:8787/api/health && echo ' service OK' || { echo '--- service diagnostics ---'; sudo systemctl status lucent-waitlist --no-pager | head -15; sudo journalctl -u lucent-waitlist -n 30 --no-pager; exit 7; }"
+          # the service may still be booting right after restart; give it up to 30s
+          $SSH 'for i in $(seq 1 15); do curl -sf http://127.0.0.1:8787/api/health && echo " service OK" && exit 0; sleep 2; done; echo "--- service diagnostics ---"; sudo systemctl status lucent-waitlist --no-pager | head -15; sudo journalctl -u lucent-waitlist -n 30 --no-pager; exit 7'
           curl -sf https://www.lucent-ai.app/api/health && echo " public OK"
