@@ -9,7 +9,12 @@
 #   ./deploy/install-api-proxy.sh --conf FILE --no-reload   # test mode
 set -euo pipefail
 
-CONF=/etc/nginx/sites-available/lucent.conf
+# Same conf location logic as bootstrap.sh: Debian vs RHEL/Amazon Linux.
+if [ -d /etc/nginx/sites-enabled ]; then
+  CONF=/etc/nginx/sites-available/lucent.conf
+else
+  CONF=/etc/nginx/conf.d/lucent.conf
+fi
 RELOAD=1
 while [ $# -gt 0 ]; do
   case "$1" in

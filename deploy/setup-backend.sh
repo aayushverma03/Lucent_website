@@ -45,11 +45,21 @@ EOF
   echo "    -> set WAITLIST_FROM_EMAIL / WAITLIST_ALERT_TO for SES alerts, then verify both in SES."
 fi
 
-echo "==> Ownership for the service user (www-data)"
-sudo chown -R www-data:www-data "$APP_DIR" "$DB_DIR"
+# Debian/Ubuntu ships www-data; RHEL/Amazon Linux ships nginx; fall back
+# to a dedicated system user if neither exists.
+SERVICE_USER=www-data
+if ! id -u "$SERVICE_USER" >/dev/null 2>&1; then SERVICE_USER=nginx; fi
+if ! id -u "$SERVICE_USER" >/dev/null 2>&1; then
+  SERVICE_USER=lucent
+  sudo useradd --system --no-create-home --shell /usr/sbin/nologin "$SERVICE_USER"
+fi
 
-echo "==> systemd service"
-sudo cp "$HERE/lucent-waitlist.service" /etc/systemd/system/
+echo "==> Ownership for the service user ($SERVICE_USER)"
+sudo chown -R "$SERVICE_USER:$SERVICE_USER" "$APP_DIR" "$DB_DIR"
+
+echo "==> systemd service (User=$SERVICE_USER)"
+sed "s/^User=.*/User=$SERVICE_USER/; s/^Group=.*/Group=$SERVICE_USER/" \
+  "$HERE/lucent-waitlist.service" | sudo tee /etc/systemd/system/lucent-waitlist.service >/dev/null
 sudo systemctl daemon-reload
 sudo systemctl enable lucent-waitlist
 # restart (not just enable --now) so re-runs pick up new app.py / unit changes
