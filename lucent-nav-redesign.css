@@ -133,6 +133,17 @@ body.lucent-theme .top-nav__cta {
 
 body.lucent-theme .top-nav__cta::after { display: none; }
 
+/* Dark label on the lime pill in every state — must out-rank the generic
+   .top-nav__links a rule (0-2-2) that paints links white. */
+body.lucent-theme .top-nav__links a.top-nav__cta,
+body.lucent-theme .top-nav__links a.top-nav__cta:hover,
+body.lucent-theme .top-nav__links a.top-nav__cta.is-active,
+body.lucent-theme .top-nav__links a.top-nav__cta:focus-visible {
+  color: #0B1400 !important;
+  text-shadow: none !important;
+  font-weight: 600 !important;
+}
+
 body.lucent-theme .top-nav__cta:hover {
   background: #B8FF5C !important;
   transform: translateY(-1px) !important;
