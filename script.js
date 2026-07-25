@@ -139,8 +139,11 @@ function setupLaunchSequence() {
     launch.setAttribute("aria-hidden", "true");
     launch.innerHTML = `
       <div class="launch-sequence__word launch-sequence__word--stack">
+        <span class="launch-sequence__ring" aria-hidden="true"></span>
+        <span class="launch-sequence__ring launch-sequence__ring--counter" aria-hidden="true"></span>
         <img class="launch-sequence__logo" src="./assets/lucent-logo-lockup.png" alt="Lucent" />
       </div>
+      <p class="launch-sequence__tagline">Record Train <em>Get Scouted</em></p>
       <div class="launch-sequence__status">
         <div class="launch-sequence__bar"><i></i></div>
       </div>

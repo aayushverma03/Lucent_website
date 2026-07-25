@@ -189,23 +189,97 @@ body.is-intro-running .nav.shell {
   z-index: 10000;
   display: grid !important;
   place-items: center;
+  align-content: center;
   overflow: hidden;
-  background: #04060a !important;
+  /* app splash field: AppGradients.splash (bg2 -> bg -> black) */
+  background: linear-gradient(135deg, #0E141B 0%, #0A0E12 50%, #05070A 100%) !important;
   color: #f5f5f7;
   pointer-events: none;
   animation: loaderMinimalExit 1.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* Atmospheric green bloom behind the logo */
+/* Breathing green glow behind the lockup, as in the app splash */
 .launch-sequence::before {
   position: absolute;
-  inset: 0;
+  left: 50%;
+  top: 44%;
+  width: min(72vw, 640px);
+  height: min(72vw, 640px);
+  border-radius: 50%;
   opacity: 1 !important;
-  background:
-    radial-gradient(ellipse 60% 40% at 50% 42%, rgba(184, 255, 92, 0.13) 0%, transparent 70%),
-    radial-gradient(ellipse 80% 30% at 50% 100%, rgba(184, 255, 92, 0.07) 0%, transparent 60%);
+  background: radial-gradient(circle,
+    rgba(184, 255, 92, 0.26) 0%,
+    rgba(184, 255, 92, 0.10) 35%,
+    rgba(102, 255, 241, 0.05) 55%,
+    transparent 72%);
   content: "";
   pointer-events: none;
+  animation: splashBreath 2.4s ease-in-out infinite alternate;
+}
+@keyframes splashBreath {
+  from { opacity: 0.78; transform: translate(-50%, -50%) scale(0.92); }
+  to   { opacity: 1;    transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* Counter-rotating green->cyan sweep rings around the lockup */
+.launch-sequence__word--stack { position: relative; }
+.launch-sequence__ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(60vw, 470px);
+  height: min(60vw, 470px);
+  border-radius: 50%;
+  background: conic-gradient(from 0deg,
+    transparent 0 55%,
+    rgba(184, 255, 92, 0.9) 74%,
+    rgba(102, 255, 241, 0.9) 84%,
+    transparent 93%);
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
+  opacity: 0.85;
+  animation: splashSweep 3.8s linear infinite;
+}
+.launch-sequence__ring--counter {
+  width: min(50vw, 392px);
+  height: min(50vw, 392px);
+  background: conic-gradient(from 180deg,
+    transparent 0 72%,
+    rgba(102, 255, 241, 0.55) 86%,
+    transparent 95%);
+  opacity: 0.6;
+  animation: splashSweepCounter 3.25s linear infinite;
+}
+@keyframes splashSweep {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes splashSweepCounter {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to   { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+/* App-splash tagline: Oswald, uppercase, no full stops, gradient accent */
+.launch-sequence__tagline {
+  position: relative;
+  z-index: 3;
+  margin: 22px 0 0;
+  font-family: 'Oswald', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.82rem, 1.4vw, 1.02rem);
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  text-transform: uppercase;
+  color: #FBFAF7;
+  animation: loaderMinimalWord 780ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+.launch-sequence__tagline em {
+  font-style: normal;
+  background: linear-gradient(90deg, #B8FF5C, #66FFF1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 /* Remove duplicate bottom bar */
@@ -260,7 +334,7 @@ body.is-intro-complete .launch-sequence__word--stack { transform: translateY(-10
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, #B8FF5C, #4ade80);
+  background: linear-gradient(90deg, #B8FF5C, #66FFF1);
   transform: scaleX(0);
   transform-origin: left;
   box-shadow: 0 0 12px rgba(184, 255, 92, 0.75), 0 0 28px rgba(184, 255, 92, 0.35);
