@@ -3,8 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Lucent Privacy Policy." />
-    <meta name="theme-color" content="#04060a" />
+    <meta name="description" content="Read how Lucent collects, uses, and protects your data — including video, health, and the data of players under 18." />
+    <meta name="theme-color" content="#05070a" />
+    <link rel="canonical" href="https://www.lucent-ai.app/privacy.html" />
+    <!-- Link/share previews (Open Graph + Twitter Card) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lucent" />
+    <meta property="og:title" content="Privacy Policy — Lucent" />
+    <meta property="og:description" content="Read how Lucent collects, uses, and protects your data — including video, health, and the data of players under 18." />
+    <meta property="og:url" content="https://www.lucent-ai.app/privacy.html" />
+    <meta property="og:image" content="https://www.lucent-ai.app/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Privacy Policy — Lucent" />
+    <meta name="twitter:description" content="Read how Lucent collects, uses, and protects your data — including video, health, and the data of players under 18." />
+    <meta name="twitter:image" content="https://www.lucent-ai.app/og-image.png" />
     <title>Privacy Policy &mdash; Lucent</title>
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
@@ -15,6 +29,7 @@
     <link rel="stylesheet" href="./legal-page.css" />
   </head>
   <body class="lucent-theme">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="fp-nav" aria-label="Primary navigation">
       <a class="fp-nav__brand" href="./index.html" aria-label="Lucent home">
         <img src="./assets/lucent-logo-lockup.png" alt="Lucent" />
@@ -27,7 +42,7 @@
       </nav>
     </header>
 
-    <main class="fp-main">
+    <main class="fp-main" id="main">
       <div class="fp-inner">
         <header class="fp-hero">
           <p class="fp-hero__kicker">Legal</p>
@@ -35,13 +50,14 @@
           <p class="fp-hero__sub">How Lucent collects, uses, and protects your data &mdash; including health, video, and the data of players under 18.</p>
         </header>
         <div class="legal">
-          <p class="meta"><strong>Version:</strong> 0.1 (draft) &middot; <strong>Effective:</strong> 29 May 2026 &middot; <strong>Last updated:</strong> 29 May 2026</p>
+          <p class="meta"><strong>Version:</strong> 1.0 &middot; <strong>Effective:</strong> 29 May 2026 &middot; <strong>Last updated:</strong> 25 July 2026</p>
 
       <section class="summary">
         <h2>Plain-language summary</h2>
+        <p><strong>Where we are today:</strong> Lucent is pre-launch. The only personal data this website collects is the waitlist signup described in &sect;2.6 &mdash; your name and email, plus the standard technical details your browser sends with the request. The sections describing the app (health data, training videos, connections, payments) explain how the platform will operate when it launches.</p>
         <p>Lucent is a football performance platform. We help players record training, get AI-driven feedback, sync health data, and (with the player's permission) connect with coaches and scouts.</p>
         <p>To do that, we collect personal information &mdash; including sensitive data like health vitals and video of you training. We treat this data carefully, store it securely, only share it with people you've approved, and give you the right to access, correct, or delete it at any time.</p>
-        <p>If you're under 18, a parent or guardian must give consent before you can use the platform, and additional protections apply to your data.</p>
+        <p>If you're under 18, the platform will require a parent or guardian to give consent before you can use it, and additional protections will apply to your data.</p>
         <p>If you remember three things from this notice:</p>
         <ol>
           <li><strong>You're in control.</strong> Coaches and scouts can't see your data unless you (or your guardian) say yes.</li>
@@ -109,6 +125,15 @@
         <li>Identity verification provider, if you sign up for a feature that requires it &mdash; none is used at this time.</li>
         <li>Sign-in providers (Apple, Google, Facebook) &mdash; all of these are enabled.</li>
         <li>Coaches and scouts who have your accepted connection may submit notes, ratings, or watchlist entries about you. You can see what they have submitted.</li>
+      </ul>
+
+      <h3>2.6 Website waitlist (live today)</h3>
+      <p>This is the only data collection running right now. When you join the waitlist on our website, we collect your <strong>name</strong> and <strong>email address</strong>, together with a tag recording that the signup came from the website, the <strong>IP address</strong> and <strong>browser user-agent string</strong> your browser sends with the request (kept for abuse prevention), and a record of the consent notice shown to you. Like most websites, our web server also keeps standard access logs (IP address, request, timestamp) for security and troubleshooting.</p>
+      <ul>
+        <li><strong>Where it goes:</strong> your details are sent over an encrypted connection (TLS) to our own server hosted with Amazon Web Services (AWS) and stored in a private database there. Backup copies of that database may be retained in AWS S3 for up to 90 days. No third-party marketing or analytics service receives them.</li>
+        <li><strong>Notifications:</strong> we use Amazon SES (AWS's email service) to send ourselves an internal alert that a signup happened. You will not receive a confirmation email at signup.</li>
+        <li><strong>What we use it for:</strong> contacting you about early access, launch, and founder pricing &mdash; the things the form describes. We do not sell or share the waitlist, and we will not use it for unrelated marketing.</li>
+        <li><strong>How long we keep it:</strong> until launch invitations have gone out, or until you ask us to remove you &mdash; whichever comes first. Email <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a> and we will delete your entry.</li>
       </ul>
 
       <h2>3. How we use your data, and our legal basis</h2>
@@ -220,6 +245,8 @@
       <p>We do not sell your personal data. We may share aggregated, anonymised data that no longer identifies you with clubs, federations, or research partners.</p>
 
       <h3>Sub-processors</h3>
+      <p><strong>In use today:</strong> Amazon Web Services (AWS) &mdash; website hosting, the waitlist database, and internal signup notifications via Amazon SES. AWS is the only service provider processing personal data for us right now; the website's fonts and scripts are served from our own domain, so no other company receives data about your visit.</p>
+      <p><strong>Planned at app launch</strong> (not yet processing your data):</p>
       <table>
         <thead><tr><th>Vendor</th><th>Purpose</th><th>Categories</th><th>Location</th><th>Role</th></tr></thead>
         <tbody>
@@ -228,7 +255,7 @@
           <tr><td>Google Health Connect</td><td>Source of Android health vitals</td><td>Health data</td><td>On-device &rarr; our servers via your permission</td><td>Independent controller</td></tr>
           <tr><td>Anthropic</td><td>Generation of coaching and health summaries</td><td>Performance and health summaries (de-identified where possible)</td><td>the United States</td><td>Processor</td></tr>
           <tr><td>In-house (no external provider)</td><td>Video analysis</td><td>Video frames or extracted features</td><td>UAE region</td><td>Processor</td></tr>
-          <tr><td>Google Analytics 4 (GA4)</td><td>Web and app analytics</td><td>Usage and device data</td><td>the United States</td><td>Processor</td></tr>
+          <tr><td>Google Analytics 4 (GA4)</td><td>App analytics (consent-based)</td><td>Usage and device data</td><td>the United States</td><td>Processor</td></tr>
           <tr><td>Stripe</td><td>Billing</td><td>Payment and identity</td><td>the United States</td><td>Independent controller</td></tr>
           <tr><td>SendGrid and Firebase Cloud Messaging</td><td>Transactional and marketing comms</td><td>Contact and content</td><td>the United States</td><td>Processor</td></tr>
           <tr><td>Zendesk</td><td>Customer support</td><td>Account and ticket content</td><td>the United States</td><td>Processor</td></tr>
@@ -236,7 +263,7 @@
           <tr><td>Firebase Crashlytics</td><td>Diagnostics</td><td>Device and crash data</td><td>the United States</td><td>Processor</td></tr>
         </tbody>
       </table>
-      <p>We update this list when we change a sub-processor. The current version is always at https://www.lucent-ai.app/legal/subprocessors.</p>
+      <p>We will update this list before any planned sub-processor starts processing your data, and whenever we change one. For the current list, contact <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a>.</p>
 
       <h2>8. How long we keep your data</h2>
       <table>
@@ -294,7 +321,7 @@
       <p>If a personal-data breach is likely to result in risk to you, we will notify the UAE Data Office and affected users without undue delay, as required by Article 9 of the PDPL.</p>
 
       <h2>12. Changes to this Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will always show the latest version, and we will keep a changelog at https://www.lucent-ai.app/legal/changelog.</p>
+      <p>We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page will always show the latest version; earlier versions are available on request from <a href="mailto:support@lucent-ai.app">support@lucent-ai.app</a>.</p>
       <p>For material changes &mdash; for example, a new category of data we collect, a new third-party processor with whom we share sensitive data, or a change to your rights &mdash; we will notify you in the app and by email <strong>before</strong> the change takes effect, and (where the change requires it) we will ask for your consent again.</p>
 
       <h2>13. How to contact us</h2>

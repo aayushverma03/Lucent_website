@@ -10,10 +10,10 @@
     BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Brand */
-  --ap-green:        #30d158;
-  --ap-green-dim:    rgba(48, 209, 88, 0.12);
-  --ap-green-glow:   rgba(48, 209, 88, 0.28);
-  --ap-blue:         #64d2ff;
+  --ap-green:        #B8FF5C;
+  --ap-green-dim:    rgba(184, 255, 92, 0.12);
+  --ap-green-glow:   rgba(184, 255, 92, 0.28);
+  --ap-blue:         #66FFF1;
   --lucent-primary:  var(--ap-green);
   --lucent-secondary: var(--ap-blue);
   --premium-green:   var(--ap-green);
@@ -59,7 +59,7 @@ body.lucent-theme {
 body.lucent-theme,
 body.premium-motion-ready {
   background:
-    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(48, 209, 88, 0.06), transparent),
+    radial-gradient(ellipse 80% 40% at 50% -10%, rgba(184, 255, 92, 0.06), transparent),
     var(--ap-bg) !important;
 }
 
@@ -121,8 +121,8 @@ body.lucent-theme .top-nav__cta {
   box-shadow: 0 0 28px var(--ap-green-glow) !important;
 }
 body.lucent-theme .top-nav__cta:hover {
-  background: #42e569 !important;
-  box-shadow: 0 0 40px rgba(48, 209, 88, 0.42) !important;
+  background: #D8FFAE !important;
+  box-shadow: 0 0 40px rgba(184, 255, 92, 0.42) !important;
   transform: translateY(-1px) !important;
 }
 
@@ -235,7 +235,7 @@ body.lucent-theme .hero-card:hover .hero-card__arrow {
 /* ── 8. Skill engine section ──────────────────────────────────── */
 body.lucent-theme .story__sticky {
   background:
-    radial-gradient(ellipse 60% 50% at 50% 46%, rgba(48, 209, 88, 0.05), transparent),
+    radial-gradient(ellipse 60% 50% at 50% 46%, rgba(184, 255, 92, 0.05), transparent),
     #060a0e !important;
 }
 body.lucent-theme .story__intro h2,
@@ -258,15 +258,15 @@ body.lucent-theme .lede {
 
 /* Skill scan halo — refined */
 body.lucent-theme .skills-stage__halo--inner {
-  border-color: rgba(48, 209, 88, 0.18) !important;
+  border-color: rgba(184, 255, 92, 0.18) !important;
 }
 body.lucent-theme .skills-stage__scan {
   background:
-    radial-gradient(circle at center, rgba(48, 209, 88, 0.22), transparent 68%),
-    linear-gradient(180deg, transparent 0%, transparent 46%, rgba(48, 209, 88, 0.72) 50%, transparent 54%, transparent 100%) !important;
+    radial-gradient(circle at center, rgba(184, 255, 92, 0.22), transparent 68%),
+    linear-gradient(180deg, transparent 0%, transparent 46%, rgba(184, 255, 92, 0.72) 50%, transparent 54%, transparent 100%) !important;
 }
 body.lucent-theme .pose-map__lines {
-  stroke: rgba(48, 209, 88, 0.85) !important;
+  stroke: rgba(184, 255, 92, 0.85) !important;
 }
 body.lucent-theme .pose-map__points {
   fill: var(--ap-green) !important;
@@ -276,9 +276,9 @@ body.lucent-theme .pose-map__points {
 body.lucent-theme .metric,
 body.lucent-theme .analysis-chip {
   border-radius: var(--r-md) !important;
-  background: linear-gradient(135deg, var(--ap-green), #64d2ff) !important;
+  background: linear-gradient(135deg, var(--ap-green), #66FFF1) !important;
   color: #071409 !important;
-  box-shadow: 0 8px 28px rgba(48, 209, 88, 0.18) !important;
+  box-shadow: 0 8px 28px rgba(184, 255, 92, 0.18) !important;
 }
 body.lucent-theme .metric span,
 body.lucent-theme .analysis-chip span {
@@ -310,7 +310,7 @@ body.lucent-theme .pose-label {
   color: var(--ap-t1) !important;
 }
 body.lucent-theme .pose-label::before {
-  background: rgba(48, 209, 88, 0.6) !important;
+  background: rgba(184, 255, 92, 0.6) !important;
 }
 body.lucent-theme .pose-label::after {
   background: var(--ap-green) !important;
@@ -388,8 +388,8 @@ body.lucent-theme .story-steps span.is-active {
 /* ── 9. Scouted / Trials section ──────────────────────────────── */
 body.lucent-theme .story--scouted .story__sticky {
   background:
-    radial-gradient(ellipse 50% 40% at 72% 44%, rgba(100, 210, 255, 0.06), transparent),
-    radial-gradient(ellipse 50% 40% at 48% 48%, rgba(48, 209, 88, 0.04), transparent),
+    radial-gradient(ellipse 50% 40% at 72% 44%, rgba(102, 255, 241, 0.06), transparent),
+    radial-gradient(ellipse 50% 40% at 48% 48%, rgba(184, 255, 92, 0.04), transparent),
     #060a0e !important;
 }
 body.lucent-theme .scout-bg-video {
@@ -493,14 +493,14 @@ body.lucent-theme .trial-card__eyebrow {
 }
 body.lucent-theme .trial-card__eyebrow {
   color: var(--ap-green) !important;
-  background: rgba(48, 209, 88, 0.08) !important;
-  border-color: rgba(48, 209, 88, 0.12) !important;
+  background: rgba(184, 255, 92, 0.08) !important;
+  border-color: rgba(184, 255, 92, 0.12) !important;
   font-weight: 600 !important;
 }
 body.lucent-theme .trial-card__footer em {
   color: var(--ap-green) !important;
-  background: rgba(48, 209, 88, 0.08) !important;
-  border-color: rgba(48, 209, 88, 0.12) !important;
+  background: rgba(184, 255, 92, 0.08) !important;
+  border-color: rgba(184, 255, 92, 0.12) !important;
 }
 
 /* Trial cards */
@@ -511,11 +511,11 @@ body.lucent-theme .trial-grid--premium .trial-card {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), inset 0 1px 0 var(--ap-b1) !important;
 }
 body.lucent-theme .trial-grid--premium .trial-card.is-selected {
-  border-color: rgba(48, 209, 88, 0.3) !important;
+  border-color: rgba(184, 255, 92, 0.3) !important;
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.24),
-    inset 0 0 0 1px rgba(48, 209, 88, 0.15),
-    0 0 40px rgba(48, 209, 88, 0.06) !important;
+    inset 0 0 0 1px rgba(184, 255, 92, 0.15),
+    0 0 40px rgba(184, 255, 92, 0.06) !important;
 }
 body.lucent-theme .trial-card h3,
 body.lucent-theme .selected-trial h3,
@@ -537,8 +537,8 @@ body.lucent-theme .selected-trial p {
   color: var(--ap-t2) !important;
 }
 body.lucent-theme .trial-card__fit {
-  border-color: rgba(48, 209, 88, 0.28) !important;
-  background: rgba(48, 209, 88, 0.06) !important;
+  border-color: rgba(184, 255, 92, 0.28) !important;
+  background: rgba(184, 255, 92, 0.06) !important;
   color: var(--ap-green) !important;
   font-family: var(--display-font) !important;
   font-weight: 700 !important;
@@ -546,8 +546,8 @@ body.lucent-theme .trial-card__fit {
   letter-spacing: -0.01em !important;
 }
 body.lucent-theme .trial-card__bar span {
-  background: linear-gradient(90deg, var(--ap-green) 0%, #64d2ff 100%) !important;
-  box-shadow: 0 0 16px rgba(48, 209, 88, 0.22) !important;
+  background: linear-gradient(90deg, var(--ap-green) 0%, #66FFF1 100%) !important;
+  box-shadow: 0 0 16px rgba(184, 255, 92, 0.22) !important;
 }
 
 /* Selected trial */
@@ -640,16 +640,16 @@ body.lucent-theme .club-mark--large {
   border-radius: var(--r-lg) !important;
 }
 body.lucent-theme .club-mark--aurelia {
-  background: linear-gradient(135deg, #30d158, #64d2ff) !important;
+  background: linear-gradient(135deg, #B8FF5C, #66FFF1) !important;
 }
 body.lucent-theme .club-mark--northbridge {
-  background: linear-gradient(135deg, #64d2ff, #a8e4ff) !important;
+  background: linear-gradient(135deg, #66FFF1, #a8e4ff) !important;
 }
 body.lucent-theme .club-mark--vale {
-  background: linear-gradient(135deg, #ffd60a, #30d158) !important;
+  background: linear-gradient(135deg, #ffd60a, #B8FF5C) !important;
 }
 body.lucent-theme .club-mark--meridian {
-  background: linear-gradient(135deg, #bf5af2, #64d2ff) !important;
+  background: linear-gradient(135deg, #66FFF1, #66FFF1) !important;
 }
 body.lucent-theme .club-mark span {
   color: #04060a !important;
@@ -680,28 +680,28 @@ body.lucent-theme .cta__inner p:last-of-type {
 body.lucent-theme .button,
 body.lucent-theme .elevate__button {
   font-family: var(--display-font) !important;
-  font-size: 0.92rem !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.005em !important;
+  font-size: 0.88rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.02em !important;
   border-radius: 999px !important;
-  padding: 0 var(--sp-8) !important;
-  min-height: 50px !important;
-  color: #071409 !important;
+  padding: 0 40px !important;
+  min-height: 48px !important;
+  color: #05070A !important;
   background: var(--ap-green) !important;
-  box-shadow: 0 0 32px rgba(48, 209, 88, 0.22) !important;
-  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease !important;
+  box-shadow: none !important;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease !important;
 }
 body.lucent-theme .button:hover,
 body.lucent-theme .elevate__button:hover {
-  background: #42e569 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 0 48px rgba(48, 209, 88, 0.36) !important;
+  background: #D8FFAE !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 8px 32px rgba(184, 255, 92, 0.20) !important;
 }
 
 /* ── 12. Focus states ─────────────────────────────────────────── */
 body.lucent-theme a:focus-visible,
 body.lucent-theme button:focus-visible {
-  outline: 2px solid var(--ap-green) !important;
+  outline: 2px solid #B8FF5C !important;
   outline-offset: 3px !important;
   border-radius: 4px !important;
 }
@@ -725,13 +725,13 @@ body.lucent-theme .elevate::before {
 
 /* ── 15. Premium ambient orbs — cool palette ──────────────────── */
 body.lucent-theme .premium-orb--one {
-  background: rgba(48, 209, 88, 0.10) !important;
+  background: rgba(184, 255, 92, 0.10) !important;
 }
 body.lucent-theme .premium-orb--two {
-  background: rgba(100, 210, 255, 0.10) !important;
+  background: rgba(102, 255, 241, 0.10) !important;
 }
 body.lucent-theme .premium-orb--three {
-  background: rgba(48, 209, 88, 0.07) !important;
+  background: rgba(184, 255, 92, 0.07) !important;
 }
 
 /* ── 16. Mobile refinements ───────────────────────────────────── */
@@ -816,7 +816,7 @@ body.lucent-theme .jtile:hover {
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.5),
     0 32px 80px rgba(0, 0, 0, 0.65),
-    0 0 0 1px rgba(48, 209, 88, 0.12) !important;
+    0 0 0 1px rgba(184, 255, 92, 0.12) !important;
 }
 
 /* Overlay — transparent top, fades so glass panel bleeds through at base */
@@ -835,7 +835,7 @@ body.lucent-theme .jtile__num {
   font-weight: 600 !important;
   letter-spacing: 0.18em !important;
   color: var(--ap-green) !important;
-  background: rgba(48, 209, 88, 0.12) !important;
+  background: rgba(184, 255, 92, 0.12) !important;
   padding: 3px 8px !important;
   border-radius: 5px !important;
   opacity: 1 !important;
@@ -921,7 +921,7 @@ body.lucent-theme .journey-slider__thumb {
   left: 0px;
   width: 48px;
   height: 4px;
-  background: var(--ap-green, #30d158);
+  background: var(--ap-green, #B8FF5C);
   border-radius: 2px;
   transition: left 0.12s ease-out, height 0.2s ease;
   cursor: grab;
@@ -987,7 +987,7 @@ body.lucent-theme .clip-frame {
   border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.6),
-    0 0 0 0 rgba(48, 209, 88, 0);
+    0 0 0 0 rgba(184, 255, 92, 0);
   transition: border-color 0.7s ease, box-shadow 0.7s ease;
   z-index: 2;
   flex-shrink: 0;
@@ -996,12 +996,12 @@ body.lucent-theme .clip-frame {
 body.lucent-theme [data-skill-step="1"] .clip-frame,
 body.lucent-theme [data-skill-step="2"] .clip-frame,
 body.lucent-theme [data-skill-step="3"] .clip-frame {
-  border-color: rgba(48, 209, 88, 0.5);
+  border-color: rgba(184, 255, 92, 0.5);
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(48, 209, 88, 0.10),
-    0 0 60px rgba(48, 209, 88, 0.12),
-    0 0 120px rgba(48, 209, 88, 0.06);
+    0 0 0 1px rgba(184, 255, 92, 0.10),
+    0 0 60px rgba(184, 255, 92, 0.12),
+    0 0 120px rgba(184, 255, 92, 0.06);
 }
 
 body.lucent-theme .clip-athlete {
@@ -1056,14 +1056,14 @@ body.lucent-theme .clip-scan-line {
   height: 3px;
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(48, 209, 88, 0.4) 15%,
-    rgba(48, 209, 88, 1) 50%,
-    rgba(48, 209, 88, 0.4) 85%,
+    rgba(184, 255, 92, 0.4) 15%,
+    rgba(184, 255, 92, 1) 50%,
+    rgba(184, 255, 92, 0.4) 85%,
     transparent 100%);
   box-shadow:
-    0 0 8px 2px rgba(48, 209, 88, 0.7),
-    0 0 24px 6px rgba(48, 209, 88, 0.35),
-    0 0 60px 12px rgba(48, 209, 88, 0.15);
+    0 0 8px 2px rgba(184, 255, 92, 0.7),
+    0 0 24px 6px rgba(184, 255, 92, 0.35),
+    0 0 60px 12px rgba(184, 255, 92, 0.15);
   opacity: 0;
   pointer-events: none;
 }
@@ -1116,8 +1116,8 @@ body.lucent-theme .skill-cards.is-revealed .skill-card--technical {
   transform: translateY(-14px) rotate(0deg);
   transition-delay: 0s;
   z-index: 2;
-  border-color: rgba(48, 209, 88, 0.25);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 28px rgba(48, 209, 88, 0.1);
+  border-color: rgba(184, 255, 92, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55), 0 0 28px rgba(184, 255, 92, 0.1);
 }
 body.lucent-theme .skill-cards.is-revealed .skill-card--psychological {
   opacity: 1;
@@ -1131,7 +1131,7 @@ body.lucent-theme .skill-card__cat {
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--ap-green, #30d158);
+  color: var(--ap-green, #B8FF5C);
   margin: 0 0 11px;
 }
 
@@ -1176,7 +1176,7 @@ body.lucent-theme .skill-bar__track {
 body.lucent-theme .skill-bar__fill {
   height: 100%;
   width: 0%;
-  background: var(--ap-green, #30d158);
+  background: var(--ap-green, #B8FF5C);
   border-radius: 2px;
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1277,7 +1277,7 @@ body.lucent-theme .rank-row em {
   font-style: normal;
   font-size: 0.72rem;
   font-weight: 600;
-  color: var(--ap-green, #30d158);
+  color: var(--ap-green, #B8FF5C);
 }
 
 /* ── Drill queue (step 3) ── */
@@ -1319,7 +1319,7 @@ body.lucent-theme .drill-queue__header {
 }
 
 body.lucent-theme .drill-queue__bolt {
-  color: var(--ap-green, #30d158);
+  color: var(--ap-green, #B8FF5C);
   font-size: 0.8rem;
 }
 
@@ -1369,7 +1369,7 @@ body.lucent-theme .drill-item__cat {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--ap-green, #30d158);
+  color: var(--ap-green, #B8FF5C);
 }
 
 body.lucent-theme .drill-dots {
@@ -1387,7 +1387,7 @@ body.lucent-theme .drill-dots i {
 }
 
 body.lucent-theme .drill-dots i.on {
-  background: var(--ap-green, #30d158);
+  background: var(--ap-green, #B8FF5C);
 }
 
 /* ── C. Trials section (#scouted) ──────────────────────────────── */
@@ -1424,9 +1424,9 @@ body.lucent-theme .trial-grid--premium .trial-card {
   border-radius: 18px !important;
 }
 body.lucent-theme .trial-grid--premium .trial-card.is-selected {
-  border-color: rgba(48, 209, 88, 0.18) !important;
+  border-color: rgba(184, 255, 92, 0.18) !important;
   background: rgba(8, 12, 18, 0.85) !important;
-  box-shadow: 0 0 0 1px rgba(48, 209, 88, 0.10) inset !important;
+  box-shadow: 0 0 0 1px rgba(184, 255, 92, 0.10) inset !important;
 }
 
 /* Tags — minimal, barely there */
@@ -1498,25 +1498,6 @@ body.lucent-theme .cta__inner .eyebrow {
   letter-spacing: 0.16em !important;
 }
 
-/* CTA button — clean outlined variant */
-body.lucent-theme .button,
-body.lucent-theme .elevate__button {
-  background: var(--ap-green) !important;
-  font-weight: 500 !important;
-  font-size: 0.88rem !important;
-  letter-spacing: 0.02em !important;
-  padding: 0 40px !important;
-  min-height: 48px !important;
-  box-shadow: none !important;
-  transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease !important;
-}
-body.lucent-theme .button:hover,
-body.lucent-theme .elevate__button:hover {
-  background: #42e569 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 8px 32px rgba(48, 209, 88, 0.20) !important;
-}
-
 /* ── E. Shared section separators ──────────────────────────────── */
 
 /* Thin rule between sections */
@@ -1524,6 +1505,30 @@ body.lucent-theme .journey-section,
 body.lucent-theme .story,
 body.lucent-theme .elevate {
   border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ── Review fixes: honeypot, skip link, elevate credibility + FAQ teaser ── */
+
+/* Honeypot: kept off-screen (aria-hidden already removes it from the a11y tree) */
+.waitlist-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Skip-to-content: hidden until keyboard focus */
+.skip-link {
+  position: absolute; left: 12px; top: -64px; z-index: 2000;
+  padding: 10px 16px; border-radius: 10px;
+  background: #B8FF5C; color: #05070A;
+  font: 600 14px/1 "Inter", system-ui, sans-serif; text-decoration: none;
+  transition: top 0.16s ease;
+}
+.skip-link:focus { top: 12px; outline: 2px solid #05070A; outline-offset: 2px; }
+
+/* "Early preview" badge */
+body.lucent-theme .elevate__badge {
+  display: inline-block !important; margin: 0 0 16px !important; padding: 6px 14px !important;
+  border: 1px solid rgba(184, 255, 92, 0.5) !important; border-radius: 999px !important;
+  background: rgba(184, 255, 92, 0.08) !important; color: #B8FF5C !important;
+  font-size: 0.66rem !important; font-weight: 600 !important; letter-spacing: 0.14em !important;
+  text-transform: uppercase !important; max-width: none !important;
 }
 
 /* ── F. Mobile ─────────────────────────────────────────────────── */
@@ -1573,8 +1578,8 @@ body.lucent-theme .hero__cta {
   transition: background 0.2s ease, box-shadow 0.2s ease !important;
 }
 body.lucent-theme .hero__cta:hover {
-  background: #42e569 !important;
-  box-shadow: 0 0 48px rgba(48, 209, 88, 0.42) !important;
+  background: #D8FFAE !important;
+  box-shadow: 0 0 48px rgba(184, 255, 92, 0.42) !important;
   /* Preserve the -50% X centering; the generic .button:hover transform
      would otherwise drop it and the button would jump sideways on hover. */
   transform: translate(-50%, calc(clamp(56px, 9vh, 96px) - 2px)) !important;
@@ -1778,6 +1783,12 @@ body.lucent-theme .waitlist-form {
   width: 100%;
   max-width: 480px;
   text-align: left;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(5, 7, 10, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 body.lucent-theme .waitlist-form__label {
   display: block;
@@ -1810,13 +1821,19 @@ body.lucent-theme .waitlist-form__input {
   transition: border-color 0.2s ease, background 0.2s ease;
   -webkit-appearance: none;
 }
+body.lucent-theme .waitlist-form__input--full {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+}
 body.lucent-theme .waitlist-form__input::placeholder {
   color: var(--ap-t3);
 }
 body.lucent-theme .waitlist-form__input:focus {
-  outline: none;
+  outline: 2px solid #B8FF5C;
+  outline-offset: 2px;
   border-color: var(--ap-green);
-  background: rgba(48, 209, 88, 0.05);
+  background: rgba(184, 255, 92, 0.05);
 }
 /* Reset the elevate__button margin-top that final-polish.css sets to 34px */
 body.lucent-theme .waitlist-form .elevate__button,
@@ -1837,6 +1854,40 @@ body.lucent-theme .waitlist-form__note {
   line-height: 1.5;
   text-align: left;
 }
+/* Success confirmation: highlighted green pill with an animated check. */
+body.lucent-theme #waitlist-form[data-state="success"] .waitlist-form__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: auto;
+  margin-top: 16px;
+  padding: 11px 18px 11px 14px;
+  font-size: 0.92rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: #0b1400 !important;
+  background: var(--ap-green);
+  border-radius: 999px;
+  box-shadow: 0 8px 30px rgba(184, 255, 92, 0.38), 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  animation: waitlistNoteIn 0.5s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+}
+body.lucent-theme .waitlist-form__check {
+  flex: 0 0 auto;
+  color: #0b1400;
+}
+body.lucent-theme .waitlist-form__check .tick {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: waitlistTick 0.45s 0.18s ease forwards;
+}
+@keyframes waitlistNoteIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes waitlistTick {
+  to { stroke-dashoffset: 0; }
+}
 @media (max-width: 520px) {
   body.lucent-theme .waitlist-form {
     max-width: 100% !important;
@@ -1848,6 +1899,9 @@ body.lucent-theme .waitlist-form__note {
   }
   body.lucent-theme .waitlist-form__input {
     width: 100% !important;
+    /* row flips to column below: flex-basis 0 would collapse the height */
+    flex: none !important;
+    min-height: 52px;
   }
   body.lucent-theme .waitlist-form .elevate__button,
   body.lucent-theme .waitlist-form .button {
@@ -1862,6 +1916,13 @@ body.lucent-theme .waitlist-form__note {
   body.lucent-theme .premium-orb--two,
   body.lucent-theme .premium-orb--three {
     animation: none !important;
+  }
+  body.lucent-theme #waitlist-form[data-state="success"] .waitlist-form__note {
+    animation: none !important;
+  }
+  body.lucent-theme .waitlist-form__check .tick {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
   }
 }
 
@@ -2065,3 +2126,94 @@ body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth
     height: clamp(360px, 54svh, 500px) !important;
   }
 }
+
+
+/* ============================================================
+   Skill-engine cards -> real app visuals (radar / gauge / rating)
+   Cards keep the .skill-card surface; only inner content changes.
+   ============================================================ */
+body.lucent-theme .skill-card__viz { display: flex; justify-content: center; margin-top: 4px; }
+body.lucent-theme .skill-card__viz svg { width: 100%; height: auto; overflow: visible; }
+body.lucent-theme .skill-card__viz--gauge { margin-top: 0; }
+body.lucent-theme .skill-card__cap {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin: 10px 0 0; font-size: 0.58rem; color: rgba(245, 245, 247, 0.5); letter-spacing: 0.01em;
+}
+body.lucent-theme .skill-card__cap em {
+  font-style: normal; font-weight: 700; color: var(--ap-green, #B8FF5C); font-variant-numeric: tabular-nums;
+}
+
+/* Cognitive = mini rating card */
+body.lucent-theme .rate-hero { display: flex; align-items: baseline; gap: 8px; margin-top: 2px; }
+body.lucent-theme .rate-ovr {
+  font-weight: 900; font-size: 2.5rem; line-height: 0.9; letter-spacing: -0.03em;
+  color: var(--ap-green, #B8FF5C); font-variant-numeric: tabular-nums;
+}
+body.lucent-theme .rate-slash { font-size: 0.8rem; font-weight: 700; color: rgba(245, 245, 247, 0.32); letter-spacing: 0; }
+body.lucent-theme .tier {
+  align-self: center; font-size: 0.5rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #66FFF1; border: 1px solid rgba(102, 255, 241, 0.3); background: rgba(102, 255, 241, 0.08);
+  border-radius: 99px; padding: 3px 8px;
+}
+body.lucent-theme .subs { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 14px; margin-top: 14px; }
+body.lucent-theme .sub {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-top: 1px solid rgba(255, 255, 255, 0.07); padding-top: 7px;
+}
+body.lucent-theme .sub span {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.52rem; letter-spacing: 0.06em;
+  color: rgba(245, 245, 247, 0.5);
+}
+body.lucent-theme .sub em { font-style: normal; font-weight: 700; font-size: 0.72rem; font-variant-numeric: tabular-nums; }
+
+/* Rank card -> percentile bars (row becomes label | bar | value) */
+body.lucent-theme .rank-row { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 9px; }
+body.lucent-theme .rank-bar { height: 4px; border-radius: 99px; background: rgba(255, 255, 255, 0.08); overflow: hidden; }
+body.lucent-theme .rank-bar i { display: block; height: 100%; border-radius: 99px; background: linear-gradient(90deg, #B8FF5C, #66FFF1); }
+
+
+/* ── Priority-drills card -> app-style full-photo drill cards ── */
+body.lucent-theme .drill-queue { padding: 14px; }
+body.lucent-theme .drill-queue__header { padding: 0 2px; margin-bottom: 12px; border-bottom: none; }
+body.lucent-theme .dcard {
+  position: relative; display: block; height: 94px; border-radius: 14px; overflow: hidden;
+  margin-bottom: 9px; text-decoration: none; border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0a0d11; isolation: isolate;
+  opacity: 0; transform: translateX(-14px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+body.lucent-theme .dcard:last-child { margin-bottom: 0; }
+body.lucent-theme .drill-queue.is-revealed .dcard { opacity: 1; transform: none; }
+body.lucent-theme .drill-queue.is-revealed .dcard:nth-child(2) { transition-delay: 0.08s; }
+body.lucent-theme .drill-queue.is-revealed .dcard:nth-child(3) { transition-delay: 0.22s; }
+body.lucent-theme .dcard::before {
+  content: ""; position: absolute; inset: 0; z-index: -2;
+  background-image: var(--img); background-size: cover; background-position: center 38%;
+}
+body.lucent-theme .dcard::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, rgba(4, 6, 10, 0.12) 0%, rgba(4, 6, 10, 0.3) 42%, rgba(4, 6, 10, 0.9) 100%);
+}
+body.lucent-theme .dcard__kind {
+  position: absolute; top: 9px; left: 9px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 8px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: #66FFF1; background: rgba(4, 10, 12, 0.5); border: 1px solid rgba(102, 255, 241, 0.35);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); padding: 3px 7px; border-radius: 6px;
+}
+body.lucent-theme .dcard__body { position: absolute; left: 12px; right: 38px; bottom: 10px; display: flex; flex-direction: column; gap: 1px; }
+body.lucent-theme .dcard__cat { font-size: 8.5px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #B8FF5C; }
+body.lucent-theme .dcard__title { font-size: 15px; font-weight: 600; color: #fff; letter-spacing: -0.01em; line-height: 1.12; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); }
+body.lucent-theme .dcard__meta { display: flex; align-items: center; gap: 6px; margin-top: 3px; font-size: 10.5px; color: rgba(245, 245, 247, 0.78); }
+body.lucent-theme .dcard__dur { font-weight: 600; font-variant-numeric: tabular-nums; }
+body.lucent-theme .dcard__dot { color: rgba(245, 245, 247, 0.4); }
+body.lucent-theme .dcard .dots { display: inline-flex; gap: 3px; }
+body.lucent-theme .dcard .dots i { width: 4.5px; height: 4.5px; border-radius: 99px; background: rgba(255, 255, 255, 0.28); }
+body.lucent-theme .dcard .dots i.on { background: #B8FF5C; box-shadow: 0 0 4px rgba(184, 255, 92, 0.6); }
+body.lucent-theme .dcard__chev {
+  position: absolute; right: 9px; top: 50%; transform: translateY(-50%);
+  width: 24px; height: 24px; border-radius: 99px; display: grid; place-items: center;
+  color: #66FFF1; background: rgba(4, 10, 12, 0.45); border: 1px solid rgba(102, 255, 241, 0.28);
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+}
+body.lucent-theme .dcard__chev svg { width: 13px; height: 13px; }

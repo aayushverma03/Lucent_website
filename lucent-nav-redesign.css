@@ -3,9 +3,13 @@
 
 body.lucent-theme .top-nav {
   top: 20px !important;
-  background: rgba(255, 255, 255, 0.10) !important;
-  backdrop-filter: blur(40px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(40px) saturate(180%) !important;
+  /* dark underlay keeps the capsule legible when bright content
+     (footer CTA, grass video) passes beneath the glass */
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.10), rgba(255, 255, 255, 0.10)),
+    linear-gradient(rgba(10, 12, 16, 0.52), rgba(10, 12, 16, 0.52)) !important;
+  backdrop-filter: blur(40px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(40px) saturate(120%) !important;
   border: 1px solid rgba(255, 255, 255, 0.18) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.22),
@@ -22,7 +26,9 @@ body.lucent-theme .top-nav {
 body.lucent-theme .top-nav.is-scrolled {
   top: 12px !important;
   transform: translate(-50%, -2px) !important;
-  background: rgba(255, 255, 255, 0.16) !important;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)),
+    linear-gradient(rgba(10, 12, 16, 0.52), rgba(10, 12, 16, 0.52)) !important;
   border-color: rgba(255, 255, 255, 0.24) !important;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.30),
@@ -91,7 +97,7 @@ body.lucent-theme .top-nav__links a:not(.top-nav__cta)::after {
   right: 0;
   bottom: -6px;
   height: 2px;
-  background: #00BD7D;
+  background: #B8FF5C;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 220ms cubic-bezier(0.2, 0, 0, 1);
@@ -107,8 +113,8 @@ body.lucent-theme .top-nav__links a:not(.top-nav__cta).is-active::after {
 /* CTA — key-cap shadow */
 body.lucent-theme .top-nav__cta {
   margin-left: 20px !important;
-  background: #00BD7D !important;
-  color: #FFFFFF !important;
+  background: #B8FF5C !important;
+  color: #0B1400 !important;
   border-radius: 8px !important;
   padding: 8px 16px !important;
   min-height: 0 !important;
@@ -118,8 +124,8 @@ body.lucent-theme .top-nav__cta {
   text-transform: uppercase !important;
   letter-spacing: 0.04em !important;
   box-shadow:
-    0 2px 0 #00955F,
-    0 6px 14px -4px rgba(0, 189, 125, 0.35) !important;
+    0 2px 0 #8FCC42,
+    0 6px 14px -4px rgba(184, 255, 92, 0.35) !important;
   transition: transform 140ms cubic-bezier(0.2, 0, 0, 1),
               box-shadow 140ms cubic-bezier(0.2, 0, 0, 1),
               background 140ms cubic-bezier(0.2, 0, 0, 1) !important;
@@ -128,22 +134,22 @@ body.lucent-theme .top-nav__cta {
 body.lucent-theme .top-nav__cta::after { display: none; }
 
 body.lucent-theme .top-nav__cta:hover {
-  background: #00BD7D !important;
+  background: #B8FF5C !important;
   transform: translateY(-1px) !important;
   box-shadow:
-    0 3px 0 #00955F,
-    0 10px 20px -4px rgba(0, 189, 125, 0.45) !important;
+    0 3px 0 #8FCC42,
+    0 10px 20px -4px rgba(184, 255, 92, 0.45) !important;
 }
 
 body.lucent-theme .top-nav__cta:active {
   transform: translateY(2px) !important;
-  box-shadow: 0 0 0 #00955F !important;
+  box-shadow: 0 0 0 #8FCC42 !important;
 }
 
 /* Focus-visible — override global cyan outline */
 body.lucent-theme .top-nav a:focus-visible,
 body.lucent-theme .top-nav button:focus-visible {
-  outline: 2px solid #00BD7D !important;
+  outline: 2px solid #B8FF5C !important;
   outline-offset: 4px !important;
   border-radius: 4px !important;
 }

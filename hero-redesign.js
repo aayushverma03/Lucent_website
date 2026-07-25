@@ -6,8 +6,7 @@
   if (!section) return;
 
   const stage = section.querySelector("[data-hero-stage]");
-  const caption = section.querySelector("[data-hero-caption]");
-  if (!stage || !caption) return;
+  if (!stage) return;
 
   const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
   const lerp = (a, b, t) => a + (b - a) * t;

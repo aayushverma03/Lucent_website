@@ -1,9 +1,9 @@
 :root {
   color-scheme: dark;
-  --aubergine: #23002b;
-  --aubergine-deep: #170019;
-  --lilac: #e0a5ff;
-  --lilac-soft: #f0d5ff;
+  --aubergine: #0A0E12;
+  --aubergine-deep: #05070A;
+  --lilac: #B8FF5C;
+  --lilac-soft: #D8FFAE;
   --paper: #fbfaf7;
   --ink: #151315;
   --teal: #08272c;
@@ -386,7 +386,7 @@ h3 {
   overflow: hidden;
   background:
     radial-gradient(circle at 50% 48%, rgba(224, 165, 255, 0.18), transparent 28%),
-    linear-gradient(180deg, #25012f 0%, #170019 100%);
+    linear-gradient(180deg, #0A0E12 0%, #05070A 100%);
 }
 
 .story__ticker {
@@ -685,7 +685,7 @@ h3 {
   background:
     radial-gradient(circle at 74% 44%, rgba(151, 255, 240, 0.12), transparent 28%),
     radial-gradient(circle at 48% 48%, rgba(224, 165, 255, 0.14), transparent 28%),
-    linear-gradient(180deg, #19001d 0%, #100013 100%);
+    linear-gradient(180deg, #05070A 0%, #05070A 100%);
 }
 
 .scouted {
@@ -751,6 +751,7 @@ h3 {
   gap: 22px;
   padding: clamp(20px, 2.4vw, 28px);
   opacity: 0;
+  visibility: hidden;
   transform: translateX(36px) scale(0.98);
   transition:
     opacity 320ms ease,
@@ -760,6 +761,7 @@ h3 {
 
 .screen.is-active {
   opacity: 1;
+  visibility: visible;
   transform: translateX(0) scale(1);
 }
 

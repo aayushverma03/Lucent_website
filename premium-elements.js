@@ -26,7 +26,7 @@ function setupLenisSmoothScroll() {
   }
 
   const s = document.createElement("script");
-  s.src = "https://unpkg.com/lenis@1.3.15/dist/lenis.min.js";
+  s.src = "./assets/vendor/lenis.min.js";
   s.async = true;
   s.onload = init;
   document.head.appendChild(s);
@@ -130,8 +130,15 @@ function setupPremiumTilt() {
 
 function setupRouteTransitions() {
   document.addEventListener("click", (event) => {
-    const link = event.target.closest("a[href^='#']");
-    if (!link || link.getAttribute("href") === "#") return;
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+    if (!href || href.startsWith("#")) return;
+    if (link.target && link.target !== "_self") return; // opens a new tab/window
+    if (link.hasAttribute("download")) return; // download, no navigation
+    if (link.protocol !== "http:" && link.protocol !== "https:") return; // mailto:, tel:, etc.
+    if (link.origin === window.location.origin && link.pathname === window.location.pathname) return;
 
     document.body.classList.add("premium-page-transition");
     window.setTimeout(() => document.body.classList.remove("premium-page-transition"), 520);

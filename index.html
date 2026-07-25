@@ -27,28 +27,38 @@
       "email": "support@lucent-ai.app",
       "description": "Lucent helps footballers capture drills, prove their level, and get seen by clubs."
     }</script>
+    <script type="application/ld+json">{
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Lucent",
+      "url": "https://www.lucent-ai.app/"
+    }</script>
     <title>Lucent — Record. Train. Get Scouted.</title>
+    <link rel="canonical" href="https://www.lucent-ai.app/" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="./favicon-192.png" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Inter-Variable-latin.woff2" crossorigin />
-    <link rel="stylesheet" href="./assets/fonts/fonts.css" />
+    <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/Oswald-600-latin.woff2" crossorigin />
+    <link rel="stylesheet" href="./assets/fonts/fonts.css?v=1" />
     <link rel="preload" as="image" href="./assets/images/opening-poster.webp" fetchpriority="high" />
     <!-- Cascade order preserved. Critical sheets block; polish bundle deferred via preload+onload. -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=1" />
     <link rel="preload" as="style" href="./lucent-polish-bundle.css?v=1" onload="this.onload=null;this.rel='stylesheet'" />
     <link rel="stylesheet" href="./hero-redesign.css?v=green-logo" />
-    <link rel="stylesheet" href="./apple-redesign.css" />
-    <link rel="stylesheet" href="./lucent-layout-fixes.css" />
-    <link rel="preload" as="style" href="./footer.css" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href="./lucent-nav-redesign.css" />
+    <link rel="stylesheet" href="./apple-redesign.css?v=2" />
+    <link rel="stylesheet" href="./lucent-layout-fixes.css?v=1" />
+    <link rel="preload" as="style" href="./footer.css?v=1" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href="./lucent-nav-redesign.css?v=2" />
+    <link rel="stylesheet" href="./fit-spotlight.css?v=3" />
     <link rel="stylesheet" href="./mobile-story.css?v=3" media="(max-width: 860px)" />
     <noscript>
       <link rel="stylesheet" href="./lucent-polish-bundle.css?v=1" />
-      <link rel="stylesheet" href="./footer.css" />
+      <link rel="stylesheet" href="./footer.css?v=1" />
     </noscript>
   </head>
   <body class="lucent-theme">
+    <a class="skip-link" href="#top">Skip to content</a>
     <div class="grain" aria-hidden="true"></div>
 
     <header class="top-nav" data-hero-nav>
@@ -81,10 +91,6 @@
             <h1>Record. Train. Get Scouted.</h1>
           </div>
 
-          <div class="film__caption" data-hero-caption>
-            <p>Lucent turns every training rep into proof. Film the drill, read the signal, and put a scout-ready pack in front of clubs that are recruiting now.</p>
-          </div>
-
           <a class="button hero__cta" href="#elevate">Join the waitlist</a>
 
           <div class="film__scroll-hint" aria-hidden="true">
@@ -101,7 +107,7 @@
         <div class="journey-section__header">
           <div class="journey-section__header-copy">
             <p class="journey-section__kicker">How it works</p>
-            <h2 class="journey-section__title">From first rep<br>to first <em>contract.</em></h2>
+            <h2 class="journey-section__title">From first rep<br>to a <em>scout-ready</em> profile.</h2>
             <p class="journey-section__sub">Five steps. One transformation &mdash; from your phone to a club shortlist.</p>
           </div>
           <div class="journey-slider" aria-hidden="true">
@@ -111,7 +117,7 @@
         </div>
         <div class="journey-track" role="list">
 
-          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-record-drills.jpg')">
+          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-record-drills.webp')">
             <div class="jtile__overlay" aria-hidden="true"></div>
             <span class="jtile__num">01</span>
             <div class="jtile__body">
@@ -120,7 +126,7 @@
             </div>
           </div>
 
-          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-get-stats.jpg')">
+          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-get-stats.webp')">
             <div class="jtile__overlay" aria-hidden="true"></div>
             <span class="jtile__num">02</span>
             <div class="jtile__body">
@@ -129,7 +135,7 @@
             </div>
           </div>
 
-          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-get-better.jpg')">
+          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-get-better.webp')">
             <div class="jtile__overlay" aria-hidden="true"></div>
             <span class="jtile__num">03</span>
             <div class="jtile__body">
@@ -138,21 +144,21 @@
             </div>
           </div>
 
-          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-track-progress.jpg')">
+          <div class="jtile" role="listitem" style="background-image:url('./assets/images/tile-track-progress.webp')">
             <div class="jtile__overlay" aria-hidden="true"></div>
             <span class="jtile__num">04</span>
             <div class="jtile__body">
               <h3 class="jtile__title">Track Progress</h3>
-              <p class="jtile__desc">Your stats build a verified record that scouts trust.</p>
+              <p class="jtile__desc">Your stats build a scout-ready profile over time.</p>
             </div>
           </div>
 
-          <div class="jtile jtile--cta" role="listitem" style="background-image:url('./assets/images/tile-get-scouted.jpg')">
+          <div class="jtile jtile--cta" role="listitem" style="background-image:url('./assets/images/tile-get-scouted.webp')">
             <div class="jtile__overlay" aria-hidden="true"></div>
             <span class="jtile__num">05</span>
             <div class="jtile__body">
               <h3 class="jtile__title">Get Scouted</h3>
-              <p class="jtile__desc">When your numbers match a brief, clubs find you directly.</p>
+              <p class="jtile__desc">Get on club shortlists when your numbers fit a brief.</p>
             </div>
           </div>
 
@@ -172,32 +178,18 @@
               <div class="skill-cards" aria-hidden="true">
                 <div class="skill-card skill-card--foundational">
                   <p class="skill-card__cat">Foundational</p>
-                  <div class="skill-bars">
-                    <div class="skill-bar"><span>Strength</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:72%"></div></div><em>72</em></div>
-                    <div class="skill-bar"><span>Speed</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:85%"></div></div><em>85</em></div>
-                    <div class="skill-bar"><span>Agility</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:79%"></div></div><em>79</em></div>
-                    <div class="skill-bar"><span>Stamina</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:68%"></div></div><em>68</em></div>
-                    <div class="skill-bar"><span>Explosiveness</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:82%"></div></div><em>82</em></div>
-                  </div>
+                  <div class="skill-card__viz"><svg class="radar" viewBox="0 0 182 182" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Attribute radar"><defs><radialGradient id="far-fill" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#B8FF5C" stop-opacity="0.30"/><stop offset="1" stop-color="#B8FF5C" stop-opacity="0.04"/></radialGradient></defs><polygon points="91.00,75.76 105.50,86.29 99.96,103.33 82.04,103.33 76.50,86.29" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,60.52 119.99,81.58 108.92,115.66 73.08,115.66 62.01,81.58" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,45.27 134.49,76.87 117.88,127.99 64.12,127.99 47.51,76.87" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,30.03 148.99,72.16 126.84,140.33 55.16,140.33 33.01,72.16" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="91.00" y2="30.03" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="148.99" y2="72.16" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="126.84" y2="140.33" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="55.16" y2="140.33" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="33.01" y2="72.16" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,47.10 140.29,74.99 119.31,129.97 66.63,124.54 43.45,75.55" fill="url(#far-fill)" stroke="#B8FF5C" stroke-width="2" stroke-linejoin="round" style="filter:drop-shadow(0 0 4px rgba(184,255,92,.35))"/><circle cx="91.00" cy="47.10" r="2.4" fill="#B8FF5C"/><circle cx="140.29" cy="74.99" r="2.4" fill="#B8FF5C"/><circle cx="119.31" cy="129.97" r="2.4" fill="#B8FF5C"/><circle cx="66.63" cy="124.54" r="2.4" fill="#B8FF5C"/><circle cx="43.45" cy="75.55" r="2.4" fill="#B8FF5C"/><text x="91.00" y="13.56" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">STR</text><text x="91.00" y="25.12" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">72</text><text x="163.70" y="66.38" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">SPD</text><text x="163.70" y="77.93" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">85</text><text x="135.93" y="151.84" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">AGI</text><text x="135.93" y="163.40" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">79</text><text x="46.07" y="151.84" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">STA</text><text x="46.07" y="163.40" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">68</text><text x="18.30" y="66.38" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">EXP</text><text x="18.30" y="77.93" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">82</text></svg></div>
+                  <p class="skill-card__cap"><span>Physical index</span><em>77</em></p>
                 </div>
                 <div class="skill-card skill-card--technical">
                   <p class="skill-card__cat">Technical</p>
-                  <div class="skill-bars">
-                    <div class="skill-bar"><span>First touch</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:91%"></div></div><em>91</em></div>
-                    <div class="skill-bar"><span>Ball retention</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:83%"></div></div><em>83</em></div>
-                    <div class="skill-bar"><span>Pose quality</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:76%"></div></div><em>76</em></div>
-                    <div class="skill-bar"><span>Shooting</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:78%"></div></div><em>78</em></div>
-                    <div class="skill-bar"><span>Weak foot</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:58%"></div></div><em>58</em></div>
-                  </div>
+                  <div class="skill-card__viz skill-card__viz--gauge"><svg class="gauge" viewBox="0 0 208 208" role="img" aria-label="Overall skill 82 out of 100" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="seg-clay" cx="32%" cy="26%" r="85%"><stop offset="0" stop-color="#292F37"/><stop offset="1" stop-color="#171D26"/></radialGradient><filter id="seg-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8.3"/></filter><filter id="seg-puck" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity="0.40"/><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/></filter></defs><circle cx="104.00" cy="104.00" r="68.64" fill="url(#seg-clay)" filter="url(#seg-puck)"/><path d="M38.86 169.14 A92.12 92.12 0 0 1 17.47 72.39" stroke="#E5455F" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M20.46 65.17 A92.12 92.12 0 0 1 100.09 11.96" stroke="#F0743E" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M107.91 11.96 A92.12 92.12 0 0 1 187.54 65.17" stroke="#E7A04C" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M190.53 72.39 A92.12 92.12 0 0 1 169.14 169.14" stroke="#35B27A" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M38.86 169.14 A92.12 92.12 0 0 1 17.47 72.39" stroke="#E5455F" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#seg-glow)"/><path d="M20.46 65.17 A92.12 92.12 0 0 1 100.09 11.96" stroke="#F0743E" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#seg-glow)"/><path d="M107.91 11.96 A92.12 92.12 0 0 1 187.54 65.17" stroke="#E7A04C" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#seg-glow)"/><path d="M190.53 72.39 A92.12 92.12 0 0 1 195.94 98.22" stroke="#35B27A" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#seg-glow)"/><path d="M38.86 169.14 A92.12 92.12 0 0 1 17.47 72.39" stroke="#E5455F" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M20.46 65.17 A92.12 92.12 0 0 1 100.09 11.96" stroke="#F0743E" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M107.91 11.96 A92.12 92.12 0 0 1 187.54 65.17" stroke="#E7A04C" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M190.53 72.39 A92.12 92.12 0 0 1 195.94 98.22" stroke="#35B27A" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><rect x="29.03" y="70.00" width="22" height="15" rx="4" fill="#0A0E12"/><text x="40.03" y="78.00" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="500" letter-spacing="1.4" fill="rgba(251,250,247,0.40)">25</text><rect x="93.00" y="27.26" width="22" height="15" rx="4" fill="#0A0E12"/><text x="104.00" y="35.26" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="500" letter-spacing="1.4" fill="rgba(251,250,247,0.40)">50</text><rect x="156.97" y="70.00" width="22" height="15" rx="4" fill="#0A0E12"/><text x="167.97" y="78.00" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="500" letter-spacing="1.4" fill="rgba(251,250,247,0.40)">75</text><line x1="185.08" y1="98.90" x2="206.80" y2="97.53" stroke="#0A0E12" stroke-opacity="0.7" stroke-width="5" stroke-linecap="round"/><line x1="185.08" y1="98.90" x2="206.80" y2="97.53" stroke="#FBFAF7" stroke-width="3" stroke-linecap="round"/><text x="104.00" y="105.66" text-anchor="middle" dominant-baseline="central" font-family="Inter,system-ui,sans-serif" font-weight="900" font-size="83.2" letter-spacing="-1" fill="#35B27A" style="font-variant-numeric:tabular-nums">82</text></svg></div>
+                  <p class="skill-card__cap"><span>5 metrics scored</span><em>Top 18%</em></p>
                 </div>
                 <div class="skill-card skill-card--cognitive">
                   <p class="skill-card__cat">Cognitive</p>
-                  <div class="skill-bars">
-                    <div class="skill-bar"><span>Spatial awareness</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:74%"></div></div><em>74</em></div>
-                    <div class="skill-bar"><span>Reaction speed</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:77%"></div></div><em>77</em></div>
-                    <div class="skill-bar"><span>Decision making</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:83%"></div></div><em>83</em></div>
-                    <div class="skill-bar"><span>Off-ball movement</span><div class="skill-bar__track"><div class="skill-bar__fill" style="--pct:69%"></div></div><em>69</em></div>
-                  </div>
+                  <div class="rate-hero"><div class="rate-ovr">76<span class="rate-slash">/99</span></div><span class="tier">Sharp</span></div>
+                  <div class="subs"><div class="sub"><span>DEC</span><em>83</em></div><div class="sub"><span>REA</span><em>77</em></div><div class="sub"><span>SPA</span><em>74</em></div><div class="sub"><span>OFF</span><em>69</em></div></div>
                 </div>
               </div>
               <div class="rank-card" aria-hidden="true">
@@ -206,42 +198,32 @@
                 <p class="rank-card__sub">of 3,200 U19 wingers</p>
                 <div class="rank-card__divider"></div>
                 <div class="rank-card__rows">
-                  <div class="rank-row"><span>Technical</span><em>Top 18%</em></div>
-                  <div class="rank-row"><span>Foundational</span><em>Top 31%</em></div>
-                  <div class="rank-row"><span>Cognitive</span><em>Top 42%</em></div>
+                  <div class="rank-row"><span>Technical</span><div class="rank-bar"><i style="width:82%"></i></div><em>Top 18%</em></div>
+                  <div class="rank-row"><span>Foundational</span><div class="rank-bar"><i style="width:69%"></i></div><em>Top 31%</em></div>
+                  <div class="rank-row"><span>Cognitive</span><div class="rank-bar"><i style="width:58%"></i></div><em>Top 42%</em></div>
                 </div>
               </div>
 
               <div class="drill-queue" aria-hidden="true">
                 <div class="drill-queue__header"><span class="drill-queue__bolt">&#9889;</span>Priority drills</div>
-                <div class="drill-item">
-                  <div class="drill-item__top"><span class="drill-item__name">Weak-foot Finishing</span><span class="drill-item__dur">12m</span></div>
-                  <div class="drill-item__meta"><span class="drill-item__cat">Technical</span><span class="drill-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
-                </div>
-                <div class="drill-item">
-                  <div class="drill-item__top"><span class="drill-item__name">First Touch Escape</span><span class="drill-item__dur">8m</span></div>
-                  <div class="drill-item__meta"><span class="drill-item__cat">Technical</span><span class="drill-dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
-                </div>
-                <div class="drill-item">
-                  <div class="drill-item__top"><span class="drill-item__name">20m Burst Ladder</span><span class="drill-item__dur">6m</span></div>
-                  <div class="drill-item__meta"><span class="drill-item__cat">Foundational</span><span class="drill-dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
-                </div>
+                <a class="dcard" style="--img:url(./assets/images/drills/weak-foot-finishing.jpg)"><span class="dcard__kind">Video</span><div class="dcard__body"><span class="dcard__cat">Technical</span><span class="dcard__title">Weak-foot Finishing</span><span class="dcard__meta"><span class="dcard__dur">12m</span><span class="dcard__dot">&middot;</span><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span></div><span class="dcard__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span></a>
+                <a class="dcard" style="--img:url(./assets/images/drills/first-touch-escape.jpg)"><span class="dcard__kind">Video</span><div class="dcard__body"><span class="dcard__cat">Technical</span><span class="dcard__title">First Touch Escape</span><span class="dcard__meta"><span class="dcard__dur">8m</span><span class="dcard__dot">&middot;</span><span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></span></div><span class="dcard__chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></span></a>
               </div>
             </div>
           </div>
           <div class="story-steps shell" aria-hidden="true"><span class="is-active">Train</span><span>Scan</span><span>Benchmark</span><span>Improve</span></div>
           <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span></div>
         </div>
-        <div class="story__mobile-cards ms" data-ms="skills" data-ms-steps="4" aria-hidden="true">
+        <div class="story__mobile-cards ms" data-ms="skills" data-ms-steps="4">
           <div class="ms__head">
             <p class="ms__eyebrow">Skill engine</p>
-            <div class="ms__progress"><i class="is-active"></i><i></i><i></i><i></i></div>
+            <div class="ms__progress" aria-hidden="true"><i class="is-active"></i><i></i><i></i><i></i></div>
             <p class="ms__steplabel" data-ms-label>Train</p>
             <h2 class="ms__title" data-ms-title>See the player clearly.</h2>
             <p class="ms__lede" data-ms-lede>Start with the athlete, then reveal the movement behind every rep.</p>
           </div>
 
-          <div class="ms__stage">
+          <div class="ms__stage" aria-hidden="true">
             <div class="ms__hero">
               <div class="ms__clip">
                 <span class="ms__rec"><i></i>REC</span>
@@ -253,21 +235,14 @@
             <div class="ms__panels">
               <article class="ms__panel ms__card" data-scene="1">
                 <p class="ms__card-cat">Skill scan</p>
-                <div class="ms__bar"><span>First touch</span><em>91</em><div class="ms__track"><i data-fill="91"></i></div></div>
-                <div class="ms__bar"><span>Speed</span><em>85</em><div class="ms__track"><i data-fill="85"></i></div></div>
-                <div class="ms__bar"><span>Decision making</span><em>83</em><div class="ms__track"><i data-fill="83"></i></div></div>
-                <div class="ms__bar"><span>Explosiveness</span><em>82</em><div class="ms__track"><i data-fill="82"></i></div></div>
+                <div class="ms__viz ms__viz--radar"><svg class="radar" viewBox="0 0 182 182" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Attribute radar"><defs><radialGradient id="mrad-fill" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#B8FF5C" stop-opacity="0.30"/><stop offset="1" stop-color="#B8FF5C" stop-opacity="0.04"/></radialGradient></defs><polygon points="91.00,75.76 105.50,86.29 99.96,103.33 82.04,103.33 76.50,86.29" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,60.52 119.99,81.58 108.92,115.66 73.08,115.66 62.01,81.58" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,45.27 134.49,76.87 117.88,127.99 64.12,127.99 47.51,76.87" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,30.03 148.99,72.16 126.84,140.33 55.16,140.33 33.01,72.16" fill="none" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="91.00" y2="30.03" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="148.99" y2="72.16" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="126.84" y2="140.33" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="55.16" y2="140.33" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><line x1="91.00" y1="91.00" x2="33.01" y2="72.16" stroke="rgba(251,250,247,0.14)" stroke-width="1"/><polygon points="91.00,47.10 140.29,74.99 119.31,129.97 66.63,124.54 43.45,75.55" fill="url(#mrad-fill)" stroke="#B8FF5C" stroke-width="2" stroke-linejoin="round" style="filter:drop-shadow(0 0 4px rgba(184,255,92,.35))"/><circle cx="91.00" cy="47.10" r="2.4" fill="#B8FF5C"/><circle cx="140.29" cy="74.99" r="2.4" fill="#B8FF5C"/><circle cx="119.31" cy="129.97" r="2.4" fill="#B8FF5C"/><circle cx="66.63" cy="124.54" r="2.4" fill="#B8FF5C"/><circle cx="43.45" cy="75.55" r="2.4" fill="#B8FF5C"/><text x="91.00" y="13.56" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">STR</text><text x="91.00" y="25.12" text-anchor="middle" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">72</text><text x="163.70" y="66.38" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">SPD</text><text x="163.70" y="77.93" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">85</text><text x="135.93" y="151.84" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">AGI</text><text x="135.93" y="163.40" text-anchor="start" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">79</text><text x="46.07" y="151.84" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">STA</text><text x="46.07" y="163.40" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">68</text><text x="18.30" y="66.38" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.1" font-weight="500" letter-spacing="0.05em" fill="rgba(245,245,247,0.62)">EXP</text><text x="18.30" y="77.93" text-anchor="end" font-family="ui-monospace,Menlo,monospace" font-size="9.5" font-weight="600" fill="#B8FF5C" style="font-variant-numeric:tabular-nums">82</text></svg></div>
+                <p class="ms__cap"><span>Physical index</span><em>77</em></p>
               </article>
 
               <article class="ms__panel ms__card" data-scene="2">
-                <p class="ms__rank-label">Overall rank</p>
-                <p class="ms__rank-num" data-ms-rank>#847</p>
-                <p class="ms__rank-sub">of 3,200 U19 wingers</p>
-                <div class="ms__rank-rows">
-                  <div><span>Technical</span><em>Top 18%</em></div>
-                  <div><span>Foundational</span><em>Top 31%</em></div>
-                  <div><span>Cognitive</span><em>Top 42%</em></div>
-                </div>
+                <p class="ms__card-cat">Overall</p>
+                <div class="ms__viz ms__viz--gauge"><svg class="gauge" viewBox="0 0 208 208" role="img" aria-label="Overall skill 82 out of 100" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="mgau-clay" cx="32%" cy="26%" r="85%"><stop offset="0" stop-color="#292F37"/><stop offset="1" stop-color="#171D26"/></radialGradient><filter id="mgau-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="8.3"/></filter><filter id="mgau-puck" x="-40%" y="-40%" width="180%" height="200%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity="0.40"/><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.25"/></filter></defs><circle cx="104.00" cy="104.00" r="68.64" fill="url(#mgau-clay)" filter="url(#mgau-puck)"/><path d="M38.86 169.14 A92.12 92.12 0 0 1 17.47 72.39" stroke="#E5455F" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M20.46 65.17 A92.12 92.12 0 0 1 100.09 11.96" stroke="#F0743E" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M107.91 11.96 A92.12 92.12 0 0 1 187.54 65.17" stroke="#E7A04C" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M190.53 72.39 A92.12 92.12 0 0 1 169.14 169.14" stroke="#35B27A" stroke-opacity="0.22" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M38.86 169.14 A92.12 92.12 0 0 1 17.47 72.39" stroke="#E5455F" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#mgau-glow)"/><path d="M20.46 65.17 A92.12 92.12 0 0 1 100.09 11.96" stroke="#F0743E" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#mgau-glow)"/><path d="M107.91 11.96 A92.12 92.12 0 0 1 187.54 65.17" stroke="#E7A04C" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#mgau-glow)"/><path d="M190.53 72.39 A92.12 92.12 0 0 1 195.94 98.22" stroke="#35B27A" stroke-opacity="0.22" fill="none" stroke-width="29.64" stroke-linecap="round" filter="url(#mgau-glow)"/><path d="M38.86 169.14 A92.12 92.12 0 0 1 17.47 72.39" stroke="#E5455F" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M20.46 65.17 A92.12 92.12 0 0 1 100.09 11.96" stroke="#F0743E" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M107.91 11.96 A92.12 92.12 0 0 1 187.54 65.17" stroke="#E7A04C" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><path d="M190.53 72.39 A92.12 92.12 0 0 1 195.94 98.22" stroke="#35B27A" stroke-opacity="0.95" fill="none" stroke-width="19.76" stroke-linecap="round"/><rect x="29.03" y="70.00" width="22" height="15" rx="4" fill="#0A0E12"/><text x="40.03" y="78.00" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="500" letter-spacing="1.4" fill="rgba(251,250,247,0.40)">25</text><rect x="93.00" y="27.26" width="22" height="15" rx="4" fill="#0A0E12"/><text x="104.00" y="35.26" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="500" letter-spacing="1.4" fill="rgba(251,250,247,0.40)">50</text><rect x="156.97" y="70.00" width="22" height="15" rx="4" fill="#0A0E12"/><text x="167.97" y="78.00" text-anchor="middle" dominant-baseline="central" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="10.5" font-weight="500" letter-spacing="1.4" fill="rgba(251,250,247,0.40)">75</text><line x1="185.08" y1="98.90" x2="206.80" y2="97.53" stroke="#0A0E12" stroke-opacity="0.7" stroke-width="5" stroke-linecap="round"/><line x1="185.08" y1="98.90" x2="206.80" y2="97.53" stroke="#FBFAF7" stroke-width="3" stroke-linecap="round"/><text x="104.00" y="105.66" text-anchor="middle" dominant-baseline="central" font-family="Inter,system-ui,sans-serif" font-weight="900" font-size="83.2" letter-spacing="-1" fill="#35B27A" style="font-variant-numeric:tabular-nums">82</text></svg></div>
+                <p class="ms__grank">Ranked <b data-ms-rank>#847</b> of 3,200 &middot; <em>Top 18%</em></p>
               </article>
 
               <article class="ms__panel ms__card" data-scene="3">
@@ -281,139 +256,155 @@
         </div>
       </section>
 
-      <section class="story story--scouted" id="scouted" data-scout-step="0">
-        <div class="story__sticky">
-          <video class="scout-bg-video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source media="(max-width: 720px)" data-src="./assets/video/opening-tracked-mobile.mp4" type="video/mp4" /><source data-src="./assets/video/opening-tracked.webm" type="video/webm" /><source data-src="./assets/video/opening-tracked.mp4" type="video/mp4" /></video>
-          <div class="scout-bg-overlay" aria-hidden="true"></div>
-          <div class="scouted shell">
-            <div class="scouted__copy" data-reveal><p class="eyebrow">Trials</p><h2 data-scout-title>See which clubs want you.</h2><p class="lede" data-scout-copy>Browse live opportunities from clubs recruiting for your exact role.</p></div>
-            <div class="product-shell" aria-label="Scroll-driven scouting product demonstration">
-              <div class="product-shell__chrome"><span></span><span></span><span></span><strong>Lucent trial board</strong></div>
-              <div class="screen screen--board is-active">
-                <div class="screen__header trial-board__header"><div><span>Live trial radar</span><strong>12 clubs recruiting</strong></div><em>3 urgent briefs</em></div>
-                <div class="command-strip" aria-label="Scouting command centre signals"><article><span>Views</span><strong>2</strong><small>clubs this week</small></article><article><span>Status</span><strong>87%</strong><small>trial-ready</small></article><article><span>Role fit</span><strong>RW</strong><small>wide forward</small></article></div>
-                <div class="trial-toolbar" aria-label="Trial filters and match signals"><span>Winger</span><span>U21</span><span>Verified clubs</span><span>High-fit only</span></div>
-                <div class="trial-grid trial-grid--premium">
-                  <article class="trial-card trial-card--aurelia is-selected"><div class="trial-card__pulse" aria-hidden="true"></div><div class="trial-card__top"><div class="club-mark club-mark--aurelia" aria-hidden="true"><span>A</span></div><div><span class="trial-card__eyebrow">Recruiting now</span><h3>Aurelia SC</h3><p>U19 winger · London</p></div><strong class="trial-card__fit">94%</strong></div><div class="trial-card__insights"><span>1v1 burst</span><span>3 drills</span><span>Scout active</span></div><div class="trial-card__evidence"><span>First touch</span><span>Weak-foot finish</span><span>20m sprint</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 94%"></span></div><div class="trial-card__footer"><em>48h left</em><span>Elite fit</span></div></article>
-                  <article class="trial-card trial-card--northbridge"><div class="trial-card__top"><div class="club-mark club-mark--northbridge" aria-hidden="true"><span>N</span></div><div><span class="trial-card__eyebrow">New brief</span><h3>Northbridge FC</h3><p>U21 forward · Manchester</p></div><strong class="trial-card__fit">89%</strong></div><div class="trial-card__insights"><span>Runs in behind</span><span>Video reel</span><span>Coach review</span></div><div class="trial-card__evidence"><span>Match reel</span><span>Sprint profile</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 89%"></span></div><div class="trial-card__footer"><em>3 days</em><span>Strong fit</span></div></article>
-                  <article class="trial-card trial-card--vale"><div class="trial-card__top"><div class="club-mark club-mark--vale" aria-hidden="true"><span>V</span></div><div><span class="trial-card__eyebrow">Shortlist open</span><h3>Vale Athletic</h3><p>Academy 9 · Birmingham</p></div><strong class="trial-card__fit">86%</strong></div><div class="trial-card__insights"><span>Finishing</span><span>Weak foot</span><span>2 slots</span></div><div class="trial-card__evidence"><span>Finishing ladder</span><span>Coach note</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 86%"></span></div><div class="trial-card__footer"><em>5 days</em><span>Strong fit</span></div></article>
-                  <article class="trial-card trial-card--meridian"><div class="trial-card__top"><div class="club-mark club-mark--meridian" aria-hidden="true"><span>M</span></div><div><span class="trial-card__eyebrow">Recommended</span><h3>Meridian United</h3><p>Wide forward · Leeds</p></div><strong class="trial-card__fit">84%</strong></div><div class="trial-card__insights"><span>1v1 profile</span><span>Sprint proof</span><span>Open combine</span></div><div class="trial-card__evidence"><span>1v1 clips</span><span>Agility test</span></div><div class="trial-card__bar" aria-hidden="true"><span style="width: 84%"></span></div><div class="trial-card__footer"><em>7 days</em><span>Good fit</span></div></article>
+      <section class="fitspot" id="scouted" aria-label="Trials">
+        <h2 class="fs-sr">Trials &mdash; clubs matched to your verified profile</h2>
+        <div class="fitspot__track" data-fit-track>
+          <div class="fitspot__pin">
+            <div class="fitspot__tag" aria-hidden="true"><span class="fitspot__tag-dot"></span>Trials</div>
+            <div class="fitspot__grid">
+              <div class="fitspot__copy">
+                <div class="fs-rail" aria-hidden="true">
+                  <span class="fs-rail__seg"></span>
+                  <span class="fs-rail__seg"></span>
+                  <span class="fs-rail__seg"></span>
+                </div>
+                <div class="fs-stack">
+                  <div class="fs-copy is-active">
+                    <p class="fs-copy__k">The brief</p>
+                    <p class="fs-copy__h">A club posts exactly who it needs.</p>
+                    <p class="fs-copy__p"><b>Lucent FC Academy</b> is scouting attacking players: a left or right winger, or a striker, aged 15&ndash;17, with a Lucent rating of 60+. Three hard requirements.</p>
+                  </div>
+                  <div class="fs-copy">
+                    <p class="fs-copy__k">The check</p>
+                    <p class="fs-copy__h">We test each one against your profile.</p>
+                    <p class="fs-copy__p">Your verified profile &mdash; <b>LW &middot; 17 &middot; rating 62</b> &mdash; is measured requirement by requirement. No self-reported guesswork.</p>
+                  </div>
+                  <div class="fs-copy">
+                    <p class="fs-copy__k">The result</p>
+                    <p class="fs-copy__h">A <span class="fs-hl">3/3</span> match. One tap to apply.</p>
+                    <p class="fs-copy__p">Every requirement met. Your drill scores travel with the application &mdash; clubs see verified numbers, not a CV.</p>
+                  </div>
                 </div>
               </div>
-              <div class="screen screen--trial"><div class="selected-trial selected-trial--rich"><div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true"><span>A</span></div><div><span>Selected trial</span><h3>Aurelia SC · U19 winger</h3><p>High-tempo transition profile</p></div><strong>94% fit</strong></div><div class="brief-stack"><article><span>Club priority</span><strong>1v1 acceleration</strong><p>Prove separation in the first three steps.</p></article><article><span>Evidence pack</span><strong>3 uploads</strong><p>Drill proof, match clips, and role signal.</p></article><article><span>Scout signal</span><strong>Active shortlist</strong><p>Recruiter opened the brief twice today.</p></article></div></div>
-              <div class="screen screen--requirements"><div class="requirements requirements--command"><article><span>Requirements</span><ul><li>90 sec match reel</li><li>Sprint profile</li><li>Finishing ladder</li></ul></article><article><span>Drills</span><ul><li>Weak-foot finish</li><li>First-touch escape</li><li>20 m burst</li></ul></article></div></div>
-              <div class="screen screen--upload"><div class="upload-card upload-card--package"><span>Upload proof</span><h3>3 of 3 attached</h3><div class="upload-list"><em>finishing-ladder.mp4</em><em>first-touch-escape.mp4</em><em>sprint-profile.csv</em></div><strong>Pack ready</strong></div></div>
-              <div class="screen screen--success"><div class="success-card success-card--scouted"><div class="club-mark club-mark--aurelia club-mark--large" aria-hidden="true"><span>A</span></div><span>Club-ready</span><h3>Aurelia SC shortlisted you</h3><p>Your football evidence is with the recruitment team.</p></div></div>
-              <div class="product-pointer" aria-hidden="true"></div>
-            </div>
-          </div>
-          <div class="story-steps story-steps--scouted shell" aria-hidden="true"><span class="is-active">Radar</span><span>Brief</span><span>Proof</span><span>Package</span><span>Scout</span></div>
-          <div class="story-progress" aria-hidden="true"><span class="is-active"></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="story__mobile-cards ms" data-ms="scouted" data-ms-steps="5" aria-hidden="true">
-          <div class="ms__head">
-            <p class="ms__eyebrow">Trials</p>
-            <div class="ms__progress"><i class="is-active"></i><i></i><i></i><i></i><i></i></div>
-            <p class="ms__steplabel" data-ms-label>Radar</p>
-            <h2 class="ms__title" data-ms-title>See which clubs want you.</h2>
-            <p class="ms__lede" data-ms-lede>Browse live opportunities from clubs recruiting for your exact role.</p>
-          </div>
 
-          <div class="ms__stage">
-            <div class="ms__scout-bg"><img src="./assets/images/opening-poster.webp" alt="" loading="lazy" decoding="async" /></div>
-            <div class="ms__frame">
-              <header class="ms__chrome"><span></span><span></span><span></span><strong>Lucent trial board</strong></header>
-              <div class="ms__screens">
+              <div class="fs-card" aria-hidden="true">
+                <div class="fs-card__scan"></div>
+                <div class="fs-card__top">
+                  <div class="fs-crest">L</div>
+                  <div>
+                    <p class="fs-card__title">U17 Academy Trial</p>
+                    <p class="fs-card__sub">Lucent FC Academy &middot; Dubai</p>
+                  </div>
+                  <span class="fs-open">Open</span>
+                </div>
 
-                <article class="ms__panel" data-scene="0">
-                  <header class="ms-sc__head">
-                    <div><small>Live trial radar</small><strong>12 clubs recruiting</strong></div>
-                    <em class="ms-sc__urgent">3 urgent</em>
-                  </header>
-                  <div class="ms-sc__command">
-                    <article><span>Views</span><strong>2</strong><small>this week</small></article>
-                    <article><span>Status</span><strong>87%</strong><small>trial-ready</small></article>
-                    <article><span>Role fit</span><strong>RW</strong><small>wide fwd</small></article>
+                <div class="fs-ringbox">
+                  <div class="fs-ring">
+                    <svg viewBox="0 0 190 190">
+                      <circle cx="95" cy="95" r="80" fill="none" stroke="var(--ap-green)" stroke-opacity=".16" stroke-width="10"></circle>
+                      <circle class="fs-ring__arc" cx="95" cy="95" r="80" fill="none" stroke="var(--ap-green)" stroke-width="10" stroke-linecap="round"></circle>
+                    </svg>
+                    <div class="fs-ring__t"><b class="fs-ring__num">0/3</b></div>
                   </div>
-                  <div class="ms-sc__card ms-sc__card--hot">
-                    <div class="ms-sc__trial-top">
-                      <div class="ms-sc__club">A</div>
-                      <div class="ms-sc__trial-body"><em>Recruiting now</em><h3>Aurelia SC</h3><p>U19 winger &middot; London</p></div>
-                      <strong class="ms-sc__fit">94%</strong>
-                    </div>
-                    <div class="ms-sc__chips"><span>1v1 burst</span><span>3 drills</span><span>Scout active</span></div>
-                    <div class="ms-sc__bar"><i style="width:94%"></i></div>
+                  <div class="fs-ringcap">
+                    <span class="fs-ringcap__lab">Requirements met</span>
+                    <b class="fs-ring__word">checking&hellip;</b>
                   </div>
-                  <div class="ms-sc__card">
-                    <div class="ms-sc__trial-top">
-                      <div class="ms-sc__club" style="background:linear-gradient(135deg,#6ec3ff,#2563eb);color:#fff">N</div>
-                      <div class="ms-sc__trial-body"><em>New brief</em><h3>Northbridge FC</h3><p>U21 forward &middot; Manchester</p></div>
-                      <strong class="ms-sc__fit">89%</strong>
-                    </div>
-                    <div class="ms-sc__bar"><i style="width:89%"></i></div>
-                  </div>
-                </article>
+                </div>
 
-                <article class="ms__panel" data-scene="1">
-                  <div class="ms-sc__card ms-sc__card--hot">
-                    <div class="ms-sc__trial-top">
-                      <div class="ms-sc__club">A</div>
-                      <div class="ms-sc__trial-body"><em>Selected trial</em><h3>Aurelia SC &middot; U19 winger</h3><p>High-tempo transition profile</p></div>
-                      <strong class="ms-sc__fit">94%</strong>
-                    </div>
+                <div class="fs-reqs">
+                  <div class="fs-req" data-req="0">
+                    <span class="fs-req__ic"><svg class="fs-check" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="var(--ap-green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                    <span class="fs-req__lab">Position</span>
+                    <span class="fs-req__cmp">needs LW/RW/ST &middot; you're <b>LW</b></span>
                   </div>
-                  <div class="ms-sc__rows">
-                    <div class="ms-sc__row"><span>Club priority</span><strong>1v1 acceleration</strong><p>Prove separation in the first three steps.</p></div>
-                    <div class="ms-sc__row"><span>Evidence pack</span><strong>3 uploads</strong><p>Drill proof, match clips, and role signal.</p></div>
-                    <div class="ms-sc__row"><span>Scout signal</span><strong>Active shortlist</strong><p>Recruiter opened the brief twice today.</p></div>
+                  <div class="fs-req" data-req="1">
+                    <span class="fs-req__ic"><svg class="fs-check" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="var(--ap-green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                    <span class="fs-req__lab">Age</span>
+                    <span class="fs-req__cmp">needs 15&ndash;17 &middot; you're <b>17</b></span>
                   </div>
-                </article>
+                  <div class="fs-req" data-req="2">
+                    <span class="fs-req__ic"><svg class="fs-check" width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 12.5l3.5 3.5L18 7.5" stroke="var(--ap-green)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+                    <span class="fs-req__lab">Lucent rating</span>
+                    <span class="fs-req__cmp">needs 60+ &middot; you're <b>62</b></span>
+                  </div>
+                  <div class="fs-req fs-req--na">
+                    <span class="fs-req__ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 12h10" stroke="var(--ap-t3)" stroke-width="2.4" stroke-linecap="round"></path></svg></span>
+                    <span class="fs-req__lab">Preferred foot</span>
+                    <span class="fs-req__cmp">any</span>
+                  </div>
+                </div>
 
-                <article class="ms__panel" data-scene="2">
-                  <div class="ms-sc__cols">
-                    <div class="ms-sc__row"><span>Requirements</span><ul><li>90 sec match reel</li><li>Sprint profile</li><li>Finishing ladder</li></ul></div>
-                    <div class="ms-sc__row"><span>Drills</span><ul><li>Weak-foot finish</li><li>First-touch escape</li><li>20 m burst</li></ul></div>
+                <div class="fs-resolve">
+                  <div class="fs-resolve__div"></div>
+                  <div class="fs-resolve__meta">
+                    <span class="fs-drill"><svg width="13" height="13" viewBox="0 0 24 24" fill="var(--ap-green)"><path d="M13 2L4 14h6l-1 8 9-12h-6z"></path></svg> 2 drills to submit</span>
+                    <span class="fs-arc"><svg width="15" height="15" viewBox="0 0 15 15"><circle cx="7.5" cy="7.5" r="6" fill="none" stroke="var(--ap-blue)" stroke-opacity=".28" stroke-width="2"></circle><circle cx="7.5" cy="7.5" r="6" fill="none" stroke="var(--ap-blue)" stroke-width="2" stroke-linecap="round" stroke-dasharray="37.7" stroke-dashoffset="18.85"></circle></svg>Closes in 7d</span>
                   </div>
-                </article>
-
-                <article class="ms__panel" data-scene="3">
-                  <div class="ms-sc__center">
-                    <span>Upload proof</span>
-                    <h3>3 of 3 attached</h3>
-                    <div class="ms-sc__files"><em>finishing-ladder.mp4</em><em>first-touch-escape.mp4</em><em>sprint-profile.csv</em></div>
-                    <p class="ms-sc__done">Pack ready</p>
+                  <div class="fs-cta">
+                    <a class="fs-apply" href="#elevate">Apply now</a>
+                    <a class="fs-save" href="#elevate">Save</a>
                   </div>
-                </article>
-
-                <article class="ms__panel" data-scene="4">
-                  <div class="ms-sc__center">
-                    <div class="ms-sc__check">&#10003;</div>
-                    <span>Club-ready</span>
-                    <h3>Aurelia SC shortlisted you</h3>
-                    <p>Your football evidence is with the recruitment team.</p>
-                  </div>
-                </article>
-
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="fitspot__outro">
+          <div class="fs-outro__head">
+            <h3 class="fs-outro__h">More open trials, ranked by fit.</h3>
+            <p class="fs-outro__note">Same check, every posting</p>
+          </div>
+          <div class="fs-minis">
+            <div class="fs-mini">
+              <div class="fs-mini__crest" style="background:rgba(255,174,56,.12);border:1px solid rgba(255,174,56,.4);color:#FFAE38">D</div>
+              <div class="fs-mini__mid"><p class="fs-mini__t">Left-Footed Wingers Wanted</p><p class="fs-mini__s">Desert Rovers &middot; Al Ain</p></div>
+              <span class="fs-mini__dl" style="color:#66FFF1;background:rgba(102,255,241,.14);border:1px solid rgba(102,255,241,.35)">2d</span>
+              <div class="fs-miniring"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="15" fill="none" stroke="#B8FF5C" stroke-opacity=".18" stroke-width="3.6"></circle><circle cx="21" cy="21" r="15" fill="none" stroke="#B8FF5C" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="94.25" stroke-dashoffset="0"></circle></svg><div class="fs-miniring__t" style="color:#B8FF5C">3/3</div></div>
+            </div>
+            <div class="fs-mini">
+              <div class="fs-mini__crest" style="background:rgba(63,124,255,.16);border:1px solid rgba(63,124,255,.45);color:#3F7CFF">F</div>
+              <div class="fs-mini__mid"><p class="fs-mini__t">U19 Midfield Trial Day</p><p class="fs-mini__s">Falcon United &middot; Abu Dhabi</p></div>
+              <span class="fs-mini__dl" style="color:#FFAE38;background:rgba(255,174,56,.14);border:1px solid rgba(255,174,56,.4)">18h</span>
+              <div class="fs-miniring"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="15" fill="none" stroke="#66FFF1" stroke-opacity=".18" stroke-width="3.6"></circle><circle cx="21" cy="21" r="15" fill="none" stroke="#66FFF1" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="94.25" stroke-dashoffset="31.42"></circle></svg><div class="fs-miniring__t" style="color:#66FFF1">2/3</div></div>
+            </div>
+            <div class="fs-mini">
+              <div class="fs-mini__crest" style="background:rgba(181,140,255,.12);border:1px solid rgba(181,140,255,.4);color:#B58CFF">A</div>
+              <div class="fs-mini__mid"><p class="fs-mini__t">U21 Women's Defensive Trial</p><p class="fs-mini__s">Altitude FC &middot; Dubai</p></div>
+              <span class="fs-mini__dl" style="color:#66FFF1;background:rgba(102,255,241,.14);border:1px solid rgba(102,255,241,.35)">9d</span>
+              <div class="fs-miniring"><svg viewBox="0 0 42 42"><circle cx="21" cy="21" r="15" fill="none" stroke="#66FFF1" stroke-opacity=".18" stroke-width="3.6"></circle><circle cx="21" cy="21" r="15" fill="none" stroke="#66FFF1" stroke-width="3.6" stroke-linecap="round" stroke-dasharray="94.25" stroke-dashoffset="31.42"></circle></svg><div class="fs-miniring__t" style="color:#66FFF1">2/3</div></div>
+            </div>
+          </div>
+          <div class="fs-legend">
+            <span class="fs-legend__i"><span class="fs-legend__sw" style="color:var(--ap-green)"></span><span><b>Good fit</b> &mdash; 70%+ of requirements met</span></span>
+            <span class="fs-legend__i"><span class="fs-legend__sw" style="color:var(--ap-blue)"></span><span><b>Stretch</b> &mdash; some met, worth a look</span></span>
+            <span class="fs-legend__i"><span class="fs-legend__sw" style="color:var(--ap-t3)"></span><span><b>Add profile</b> &mdash; too little to score</span></span>
           </div>
         </div>
       </section>
 
       <section class="elevate" id="elevate" aria-label="Step into Lucent">
-        <video class="elevate__video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source media="(max-width: 720px)" data-src="./assets/video/match-vide-mobile.mp4" type="video/mp4" /><source data-src="./assets/video/match%20vide%20(1).mp4" type="video/mp4" /></video>
+        <video class="elevate__video" aria-hidden="true" muted loop playsinline preload="none" poster="./assets/images/opening-poster.webp" data-lazy-video><source media="(max-width: 720px)" data-src="./assets/video/match-video-mobile.mp4" type="video/mp4" /><source data-src="./assets/video/match-video.mp4" type="video/mp4" /></video>
         <div class="elevate__veil" aria-hidden="true"></div>
         <div class="shell elevate__inner" data-reveal>
           <p class="eyebrow">Join Lucent</p>
+          <p class="elevate__badge">Early preview</p>
           <h2>Record. Train. Get Scouted.</h2>
-          <p>Build the football evidence clubs can act on. Be first when we launch.</p>
+          <p>Join for first invites, founder pricing, and a say in what we build next.</p>
           <form class="waitlist-form" id="waitlist-form" novalidate>
-            <label class="waitlist-form__label" for="waitlist-email">Your email</label>
+            <label class="waitlist-form__label" for="waitlist-name">Your name</label>
+            <input class="waitlist-form__input waitlist-form__input--full" id="waitlist-name" type="text" name="name" placeholder="First and last name" autocomplete="name" aria-describedby="waitlist-note" required />
+            <label class="waitlist-form__label" for="waitlist-email">Email address</label>
             <div class="waitlist-form__row">
-              <input class="waitlist-form__input" id="waitlist-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+              <input class="waitlist-form__input" id="waitlist-email" type="email" name="email" placeholder="you@example.com" inputmode="email" autocomplete="email" aria-describedby="waitlist-note" aria-invalid="false" required />
               <button class="button elevate__button" type="submit">Join the waitlist</button>
             </div>
-            <p class="waitlist-form__note" aria-live="polite" role="status"></p>
+            <div class="waitlist-form__hp" aria-hidden="true">
+              <label for="waitlist-company">Company</label>
+              <input id="waitlist-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+            <p id="waitlist-note" class="waitlist-form__note" role="status" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -444,8 +435,6 @@
             <p class="site-footer__col-title">For</p>
             <ul class="site-footer__links">
               <li><a href="#how">For players</a></li>
-              <li><a href="#scouted">For clubs</a></li>
-              <li><a href="#how">For coaches</a></li>
             </ul>
           </div>
 
@@ -479,13 +468,13 @@
       </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="./assets/vendor/gsap.min.js" defer></script>
+    <script src="./assets/vendor/ScrollTrigger.min.js" defer></script>
     <script src="./script.js?v=dots-2" defer></script>
+    <script src="./fit-spotlight.js?v=1" defer></script>
     <script src="./mobile-story.js?v=3" defer></script>
-    <script src="./premium-elements.js?v=lenis-lazy-1" defer></script>
-    <script src="./qa-polish.js" defer></script>
-    <script src="./hero-redesign.js?v=auto-slide-v2" defer></script>
+    <script src="./premium-elements.js?v=lenis-local-1" defer></script>
+    <script src="./hero-redesign.js?v=auto-slide-v3" defer></script>
     <script src="./journey-slider.js?v=autocycle-1" defer></script>
   </body>
 </html>

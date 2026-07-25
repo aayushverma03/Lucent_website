@@ -172,11 +172,11 @@
   position: absolute;
   left: 50%;
   bottom: clamp(40px, 8vh, 96px);
-  transform: translate(-50%, var(--caption-y, 24px));
+  transform: translate(-50%, 0);
   z-index: 4;
   max-width: min(620px, calc(100vw - 48px));
   text-align: center;
-  opacity: var(--caption-opacity, 0);
+  opacity: 1;
   color: rgba(251, 250, 247, 0.86);
   font-family: var(--body-font);
   font-size: clamp(0.92rem, 1.1vw, 1.05rem);
@@ -206,7 +206,7 @@
 }
 
 /* Mobile nav */
-@media (max-width: 680px) {
+@media (max-width: 860px) {
   .top-nav {
     top: 12px;
     width: calc(100% - 28px);
