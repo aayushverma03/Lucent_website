@@ -96,7 +96,9 @@ git push origin main            # or run it manually from the Actions tab
 ```
 
 It rsyncs the site into `/var/www/lucent` (excluding `.git`, `.github`,
-`deploy/`, and docs). `--delete` keeps the server an exact mirror of the repo.
+`deploy/`, `backend/`, and all `*.md`/`*.pdf` so internal docs and draft
+policies are never publicly served). `--delete --delete-excluded` keeps the
+server an exact mirror and removes previously deployed excluded files.
 
 ---
 
@@ -108,6 +110,44 @@ It rsyncs the site into `/var/www/lucent` (excluding `.git`, `.github`,
 - **Renew cert manually / test:** `sudo certbot renew --dry-run`
 - **Edit the served Nginx config:** `/etc/nginx/sites-available/lucent.conf`
   (regenerate from `deploy/nginx/lucent.conf.template` if you change the template).
+
+## Backups (waitlist DB → S3)
+
+The signups live in one SQLite file (`/var/lib/lucent/waitlist.db`). A daily cron
+uploads a consistent, gzipped snapshot to S3 so instance loss ≠ data loss.
+
+**One-time setup:**
+
+1. Create a private S3 bucket (e.g. `lucent-backups`).
+2. Give the EC2 instance an **IAM role** allowing writes to the backup prefix
+   (EC2 → instance → Actions → Security → Modify IAM role):
+   ```json
+   { "Version": "2012-10-17", "Statement": [{
+       "Effect": "Allow", "Action": "s3:PutObject",
+       "Resource": "arn:aws:s3:::lucent-backups/waitlist-backups/*" }] }
+   ```
+3. Install the cron (on the server, from the repo checkout):
+   ```bash
+   sudo ./deploy/setup-backup.sh lucent-backups
+   ```
+   This installs `/opt/lucent-backend/backup-waitlist.sh`, writes
+   `/etc/cron.d/lucent-backup` (daily 03:17 UTC, runs as `www-data`), and runs
+   one backup immediately to verify. Logs: `tail -f /var/log/lucent-backup.log`.
+
+Backups land at `s3://lucent-backups/waitlist-backups/waitlist-<UTC-timestamp>.db.gz`.
+
+**Retention:** add an S3 lifecycle rule on the bucket to expire objects after,
+say, 90 days (S3 console → bucket → Management → Lifecycle rules).
+
+**Restore:**
+```bash
+aws s3 cp s3://lucent-backups/waitlist-backups/waitlist-<stamp>.db.gz .
+gunzip waitlist-<stamp>.db.gz
+sudo systemctl stop lucent-waitlist
+sudo -u www-data cp waitlist-<stamp>.db /var/lib/lucent/waitlist.db
+sudo rm -f /var/lib/lucent/waitlist.db-wal /var/lib/lucent/waitlist.db-shm
+sudo systemctl start lucent-waitlist
+```
 
 ## Optional hardening
 
