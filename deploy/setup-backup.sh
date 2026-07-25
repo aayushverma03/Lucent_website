@@ -14,12 +14,18 @@ LOG=/var/log/lucent-backup.log
 
 echo "==> Installing backup script to $SCRIPT"
 sudo cp "$HERE/backup-waitlist.sh" "$SCRIPT"
-sudo chown www-data:www-data "$SCRIPT"
+# Match the service user chosen by setup-backend.sh (www-data on Debian,
+# nginx on RHEL/Amazon Linux, lucent as fallback).
+SERVICE_USER=www-data
+id -u "$SERVICE_USER" >/dev/null 2>&1 || SERVICE_USER=nginx
+id -u "$SERVICE_USER" >/dev/null 2>&1 || SERVICE_USER=lucent
+
+sudo chown "$SERVICE_USER:$SERVICE_USER" "$SCRIPT"
 sudo chmod 750 "$SCRIPT"
 
 echo "==> Log file $LOG"
 sudo touch "$LOG"
-sudo chown www-data:www-data "$LOG"
+sudo chown "$SERVICE_USER:$SERVICE_USER" "$LOG"
 
 echo "==> Cron entry /etc/cron.d/lucent-backup (daily 03:17 UTC)"
 sudo tee /etc/cron.d/lucent-backup >/dev/null <<EOF
@@ -27,12 +33,12 @@ sudo tee /etc/cron.d/lucent-backup >/dev/null <<EOF
 PATH=/usr/bin:/bin
 LUCENT_BACKUP_BUCKET=$BUCKET
 LUCENT_BACKUP_PREFIX=$PREFIX
-17 3 * * * www-data $SCRIPT >> $LOG 2>&1
+17 3 * * * $SERVICE_USER $SCRIPT >> $LOG 2>&1
 EOF
 sudo chmod 644 /etc/cron.d/lucent-backup
 
 echo "==> Running one backup now to verify (uploads to S3)"
-sudo -u www-data env LUCENT_BACKUP_BUCKET="$BUCKET" LUCENT_BACKUP_PREFIX="$PREFIX" "$SCRIPT"
+sudo -u "$SERVICE_USER" env LUCENT_BACKUP_BUCKET="$BUCKET" LUCENT_BACKUP_PREFIX="$PREFIX" "$SCRIPT"
 
 echo
 echo "==> Done. Daily backups land in s3://$BUCKET/$PREFIX/"
