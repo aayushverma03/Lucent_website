@@ -102,6 +102,27 @@ server an exact mirror and removes previously deployed excluded files.
 
 ---
 
+## Waitlist backend (one-time, from GitHub)
+
+The static-site job never touches the backend. To install or update the
+waitlist API service and its nginx `/api/` proxy, run the workflow manually:
+
+1. Add repo secrets (Settings → Secrets → Actions): `WAITLIST_FROM_EMAIL`
+   (SES-verified sender), `WAITLIST_ALERT_TO` (inbox for signup alerts),
+   and optionally `AWS_REGION` (defaults to eu-west-1). Verify both email
+   identities in SES first (both, if the SES account is in sandbox).
+2. Actions → "Deploy to EC2" → Run workflow → tick **deploy_backend**
+   (pick the branch whose backend code you want).
+3. The job rsyncs `backend/` + `deploy/` to `~/lucent-setup` on the box, runs
+   `setup-backend.sh` (venv, env file, systemd service) and
+   `install-api-proxy.sh` (idempotently inserts the `/api/` block into the
+   live nginx conf, `nginx -t`, reload, auto-revert on failure), then smoke
+   tests `/api/health` locally and publicly.
+
+The env file `/etc/lucent/waitlist.env` is created only on the first run —
+to change SES settings later, edit it on the box and
+`sudo systemctl restart lucent-waitlist`.
+
 ## Operations
 
 - **Redeploy:** just push to `main` (or Actions → Deploy to EC2 → Run workflow).
