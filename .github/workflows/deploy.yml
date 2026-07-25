@@ -33,11 +33,13 @@ jobs:
       - name: Deploy with rsync
         run: |
           PORT="${{ secrets.EC2_PORT }}"; PORT="${PORT:-22}"
-          rsync -avz --delete \
+          rsync -avz --delete --delete-excluded \
             --exclude '.git' \
             --exclude '.github' \
             --exclude 'deploy' \
-            --exclude 'DEPLOYMENT.md' \
+            --exclude 'backend' \
+            --exclude '*.md' \
+            --exclude '*.pdf' \
             --exclude '.gitignore' \
             -e "ssh -i ~/.ssh/deploy_key -p $PORT -o StrictHostKeyChecking=yes" \
             ./ "${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/lucent/"

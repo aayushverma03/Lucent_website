@@ -101,7 +101,7 @@ echo "==> Pulling current site into $WEBROOT"
 TMP="$(mktemp -d)"
 git clone --depth 1 "$REPO_URL" "$TMP/repo"
 rsync -a --delete \
-  --exclude '.git' --exclude '.github' --exclude 'deploy' \
+  --exclude '.git' --exclude '.github' --exclude 'deploy' --exclude 'backend' \
   --exclude 'DEPLOYMENT.md' --exclude '.gitignore' \
   "$TMP/repo/" "$WEBROOT/"
 rm -rf "$TMP"

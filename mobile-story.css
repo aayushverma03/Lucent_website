@@ -29,7 +29,7 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #00BD7D;
+  color: #B8FF5C;
   margin: 0;
 }
 .ms__progress {
@@ -50,7 +50,7 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   position: absolute;
   inset: 0;
   width: 0%;
-  background: #00BD7D;
+  background: #B8FF5C;
   border-radius: 2px;
   transition: width 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -83,6 +83,11 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   max-width: 32ch;
 }
 
+/* Short viewports: trim head padding so the taller scouted card isn't clipped */
+@media (max-height: 720px) {
+  .ms__head { padding-top: 38px; padding-bottom: 6px; }
+}
+
 /* ── Stage: persistent hero + crossfading scene panels ────────────── */
 .ms__stage {
   position: relative;
@@ -111,8 +116,8 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   transition: border-color 0.6s ease, box-shadow 0.6s ease;
 }
 .ms.is-scanning .ms__clip {
-  border-color: rgba(48, 209, 88, 0.5);
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55), 0 0 48px rgba(48, 209, 88, 0.16);
+  border-color: rgba(184, 255, 92, 0.5);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.55), 0 0 48px rgba(184, 255, 92, 0.16);
 }
 .ms__clip img {
   width: 100%;
@@ -154,8 +159,8 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   height: 3px;
   z-index: 2;
   opacity: 0;
-  background: linear-gradient(90deg, transparent, rgba(48, 209, 88, 0.4) 15%, rgba(48, 209, 88, 1) 50%, rgba(48, 209, 88, 0.4) 85%, transparent);
-  box-shadow: 0 0 8px 2px rgba(48, 209, 88, 0.7), 0 0 24px 6px rgba(48, 209, 88, 0.35);
+  background: linear-gradient(90deg, transparent, rgba(184, 255, 92, 0.4) 15%, rgba(184, 255, 92, 1) 50%, rgba(184, 255, 92, 0.4) 85%, transparent);
+  box-shadow: 0 0 8px 2px rgba(184, 255, 92, 0.7), 0 0 24px 6px rgba(184, 255, 92, 0.35);
   pointer-events: none;
 }
 
@@ -236,7 +241,7 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   height: 100%;
   width: 0%;
   border-radius: 3px;
-  background: linear-gradient(90deg, #00BD7D, #30d158);
+  background: linear-gradient(90deg, #B8FF5C, #66FFF1);
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -265,7 +270,7 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
 .ms__rank-rows { display: grid; gap: 9px; }
 .ms__rank-rows > div { display: flex; justify-content: space-between; }
 .ms__rank-rows span { font-size: 0.74rem; color: rgba(245, 245, 247, 0.52); }
-.ms__rank-rows em { font-style: normal; font-size: 0.74rem; font-weight: 600; color: #30d158; }
+.ms__rank-rows em { font-style: normal; font-size: 0.74rem; font-weight: 600; color: #B8FF5C; }
 
 /* Drills panel (Improve) */
 .ms__drills-head {
@@ -290,7 +295,7 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
 .ms__drill:first-of-type { border-top: 0; }
 .ms__drill-name { font-size: 13px; color: rgba(245, 245, 247, 0.88); }
 .ms__drill-cat { font-size: 11px; color: rgba(245, 245, 247, 0.45); display: block; margin-top: 2px; }
-.ms__drill-dur { font-size: 12px; font-weight: 600; color: #30d158; }
+.ms__drill-dur { font-size: 12px; font-weight: 600; color: #B8FF5C; }
 
 /* ── Scouted: persistent product frame with swapping screens ──────── */
 .ms[data-ms="scouted"] .ms__stage {
@@ -392,15 +397,15 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
   width: 38px; height: 38px; border-radius: 11px; flex-shrink: 0;
   display: flex; align-items: center; justify-content: center;
   font-weight: 700; font-size: 16px; color: #04231a;
-  background: linear-gradient(135deg, #4be3a8, #00bd7d);
+  background: linear-gradient(135deg, #66FFF1, #B8FF5C);
 }
 .ms-sc__trial-body { flex: 1; min-width: 0; }
 .ms-sc__trial-body em { font-style: normal; font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: #00BD7D; }
 .ms-sc__trial-body h3 { font-size: 15px; font-weight: 600; color: rgba(245, 245, 247, 0.95); margin: 1px 0; }
 .ms-sc__trial-body p { font-size: 12px; color: rgba(245, 245, 247, 0.5); margin: 0; }
-.ms-sc__fit { font-size: 18px; font-weight: 700; color: #30d158; }
+.ms-sc__fit { font-size: 18px; font-weight: 700; color: #B8FF5C; }
 .ms-sc__bar { height: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.08); overflow: hidden; margin-top: 11px; }
-.ms-sc__bar i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #00BD7D, #30d158); }
+.ms-sc__bar i { display: block; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #B8FF5C, #66FFF1); }
 .ms-sc__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
 .ms-sc__chips span { font-size: 10.5px; color: rgba(245, 245, 247, 0.62); background: rgba(255, 255, 255, 0.06); padding: 3px 9px; border-radius: 999px; }
 
@@ -422,13 +427,13 @@ body.lucent-theme .story__mobile-cards.ms.is-ready {
 /* Upload + success */
 .ms-sc__center { margin: auto 0; text-align: center; display: grid; gap: 8px; justify-items: center; }
 .ms-sc__big-club { width: 56px; height: 56px; border-radius: 16px; font-size: 24px; }
-.ms-sc__center span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #00BD7D; }
+.ms-sc__center span { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #B8FF5C; }
 .ms-sc__center h3 { font-size: 20px; font-weight: 600; color: rgba(245, 245, 247, 0.96); margin: 2px 0; line-height: 1.15; }
 .ms-sc__center p { font-size: 13px; color: rgba(245, 245, 247, 0.55); margin: 0; max-width: 30ch; }
 .ms-sc__files { display: grid; gap: 7px; width: 100%; margin-top: 6px; }
 .ms-sc__files em { font-style: normal; font-size: 12px; color: rgba(245, 245, 247, 0.72); background: rgba(255, 255, 255, 0.05); border-radius: 9px; padding: 9px 12px; text-align: left; }
-.ms-sc__done { margin-top: 6px; font-size: 12px; font-weight: 600; color: #30d158; }
-.ms-sc__check { width: 54px; height: 54px; border-radius: 50%; background: rgba(48, 209, 88, 0.16); border: 1px solid rgba(48, 209, 88, 0.5); display: flex; align-items: center; justify-content: center; font-size: 26px; color: #30d158; }
+.ms-sc__done { margin-top: 6px; font-size: 12px; font-weight: 600; color: #B8FF5C; }
+.ms-sc__check { width: 54px; height: 54px; border-radius: 50%; background: rgba(184, 255, 92, 0.16); border: 1px solid rgba(184, 255, 92, 0.5); display: flex; align-items: center; justify-content: center; font-size: 26px; color: #B8FF5C; }
 
 /* ── Fallback when JS/GSAP unavailable: show as readable stack ─────── */
 body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__scanline { display: none; }
@@ -436,3 +441,19 @@ body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__hero { position: r
 body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__stage { display: grid; gap: 16px; padding: 0 16px 32px; }
 body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__panels { position: static; }
 body.lucent-theme .story__mobile-cards.ms:not(.is-ready) .ms__panel { position: static; opacity: 1; transform: none; margin-top: 14px; }
+
+
+/* ── App-visual widgets inside the mobile Skill scenes ────────────── */
+body.lucent-theme .ms__viz { display: flex; justify-content: center; margin-top: 2px; }
+body.lucent-theme .ms__viz svg { width: 100%; max-width: 198px; height: auto; overflow: visible; }
+body.lucent-theme .ms__viz--gauge svg { max-width: 186px; }
+body.lucent-theme .ms__cap {
+  display: flex; justify-content: space-between; align-items: baseline;
+  margin: 11px 0 0; font-size: 12px; color: rgba(245, 245, 247, 0.5);
+}
+body.lucent-theme .ms__cap em { font-style: normal; font-weight: 700; color: #B8FF5C; font-variant-numeric: tabular-nums; }
+body.lucent-theme .ms__grank {
+  margin: 9px 0 0; text-align: center; font-size: 12.5px; color: rgba(245, 245, 247, 0.58);
+}
+body.lucent-theme .ms__grank b { font-weight: 700; color: #f5f5f7; font-variant-numeric: tabular-nums; }
+body.lucent-theme .ms__grank em { font-style: normal; font-weight: 700; color: #B8FF5C; }

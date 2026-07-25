@@ -4,7 +4,7 @@ root.classList.add("js");
 const skillStory = document.querySelector(".story--skills");
 const scoutStory = document.querySelector(".story--scouted");
 const film = document.querySelector(".film");
-const filmVideo = document.querySelector("[data-film-video]");
+const filmVideo = document.querySelector(".film__stage-video");
 const revealItems = [...document.querySelectorAll("[data-reveal]")];
 const skillTitle = document.querySelector("[data-skill-title]");
 const skillCopy = document.querySelector("[data-skill-copy]");
@@ -89,31 +89,45 @@ function setupHamburger() {
   const nav = document.getElementById("top-nav-links");
   if (!hamburger || !nav) return;
 
+  const main = document.querySelector("main");
+  const footer = document.querySelector("footer");
+  const setInert = (on) => {
+    [main, footer].forEach((el) => {
+      if (!el) return;
+      if (on) el.setAttribute("inert", "");
+      else el.removeAttribute("inert");
+    });
+  };
+
+  const open = () => {
+    hamburger.setAttribute("aria-expanded", "true");
+    hamburger.classList.add("is-active");
+    nav.classList.add("is-open");
+    document.body.classList.add("nav-is-open");
+    setInert(true);
+    nav.querySelector("a")?.focus();
+  };
+
+  const close = ({ returnFocus = false } = {}) => {
+    hamburger.setAttribute("aria-expanded", "false");
+    hamburger.classList.remove("is-active");
+    nav.classList.remove("is-open");
+    document.body.classList.remove("nav-is-open");
+    setInert(false);
+    if (returnFocus) hamburger.focus();
+  };
+
   hamburger.addEventListener("click", () => {
-    const isOpen = hamburger.getAttribute("aria-expanded") === "true";
-    hamburger.setAttribute("aria-expanded", String(!isOpen));
-    hamburger.classList.toggle("is-active", !isOpen);
-    nav.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("nav-is-open", !isOpen);
+    if (hamburger.getAttribute("aria-expanded") === "true") close();
+    else open();
   });
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("is-open")) {
-      hamburger.setAttribute("aria-expanded", "false");
-      hamburger.classList.remove("is-active");
-      nav.classList.remove("is-open");
-      document.body.classList.remove("nav-is-open");
-      hamburger.focus();
-    }
+    if (e.key === "Escape" && nav.classList.contains("is-open")) close({ returnFocus: true });
   });
 
   nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      hamburger.setAttribute("aria-expanded", "false");
-      hamburger.classList.remove("is-active");
-      nav.classList.remove("is-open");
-      document.body.classList.remove("nav-is-open");
-    });
+    link.addEventListener("click", () => close());
   });
 }
 
@@ -155,6 +169,7 @@ function setupLaunchSequence() {
 }
 
 function setupVideoLazyLoad() {
+  if (prefersReducedMotion.matches) return;
   if (!("IntersectionObserver" in window)) return;
 
   const lazyVideos = [...document.querySelectorAll("video[data-lazy-video]")];
@@ -183,26 +198,88 @@ function setupWaitlistForm() {
   const form = document.getElementById("waitlist-form");
   if (!form) return;
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const emailInput = form.querySelector('[type="email"]');
-    const note = form.querySelector(".waitlist-form__note");
-    const email = emailInput?.value?.trim();
+  const nameInput = document.getElementById("waitlist-name");
+  const emailInput = document.getElementById("waitlist-email");
+  const note = document.getElementById("waitlist-note");
+  const button = form.querySelector('button[type="submit"]');
+  const honeypot = form.querySelector('input[name="company"]');
 
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      if (note) note.textContent = "Please enter a valid email address.";
-      emailInput?.focus();
+  const ENDPOINT = "/api/waitlist";
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let submitting = false;
+
+  const CHECK_SVG =
+    '<svg class="waitlist-form__check" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="11" fill="currentColor" opacity=".16"/>' +
+    '<path class="tick" d="M6.5 12.5l3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>' +
+    "</svg>";
+
+  const setState = (state, message, assertive = false) => {
+    form.dataset.state = state;
+    if (!note) return;
+    note.setAttribute("aria-live", assertive ? "assertive" : "polite");
+    if (state === "success") {
+      note.innerHTML = CHECK_SVG + '<span class="waitlist-form__note-text"></span>';
+      note.querySelector(".waitlist-form__note-text").textContent = message;
+    } else {
+      note.textContent = message;
+    }
+  };
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (submitting) return;
+
+    // Bots fill the hidden field: pretend success, store nothing.
+    if (honeypot?.value?.trim()) {
+      setState("success", "You're in. We'll email you when the first invites go out.");
       return;
     }
 
-    const subject = encodeURIComponent("Lucent waitlist");
-    const body = encodeURIComponent(
-      `Hi Lucent team,\n\nI'd like to join the waitlist.\n\nEmail: ${email}\n\nLooking forward to it!`,
-    );
-    window.location.href = `mailto:hello@lucent.app?subject=${subject}&body=${body}`;
+    const name = nameInput?.value?.trim() ?? "";
+    if (!name) {
+      nameInput?.setAttribute("aria-invalid", "true");
+      nameInput?.focus();
+      setState("error", "Please enter your name.", true);
+      return;
+    }
+    nameInput?.setAttribute("aria-invalid", "false");
 
-    if (note) {
-      note.textContent = "Opening your email client — if nothing happens, email us at hello@lucent.app";
+    const email = emailInput?.value?.trim() ?? "";
+    if (!EMAIL_RE.test(email)) {
+      emailInput?.setAttribute("aria-invalid", "true");
+      emailInput?.focus();
+      setState("error", "Enter a valid email address.", true);
+      return;
+    }
+    emailInput?.setAttribute("aria-invalid", "false");
+
+    submitting = true;
+    if (button) button.disabled = true;
+    setState("loading", "Adding you to the waitlist…");
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, email, company: honeypot?.value ?? "", source: "website" }),
+      });
+
+      if (res.status === 409) {
+        setState("success", "You're already on the list — see you at launch.");
+      } else if (res.ok) {
+        setState("success", "You're in. We'll email you when the first invites go out.");
+        form.reset();
+      } else if (res.status === 429) {
+        setState("error", "You're going a bit fast — please wait a moment and try again.", true);
+      } else {
+        setState("error", "Something went wrong. Please try again, or email support@lucent-ai.app.", true);
+      }
+    } catch {
+      setState("error", "Something went wrong. Please try again, or email support@lucent-ai.app.", true);
+    } finally {
+      submitting = false;
+      if (button) button.disabled = false;
     }
   });
 }
