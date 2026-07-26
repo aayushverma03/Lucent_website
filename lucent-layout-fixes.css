@@ -337,3 +337,19 @@ body.lucent-theme .success-card p {
   }
 
 }
+
+/* Reduced motion: collapse the Skill Engine scrub to one static frame
+   (mirrors the fitspot fallback). script.js pins step 3 (Improve) and
+   reveals the drill queue; without this the 420vh track leaves ~3.4
+   viewports of frozen scrolling. */
+@media (prefers-reduced-motion: reduce) {
+  body.lucent-theme .story--skills {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  body.lucent-theme .story--skills .story__sticky {
+    position: relative !important;
+    height: 100svh !important;
+    min-height: 0 !important;
+  }
+}

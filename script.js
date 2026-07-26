@@ -384,7 +384,7 @@ function updateSkillStory() {
   if (!skillStory) return;
   if (prefersReducedMotion.matches) {
     setSkillStep(3);
-    if (skillCardsEl) skillCardsEl.classList.add("is-revealed");
+    if (drillQueueEl) drillQueueEl.classList.add("is-revealed");
     return;
   }
 
