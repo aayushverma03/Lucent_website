@@ -8,6 +8,8 @@ const filmVideo = document.querySelector(".film__stage-video");
 const revealItems = [...document.querySelectorAll("[data-reveal]")];
 const skillTitle = document.querySelector("[data-skill-title]");
 const skillCopy = document.querySelector("[data-skill-copy]");
+const skillKicker = document.querySelector("[data-skill-kicker]");
+const skillIntroEl = document.querySelector(".story--skills .story__intro");
 const scoutTitle = document.querySelector("[data-scout-title]");
 const scoutCopy = document.querySelector("[data-scout-copy]");
 const skillSteps = [...document.querySelectorAll(".story--skills .story-steps span")];
@@ -18,10 +20,10 @@ const screens = [...document.querySelectorAll(".screen")];
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const skillScenes = [
-  ["See the player clearly.", "Start with the athlete, then reveal the movement behind every rep."],
-  ["Read the movement.", "Pose analysis exposes alignment, hip rotation, and control before small flaws become habits."],
-  ["See where you rank.", "Every score is benchmarked against players at your level, across your position and age group."],
-  ["Know what to train next.", "Lucent builds a drill plan from your weakest scores and updates it every session."],
+  ["See the player clearly", "Start with the athlete, then reveal the movement behind every rep."],
+  ["Read the movement", "Pose analysis exposes alignment, hip rotation, and control before small flaws become habits."],
+  ["See where you rank", "Every score is benchmarked against players at your level, across your position and age group."],
+  ["Know what to train next", "Lucent builds a drill plan from your weakest scores and updates it every session."],
 ];
 
 const scoutScenes = [
@@ -321,18 +323,39 @@ function sectionProgress(section) {
   return clamp(-rect.top / range, 0, 1);
 }
 
+const skillKickers = ["Train", "Scan", "Benchmark", "Improve"];
+const skillRailSegs = [...document.querySelectorAll(".story--skills .story__rail span")];
+let activeSkillStep = -1;
+let skillSwapTimer = 0;
+
 function setSkillStep(step) {
   skillStory?.setAttribute("data-skill-step", String(step));
-  const scene = skillScenes[step];
-  if (scene) {
-    if (skillTitle) skillTitle.textContent = scene[0];
-    if (skillCopy) skillCopy.textContent = scene[1];
-  }
+  skillRailSegs.forEach((seg, index) => seg.classList.toggle("is-active", index === step));
   skillSteps.forEach((item, index) => item.classList.toggle("is-active", index === step));
   skillDots.forEach((dot, index) => {
     dot.classList.toggle("is-active", index === step);
     dot.classList.toggle("is-past", index < step);
   });
+  if (step === activeSkillStep) return;
+  const firstRun = activeSkillStep === -1;
+  activeSkillStep = step;
+  const apply = () => {
+    const scene = skillScenes[step];
+    if (!scene) return;
+    if (skillKicker) skillKicker.textContent = skillKickers[step] || "";
+    if (skillTitle) skillTitle.textContent = scene[0];
+    if (skillCopy) skillCopy.textContent = scene[1];
+  };
+  if (firstRun || prefersReducedMotion.matches || !skillIntroEl) {
+    apply();
+    return;
+  }
+  clearTimeout(skillSwapTimer);
+  skillIntroEl.classList.add("is-swapping");
+  skillSwapTimer = setTimeout(() => {
+    apply();
+    skillIntroEl.classList.remove("is-swapping");
+  }, 180);
 }
 
 function setScoutStep(step) {

@@ -2,7 +2,10 @@ const premiumMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)")
 
 function setupLenisSmoothScroll() {
   if (premiumMotionQuery.matches) return;
-  if (!window.matchMedia("(hover: hover)").matches) return;
+
+  // syncTouch drives touch scrolling through the same lerped transform as the
+  // wheel, so pinned scrub sections stay in sync with the finger on mobile.
+  const isTouch = !window.matchMedia("(hover: hover)").matches;
 
   const init = () => {
     if (typeof window.Lenis !== "function") return;
@@ -11,6 +14,7 @@ function setupLenisSmoothScroll() {
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       wheelMultiplier: 0.86,
+      syncTouch: isTouch,
     });
     function raf(time) {
       lenis.raf(time);

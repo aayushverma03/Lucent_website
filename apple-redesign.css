@@ -1941,23 +1941,8 @@ body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth
 
 /* ── N. Mobile responsive fixes ───────────────────────────────── */
 
-/*
- * Skill engine — three fanned cards total ~480 px wide which overflows
- * a 390-px viewport. On phones, hide the outer pair and show only the
- * centre Technical card flat, so the stat bars are readable.
- */
-@media (max-width: 520px) {
-  body.lucent-theme .skill-card--foundational,
-  body.lucent-theme .skill-card--cognitive {
-    display: none !important;
-  }
-  body.lucent-theme .skill-cards.is-revealed .skill-card--technical {
-    transform: none !important;
-  }
-  body.lucent-theme .skill-card--technical {
-    width: clamp(210px, 54vw, 250px) !important;
-  }
-}
+/* Skill engine — all three fanned cards stay on phones; the phone card
+   sizing lives in lucent-layout-fixes.css (mobile parity block). */
 
 /*
  * Trials section — on narrow phones the product-shell sits too high
@@ -2032,7 +2017,7 @@ body.lucent-theme .skill-cards.is-revealed .skill-card--cognitive .skill-bar:nth
 
   body.lucent-theme .story--skills .story__intro {
     position: absolute !important;
-    top: clamp(72px, 9svh, 108px) !important;
+    top: clamp(56px, 8svh, 76px) !important;
     left: 0 !important;
     max-width: min(360px, 86vw) !important;
     padding-top: 0 !important;
