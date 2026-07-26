@@ -2,8 +2,8 @@
    Reads native scroll (Lenis dispatches native scroll events) and scrubs the
    pinned .fitspot__track: fit ring fills, requirements check in, copy beats
    cross-fade, resolve state opens. Static resolved state under reduced-motion
-   or on small screens (<=860px), matching the CSS fallback. Self-contained;
-   does not touch the Skill Engine driver in script.js. */
+   only, matching the CSS fallback; mobile runs the same pinned narrative.
+   Self-contained; does not touch the Skill Engine driver in script.js. */
 (function () {
   "use strict";
   var track = document.querySelector(".fitspot__track");
@@ -25,9 +25,8 @@
   }
 
   var reduceQ = window.matchMedia("(prefers-reduced-motion: reduce)");
-  var smallQ = window.matchMedia("(max-width: 860px)");
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
-  function isStatic() { return reduceQ.matches || smallQ.matches; }
+  function isStatic() { return reduceQ.matches; }
 
   function render(p) {
     var beat = p < 0.34 ? 0 : p < 0.67 ? 1 : 2;
@@ -67,6 +66,5 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", progress, { passive: true });
   if (reduceQ.addEventListener) reduceQ.addEventListener("change", progress);
-  if (smallQ.addEventListener) smallQ.addEventListener("change", progress);
   progress();
 })();

@@ -162,10 +162,65 @@ body.lucent-theme .fs-legend__i b { color: var(--ap-t1); font-weight: 600; }
 /* ---- responsive / reduced-motion static fallback ---- */
 @media (max-width: 980px) {
   body.lucent-theme .fitspot__grid { grid-template-columns: 1fr; gap: 28px; }
-  body.lucent-theme .fitspot__copy { order: 2; }
-  body.lucent-theme .fs-card { order: 1; }
+  body.lucent-theme .fs-card { justify-self: center; }
 }
-@media (prefers-reduced-motion: reduce), (max-width: 860px) {
+@media (max-width: 860px) {
+  body.lucent-theme .fitspot__track { height: 300vh; }
+  body.lucent-theme .fitspot__pin { align-items: flex-start; }
+  body.lucent-theme .fitspot__tag { top: clamp(56px, 8svh, 76px); }
+  body.lucent-theme .fitspot__grid { padding: clamp(112px, 15svh, 128px) 0 16px; gap: 14px; }
+  body.lucent-theme .fitspot__copy { gap: 14px; }
+  body.lucent-theme .fs-card { padding: 16px; max-width: 420px; }
+  /* Beat rail reads as stray bars against the copy at phone widths;
+     the ring + copy crossfade already carry the progression. */
+  body.lucent-theme .fs-rail { display: none; }
+  body.lucent-theme .fs-stack { min-height: 148px; }
+  body.lucent-theme .fs-copy__k { margin: 0 0 8px !important; }
+  body.lucent-theme .fs-copy__h { font-size: clamp(21px, 5.8vw, 26px) !important; margin: 0 0 10px !important; }
+  body.lucent-theme .fs-copy__p { font-size: 13.5px !important; line-height: 1.45 !important; }
+  body.lucent-theme .fs-card__top { gap: 12px; margin-bottom: 10px; }
+  body.lucent-theme .fs-crest { width: 44px; height: 44px; font-size: 18px; }
+  body.lucent-theme .fs-card__title { font-size: 16px !important; }
+  body.lucent-theme .fs-ringbox { padding: 0 0 6px; }
+  body.lucent-theme .fs-ring { width: 96px; }
+  body.lucent-theme .fs-ring__num { font-size: 26px !important; }
+  body.lucent-theme .fs-ringcap { margin: 6px 0 0; }
+  body.lucent-theme .fs-ringcap__lab { font-size: 9.5px !important; }
+  body.lucent-theme .fs-ringcap b { font-size: 13px !important; }
+  body.lucent-theme .fs-reqs { gap: 6px; }
+  body.lucent-theme .fs-req { padding: 7px 11px; gap: 9px; }
+  body.lucent-theme .fs-req__lab { font-size: 12.5px; }
+  body.lucent-theme .fs-req__cmp { font-size: 11px; }
+  body.lucent-theme .fs-resolve.is-on { margin-top: 10px; }
+  body.lucent-theme .fs-resolve__div { margin-bottom: 10px; }
+  body.lucent-theme .fs-resolve__meta { margin-bottom: 10px; }
+  body.lucent-theme .fs-cta a { padding: 10px; font-size: 13.5px; }
+  body.lucent-theme .fs-cta .fs-save { padding: 10px 16px; }
+}
+@media (max-width: 860px) and (max-height: 760px) {
+  body.lucent-theme .fitspot__tag { top: 52px; }
+  body.lucent-theme .fitspot__grid { padding-top: 86px; gap: 10px; }
+  body.lucent-theme .fs-stack { min-height: 118px; }
+  body.lucent-theme .fs-resolve.is-on { margin-top: 6px; }
+  body.lucent-theme .fs-resolve__div { margin-bottom: 6px; }
+  body.lucent-theme .fs-resolve__meta { margin-bottom: 6px; }
+  body.lucent-theme .fs-copy__h { font-size: 19px !important; }
+  body.lucent-theme .fs-copy__p { font-size: 12.5px !important; }
+  body.lucent-theme .fs-ring { width: 76px; }
+  body.lucent-theme .fs-ring__num { font-size: 22px !important; }
+  body.lucent-theme .fs-ringcap { margin: 4px 0 0; }
+  body.lucent-theme .fs-req { padding: 5px 11px; }
+  body.lucent-theme .fs-req__ic { width: 20px; height: 20px; }
+  body.lucent-theme .fs-card { padding: 12px 14px; }
+  body.lucent-theme .fs-card__top { margin-bottom: 8px; }
+  body.lucent-theme .fs-crest { width: 38px; height: 38px; font-size: 16px; }
+  body.lucent-theme .fs-drill, body.lucent-theme .fs-arc { font-size: 11px; padding: 5px 10px; }
+  body.lucent-theme .fs-cta a { padding: 9px; }
+}
+@media (max-width: 360px) {
+  body.lucent-theme .fs-stack { min-height: 150px; }
+}
+@media (prefers-reduced-motion: reduce) {
   body.lucent-theme .fitspot__track { height: auto; }
   body.lucent-theme .fitspot__pin { position: static; min-height: 0; overflow: visible; display: block; }
   body.lucent-theme .fitspot__tag { position: static; transform: none; width: min(1200px, 92vw); margin: 8px auto 0; }
@@ -174,7 +229,73 @@ body.lucent-theme .fs-legend__i b { color: var(--ap-t1); font-weight: 600; }
   body.lucent-theme .fs-copy { position: relative; opacity: 1; transform: none; display: none; }
   body.lucent-theme .fs-copy.is-active { display: block; }
   body.lucent-theme .fs-card__scan { display: none; }
-}
-@media (prefers-reduced-motion: reduce) {
   body.lucent-theme .fs-card.is-scanning .fs-card__scan { animation: none; }
+}
+
+/* ---- Skill Engine intro: same copy grammar as the Trials section ----
+   (chapter tag with dot, cyan step kicker, heavy display headline,
+   fs-copy body style, and the same rise-and-fade step transition). */
+body.lucent-theme .story--skills .eyebrow {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px !important; font-weight: 700 !important; letter-spacing: .24em !important;
+  text-transform: uppercase; color: var(--ap-green) !important; font-family: var(--display-font) !important;
+  margin: 0 0 clamp(24px, 4.5svh, 40px) !important;
+}
+body.lucent-theme .story--skills .eyebrow::before {
+  content: ""; width: 8px; height: 8px; border-radius: 50%; flex: none;
+  background: var(--ap-green); box-shadow: 0 0 12px var(--ap-green-glow);
+}
+body.lucent-theme .story--skills .story__kicker {
+  font-size: 12px !important; font-weight: 700 !important; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--ap-blue) !important; margin: 0 0 14px !important;
+  font-family: var(--display-font) !important;
+}
+body.lucent-theme .story--skills .story__intro h2 {
+  font-size: clamp(26px, 3.6vw, 44px) !important; line-height: 1.04 !important; letter-spacing: -.03em !important;
+  font-weight: 700 !important; color: var(--ap-t1) !important; margin: 0 0 16px !important; text-wrap: balance;
+  font-family: var(--display-font) !important;
+}
+body.lucent-theme .story--skills .story__intro .lede {
+  font-size: 16.5px !important; line-height: 1.5 !important; color: var(--ap-t2) !important;
+  margin: 0 !important; max-width: 42ch; font-weight: 400 !important;
+}
+body.lucent-theme .story--skills .story__kicker,
+body.lucent-theme .story--skills .story__intro h2,
+body.lucent-theme .story--skills .story__intro .lede {
+  transition: opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1);
+}
+body.lucent-theme .story--skills .story__intro.is-swapping .story__kicker,
+body.lucent-theme .story--skills .story__intro.is-swapping h2,
+body.lucent-theme .story--skills .story__intro.is-swapping .lede {
+  opacity: 0; transform: translateY(18px); transition-duration: .18s, .18s;
+}
+@media (max-width: 860px) {
+  body.lucent-theme .story--skills .eyebrow { margin: 0 0 clamp(28px, 5svh, 42px) !important; }
+  body.lucent-theme .story--skills .story__kicker { margin: 0 0 8px !important; }
+  body.lucent-theme .story--skills .story__intro h2 { font-size: clamp(21px, 5.8vw, 26px) !important; margin: 0 0 10px !important; }
+  body.lucent-theme .story--skills .story__intro .lede { font-size: 13.5px !important; line-height: 1.45 !important; }
+}
+
+/* Skill Engine: progress rail + vertically centered copy, same as fitspot */
+body.lucent-theme .story--skills .story__introrow { display: flex; gap: 22px; }
+body.lucent-theme .story--skills .story__rail { display: flex; flex-direction: column; gap: 10px; padding-top: 8px; flex: none; }
+body.lucent-theme .story--skills .story__rail span { width: 3px; height: 42px; border-radius: 3px; background: var(--ap-b1); transition: background .4s, box-shadow .4s; }
+body.lucent-theme .story--skills .story__rail span.is-active { background: var(--ap-green); box-shadow: 0 0 14px var(--ap-green-glow); }
+@media (min-width: 861px) {
+  body.lucent-theme .story--skills .story__intro {
+    top: 0 !important; bottom: 0 !important;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  body.lucent-theme .story--skills .eyebrow {
+    position: absolute; top: clamp(84px, 12vh, 128px); left: 0; margin: 0 !important;
+  }
+  /* keep the copy column clear of the centered clip-frame at mid widths:
+     46vw = 50vw minus the 4vw shell edge; 21.94vh/191.25px = half the
+     frame width (min(78vh, 680px) * 9/16 / 2); 28px breathing gap */
+  body.lucent-theme .story--skills .story__introrow {
+    max-width: min(430px, calc(46vw - min(21.94vh, 191.25px) - 28px));
+  }
+}
+@media (max-width: 860px) {
+  body.lucent-theme .story--skills .story__rail { display: none; }
 }
