@@ -1234,15 +1234,6 @@ body.lucent-theme .rank-card__label {
   margin: 0 0 10px;
 }
 
-body.lucent-theme .rank-card__number {
-  font-size: clamp(3rem, 5vw, 4.2rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: var(--ap-t1, #f5f5f7);
-  line-height: 1;
-  margin: 0 0 6px;
-}
-
 body.lucent-theme .rank-card__sub {
   font-size: 0.72rem;
   color: rgba(245, 245, 247, 0.44);

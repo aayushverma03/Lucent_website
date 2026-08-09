@@ -22,7 +22,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 const skillScenes = [
   ["See the player clearly", "Start with the athlete, then reveal the movement behind every rep."],
   ["Read the movement", "Pose analysis exposes alignment, hip rotation, and control before small flaws become habits."],
-  ["See where you rank", "Every score is benchmarked against players at your level, across your position and age group."],
+  ["See where you stand", "Your technical and physical scores are benchmarked against players at your level, across your position and age group."],
   ["Know what to train next", "Lucent builds a drill plan from your weakest scores and updates it every session."],
 ];
 
@@ -376,9 +376,7 @@ function setScoutStep(step) {
 const clipFrameEl  = document.querySelector(".clip-frame");
 const skillCardsEl = document.querySelector(".skill-cards");
 const scanLineEl   = document.querySelector(".clip-scan-line");
-const rankCardEl   = document.querySelector(".rank-card");
 const drillQueueEl = document.querySelector(".drill-queue");
-let rankAnimated   = false;
 
 function updateSkillStory() {
   if (!skillStory) return;
@@ -417,22 +415,6 @@ function updateSkillStory() {
       skillCardsEl.classList.remove("is-revealed");
     }
   }
-
-  if (step === 2 && !rankAnimated && rankCardEl) {
-    rankAnimated = true;
-    const numEl = rankCardEl.querySelector(".rank-card__number");
-    if (numEl) {
-      const target = 847, start = target + 153, dur = 900;
-      const t0 = performance.now();
-      (function tick(now) {
-        const p = Math.min((now - t0) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        numEl.textContent = "#" + Math.round(start - (start - target) * eased);
-        if (p < 1) requestAnimationFrame(tick);
-      })(t0);
-    }
-  }
-  if (step < 2) rankAnimated = false;
 
   if (drillQueueEl) {
     if (step >= 3) {
