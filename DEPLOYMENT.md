@@ -73,7 +73,10 @@ to confirm Nginx is up.
 ```
 
 Certbot fetches the certificate, switches the site to HTTPS, and adds an
-HTTP→HTTPS redirect. Renewal is automatic (certbot systemd timer).
+HTTP→HTTPS redirect, then arms the certbot systemd timer and verifies it is
+active. Do not assume renewal is automatic: the Amazon Linux certbot package
+ships `certbot-renew.timer` **disabled**, which silently expired the cert in
+August 2026. Check with `systemctl list-timers certbot-renew.timer`.
 
 ---
 

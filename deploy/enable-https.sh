@@ -16,5 +16,5 @@ sudo certbot --nginx \
   --non-interactive --agree-tos -m "$EMAIL" --redirect
 
 echo
-echo "HTTPS is on. Renewal is automatic via the certbot systemd timer:"
-systemctl list-timers 2>/dev/null | grep -i certbot || echo "  (run 'sudo certbot renew --dry-run' to verify)"
+echo "==> Arming automatic renewal"
+"$(dirname "$0")/enable-auto-renew.sh"

@@ -125,7 +125,8 @@ if [ -n "$EMAIL" ]; then
   echo "==> Attempting HTTPS via Let's Encrypt (needs DNS already pointing here)"
   if sudo certbot --nginx -d "$DOMAIN" -d "www.$DOMAIN" \
         --non-interactive --agree-tos -m "$EMAIL" --redirect; then
-    echo "    HTTPS enabled; renewal is automatic."
+    echo "    HTTPS enabled; arming automatic renewal"
+    "$(dirname "$0")/enable-auto-renew.sh"
   else
     echo "    Certbot failed (likely DNS not propagated yet). Re-run later:"
     echo "      sudo certbot --nginx -d $DOMAIN -d www.$DOMAIN --agree-tos -m $EMAIL --redirect"
