@@ -273,14 +273,6 @@ body.is-intro-running .nav.shell {
   color: #FBFAF7;
   animation: loaderMinimalWord 780ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
 }
-.launch-sequence__tagline em {
-  font-style: normal;
-  background: linear-gradient(90deg, #B8FF5C, #66FFF1);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
 
 /* Remove duplicate bottom bar */
 .launch-sequence::after {
