@@ -145,7 +145,7 @@ function setupLaunchSequence() {
         <span class="launch-sequence__ring launch-sequence__ring--counter" aria-hidden="true"></span>
         <img class="launch-sequence__logo" src="./assets/lucent-logo-lockup.png" alt="Lucent" />
       </div>
-      <p class="launch-sequence__tagline">Record Train <em>Get Scouted</em></p>
+      <p class="launch-sequence__tagline beats"><span class="beats__beat">Record</span> <span class="beats__beat">Train</span> <span class="beats__beat beats__go">Get Scouted</span></p>
       <div class="launch-sequence__status">
         <div class="launch-sequence__bar"><i></i></div>
       </div>

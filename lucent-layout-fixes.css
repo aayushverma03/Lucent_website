@@ -353,3 +353,63 @@ body.lucent-theme .success-card p {
     min-height: 0 !important;
   }
 }
+
+/* Three-beat tagline lockup ----------------------------------------------
+   "Record Train Get Scouted" is three beats, not four words. A single space
+   everywhere made "Train Get" look as joined as "Get Scouted". Each beat is
+   wrapped in a span and the beats are laid out with a flex column-gap, so the
+   gap BETWEEN beats is ~2.8x the space INSIDE "Get Scouted" — that contrast is
+   what groups the payoff. Flex gap rather than margin because gap is not
+   applied at the start of a wrapped line: with margins the third beat pushed
+   its own line off-centre whenever the lockup wrapped to two lines. Wrapping
+   now also breaks on a beat boundary instead of mid-phrase. .beats__go carries
+   the lime->cyan accent the splash loader already used. */
+.beats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.62em;
+  row-gap: 0.06em;
+  /* text-indent inherits into each blockified flex item, so the splash's
+     .34em centring indent would indent every beat, not just the first. */
+  text-indent: 0;
+}
+
+.beats__go {
+  background: linear-gradient(90deg, #B8FF5C, #66FFF1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* The gradient rides on the glyphs, so the hero's text-shadow bleeds THROUGH
+   the transparent fill instead of sitting behind it, muddying the lime. Swap
+   it for a drop-shadow filter, which shadows the rendered glyph — the accent
+   keeps the same dark halo that makes the white beats legible over video.
+   Without this the lime end of the gradient washes out on sunlit grass. */
+body.lucent-theme .film__hero-tagline h1 .beats__go,
+body.lucent-theme .elevate__inner h2 .beats__go {
+  text-shadow: none;
+  filter: drop-shadow(0 2px 3px rgba(5, 7, 10, 0.55))
+          drop-shadow(0 6px 26px rgba(5, 7, 10, 0.65));
+}
+
+/* Splash tagline is already tracked at .34em, so it needs a smaller gap.
+   Its text-indent centring trick does not apply to a flex container, so the
+   last beat's trailing letter-space is cancelled here instead. */
+.launch-sequence__tagline.beats {
+  column-gap: 0.5em;
+}
+
+.launch-sequence__tagline.beats .beats__beat:last-child {
+  margin-right: -0.34em;
+}
+
+@media (prefers-contrast: more) {
+  .beats__go {
+    -webkit-text-fill-color: #B8FF5C;
+    color: #B8FF5C;
+    background: none;
+  }
+}
